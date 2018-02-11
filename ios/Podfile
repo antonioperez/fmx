@@ -24,4 +24,6 @@ target 'fmx' do
   
   pod 'Fabric', '~> 1.7.2'
   pod 'Crashlytics', '~> 3.9.3'
+ # pod 'React', :path => '../node_modules/react-native'
+#  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
 end

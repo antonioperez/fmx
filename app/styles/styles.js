@@ -34,5 +34,19 @@ export const styles = StyleSheet.create({
       fontSize: 14,
       marginTop: 4,
       textAlign: 'center',
+    },
+    linearGradient: {
+      flex: 1,
+      paddingLeft: 15,
+      paddingRight: 15,
+      borderRadius: 5
+    },
+    buttonText: {
+      fontSize: 18,
+      fontFamily: 'Gill Sans',
+      textAlign: 'center',
+      margin: 10,
+      color: '#ffffff',
+      backgroundColor: 'transparent',
     }
   });
