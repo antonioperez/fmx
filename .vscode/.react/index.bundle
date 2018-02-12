@@ -58517,15 +58517,15 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _reactNative = require(_dependencyMap[2], "react-native");
 
-  var _styles = require(_dependencyMap[3], "./styles/styles");
-
-  var _reactNativeFirebase = require(_dependencyMap[4], "react-native-firebase");
-
-  var _reactNativeFirebase2 = _interopRequireDefault(_reactNativeFirebase);
-
-  var _reactNativeLinearGradient = require(_dependencyMap[5], "react-native-linear-gradient");
+  var _reactNativeLinearGradient = require(_dependencyMap[3], "react-native-linear-gradient");
 
   var _reactNativeLinearGradient2 = _interopRequireDefault(_reactNativeLinearGradient);
+
+  var _styles = require(_dependencyMap[4], "./styles");
+
+  var _user = require(_dependencyMap[5], "./user");
+
+  var _user2 = _interopRequireDefault(_user);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -58562,6 +58562,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
       var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
 
+      _this.lightTheme = ['#6651c1', '#8162cb', '#946ed1'];
+      _this.darkTheme = ["#000", "#1d0c34"];
       _this.state = {};
       return _this;
     }
@@ -58573,62 +58575,31 @@ __d(function (global, require, module, exports, _dependencyMap) {
       key: "render",
       value: function render() {
         return _react3.default.createElement(
-          _reactNative.View,
+          _reactNativeLinearGradient2.default,
           {
-            style: _styles.styles.container,
+            colors: this.darkTheme,
+            style: _styles.styles.background,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 29
+              lineNumber: 22
             }
           },
-          _react3.default.createElement(_reactNative.Image, {
-            source: require(_dependencyMap[6], './assets/RNFirebase512x512.png'),
-            style: [_styles.styles.logo],
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 30
-            }
-          }),
           _react3.default.createElement(
-            _reactNative.Text,
+            _reactNative.View,
             {
-              style: _styles.styles.welcome,
+              style: _styles.styles.container,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 31
+                lineNumber: 23
               }
             },
-            "Welcome the FMx"
-          ),
-          _react3.default.createElement(
-            _reactNativeLinearGradient2.default,
-            {
-              colors: ['#4c669f', '#3b5998', '#192f6a'],
-              style: _styles.styles.linearGradient,
+            _react3.default.createElement(_user2.default, {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 34
+                lineNumber: 24
               }
-            },
-            _react3.default.createElement(
-              _reactNative.Text,
-              {
-                style: _styles.styles.buttonText,
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 35
-                }
-              },
-              "Sign in with Facebook"
-            )
-          ),
-          _react3.default.createElement(_reactNative.View, {
-            style: _styles.styles.modules,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 39
-            }
-          })
+            })
+          )
         );
       }
     }]);
@@ -58637,71 +58608,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = App;
-},489,[109,128,12,490,491,557,558],"fmx/app/App.js");
-__d(function (global, require, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.styles = undefined;
-
-  var _react = require(_dependencyMap[0], "react");
-
-  var _react2 = _interopRequireDefault(_react);
-
-  var _reactNative = require(_dependencyMap[1], "react-native");
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  var styles = exports.styles = _reactNative.StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#F5FCFF'
-    },
-    logo: {
-      height: 80,
-      marginBottom: 16,
-      width: 80
-    },
-    welcome: {
-      fontSize: 20,
-      textAlign: 'center',
-      margin: 10
-    },
-    instructions: {
-      textAlign: 'center',
-      color: '#333333',
-      marginBottom: 5
-    },
-    modules: {
-      margin: 20
-    },
-    modulesHeader: {
-      fontSize: 16,
-      marginBottom: 8
-    },
-    module: {
-      fontSize: 14,
-      marginTop: 4,
-      textAlign: 'center'
-    },
-    linearGradient: {
-      flex: 1,
-      paddingLeft: 15,
-      paddingRight: 15,
-      borderRadius: 5
-    },
-    buttonText: {
-      fontSize: 18,
-      fontFamily: 'Gill Sans',
-      textAlign: 'center',
-      margin: 10,
-      color: '#ffffff',
-      backgroundColor: 'transparent'
-    }
-  });
-},490,[109,12],"fmx/app/styles/styles.js");
+},489,[109,128,12,557,564,561],"fmx/app/App.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -66275,17 +66182,177 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var NativeLinearGradient = (0, _reactNative.requireNativeComponent)('BVLinearGradient', null);
 },557,[109,128,292,12,297],"react-native-linear-gradient/index.ios.js");
 __d(function (global, require, module, exports, _dependencyMap) {
-  module.exports = require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
-    "__packager_asset": true,
-    "httpServerLocation": "/assets/app/assets",
-    "width": 512,
-    "height": 512,
-    "scales": [1],
-    "hash": "97b4a931ddb88057f6be6b7543eabb36",
-    "name": "RNFirebase512x512",
-    "type": "png"
+  Object.defineProperty(exports, "__esModule", {
+    value: true
   });
-},558,[325],"app/assets/RNFirebase512x512.png");
+
+  var _Login = require(_dependencyMap[0], "./components/Login");
+
+  var _Login2 = _interopRequireDefault(_Login);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  exports.default = _Login2.default;
+},561,[562],"fmx/app/user/index.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react2 = require(_dependencyMap[0], "react");
+
+  var _react3 = _interopRequireDefault(_react2);
+
+  var _index = require(_dependencyMap[1], "./../../../node_modules/react-transform-hmr/lib/index.js");
+
+  var _index2 = _interopRequireDefault(_index);
+
+  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/Login.js";
+
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  var _reactNative = require(_dependencyMap[2], "react-native");
+
+  var _reactNativeFirebase = require(_dependencyMap[3], "react-native-firebase");
+
+  var _reactNativeFirebase2 = _interopRequireDefault(_reactNativeFirebase);
+
+  var _reactNativeLinearGradient = require(_dependencyMap[4], "react-native-linear-gradient");
+
+  var _reactNativeLinearGradient2 = _interopRequireDefault(_reactNativeLinearGradient);
+
+  var _style = require(_dependencyMap[5], "../style");
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var _components = {
+    Login: {
+      displayName: "Login"
+    }
+  };
+
+  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/Login.js",
+    components: _components,
+    locals: [module],
+    imports: [_react3.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var Login = _wrapComponent("Login")(function (_React$Component) {
+    _inherits(Login, _React$Component);
+
+    function Login() {
+      _classCallCheck(this, Login);
+
+      var _this = _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this));
+
+      _this.state = {};
+      return _this;
+    }
+
+    _createClass(Login, [{
+      key: "componentDidMount",
+      value: function componentDidMount() {}
+    }, {
+      key: "render",
+      value: function render() {
+        return _react3.default.createElement(
+          _reactNative.View,
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 28
+            }
+          },
+          _react3.default.createElement(
+            _reactNative.Text,
+            {
+              style: _style.styles.appText,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 29
+              }
+            },
+            "Welcome to FMx"
+          ),
+          _react3.default.createElement(
+            _reactNative.Text,
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 32
+              }
+            },
+            "THIS IS A TEST"
+          )
+        );
+      }
+    }]);
+
+    return Login;
+  }(_react3.default.Component));
+
+  exports.default = Login;
+},562,[109,128,12,491,557,563],"fmx/app/user/components/Login.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.styles = undefined;
+
+  var _react = require(_dependencyMap[0], "react");
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _reactNative = require(_dependencyMap[1], "react-native");
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var styles = exports.styles = _reactNative.StyleSheet.create({
+    logo: {},
+    appText: {
+      color: "white"
+    }
+  });
+},563,[109,12],"fmx/app/user/style.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.styles = undefined;
+
+  var _react = require(_dependencyMap[0], "react");
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _reactNative = require(_dependencyMap[1], "react-native");
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  var styles = exports.styles = _reactNative.StyleSheet.create({
+    container: {
+      flex: 1,
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center'
+    },
+    background: {
+      flex: 1
+    }
+  });
+},564,[109,12],"fmx/app/styles.js");
 require(23);
 require(11);
 //# sourceMappingURL=index.map
