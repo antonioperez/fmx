@@ -26,4 +26,6 @@ target 'fmx' do
   pod 'Crashlytics', '~> 3.9.3'
  # pod 'React', :path => '../node_modules/react-native'
 #  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
 end

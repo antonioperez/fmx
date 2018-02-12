@@ -1,7 +1,7 @@
 import React from 'react';
 import { Platform, Image, Text, View } from 'react-native';
 import {styles} from '../../style';
-import LoginButton from './container';
+import {LoginForm, FBLoginButton} from './container';
 
 export default class LoginUI extends React.Component {
   constructor() {
@@ -28,7 +28,8 @@ export default class LoginUI extends React.Component {
         <Text style={styles.appText}>
           Welcome to FMx {"\n"}
         </Text>
-        <LoginButton />
+        <LoginForm />
+        <FBLoginButton />
       </View>
     );
   }

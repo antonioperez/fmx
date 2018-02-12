@@ -1,16 +1,47 @@
 import React, { Component } from 'react';
-import { Button, Text } from 'react-native';
-import { login } from '../../actions';
 
-export default class LoginButton extends React.Component {
+import { View, Text } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { Button, FormLabel, FormInput, FormValidationMessage  } from 'react-native-elements';
+import { login, FBLogin } from '../../actions';
+import {styles} from '../../style';
+
+export class LoginForm extends React.Component {
     onLogin = () => {
         login();
     }
     render() {
         return (
-            <Button onPress={this.onLogin} title="Login" accessibilityLabel="Login">
-                <Text>Start Chatting</Text>
-            </Button>
+            <View >
+               
+                {/* <FormLabel>Email</FormLabel>
+                <FormInput />
+                <FormValidationMessage>Error message</FormValidationMessage> */}
+                <Button 
+                    buttonStyle={styles.clearButton}
+                    onPress={this.onLogin} 
+                    title="Login" 
+                    accessibilityLabel="Login"
+                />
+            </View>
+        )
+    }
+}
+
+export class FBLoginButton extends React.Component {
+    onLogin = () => {
+        FBLogin();
+    }
+    render() {
+        return (
+            <View >
+                <Button
+                    icon={{name: 'home'}}
+                    buttonStyle={styles.clearButton}
+                    textStyle={{textAlign: 'center'}}
+                    title={`Facebook`}
+                />
+            </View>
         )
     }
 }

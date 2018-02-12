@@ -6,4 +6,10 @@ export const styles = StyleSheet.create({
     appText: {
       color: "white",
     },
+    clearButton: {
+      backgroundColor: 'transparent', 
+      borderRadius: 10,  
+      borderColor: "#fff",
+      borderWidth: 1
+    }
   });
