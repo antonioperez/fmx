@@ -58613,22 +58613,6 @@ __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.AdMob = undefined;
-
-  var _firebase = require(_dependencyMap[0], "./modules/core/firebase");
-
-  var _firebase2 = _interopRequireDefault(_firebase);
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  var AdMob = exports.AdMob = require(_dependencyMap[1], './modules/admob');
-
-  exports.default = _firebase2.default;
-},491,[492,510],"react-native-firebase/dist/index.js");
-__d(function (global, require, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -66186,147 +66170,14 @@ __d(function (global, require, module, exports, _dependencyMap) {
     value: true
   });
 
-  var _Login = require(_dependencyMap[0], "./components/Login");
+  var _LoginUI = require(_dependencyMap[0], "./components/LoginUI");
 
-  var _Login2 = _interopRequireDefault(_Login);
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  exports.default = _Login2.default;
-},561,[562],"fmx/app/user/index.js");
-__d(function (global, require, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-
-  var _react2 = require(_dependencyMap[0], "react");
-
-  var _react3 = _interopRequireDefault(_react2);
-
-  var _index = require(_dependencyMap[1], "./../../../node_modules/react-transform-hmr/lib/index.js");
-
-  var _index2 = _interopRequireDefault(_index);
-
-  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/Login.js";
-
-  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-  var _reactNative = require(_dependencyMap[2], "react-native");
-
-  var _reactNativeFirebase = require(_dependencyMap[3], "react-native-firebase");
-
-  var _reactNativeFirebase2 = _interopRequireDefault(_reactNativeFirebase);
-
-  var _reactNativeLinearGradient = require(_dependencyMap[4], "react-native-linear-gradient");
-
-  var _reactNativeLinearGradient2 = _interopRequireDefault(_reactNativeLinearGradient);
-
-  var _style = require(_dependencyMap[5], "../style");
+  var _LoginUI2 = _interopRequireDefault(_LoginUI);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-  var _components = {
-    Login: {
-      displayName: "Login"
-    }
-  };
-
-  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/Login.js",
-    components: _components,
-    locals: [module],
-    imports: [_react3.default]
-  });
-
-  function _wrapComponent(id) {
-    return function (Component) {
-      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
-    };
-  }
-
-  var Login = _wrapComponent("Login")(function (_React$Component) {
-    _inherits(Login, _React$Component);
-
-    function Login() {
-      _classCallCheck(this, Login);
-
-      var _this = _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this));
-
-      _this.state = {};
-      return _this;
-    }
-
-    _createClass(Login, [{
-      key: "componentDidMount",
-      value: function componentDidMount() {}
-    }, {
-      key: "render",
-      value: function render() {
-        return _react3.default.createElement(
-          _reactNative.View,
-          {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 28
-            }
-          },
-          _react3.default.createElement(
-            _reactNative.Text,
-            {
-              style: _style.styles.appText,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 29
-              }
-            },
-            "Welcome to FMx"
-          ),
-          _react3.default.createElement(
-            _reactNative.Text,
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 32
-              }
-            },
-            "THIS IS A TEST"
-          )
-        );
-      }
-    }]);
-
-    return Login;
-  }(_react3.default.Component));
-
-  exports.default = Login;
-},562,[109,128,12,491,557,563],"fmx/app/user/components/Login.js");
-__d(function (global, require, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.styles = undefined;
-
-  var _react = require(_dependencyMap[0], "react");
-
-  var _react2 = _interopRequireDefault(_react);
-
-  var _reactNative = require(_dependencyMap[1], "react-native");
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  var styles = exports.styles = _reactNative.StyleSheet.create({
-    logo: {},
-    appText: {
-      color: "white"
-    }
-  });
-},563,[109,12],"fmx/app/user/style.js");
+  exports.default = _LoginUI2.default;
+},561,[565],"fmx/app/user/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -66353,6 +66204,117 @@ __d(function (global, require, module, exports, _dependencyMap) {
     }
   });
 },564,[109,12],"fmx/app/styles.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react2 = require(_dependencyMap[0], "react");
+
+  var _react3 = _interopRequireDefault(_react2);
+
+  var _index = require(_dependencyMap[1], "./../../../node_modules/react-transform-hmr/lib/index.js");
+
+  var _index2 = _interopRequireDefault(_index);
+
+  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/LoginUI.js";
+
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  var _reactNative = require(_dependencyMap[2], "react-native");
+
+  var _reactNativeFirebase = require(_dependencyMap[3], "react-native-firebase");
+
+  var _reactNativeFirebase2 = _interopRequireDefault(_reactNativeFirebase);
+
+  var _reactNativeLinearGradient = require(_dependencyMap[4], "react-native-linear-gradient");
+
+  var _reactNativeLinearGradient2 = _interopRequireDefault(_reactNativeLinearGradient);
+
+  var _style = require(_dependencyMap[5], "../style");
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var _components = {
+    LoginUI: {
+      displayName: "LoginUI"
+    }
+  };
+
+  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/LoginUI.js",
+    components: _components,
+    locals: [module],
+    imports: [_react3.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var LoginUI = _wrapComponent("LoginUI")(function (_React$Component) {
+    _inherits(LoginUI, _React$Component);
+
+    function LoginUI() {
+      _classCallCheck(this, LoginUI);
+
+      var _this = _possibleConstructorReturn(this, (LoginUI.__proto__ || Object.getPrototypeOf(LoginUI)).call(this));
+
+      _this.state = {};
+      return _this;
+    }
+
+    _createClass(LoginUI, [{
+      key: "componentDidMount",
+      value: function componentDidMount() {}
+    }, {
+      key: "render",
+      value: function render() {
+        return _react3.default.createElement(
+          _reactNative.View,
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 27
+            }
+          },
+          _react3.default.createElement(_reactNative.Image, {
+            source: require(_dependencyMap[6], '../.././assets/images/FMx.png'),
+            style: [_style.styles.logo],
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 28
+            }
+          }),
+          _react3.default.createElement(
+            _reactNative.Text,
+            {
+              style: _style.styles.appText,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 29
+              }
+            },
+            "Welcome to FMx ",
+            "\n"
+          )
+        );
+      }
+    }]);
+
+    return LoginUI;
+  }(_react3.default.Component));
+
+  exports.default = LoginUI;
+},565,[109,128,12,491,557,563,560],"fmx/app/user/components/LoginUI.js");
 require(23);
 require(11);
 //# sourceMappingURL=index.map

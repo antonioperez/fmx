@@ -3,7 +3,7 @@ import { Platform, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import {styles} from './styles';
-import Login  from './user';
+import LoginUI  from './user';
 
 export default class App extends React.Component {
   constructor() {
@@ -21,7 +21,7 @@ export default class App extends React.Component {
     return (
       <LinearGradient colors={this.darkTheme} style={styles.background}>
       <View style={styles.container}>
-        <Login />
+        <LoginUI />
       </View>
       </LinearGradient>
     );

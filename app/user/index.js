@@ -1,3 +1,3 @@
 
-import Login from './components/Login';
-export default Login;
+import LoginUI from './components/Login';
+export default LoginUI;

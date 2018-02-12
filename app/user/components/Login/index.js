@@ -1,12 +1,17 @@
 import React from 'react';
 import { Platform, Image, Text, View } from 'react-native';
-import firebase from 'react-native-firebase';
-import LinearGradient from 'react-native-linear-gradient';
-import {styles} from '../style';
+import {styles} from '../../style';
+import LoginButton from './container';
 
-export default class Login extends React.Component {
+export default class LoginUI extends React.Component {
   constructor() {
     super();
+    this.state = {
+
+    };
+  }
+
+  componentDidMount() {
     // var users = firebase.database().ref('users')
     //   var rooms = users.on("value", function (snapshot) {
     //     snapshot.forEach(function (data) {
@@ -15,23 +20,15 @@ export default class Login extends React.Component {
     // }, function (errorObject) {
     //     alert("The read failed: " + errorObject.code);
     // });
-    this.state = {
-
-    };
-  }
-
-  componentDidMount() {
-    
   }
   render() {
     return (
       <View >
+        <Image source={require('../../.././assets/images/FMx.png')} style={[styles.logo]} />
         <Text style={styles.appText}>
-          Welcome to FMx
+          Welcome to FMx {"\n"}
         </Text>
-        <Text>
-          THIS IS A TEST
-        </Text>
+        <LoginButton />
       </View>
     );
   }
