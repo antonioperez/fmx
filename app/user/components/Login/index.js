@@ -23,7 +23,7 @@ export default class LoginUI extends React.Component {
             FMx Merchant Portal
         </Text>
         <Text style={[styles.whiteText,styles.center]}>
-            Invest Back Into Your Business!
+          Save time. Save money. Scale Your Business.
         </Text>
         <LoginForm />
         <FBLoginButton />
