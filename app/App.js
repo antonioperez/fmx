@@ -20,9 +20,7 @@ export default class App extends React.Component {
   render() {
     return (
       <LinearGradient colors={this.darkTheme} style={styles.background}>
-      <View style={styles.container}>
         <LoginUI />
-      </View>
       </LinearGradient>
     );
   }

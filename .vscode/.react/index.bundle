@@ -58584,22 +58584,12 @@ __d(function (global, require, module, exports, _dependencyMap) {
               lineNumber: 22
             }
           },
-          _react3.default.createElement(
-            _reactNative.View,
-            {
-              style: _styles.styles.container,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 23
-              }
-            },
-            _react3.default.createElement(_user2.default, {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 24
-              }
-            })
-          )
+          _react3.default.createElement(_user2.default, {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 23
+            }
+          })
         );
       }
     }]);
@@ -58746,12 +58736,6 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var _reactNative = require(_dependencyMap[0], "react-native");
 
   var styles = exports.styles = _reactNative.StyleSheet.create({
-    container: {
-      flex: 1,
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center'
-    },
     background: {
       flex: 1
     }
@@ -58792,6 +58776,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var _style = require(_dependencyMap[3], "../../style");
 
   var _container = require(_dependencyMap[4], "./container");
+
+  var _reactNativeElements = require(_dependencyMap[5], "react-native-elements");
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -58841,41 +58827,46 @@ __d(function (global, require, module, exports, _dependencyMap) {
         return _react3.default.createElement(
           _reactNative.View,
           {
+            style: _style.styles.loginContainer,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 26
+              lineNumber: 29
             }
           },
-          _react3.default.createElement(_reactNative.Image, {
-            source: require(_dependencyMap[5], '../../.././assets/images/FMx.png'),
-            style: [_style.styles.logo],
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 27
-            }
-          }),
           _react3.default.createElement(
-            _reactNative.Text,
+            _reactNativeElements.Text,
             {
-              style: _style.styles.appText,
+              h2: true,
+              style: [_style.styles.whiteText, _style.styles.center],
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 28
+                lineNumber: 31
               }
             },
-            "Welcome to FMx ",
-            "\n"
+            "FMx"
+          ),
+          _react3.default.createElement(
+            _reactNativeElements.Text,
+            {
+              h4: true,
+              style: [_style.styles.whiteText, _style.styles.center],
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 34
+              }
+            },
+            "Merchant Portal"
           ),
           _react3.default.createElement(_container.LoginForm, {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 31
+              lineNumber: 37
             }
           }),
           _react3.default.createElement(_container.FBLoginButton, {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 32
+              lineNumber: 38
             }
           })
         );
@@ -58886,7 +58877,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = LoginUI;
-},493,[109,128,12,494,495,689],"fmx/app/user/components/Login/index.js");
+},493,[109,128,12,494,495,546],"fmx/app/user/components/Login/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -58896,15 +58887,23 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var _reactNative = require(_dependencyMap[0], "react-native");
 
   var styles = exports.styles = _reactNative.StyleSheet.create({
-    logo: {},
-    appText: {
+    loginContainer: {
+      flex: 1,
+      justifyContent: 'center'
+    },
+    center: {
+      alignSelf: 'center'
+    },
+    whiteText: {
       color: "white"
     },
     clearButton: {
       backgroundColor: 'transparent',
       borderRadius: 10,
       borderColor: "#fff",
-      borderWidth: 1
+      borderWidth: 1,
+      marginTop: 10,
+      marginBottom: 30
     }
   });
 },494,[12],"fmx/app/user/style.js");
@@ -58926,17 +58925,17 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-    var _reactNative = require(_dependencyMap[2], "react-native");
+    var _actions = require(_dependencyMap[2], "../../actions");
 
-    var _FontAwesome = require(_dependencyMap[3], "react-native-vector-icons/FontAwesome");
+    var _style = require(_dependencyMap[3], "../../style");
+
+    var _reactNative = require(_dependencyMap[4], "react-native");
+
+    var _FontAwesome = require(_dependencyMap[5], "react-native-vector-icons/FontAwesome");
 
     var _FontAwesome2 = _interopRequireDefault(_FontAwesome);
 
-    var _reactNativeElements = require(_dependencyMap[4], "react-native-elements");
-
-    var _actions = require(_dependencyMap[5], "../../actions");
-
-    var _style = require(_dependencyMap[6], "../../style");
+    var _reactNativeElements = require(_dependencyMap[6], "react-native-elements");
 
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -58995,9 +58994,53 @@ __d(function (global, require, module, exports, _dependencyMap) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 15
+                            lineNumber: 23
                         }
                     },
+                    _react3.default.createElement(
+                        _reactNativeElements.FormLabel,
+                        {
+                            labelStyle: _style.styles.whiteText,
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 24
+                            }
+                        },
+                        "Email"
+                    ),
+                    _react3.default.createElement(_reactNativeElements.FormInput, {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 25
+                        }
+                    }),
+                    _react3.default.createElement(
+                        _reactNativeElements.FormLabel,
+                        {
+                            labelStyle: _style.styles.whiteText,
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 26
+                            }
+                        },
+                        "Password"
+                    ),
+                    _react3.default.createElement(_reactNativeElements.FormInput, {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 27
+                        }
+                    }),
+                    _react3.default.createElement(
+                        _reactNativeElements.FormValidationMessage,
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 28
+                            }
+                        },
+                        "Error message"
+                    ),
                     _react3.default.createElement(_reactNativeElements.Button, {
                         buttonStyle: _style.styles.clearButton,
                         onPress: this.onLogin,
@@ -59005,7 +59048,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         accessibilityLabel: "Login",
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 20
+                            lineNumber: 29
                         }
                     })
                 );
@@ -59042,22 +59085,20 @@ __d(function (global, require, module, exports, _dependencyMap) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 37
+                            lineNumber: 47
                         }
                     },
-                    _react3.default.createElement(_reactNativeElements.Button, {
-                        onPress: this.onLogin,
-                        icon: {
-                            name: 'home'
-                        },
-                        buttonStyle: _style.styles.clearButton,
+                    _react3.default.createElement(_reactNativeElements.SocialIcon, {
+                        title: "Or Sign In With Facebook",
+                        button: true,
+                        type: "facebook",
                         textStyle: {
                             textAlign: 'center'
                         },
-                        title: "Facebook",
+                        onPress: this.onLogin,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 38
+                            lineNumber: 48
                         }
                     })
                 );
@@ -59066,7 +59107,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
         return FBLoginButton;
     }(_react3.default.Component));
-},495,[109,128,12,496,546,604,494],"fmx/app/user/components/Login/container.js");
+},495,[109,128,604,494,12,496,546],"fmx/app/user/components/Login/container.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -73304,7 +73345,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
     var login = exports.login = function login(email, password) {
         if (email && password) {
             _reactNativeFirebase2.default.auth().signInWithEmailAndPassword(email, password).then(function (firebaseUser) {
-                alert(firebaseUser.toJSON());
+                var user = firebaseUser.toJSON();
+                alert(user.email);
             }).catch(function (error) {
                 var errorCode = error.code;
                 var errorMessage = error.message;
@@ -81777,18 +81819,6 @@ __d(function (global, require, module, exports, _dependencyMap) {
     "version": "3.2.2"
   };
 },688,[],"react-native-firebase/package.json");
-__d(function (global, require, module, exports, _dependencyMap) {
-  module.exports = require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
-    "__packager_asset": true,
-    "httpServerLocation": "/assets/app/assets/images",
-    "width": 148,
-    "height": 52,
-    "scales": [1, 2, 3],
-    "hash": "4e6221a93d29a6e8570cc2b3f22948d4",
-    "name": "FMx",
-    "type": "png"
-  });
-},689,[325],"app/assets/images/FMx.png");
 require(23);
 require(11);
 //# sourceMappingURL=index.map

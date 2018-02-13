@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
-
-import { View, Text } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import { Button, FormLabel, FormInput, FormValidationMessage  } from 'react-native-elements';
 import { login, FBLogin } from '../../actions';
 import {styles} from '../../style';
+import { View, Image} from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { 
+    Button, 
+    FormLabel, 
+    FormInput,
+    TextInput,
+    FormValidationMessage,
+    Text,
+    SocialIcon
+} from 'react-native-elements';
+
 
 export class LoginForm extends React.Component {
     onLogin = () => {
@@ -12,11 +20,12 @@ export class LoginForm extends React.Component {
     }
     render() {
         return (
-            <View >
-               
-                {/* <FormLabel>Email</FormLabel>
+            <View>
+                <FormLabel labelStyle={styles.whiteText}>Email</FormLabel>
                 <FormInput />
-                <FormValidationMessage>Error message</FormValidationMessage> */}
+                <FormLabel labelStyle={styles.whiteText}>Password</FormLabel>
+                <FormInput />
+                <FormValidationMessage>Error message</FormValidationMessage>
                 <Button 
                     buttonStyle={styles.clearButton}
                     onPress={this.onLogin} 
@@ -32,15 +41,16 @@ export class FBLoginButton extends React.Component {
     onLogin = () => {
         FBLogin();
     }
+
     render() {
         return (
             <View >
-                <Button
-                    onPress={this.onLogin} 
-                    icon={{name: 'home'}}
-                    buttonStyle={styles.clearButton}
+                <SocialIcon
+                    title='Or Sign In With Facebook'
+                    button
+                    type='facebook'
                     textStyle={{textAlign: 'center'}}
-                    title={`Facebook`}
+                    onPress={this.onLogin} 
                 />
             </View>
         )

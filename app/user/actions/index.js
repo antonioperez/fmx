@@ -5,7 +5,9 @@ export const login = (email, password) => {
     if (email && password) {
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then(function (firebaseUser) {
-                alert(firebaseUser.toJSON());
+                let user = firebaseUser.toJSON();
+
+                alert(user.email);
             })
             .catch(function (error) {
                 // Handle Errors here.
@@ -16,32 +18,6 @@ export const login = (email, password) => {
     }
 }
 
-//     let loginManager = FBSDKLoginManager()
-//     loginManager.logIn(withReadPermissions: ["email"], from: self, handler: { (result, error) in
-//         if let error = error {
-//              showErrorAlert(view: self, title: "Login failed", msg: error.localizedDescription)
-//         } else if result!.isCancelled {
-//             print("FBLogin cancelled")
-//         } else {
-//             let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-//             Auth.auth().signIn(with: credential) { (user, error) in
-//                 guard let user = user else {
-//                     if let error = error  {
-//                         showErrorAlert(view: self, title: "Login failed", msg: error.localizedDescription)
-//                     }
-//                      return;
-//                 }
-//                 let userData = [
-//                     "provider": "facebook",
-//                     "type" : self.userType
-//                 ]
-//                 UserService.instance.addProfile(uid: user.uid, user: userData)
-//                 UserDefaults.standard.setValue(user.uid, forKey: KEY_UID)
-//                 self.performSegue(withIdentifier: "user_views", sender: nil)
-//             }
-//         }
-//     })
-// }
 export const FBLogin = async () => {
     try {
         const result = await LoginManager.logInWithReadPermissions(['public_profile', 'email']);
