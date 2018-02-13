@@ -19,7 +19,6 @@ export default class LoginUI extends React.Component {
   render() {
     return (
       <View style={styles.loginContainer}>
-        {/* <Image source={require('../../.././assets/images/FMx.png')} style={styles.logo} /> */}
         <Text h2 style={[styles.whiteText,styles.center]}>
             FMx
         </Text>

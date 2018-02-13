@@ -21,7 +21,7 @@ export class LoginForm extends React.Component {
             pw: '', 
         };
     }
-    
+
     onLogin = () => {
         if (this.state.email && this.state.pw) {
             login(this.state.email, this.state.pw);
@@ -36,9 +36,15 @@ export class LoginForm extends React.Component {
                 <FormInput 
                     onChangeText={(email) => this.setState({email})}
                     clearButtonMode='always'
+                    inputStyle={styles.whiteText}
                 />
                 <FormLabel labelStyle={styles.whiteText}>Password</FormLabel>
-                <FormInput onChangeText={(pw) => this.setState({pw})}/>
+                <FormInput 
+                    onChangeText={(pw) => this.setState({pw})}
+                    clearButtonMode='always'
+                    secureTextEntry={true}
+                    inputStyle={styles.whiteText}
+                />
                 <Button 
                     buttonStyle={styles.clearButton}
                     onPress={this.onLogin} 

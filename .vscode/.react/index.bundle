@@ -58840,7 +58840,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               style: [_style.styles.whiteText, _style.styles.center],
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 23
+                lineNumber: 22
               }
             },
             "FMx"
@@ -58852,7 +58852,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               style: [_style.styles.whiteText, _style.styles.center],
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 26
+                lineNumber: 25
               }
             },
             "Merchant Portal"
@@ -58860,13 +58860,13 @@ __d(function (global, require, module, exports, _dependencyMap) {
           _react3.default.createElement(_container.LoginForm, {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 29
+              lineNumber: 28
             }
           }),
           _react3.default.createElement(_container.FBLoginButton, {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 30
+              lineNumber: 29
             }
           })
         );
@@ -59017,6 +59017,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             });
                         },
                         clearButtonMode: "always",
+                        inputStyle: _style.styles.whiteText,
                         __source: {
                             fileName: _jsxFileName,
                             lineNumber: 36
@@ -59028,7 +59029,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             labelStyle: _style.styles.whiteText,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 40
+                                lineNumber: 41
                             }
                         },
                         "Password"
@@ -59039,9 +59040,12 @@ __d(function (global, require, module, exports, _dependencyMap) {
                                 pw: pw
                             });
                         },
+                        clearButtonMode: "always",
+                        secureTextEntry: true,
+                        inputStyle: _style.styles.whiteText,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 41
+                            lineNumber: 42
                         }
                     }),
                     _react3.default.createElement(_reactNativeElements.Button, {
@@ -59051,7 +59055,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         accessibilityLabel: "Login",
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 42
+                            lineNumber: 48
                         }
                     })
                 );
@@ -59088,7 +59092,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 60
+                            lineNumber: 66
                         }
                     },
                     _react3.default.createElement(_reactNativeElements.SocialIcon, {
@@ -59101,7 +59105,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         onPress: this.onLogin,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 61
+                            lineNumber: 67
                         }
                     })
                 );
