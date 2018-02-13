@@ -58866,13 +58866,13 @@ __d(function (global, require, module, exports, _dependencyMap) {
             "Welcome to FMx ",
             "\n"
           ),
-          _react3.default.createElement(_container.FBLoginButton, {
+          _react3.default.createElement(_container.LoginForm, {
             __source: {
               fileName: _jsxFileName,
               lineNumber: 31
             }
           }),
-          _react3.default.createElement(_container.LoginButton, {
+          _react3.default.createElement(_container.FBLoginButton, {
             __source: {
               fileName: _jsxFileName,
               lineNumber: 32
@@ -58886,7 +58886,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = LoginUI;
-},493,[109,128,12,494,495,671],"fmx/app/user/components/Login/index.js");
+},493,[109,128,12,494,495,689],"fmx/app/user/components/Login/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -58912,7 +58912,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
-    exports.FBLoginButton = exports.LoginButton = undefined;
+    exports.FBLoginButton = exports.LoginForm = undefined;
 
     var _react2 = require(_dependencyMap[0], "react");
 
@@ -58947,8 +58947,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
     function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
     var _components = {
-        LoginButton: {
-            displayName: "LoginButton"
+        LoginForm: {
+            displayName: "LoginForm"
         },
         FBLoginButton: {
             displayName: "FBLoginButton"
@@ -58968,26 +58968,26 @@ __d(function (global, require, module, exports, _dependencyMap) {
         };
     }
 
-    var LoginButton = exports.LoginButton = _wrapComponent("LoginButton")(function (_React$Component) {
-        _inherits(LoginButton, _React$Component);
+    var LoginForm = exports.LoginForm = _wrapComponent("LoginForm")(function (_React$Component) {
+        _inherits(LoginForm, _React$Component);
 
-        function LoginButton() {
+        function LoginForm() {
             var _ref;
 
             var _temp, _this, _ret;
 
-            _classCallCheck(this, LoginButton);
+            _classCallCheck(this, LoginForm);
 
             for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
                 args[_key] = arguments[_key];
             }
 
-            return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = LoginButton.__proto__ || Object.getPrototypeOf(LoginButton)).call.apply(_ref, [this].concat(args))), _this), _this.onLogin = function () {
-                (0, _actions.login)();
+            return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = LoginForm.__proto__ || Object.getPrototypeOf(LoginForm)).call.apply(_ref, [this].concat(args))), _this), _this.onLogin = function () {
+                (0, _actions.login)("aperez2541@outlook.com", "reaper123");
             }, _temp), _possibleConstructorReturn(_this, _ret);
         }
 
-        _createClass(LoginButton, [{
+        _createClass(LoginForm, [{
             key: "render",
             value: function render() {
                 return _react3.default.createElement(
@@ -58998,16 +58998,6 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             lineNumber: 15
                         }
                     },
-                    _react3.default.createElement(
-                        _reactNative.Text,
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 16
-                            }
-                        },
-                        "Start Chatting"
-                    ),
                     _react3.default.createElement(_reactNativeElements.Button, {
                         buttonStyle: _style.styles.clearButton,
                         onPress: this.onLogin,
@@ -59015,14 +59005,14 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         accessibilityLabel: "Login",
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 17
+                            lineNumber: 20
                         }
                     })
                 );
             }
         }]);
 
-        return LoginButton;
+        return LoginForm;
     }(_react3.default.Component));
 
     var FBLoginButton = exports.FBLoginButton = _wrapComponent("FBLoginButton")(function (_React$Component2) {
@@ -59052,10 +59042,11 @@ __d(function (global, require, module, exports, _dependencyMap) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 34
+                            lineNumber: 37
                         }
                     },
                     _react3.default.createElement(_reactNativeElements.Button, {
+                        onPress: this.onLogin,
                         icon: {
                             name: 'home'
                         },
@@ -59066,7 +59057,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         title: "Facebook",
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 35
+                            lineNumber: 38
                         }
                     })
                 );
@@ -73300,9 +73291,9 @@ __d(function (global, require, module, exports, _dependencyMap) {
     });
     exports.FBLogin = exports.login = undefined;
 
-    var _react = require(_dependencyMap[0], "react");
+    var _this = this;
 
-    var _react2 = _interopRequireDefault(_react);
+    var _reactNativeFbsdk = require(_dependencyMap[0], "react-native-fbsdk");
 
     var _reactNativeFirebase = require(_dependencyMap[1], "react-native-firebase");
 
@@ -73310,14 +73301,1038 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-    var login = exports.login = function login() {
-        alert("hi");
+    var login = exports.login = function login(email, password) {
+        if (email && password) {
+            _reactNativeFirebase2.default.auth().signInWithEmailAndPassword(email, password).then(function (firebaseUser) {
+                alert(firebaseUser.toJSON());
+            }).catch(function (error) {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                alert(errorMessage);
+            });
+        }
     };
 
     var FBLogin = exports.FBLogin = function FBLogin() {
-        alert("hsi");
+        var result, data, credential, currentUser;
+        return regeneratorRuntime.async(function FBLogin$(_context) {
+            while (1) {
+                switch (_context.prev = _context.next) {
+                    case 0:
+                        _context.prev = 0;
+                        _context.next = 3;
+                        return regeneratorRuntime.awrap(_reactNativeFbsdk.LoginManager.logInWithReadPermissions(['public_profile', 'email']));
+
+                    case 3:
+                        result = _context.sent;
+
+                        if (!result.isCancelled) {
+                            _context.next = 6;
+                            break;
+                        }
+
+                        throw new Error('User cancelled request');
+
+                    case 6:
+                        console.log("Login success with permissions: " + result.grantedPermissions.toString());
+                        _context.next = 9;
+                        return regeneratorRuntime.awrap(_reactNativeFbsdk.AccessToken.getCurrentAccessToken());
+
+                    case 9:
+                        data = _context.sent;
+
+                        if (data) {
+                            _context.next = 12;
+                            break;
+                        }
+
+                        throw new Error('Something went wrong obtaining the users access token');
+
+                    case 12:
+                        credential = _reactNativeFirebase2.default.auth.FacebookAuthProvider.credential(data.accessToken);
+                        _context.next = 15;
+                        return regeneratorRuntime.awrap(_reactNativeFirebase2.default.auth().signInWithCredential(credential));
+
+                    case 15:
+                        currentUser = _context.sent;
+                        console.info(JSON.stringify(currentUser.toJSON()));
+                        _context.next = 22;
+                        break;
+
+                    case 19:
+                        _context.prev = 19;
+                        _context.t0 = _context["catch"](0);
+                        console.error(_context.t0);
+
+                    case 22:
+                    case "end":
+                        return _context.stop();
+                }
+            }
+        }, null, _this, [[0, 19]]);
     };
-},604,[109,605],"fmx/app/user/actions/index.js");
+},604,[605,623],"fmx/app/user/actions/index.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  'use strict';
+
+  module.exports = {
+    get ShareOpenGraphAction() {
+      return require(_dependencyMap[0], './models/FBShareOpenGraphAction');
+    },
+
+    get ShareOpenGraphObject() {
+      return require(_dependencyMap[1], './models/FBShareOpenGraphObject');
+    },
+
+    get ShareOpenGraphValueContainer() {
+      return require(_dependencyMap[2], './models/FBShareOpenGraphValueContainer');
+    },
+
+    get AccessToken() {
+      return require(_dependencyMap[3], './FBAccessToken');
+    },
+
+    get AppEventsLogger() {
+      return require(_dependencyMap[4], './FBAppEventsLogger');
+    },
+
+    get AppInviteDialog() {
+      return require(_dependencyMap[5], './FBAppInviteDialog');
+    },
+
+    get GameRequestDialog() {
+      return require(_dependencyMap[6], './FBGameRequestDialog');
+    },
+
+    get GraphRequest() {
+      return require(_dependencyMap[7], './FBGraphRequest');
+    },
+
+    get GraphRequestManager() {
+      return require(_dependencyMap[8], './FBGraphRequestManager');
+    },
+
+    get LoginManager() {
+      return require(_dependencyMap[9], './FBLoginManager');
+    },
+
+    get MessageDialog() {
+      return require(_dependencyMap[10], './FBMessageDialog');
+    },
+
+    get ShareApi() {
+      return require(_dependencyMap[11], './FBShareApi');
+    },
+
+    get ShareDialog() {
+      return require(_dependencyMap[12], './FBShareDialog');
+    },
+
+    get LikeView() {
+      return require(_dependencyMap[13], './FBLikeView');
+    },
+
+    get LoginButton() {
+      return require(_dependencyMap[14], './FBLoginButton');
+    },
+
+    get SendButton() {
+      return require(_dependencyMap[15], './FBSendButton');
+    },
+
+    get ShareButton() {
+      return require(_dependencyMap[16], './FBShareButton');
+    }
+
+  };
+},605,[606,608,607,609,610,611,612,613,614,615,616,617,618,619,620,621,622],"react-native-fbsdk/js/index.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  'use strict';
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var ShareOpenGraphValueContainer = require(_dependencyMap[0], './FBShareOpenGraphValueContainer');
+
+  var ShareOpenGraphAction = function (_ShareOpenGraphValueC) {
+    _inherits(ShareOpenGraphAction, _ShareOpenGraphValueC);
+
+    function ShareOpenGraphAction(actionType) {
+      _classCallCheck(this, ShareOpenGraphAction);
+
+      var _this = _possibleConstructorReturn(this, (ShareOpenGraphAction.__proto__ || Object.getPrototypeOf(ShareOpenGraphAction)).call(this, null));
+
+      _this.actionType = actionType;
+      return _this;
+    }
+
+    return ShareOpenGraphAction;
+  }(ShareOpenGraphValueContainer);
+
+  module.exports = ShareOpenGraphAction;
+},606,[607],"react-native-fbsdk/js/models/FBShareOpenGraphAction.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  'use strict';
+
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  var ShareOpenGraphValueContainer = function () {
+    function ShareOpenGraphValueContainer(properties) {
+      _classCallCheck(this, ShareOpenGraphValueContainer);
+
+      this._properties = properties ? properties : {};
+    }
+
+    _createClass(ShareOpenGraphValueContainer, [{
+      key: "putNumber",
+      value: function putNumber(key, number) {
+        this._properties[key] = {
+          type: 'number',
+          value: number
+        };
+      }
+    }, {
+      key: "putObject",
+      value: function putObject(key, object) {
+        this._properties[key] = {
+          type: 'open-graph-object',
+          value: object
+        };
+      }
+    }, {
+      key: "putPhoto",
+      value: function putPhoto(key, photo) {
+        this._properties[key] = {
+          type: 'photo',
+          value: photo
+        };
+      }
+    }, {
+      key: "putString",
+      value: function putString(key, string) {
+        this._properties[key] = {
+          type: 'string',
+          value: string
+        };
+      }
+    }, {
+      key: "getEntry",
+      value: function getEntry(key) {
+        return this._properties[key];
+      }
+    }]);
+
+    return ShareOpenGraphValueContainer;
+  }();
+
+  module.exports = ShareOpenGraphValueContainer;
+},607,[],"react-native-fbsdk/js/models/FBShareOpenGraphValueContainer.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  'use strict';
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var ShareOpenGraphValueContainer = require(_dependencyMap[0], './FBShareOpenGraphValueContainer');
+
+  var ShareOpenGraphObject = function (_ShareOpenGraphValueC) {
+    _inherits(ShareOpenGraphObject, _ShareOpenGraphValueC);
+
+    function ShareOpenGraphObject() {
+      _classCallCheck(this, ShareOpenGraphObject);
+
+      return _possibleConstructorReturn(this, (ShareOpenGraphObject.__proto__ || Object.getPrototypeOf(ShareOpenGraphObject)).apply(this, arguments));
+    }
+
+    return ShareOpenGraphObject;
+  }(ShareOpenGraphValueContainer);
+
+  module.exports = ShareOpenGraphObject;
+},608,[607],"react-native-fbsdk/js/models/FBShareOpenGraphObject.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  'use strict';
+
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  var AccessToken = require(_dependencyMap[0], 'react-native').NativeModules.FBAccessToken;
+
+  var FBAccessToken = function () {
+    function FBAccessToken(tokenMap) {
+      _classCallCheck(this, FBAccessToken);
+
+      this.accessToken = tokenMap.accessToken;
+      this.permissions = tokenMap.permissions;
+      this.declinedPermissions = tokenMap.declinedPermissions;
+      this.applicationID = tokenMap.applicationID;
+      this.accessTokenSource = tokenMap.accessTokenSource;
+      this.userID = tokenMap.userID;
+      this.expirationTime = tokenMap.expirationTime;
+      this.lastRefreshTime = tokenMap.lastRefreshTime;
+      Object.freeze(this);
+    }
+
+    _createClass(FBAccessToken, [{
+      key: "getExpires",
+      value: function getExpires() {
+        return this.expirationTime;
+      }
+    }, {
+      key: "getPermissions",
+      value: function getPermissions() {
+        return this.permissions;
+      }
+    }, {
+      key: "getDeclinedPermissions",
+      value: function getDeclinedPermissions() {
+        return this.declinedPermissions;
+      }
+    }, {
+      key: "getLastRefresh",
+      value: function getLastRefresh() {
+        return this.lastRefreshTime;
+      }
+    }, {
+      key: "getApplicationId",
+      value: function getApplicationId() {
+        return this.applicationID;
+      }
+    }, {
+      key: "getUserId",
+      value: function getUserId() {
+        return this.userID;
+      }
+    }], [{
+      key: "getCurrentAccessToken",
+      value: function getCurrentAccessToken() {
+        return new Promise(function (resolve, reject) {
+          AccessToken.getCurrentAccessToken(function (tokenMap) {
+            if (tokenMap) {
+              resolve(new FBAccessToken(tokenMap));
+            } else {
+              resolve(null);
+            }
+          });
+        });
+      }
+    }, {
+      key: "setCurrentAccessToken",
+      value: function setCurrentAccessToken(accessToken) {
+        AccessToken.setCurrentAccessToken(accessToken);
+      }
+    }, {
+      key: "refreshCurrentAccessTokenAsync",
+      value: function refreshCurrentAccessTokenAsync() {
+        return AccessToken.refreshCurrentAccessTokenAsync();
+      }
+    }]);
+
+    return FBAccessToken;
+  }();
+
+  module.exports = FBAccessToken;
+},609,[12],"react-native-fbsdk/js/FBAccessToken.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  'use strict';
+
+  var AppEventsLogger = require(_dependencyMap[0], 'react-native').NativeModules.FBAppEventsLogger;
+
+  module.exports = {
+    setFlushBehavior: function setFlushBehavior(flushBehavior) {
+      AppEventsLogger.setFlushBehavior(flushBehavior);
+    },
+    logEvent: function logEvent(eventName) {
+      var valueToSum = 0;
+
+      for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        args[_key - 1] = arguments[_key];
+      }
+
+      if (typeof args[0] === 'number') {
+        valueToSum = args.shift();
+      }
+
+      var parameters = null;
+
+      if (typeof args[0] === 'object') {
+        parameters = args[0];
+      }
+
+      AppEventsLogger.logEvent(eventName, valueToSum, parameters);
+    },
+    logPurchase: function logPurchase(purchaseAmount, currencyCode, parameters) {
+      AppEventsLogger.logPurchase(purchaseAmount, currencyCode, parameters);
+    },
+    logPushNotificationOpen: function logPushNotificationOpen(payload) {
+      AppEventsLogger.logPushNotificationOpen(payload);
+    },
+    flush: function flush() {
+      AppEventsLogger.flush();
+    },
+    setUserID: function setUserID(userID) {
+      AppEventsLogger.setUserID(userID);
+    },
+    getUserID: function getUserID() {
+      return regeneratorRuntime.async(function getUserID$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return regeneratorRuntime.awrap(AppEventsLogger.getUserID());
+
+            case 2:
+              return _context.abrupt("return", _context.sent);
+
+            case 3:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, null, this);
+    },
+    updateUserProperties: function updateUserProperties(parameters) {
+      AppEventsLogger.updateUserProperties(parameters);
+    },
+    setPushNotificationsDeviceToken: function setPushNotificationsDeviceToken(deviceToken) {
+      AppEventsLogger.setPushNotificationsDeviceToken(deviceToken);
+    },
+    setPushNotificationsRegistrationId: function setPushNotificationsRegistrationId(registrationId) {
+      AppEventsLogger.setPushNotificationsRegistrationId(registrationId);
+    }
+  };
+},610,[12],"react-native-fbsdk/js/FBAppEventsLogger.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  'use strict';
+
+  var AppInviteDialog = require(_dependencyMap[0], 'react-native').NativeModules.FBAppInviteDialog;
+
+  module.exports = {
+    canShow: function canShow() {
+      return AppInviteDialog.canShow();
+    },
+    show: function show(appInviteContent) {
+      return AppInviteDialog.show(appInviteContent);
+    }
+  };
+},611,[12],"react-native-fbsdk/js/FBAppInviteDialog.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  'use strict';
+
+  var GameRequestDialog = require(_dependencyMap[0], 'react-native').NativeModules.FBGameRequestDialog;
+
+  module.exports = {
+    canShow: function canShow() {
+      return GameRequestDialog.canShow();
+    },
+    show: function show(gameRequestContent) {
+      return GameRequestDialog.show(gameRequestContent);
+    }
+  };
+},612,[12],"react-native-fbsdk/js/FBGameRequestDialog.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  'use strict';
+
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  var FBGraphRequest = function () {
+    function FBGraphRequest(graphPath, config, callback) {
+      _classCallCheck(this, FBGraphRequest);
+
+      this.graphPath = graphPath;
+      this.config = config ? config : {};
+      this.callback = callback ? callback : function () {};
+    }
+
+    _createClass(FBGraphRequest, [{
+      key: "addStringParameter",
+      value: function addStringParameter(paramString, key) {
+        if (this.config != null && this.config.parameters != null) {
+          this.config.parameters[key] = {
+            string: paramString
+          };
+        }
+      }
+    }]);
+
+    return FBGraphRequest;
+  }();
+
+  module.exports = FBGraphRequest;
+},613,[],"react-native-fbsdk/js/FBGraphRequest.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  'use strict';
+
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  var NativeGraphRequestManager = require(_dependencyMap[0], 'react-native').NativeModules.FBGraphRequest;
+
+  function _verifyParameters(request) {
+    if (request.config && request.config.parameters) {
+      for (var key in request.config.parameters) {
+        var param = request.config.parameters[key];
+
+        if (typeof param === 'object' && param.string) {
+          continue;
+        }
+
+        throw new Error("Unexpected value for parameter '" + key + "'. Request parameters " + "need to be objects with a 'string' field.");
+      }
+    }
+  }
+
+  var FBGraphRequestManager = function () {
+    function FBGraphRequestManager() {
+      _classCallCheck(this, FBGraphRequestManager);
+
+      this.requestBatch = [];
+      this.requestCallbacks = [];
+    }
+
+    _createClass(FBGraphRequestManager, [{
+      key: "addRequest",
+      value: function addRequest(request) {
+        _verifyParameters(request);
+
+        this.requestBatch.push(request);
+        this.requestCallbacks.push(request.callback);
+        return this;
+      }
+    }, {
+      key: "addBatchCallback",
+      value: function addBatchCallback(callback) {
+        this.batchCallback = callback;
+        return this;
+      }
+    }, {
+      key: "start",
+      value: function start(timeout) {
+        var that = this;
+
+        var callback = function callback(error, result, response) {
+          if (response) {
+            that.requestCallbacks.forEach(function (innerCallback, index, array) {
+              if (innerCallback) {
+                innerCallback(response[index][0], response[index][1]);
+              }
+            });
+          }
+
+          if (that.batchCallback) {
+            that.batchCallback(error, result);
+          }
+        };
+
+        NativeGraphRequestManager.start(this.requestBatch, timeout || 0, callback);
+      }
+    }]);
+
+    return FBGraphRequestManager;
+  }();
+
+  module.exports = FBGraphRequestManager;
+},614,[12],"react-native-fbsdk/js/FBGraphRequestManager.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  'use strict';
+
+  var LoginManager = require(_dependencyMap[0], 'react-native').NativeModules.FBLoginManager;
+
+  module.exports = {
+    logInWithReadPermissions: function logInWithReadPermissions(permissions) {
+      return LoginManager.logInWithReadPermissions(permissions);
+    },
+    logInWithPublishPermissions: function logInWithPublishPermissions(permissions) {
+      return LoginManager.logInWithPublishPermissions(permissions);
+    },
+    getLoginBehavior: function getLoginBehavior() {
+      return LoginManager.getLoginBehavior();
+    },
+    setLoginBehavior: function setLoginBehavior(loginBehavior) {
+      LoginManager.setLoginBehavior(loginBehavior);
+    },
+    getDefaultAudience: function getDefaultAudience() {
+      return LoginManager.getDefaultAudience();
+    },
+    setDefaultAudience: function setDefaultAudience(defaultAudience) {
+      LoginManager.setDefaultAudience(defaultAudience);
+    },
+    logOut: function logOut() {
+      LoginManager.logOut();
+    }
+  };
+},615,[12],"react-native-fbsdk/js/FBLoginManager.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  'use strict';
+
+  var MessageDialog = require(_dependencyMap[0], 'react-native').NativeModules.FBMessageDialog;
+
+  module.exports = {
+    canShow: function canShow(shareContent) {
+      return MessageDialog.canShow(shareContent);
+    },
+    show: function show(shareContent) {
+      return MessageDialog.show(shareContent);
+    },
+    setShouldFailOnDataError: function setShouldFailOnDataError(shouldFailOnDataError) {
+      MessageDialog.setShouldFailOnDataError(shouldFailOnDataError);
+    }
+  };
+},616,[12],"react-native-fbsdk/js/FBMessageDialog.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  'use strict';
+
+  var ShareApi = require(_dependencyMap[0], 'react-native').NativeModules.FBShareApi;
+
+  var ShareOpenGraphObject = require(_dependencyMap[1], './models/FBShareOpenGraphObject');
+
+  module.exports = {
+    canShare: function canShare(shareContent) {
+      return ShareApi.canShare(shareContent);
+    },
+    createOpenGraphObject: function createOpenGraphObject(openGraphObject) {
+      return ShareApi.createOpenGraphObject(openGraphObject);
+    },
+    share: function share(shareContent, graphNode, message) {
+      return ShareApi.share(shareContent, graphNode, message);
+    }
+  };
+},617,[12,608],"react-native-fbsdk/js/FBShareApi.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  'use strict';
+
+  var ShareDialog = require(_dependencyMap[0], 'react-native').NativeModules.FBShareDialog;
+
+  module.exports = {
+    canShow: function canShow(shareContent) {
+      return ShareDialog.canShow(shareContent);
+    },
+    show: function show(shareContent) {
+      return ShareDialog.show(shareContent);
+    },
+    setMode: function setMode(mode) {
+      ShareDialog.setMode(mode);
+    },
+    setShouldFailOnDataError: function setShouldFailOnDataError(shouldFailOnDataError) {
+      ShareDialog.setShouldFailOnDataError(shouldFailOnDataError);
+    }
+  };
+},618,[12],"react-native-fbsdk/js/FBShareDialog.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  'use strict';
+
+  var _react2 = require(_dependencyMap[0], "react");
+
+  var React = _interopRequireWildcard(_react2);
+
+  var _index = require(_dependencyMap[1], "./../../react-transform-hmr/lib/index.js");
+
+  var _index2 = _interopRequireDefault(_index);
+
+  var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/node_modules/react-native-fbsdk/js/FBLikeView.js";
+
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  var _propTypes = require(_dependencyMap[2], "prop-types");
+
+  var _propTypes2 = _interopRequireDefault(_propTypes);
+
+  var _reactNative = require(_dependencyMap[3], "react-native");
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var _components = {
+    LikeView: {
+      displayName: "LikeView"
+    }
+  };
+
+  var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: "/Users/antonioperez/Desktop/projects/fmx/node_modules/react-native-fbsdk/js/FBLikeView.js",
+    components: _components,
+    locals: [module],
+    imports: [React.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _reactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var LikeView = _wrapComponent("LikeView")(function (_React$Component) {
+    _inherits(LikeView, _React$Component);
+
+    function LikeView() {
+      _classCallCheck(this, LikeView);
+
+      return _possibleConstructorReturn(this, (LikeView.__proto__ || Object.getPrototypeOf(LikeView)).apply(this, arguments));
+    }
+
+    _createClass(LikeView, [{
+      key: "render",
+      value: function render() {
+        return React.createElement(RCTFBLikeView, _extends({}, this.props, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 82
+          }
+        }));
+      }
+    }]);
+
+    return LikeView;
+  }(React.Component));
+
+  LikeView.propTypes = _extends({}, _reactNative.ViewPropTypes, {
+    objectIdAndType: _propTypes2.default.object.isRequired,
+    likeViewStyle: _propTypes2.default.oneOf(['standard', 'button', 'box_count']),
+    auxiliaryViewPosition: _propTypes2.default.oneOf(['top', 'bottom', 'inline']),
+    horizontalAlignment: _propTypes2.default.oneOf(['center', 'left', 'right']),
+    foregroundColor: _propTypes2.default.number,
+    soundEnabled: _propTypes2.default.bool
+  });
+
+  var styles = _reactNative.StyleSheet.create({
+    defaultButtonStyle: {
+      height: 65,
+      width: 300
+    }
+  });
+
+  LikeView.defaultProps = {
+    style: styles.defaultButtonStyle
+  };
+  var RCTFBLikeView = (0, _reactNative.requireNativeComponent)('RCTFBLikeView', LikeView);
+  module.exports = LikeView;
+},619,[109,128,292,12],"react-native-fbsdk/js/FBLikeView.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  'use strict';
+
+  var _react2 = require(_dependencyMap[0], "react");
+
+  var React = _interopRequireWildcard(_react2);
+
+  var _index = require(_dependencyMap[1], "./../../react-transform-hmr/lib/index.js");
+
+  var _index2 = _interopRequireDefault(_index);
+
+  var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/node_modules/react-native-fbsdk/js/FBLoginButton.js";
+
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  var _propTypes = require(_dependencyMap[2], "prop-types");
+
+  var _propTypes2 = _interopRequireDefault(_propTypes);
+
+  var _reactNative = require(_dependencyMap[3], "react-native");
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var _components = {
+    LoginButton: {
+      displayName: "LoginButton"
+    }
+  };
+
+  var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: "/Users/antonioperez/Desktop/projects/fmx/node_modules/react-native-fbsdk/js/FBLoginButton.js",
+    components: _components,
+    locals: [module],
+    imports: [React.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _reactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var LoginButton = _wrapComponent("LoginButton")(function (_React$Component) {
+    _inherits(LoginButton, _React$Component);
+
+    function LoginButton() {
+      _classCallCheck(this, LoginButton);
+
+      return _possibleConstructorReturn(this, (LoginButton.__proto__ || Object.getPrototypeOf(LoginButton)).apply(this, arguments));
+    }
+
+    _createClass(LoginButton, [{
+      key: "_eventHandler",
+      value: function _eventHandler(event) {
+        var eventDict = event.nativeEvent;
+
+        if (eventDict.type === 'loginFinished') {
+          if (this.props.onLoginFinished) {
+            this.props.onLoginFinished(eventDict.error, eventDict.result);
+          }
+        } else if (eventDict.type === 'logoutFinished') {
+          if (this.props.onLogoutFinished) {
+            this.props.onLogoutFinished();
+          }
+        }
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        return React.createElement(RCTFBLoginButton, _extends({}, this.props, {
+          onChange: this._eventHandler.bind(this),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 112
+          }
+        }));
+      }
+    }]);
+
+    return LoginButton;
+  }(React.Component));
+
+  LoginButton.propTypes = _extends({}, _reactNative.ViewPropTypes, {
+    readPermissions: _propTypes2.default.arrayOf(_propTypes2.default.string),
+    publishPermissions: _propTypes2.default.arrayOf(_propTypes2.default.string),
+    onLoginFinished: _propTypes2.default.func,
+    onLogoutFinished: _propTypes2.default.func,
+    loginBehaviorAndroid: _propTypes2.default.oneOf(['native_with_fallback', 'native_only', 'web_only']),
+    loginBehaviorIOS: _propTypes2.default.oneOf(['native', 'browser', 'system_account', 'web']),
+    defaultAudience: _propTypes2.default.oneOf(['only_me', 'friends', 'everyone']),
+    tooltipBehaviorIOS: _propTypes2.default.oneOf(['auto', 'force_display', 'disable'])
+  });
+
+  var styles = _reactNative.StyleSheet.create({
+    defaultButtonStyle: {
+      height: 30,
+      width: 190
+    }
+  });
+
+  LoginButton.defaultProps = {
+    style: styles.defaultButtonStyle
+  };
+  var RCTFBLoginButton = (0, _reactNative.requireNativeComponent)('RCTFBLoginButton', LoginButton, {
+    nativeOnly: {
+      onChange: true
+    }
+  });
+  module.exports = LoginButton;
+},620,[109,128,292,12],"react-native-fbsdk/js/FBLoginButton.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  'use strict';
+
+  var _react2 = require(_dependencyMap[0], "react");
+
+  var React = _interopRequireWildcard(_react2);
+
+  var _index = require(_dependencyMap[1], "./../../react-transform-hmr/lib/index.js");
+
+  var _index2 = _interopRequireDefault(_index);
+
+  var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/node_modules/react-native-fbsdk/js/FBSendButton.js";
+
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  var _propTypes = require(_dependencyMap[2], "prop-types");
+
+  var _propTypes2 = _interopRequireDefault(_propTypes);
+
+  var _reactNative = require(_dependencyMap[3], "react-native");
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var _components = {
+    SendButton: {
+      displayName: "SendButton"
+    }
+  };
+
+  var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: "/Users/antonioperez/Desktop/projects/fmx/node_modules/react-native-fbsdk/js/FBSendButton.js",
+    components: _components,
+    locals: [module],
+    imports: [React.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _reactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var SendButton = _wrapComponent("SendButton")(function (_React$Component) {
+    _inherits(SendButton, _React$Component);
+
+    function SendButton() {
+      _classCallCheck(this, SendButton);
+
+      return _possibleConstructorReturn(this, (SendButton.__proto__ || Object.getPrototypeOf(SendButton)).apply(this, arguments));
+    }
+
+    _createClass(SendButton, [{
+      key: "render",
+      value: function render() {
+        return React.createElement(RCTFBSendButton, _extends({}, this.props, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 47
+          }
+        }));
+      }
+    }]);
+
+    return SendButton;
+  }(React.Component));
+
+  SendButton.propTypes = _extends({}, _reactNative.ViewPropTypes, {
+    shareContent: _propTypes2.default.object
+  });
+
+  var styles = _reactNative.StyleSheet.create({
+    defaultButtonStyle: {
+      height: 30,
+      width: 80
+    }
+  });
+
+  SendButton.defaultProps = {
+    style: styles.defaultButtonStyle
+  };
+  var RCTFBSendButton = (0, _reactNative.requireNativeComponent)('RCTFBSendButton', SendButton);
+  module.exports = SendButton;
+},621,[109,128,292,12],"react-native-fbsdk/js/FBSendButton.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  'use strict';
+
+  var _react2 = require(_dependencyMap[0], "react");
+
+  var React = _interopRequireWildcard(_react2);
+
+  var _index = require(_dependencyMap[1], "./../../react-transform-hmr/lib/index.js");
+
+  var _index2 = _interopRequireDefault(_index);
+
+  var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/node_modules/react-native-fbsdk/js/FBShareButton.js";
+
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  var _propTypes = require(_dependencyMap[2], "prop-types");
+
+  var _propTypes2 = _interopRequireDefault(_propTypes);
+
+  var _reactNative = require(_dependencyMap[3], "react-native");
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var _components = {
+    ShareButton: {
+      displayName: "ShareButton"
+    }
+  };
+
+  var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: "/Users/antonioperez/Desktop/projects/fmx/node_modules/react-native-fbsdk/js/FBShareButton.js",
+    components: _components,
+    locals: [module],
+    imports: [React.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _reactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var ShareButton = _wrapComponent("ShareButton")(function (_React$Component) {
+    _inherits(ShareButton, _React$Component);
+
+    function ShareButton() {
+      _classCallCheck(this, ShareButton);
+
+      return _possibleConstructorReturn(this, (ShareButton.__proto__ || Object.getPrototypeOf(ShareButton)).apply(this, arguments));
+    }
+
+    _createClass(ShareButton, [{
+      key: "render",
+      value: function render() {
+        return React.createElement(RCTFBShareButton, _extends({}, this.props, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 48
+          }
+        }));
+      }
+    }]);
+
+    return ShareButton;
+  }(React.Component));
+
+  ShareButton.propTypes = _extends({}, _reactNative.ViewPropTypes, {
+    shareContent: _propTypes2.default.object
+  });
+
+  var styles = _reactNative.StyleSheet.create({
+    defaultButtonStyle: {
+      height: 30,
+      width: 80
+    }
+  });
+
+  ShareButton.defaultProps = {
+    style: styles.defaultButtonStyle
+  };
+  var RCTFBShareButton = (0, _reactNative.requireNativeComponent)('RCTFBShareButton', ShareButton);
+  module.exports = ShareButton;
+},622,[109,128,292,12],"react-native-fbsdk/js/FBShareButton.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -73333,7 +74348,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var AdMob = exports.AdMob = require(_dependencyMap[1], './modules/admob');
 
   exports.default = _firebase2.default;
-},605,[606,624],"react-native-firebase/dist/index.js");
+},623,[624,642],"react-native-firebase/dist/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -73573,7 +74588,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = new FirebaseCore();
-},606,[12,607,623,614,624,633,643,644,645,646,647,649,661,662,664,666,669],"react-native-firebase/dist/modules/core/firebase.js");
+},624,[12,625,641,632,642,651,661,662,663,664,665,667,679,680,682,684,687],"react-native-firebase/dist/modules/core/firebase.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -73731,7 +74746,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       });
     }
   };
-},607,[12,608,612,617],"react-native-firebase/dist/utils/internals.js");
+},625,[12,626,630,635],"react-native-firebase/dist/utils/internals.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -73840,7 +74855,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   module.exports = EventEmitter;
-},608,[609,611,57,13],"react-native-firebase/dist/utils/emitter/EventEmitter.js");
+},626,[627,629,57,13],"react-native-firebase/dist/utils/emitter/EventEmitter.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -73879,7 +74894,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(EventSubscription);
 
   module.exports = EmitterSubscription;
-},609,[610],"react-native-firebase/dist/utils/emitter/EmitterSubscription.js");
+},627,[628],"react-native-firebase/dist/utils/emitter/EmitterSubscription.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -73905,7 +74920,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   module.exports = EventSubscription;
-},610,[],"react-native-firebase/dist/utils/emitter/EventSubscription.js");
+},628,[],"react-native-firebase/dist/utils/emitter/EventSubscription.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -73971,7 +74986,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   module.exports = EventSubscriptionVendor;
-},611,[13],"react-native-firebase/dist/utils/emitter/EventSubscriptionVendor.js");
+},629,[13],"react-native-firebase/dist/utils/emitter/EventSubscriptionVendor.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -74125,7 +75140,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = ModuleBase;
-},612,[12,613,607,606,614],"react-native-firebase/dist/utils/ModuleBase.js");
+},630,[12,631,625,624,632],"react-native-firebase/dist/utils/ModuleBase.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -74165,7 +75180,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = Log;
-},613,[614,615],"react-native-firebase/dist/utils/log.js");
+},631,[632,633],"react-native-firebase/dist/utils/log.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -74417,7 +75432,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     return autoId;
   }
-},614,[12],"react-native-firebase/dist/utils/index.js");
+},632,[12],"react-native-firebase/dist/utils/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   (function () {
     function checkColorSupport() {
@@ -74542,7 +75557,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       window.bows = bows;
     }
   }).call();
-},615,[616],"bows/bows.js");
+},633,[634],"bows/bows.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     (function () {
         var inNode = typeof window === 'undefined',
@@ -74574,7 +75589,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             window.console = out;
         }
     })();
-},616,[],"andlog/andlog.js");
+},634,[],"andlog/andlog.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -74817,7 +75832,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = SyncTree;
-},617,[12,607,618,619,614],"react-native-firebase/dist/utils/SyncTree.js");
+},635,[12,625,636,637,632],"react-native-firebase/dist/utils/SyncTree.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -74921,7 +75936,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = Snapshot;
-},618,[614],"react-native-firebase/dist/modules/database/snapshot.js");
+},636,[632],"react-native-firebase/dist/modules/database/snapshot.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -75408,7 +76423,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_ReferenceBase3.default);
 
   exports.default = Reference;
-},619,[620,618,621,622,614,607],"react-native-firebase/dist/modules/database/reference.js");
+},637,[638,636,639,640,632,625],"react-native-firebase/dist/modules/database/reference.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -75495,7 +76510,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = Query;
-},620,[614],"react-native-firebase/dist/modules/database/query.js");
+},638,[632],"react-native-firebase/dist/modules/database/query.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -75546,7 +76561,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = Disconnect;
-},621,[614],"react-native-firebase/dist/modules/database/disconnect.js");
+},639,[632],"react-native-firebase/dist/modules/database/disconnect.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -75587,7 +76602,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = ReferenceBase;
-},622,[613],"react-native-firebase/dist/utils/ReferenceBase.js");
+},640,[631],"react-native-firebase/dist/utils/ReferenceBase.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -75793,7 +76808,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = FirebaseApp;
-},623,[12,607,614,624,633,643,644,645,646,647,649,661,662,664,666,669],"react-native-firebase/dist/modules/core/firebase-app.js");
+},641,[12,625,632,642,651,661,662,663,664,665,667,679,680,682,684,687],"react-native-firebase/dist/modules/core/firebase-app.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -75936,7 +76951,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     RewardedVideoEventTypes: _EventTypes.RewardedVideoEventTypes,
     NativeExpressEventTypes: _EventTypes.NativeExpressEventTypes
   };
-},624,[612,625,627,626,628,629,632,631],"react-native-firebase/dist/modules/admob/index.js");
+},642,[630,643,645,644,646,647,650,649],"react-native-firebase/dist/modules/admob/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -76049,7 +77064,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = Interstitial;
-},625,[12,624,626,614],"react-native-firebase/dist/modules/admob/Interstitial.js");
+},643,[12,642,644,632],"react-native-firebase/dist/modules/admob/Interstitial.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -76135,7 +77150,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = AdRequest;
-},626,[],"react-native-firebase/dist/modules/admob/AdRequest.js");
+},644,[],"react-native-firebase/dist/modules/admob/AdRequest.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -76246,7 +77261,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = RewardedVideo;
-},627,[12,624,626,614],"react-native-firebase/dist/modules/admob/RewardedVideo.js");
+},645,[12,642,644,632],"react-native-firebase/dist/modules/admob/RewardedVideo.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -76283,7 +77298,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = VideoOptions;
-},628,[],"react-native-firebase/dist/modules/admob/VideoOptions.js");
+},646,[],"react-native-firebase/dist/modules/admob/VideoOptions.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -76322,7 +77337,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     size: 'SMART_BANNER'
   };
   exports.default = Banner;
-},629,[109,630],"react-native-firebase/dist/modules/admob/Banner.js");
+},647,[109,648],"react-native-firebase/dist/modules/admob/Banner.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -76482,7 +77497,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }, _temp));
 
   exports.default = AdMobComponent;
-},630,[109,128,12,292,631,614,626,628],"react-native-firebase/dist/modules/admob/AdMobComponent.js");
+},648,[109,128,12,292,649,632,644,646],"react-native-firebase/dist/modules/admob/AdMobComponent.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -76505,7 +77520,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     onRewarded: 'onRewarded',
     onRewardedVideoStarted: 'onRewardedVideoStarted'
   };
-},631,[],"react-native-firebase/dist/modules/admob/EventTypes.js");
+},649,[],"react-native-firebase/dist/modules/admob/EventTypes.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -76544,7 +77559,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     size: 'SMART_BANNER'
   };
   exports.default = NativeExpress;
-},632,[109,630],"react-native-firebase/dist/modules/admob/NativeExpress.js");
+},650,[109,648],"react-native-firebase/dist/modules/admob/NativeExpress.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -76850,7 +77865,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       ERROR: 'error'
     }
   };
-},633,[634,612,607,635,636,637,638,639,640,641,642],"react-native-firebase/dist/modules/auth/index.js");
+},651,[652,630,625,653,654,655,656,657,658,659,660],"react-native-firebase/dist/modules/auth/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -77037,7 +78052,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = User;
-},634,[607],"react-native-firebase/dist/modules/auth/User.js");
+},652,[625],"react-native-firebase/dist/modules/auth/User.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -77071,7 +78086,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = ConfirmationResult;
-},635,[],"react-native-firebase/dist/modules/auth/ConfirmationResult.js");
+},653,[],"react-native-firebase/dist/modules/auth/ConfirmationResult.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -77110,7 +78125,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = EmailAuthProvider;
-},636,[],"react-native-firebase/dist/modules/auth/providers/EmailAuthProvider.js");
+},654,[],"react-native-firebase/dist/modules/auth/providers/EmailAuthProvider.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -77149,7 +78164,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = PhoneAuthProvider;
-},637,[],"react-native-firebase/dist/modules/auth/providers/PhoneAuthProvider.js");
+},655,[],"react-native-firebase/dist/modules/auth/providers/PhoneAuthProvider.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -77188,7 +78203,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = GoogleAuthProvider;
-},638,[],"react-native-firebase/dist/modules/auth/providers/GoogleAuthProvider.js");
+},656,[],"react-native-firebase/dist/modules/auth/providers/GoogleAuthProvider.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -77227,7 +78242,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = GithubAuthProvider;
-},639,[],"react-native-firebase/dist/modules/auth/providers/GithubAuthProvider.js");
+},657,[],"react-native-firebase/dist/modules/auth/providers/GithubAuthProvider.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -77266,7 +78281,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = TwitterAuthProvider;
-},640,[],"react-native-firebase/dist/modules/auth/providers/TwitterAuthProvider.js");
+},658,[],"react-native-firebase/dist/modules/auth/providers/TwitterAuthProvider.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -77305,7 +78320,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = FacebookAuthProvider;
-},641,[],"react-native-firebase/dist/modules/auth/providers/FacebookAuthProvider.js");
+},659,[],"react-native-firebase/dist/modules/auth/providers/FacebookAuthProvider.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -77547,7 +78562,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = PhoneAuthListener;
-},642,[607,614],"react-native-firebase/dist/modules/auth/PhoneAuthListener.js");
+},660,[625,632],"react-native-firebase/dist/modules/auth/PhoneAuthListener.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -77660,7 +78675,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_ModuleBase3.default), _class._NAMESPACE = 'analytics', _class._NATIVE_MODULE = 'RNFirebaseAnalytics', _temp);
   exports.default = Analytics;
   var statics = exports.statics = {};
-},643,[612],"react-native-firebase/dist/modules/analytics/index.js");
+},661,[630],"react-native-firebase/dist/modules/analytics/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -77779,7 +78794,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_ModuleBase3.default), _class._NAMESPACE = 'config', _class._NATIVE_MODULE = 'RNFirebaseRemoteConfig', _temp);
   exports.default = RemoteConfig;
   var statics = exports.statics = {};
-},644,[612],"react-native-firebase/dist/modules/config/index.js");
+},662,[630],"react-native-firebase/dist/modules/config/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -77860,7 +78875,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_ModuleBase3.default), _class._NAMESPACE = 'crash', _class._NATIVE_MODULE = 'RNFirebaseCrash', _temp);
   exports.default = Crash;
   var statics = exports.statics = {};
-},645,[612],"react-native-firebase/dist/modules/crash/index.js");
+},663,[630],"react-native-firebase/dist/modules/crash/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -77940,7 +78955,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_ModuleBase3.default), _class._NAMESPACE = 'crashlytics', _class._NATIVE_MODULE = 'RNFirebaseCrashlytics', _temp);
   exports.default = Crashlytics;
   var statics = exports.statics = {};
-},646,[612],"react-native-firebase/dist/modules/fabric/crashlytics/index.js");
+},664,[630],"react-native-firebase/dist/modules/fabric/crashlytics/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -78037,7 +79052,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       }
     }
   };
-},647,[12,619,648,612],"react-native-firebase/dist/modules/database/index.js");
+},665,[12,637,666,630],"react-native-firebase/dist/modules/database/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -78175,7 +79190,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = TransactionHandler;
-},648,[],"react-native-firebase/dist/modules/database/transaction.js");
+},666,[],"react-native-firebase/dist/modules/database/transaction.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -78345,7 +79360,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       }
     }
   };
-},649,[12,612,650,651,655,656,653,660,607],"react-native-firebase/dist/modules/firestore/index.js");
+},667,[12,630,668,669,673,674,671,678,625],"react-native-firebase/dist/modules/firestore/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -78482,7 +79497,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = CollectionReference;
-},650,[651,657,614],"react-native-firebase/dist/modules/firestore/CollectionReference.js");
+},668,[669,675,632],"react-native-firebase/dist/modules/firestore/CollectionReference.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -78693,7 +79708,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = DocumentReference;
-},651,[650,652,654,614],"react-native-firebase/dist/modules/firestore/DocumentReference.js");
+},669,[668,670,672,632],"react-native-firebase/dist/modules/firestore/DocumentReference.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -78761,7 +79776,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = DocumentSnapshot;
-},652,[651,653,654],"react-native-firebase/dist/modules/firestore/DocumentSnapshot.js");
+},670,[669,671,672],"react-native-firebase/dist/modules/firestore/DocumentSnapshot.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -78833,7 +79848,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = Path;
-},653,[],"react-native-firebase/dist/modules/firestore/Path.js");
+},671,[],"react-native-firebase/dist/modules/firestore/Path.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -78997,7 +80012,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     console.warn("Unknown data type received " + type);
     return value;
   };
-},654,[651,655,656,653,614],"react-native-firebase/dist/modules/firestore/utils/serialize.js");
+},672,[669,673,674,671,632],"react-native-firebase/dist/modules/firestore/utils/serialize.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -79030,7 +80045,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   exports.default = FieldValue;
   var DELETE_FIELD_VALUE = exports.DELETE_FIELD_VALUE = new FieldValue();
   var SERVER_TIMESTAMP_FIELD_VALUE = exports.SERVER_TIMESTAMP_FIELD_VALUE = new FieldValue();
-},655,[],"react-native-firebase/dist/modules/firestore/FieldValue.js");
+},673,[],"react-native-firebase/dist/modules/firestore/FieldValue.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -79064,7 +80079,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = GeoPoint;
-},656,[],"react-native-firebase/dist/modules/firestore/GeoPoint.js");
+},674,[],"react-native-firebase/dist/modules/firestore/GeoPoint.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -79335,7 +80350,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = Query;
-},657,[652,658,654,614],"react-native-firebase/dist/modules/firestore/Query.js");
+},675,[670,676,672,632],"react-native-firebase/dist/modules/firestore/Query.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -79413,7 +80428,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = QuerySnapshot;
-},658,[659,652],"react-native-firebase/dist/modules/firestore/QuerySnapshot.js");
+},676,[677,670],"react-native-firebase/dist/modules/firestore/QuerySnapshot.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -79466,7 +80481,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = DocumentChange;
-},659,[652],"react-native-firebase/dist/modules/firestore/DocumentChange.js");
+},677,[670],"react-native-firebase/dist/modules/firestore/DocumentChange.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -79560,7 +80575,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = WriteBatch;
-},660,[654,614],"react-native-firebase/dist/modules/firestore/WriteBatch.js");
+},678,[672,632],"react-native-firebase/dist/modules/firestore/WriteBatch.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -79704,7 +80719,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var statics = exports.statics = {
     EVENT_TYPE: EVENT_TYPE
   };
-},661,[612,614],"react-native-firebase/dist/modules/links/index.js");
+},679,[630,632],"react-native-firebase/dist/modules/links/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -79966,7 +80981,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     WILL_PRESENT_RESULT: WILL_PRESENT_RESULT,
     RemoteMessage: _RemoteMessage2.default
   };
-},662,[12,612,663],"react-native-firebase/dist/modules/messaging/index.js");
+},680,[12,630,681],"react-native-firebase/dist/modules/messaging/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -80047,7 +81062,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = RemoteMessage;
-},663,[614],"react-native-firebase/dist/modules/messaging/RemoteMessage.js");
+},681,[632],"react-native-firebase/dist/modules/messaging/RemoteMessage.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -80101,7 +81116,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_ModuleBase3.default), _class._NAMESPACE = 'perf', _class._NATIVE_MODULE = 'RNFirebasePerformance', _temp);
   exports.default = PerformanceMonitoring;
   var statics = exports.statics = {};
-},664,[665,612],"react-native-firebase/dist/modules/perf/index.js");
+},682,[683,630],"react-native-firebase/dist/modules/perf/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -80140,7 +81155,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = Trace;
-},665,[],"react-native-firebase/dist/modules/perf/Trace.js");
+},683,[],"react-native-firebase/dist/modules/perf/Trace.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -80273,7 +81288,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       FILETYPE_DIRECTORY: FirebaseStorage.FILETYPE_DIRECTORY
     } : {}
   };
-},666,[12,667,612],"react-native-firebase/dist/modules/storage/index.js");
+},684,[12,685,630],"react-native-firebase/dist/modules/storage/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -80371,7 +81386,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_ReferenceBase3.default);
 
   exports.default = StorageReference;
-},667,[622,668],"react-native-firebase/dist/modules/storage/reference.js");
+},685,[640,686],"react-native-firebase/dist/modules/storage/reference.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -80510,7 +81525,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = StorageTask;
-},668,[666,614],"react-native-firebase/dist/modules/storage/task.js");
+},686,[684,632],"react-native-firebase/dist/modules/storage/task.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -80646,7 +81661,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var statics = exports.statics = {
     DEFAULT_APP_NAME: _internals2.default.STRINGS.DEFAULT_APP_NAME
   };
-},669,[12,607,614,612,670],"react-native-firebase/dist/modules/utils/index.js");
+},687,[12,625,632,630,688],"react-native-firebase/dist/modules/utils/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   module.exports = {
     "_args": [["react-native-firebase@3.2.2", "/Users/antonioperez/Desktop/react-native-firebase-starter"]],
@@ -80761,7 +81776,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     "types": "dist/index.d.ts",
     "version": "3.2.2"
   };
-},670,[],"react-native-firebase/package.json");
+},688,[],"react-native-firebase/package.json");
 __d(function (global, require, module, exports, _dependencyMap) {
   module.exports = require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -80773,7 +81788,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     "name": "FMx",
     "type": "png"
   });
-},671,[325],"app/assets/images/FMx.png");
+},689,[325],"app/assets/images/FMx.png");
 require(23);
 require(11);
 //# sourceMappingURL=index.map

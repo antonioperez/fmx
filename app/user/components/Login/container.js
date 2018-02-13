@@ -8,7 +8,7 @@ import {styles} from '../../style';
 
 export class LoginForm extends React.Component {
     onLogin = () => {
-        login();
+        login("aperez2541@outlook.com", "reaper123");
     }
     render() {
         return (
@@ -36,6 +36,7 @@ export class FBLoginButton extends React.Component {
         return (
             <View >
                 <Button
+                    onPress={this.onLogin} 
                     icon={{name: 'home'}}
                     buttonStyle={styles.clearButton}
                     textStyle={{textAlign: 'center'}}

@@ -1,39 +1,21 @@
-import React from 'react';
+import { AccessToken, LoginManager } from 'react-native-fbsdk';
 import firebase from 'react-native-firebase';
 
-
-
-    //     Auth.auth().signIn(withEmail: email, password: pwd) { user, error in
-            
-    //         guard let user = user else {
-    //             if error != nil {
-    //                 Auth.auth().createUser(withEmail: email, password: pwd) { (user, error) in
-    //                     if let error = error  {
-    //                         showErrorAlert(view: self, title: "Login failed", msg: error.localizedDescription)
-    //                     } else if let user = user {
-    //                         user.sendEmailVerification(completion: { (error) in })
-    //                     }
-    //                 }
-    //             }
-    //             return;
-    //         }
-            
-    //         let userData = [
-    //             "provider": "email",
-    //             "type" : self.userType
-            
-    //         ]
-    //         UserService.instance.addProfile(uid: user.uid, user: userData)
-    //         UserDefaults.standard.setValue(user.uid, forKey: KEY_UID)
-    //         self.performSegue(withIdentifier: "user_views", sender: nil)
-    //     }
-    // } 
-export const login = () => {
-    alert("hi");
+export const login = (email, password) => {
+    if (email && password) {
+        firebase.auth().signInWithEmailAndPassword(email, password)
+            .then(function (firebaseUser) {
+                alert(firebaseUser.toJSON());
+            })
+            .catch(function (error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                alert(errorMessage);
+            });
+    }
 }
 
-
-// @IBAction func fbBtnPressed(sender: AnyObject){
 //     let loginManager = FBSDKLoginManager()
 //     loginManager.logIn(withReadPermissions: ["email"], from: self, handler: { (result, error) in
 //         if let error = error {
@@ -60,6 +42,31 @@ export const login = () => {
 //         }
 //     })
 // }
-export const FBLogin = () => {
-    alert("hsi");
+export const FBLogin = async () => {
+    try {
+        const result = await LoginManager.logInWithReadPermissions(['public_profile', 'email']);
+
+        if (result.isCancelled) {
+            throw new Error('User cancelled request'); 
+        }
+
+        console.log(`Login success with permissions: ${result.grantedPermissions.toString()}`);
+
+        // get the access token
+        const data = await AccessToken.getCurrentAccessToken();
+
+        if (!data) {
+            throw new Error('Something went wrong obtaining the users access token'); // Handle this however fits the flow of your app
+        }
+
+        // create a new firebase credential with the token
+        const credential = firebase.auth.FacebookAuthProvider.credential(data.accessToken);
+
+        // login with credential
+        const currentUser = await firebase.auth().signInWithCredential(credential);
+
+        console.info(JSON.stringify(currentUser.toJSON()))
+    } catch (e) {
+        console.error(e);
+    }
 }
