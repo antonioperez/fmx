@@ -14,17 +14,14 @@ import {
 
 
 export class LoginForm extends React.Component {
-
     constructor(props) {
         super(props);
-        this.email = "";
-        this.password = "";
         this.state = { 
             email: 'email',
             pw: '', 
         };
     }
-
+    
     onLogin = () => {
         if (this.state.email && this.state.pw) {
             login(this.state.email, this.state.pw);
@@ -32,8 +29,6 @@ export class LoginForm extends React.Component {
             alert("Email and Password Required!")
         }
     }
-
-
     render() {
         return (
             <View>

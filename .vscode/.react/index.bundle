@@ -58979,8 +58979,6 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 }
             };
 
-            _this.email = "";
-            _this.password = "";
             _this.state = {
                 email: 'email',
                 pw: ''
@@ -58998,7 +58996,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 39
+                            lineNumber: 34
                         }
                     },
                     _react3.default.createElement(
@@ -59007,7 +59005,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             labelStyle: _style.styles.whiteText,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 40
+                                lineNumber: 35
                             }
                         },
                         "Email"
@@ -59021,7 +59019,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         clearButtonMode: "always",
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 41
+                            lineNumber: 36
                         }
                     }),
                     _react3.default.createElement(
@@ -59030,7 +59028,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             labelStyle: _style.styles.whiteText,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 45
+                                lineNumber: 40
                             }
                         },
                         "Password"
@@ -59043,7 +59041,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         },
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 46
+                            lineNumber: 41
                         }
                     }),
                     _react3.default.createElement(_reactNativeElements.Button, {
@@ -59053,7 +59051,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         accessibilityLabel: "Login",
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 47
+                            lineNumber: 42
                         }
                     })
                 );
@@ -59090,7 +59088,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 65
+                            lineNumber: 60
                         }
                     },
                     _react3.default.createElement(_reactNativeElements.SocialIcon, {
@@ -59103,7 +59101,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         onPress: this.onLogin,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 66
+                            lineNumber: 61
                         }
                     })
                 );
