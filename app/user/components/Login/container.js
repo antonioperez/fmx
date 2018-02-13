@@ -14,22 +14,36 @@ import {
 
 
 export class LoginForm extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.email = "";
+        this.password = "";
+        this.state = { 
+            email: 'email',
+            pw: '', 
+        };
+    }
+
     onLogin = () => {
-        login("aperez2541@outlook.com", "reaper123");
+        if (this.state.email && this.state.pw) {
+            login(this.state.email, this.state.pw);
+        } else {
+            alert("Email and Password Required!")
+        }
     }
 
-    setEmail = () => {
-
-    }
 
     render() {
         return (
             <View>
                 <FormLabel labelStyle={styles.whiteText}>Email</FormLabel>
-                <FormInput ref={input => this.input = input} onChangeText={this.setEmail}/>
+                <FormInput 
+                    onChangeText={(email) => this.setState({email})}
+                    clearButtonMode='always'
+                />
                 <FormLabel labelStyle={styles.whiteText}>Password</FormLabel>
-                <FormInput />
-                <FormValidationMessage>Error message</FormValidationMessage>
+                <FormInput onChangeText={(pw) => this.setState({pw})}/>
                 <Button 
                     buttonStyle={styles.clearButton}
                     onPress={this.onLogin} 

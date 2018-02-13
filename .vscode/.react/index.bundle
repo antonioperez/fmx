@@ -58966,20 +58966,26 @@ __d(function (global, require, module, exports, _dependencyMap) {
     var LoginForm = exports.LoginForm = _wrapComponent("LoginForm")(function (_React$Component) {
         _inherits(LoginForm, _React$Component);
 
-        function LoginForm() {
-            var _ref;
-
-            var _temp, _this, _ret;
-
+        function LoginForm(props) {
             _classCallCheck(this, LoginForm);
 
-            for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-                args[_key] = arguments[_key];
-            }
+            var _this = _possibleConstructorReturn(this, (LoginForm.__proto__ || Object.getPrototypeOf(LoginForm)).call(this, props));
 
-            return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = LoginForm.__proto__ || Object.getPrototypeOf(LoginForm)).call.apply(_ref, [this].concat(args))), _this), _this.onLogin = function () {
-                (0, _actions.login)("aperez2541@outlook.com", "reaper123");
-            }, _this.setEmail = function () {}, _temp), _possibleConstructorReturn(_this, _ret);
+            _this.onLogin = function () {
+                if (_this.state.email && _this.state.pw) {
+                    (0, _actions.login)(_this.state.email, _this.state.pw);
+                } else {
+                    alert("Email and Password Required!");
+                }
+            };
+
+            _this.email = "";
+            _this.password = "";
+            _this.state = {
+                email: 'email',
+                pw: ''
+            };
+            return _this;
         }
 
         _createClass(LoginForm, [{
@@ -58992,7 +58998,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 27
+                            lineNumber: 39
                         }
                     },
                     _react3.default.createElement(
@@ -59001,19 +59007,21 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             labelStyle: _style.styles.whiteText,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 28
+                                lineNumber: 40
                             }
                         },
                         "Email"
                     ),
                     _react3.default.createElement(_reactNativeElements.FormInput, {
-                        ref: function ref(input) {
-                            return _this2.input = input;
+                        onChangeText: function onChangeText(email) {
+                            return _this2.setState({
+                                email: email
+                            });
                         },
-                        onChangeText: this.setEmail,
+                        clearButtonMode: "always",
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 29
+                            lineNumber: 41
                         }
                     }),
                     _react3.default.createElement(
@@ -59022,27 +59030,22 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             labelStyle: _style.styles.whiteText,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 30
+                                lineNumber: 45
                             }
                         },
                         "Password"
                     ),
                     _react3.default.createElement(_reactNativeElements.FormInput, {
+                        onChangeText: function onChangeText(pw) {
+                            return _this2.setState({
+                                pw: pw
+                            });
+                        },
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 31
+                            lineNumber: 46
                         }
                     }),
-                    _react3.default.createElement(
-                        _reactNativeElements.FormValidationMessage,
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 32
-                            }
-                        },
-                        "Error message"
-                    ),
                     _react3.default.createElement(_reactNativeElements.Button, {
                         buttonStyle: _style.styles.clearButton,
                         onPress: this.onLogin,
@@ -59050,7 +59053,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         accessibilityLabel: "Login",
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 33
+                            lineNumber: 47
                         }
                     })
                 );
@@ -59064,19 +59067,19 @@ __d(function (global, require, module, exports, _dependencyMap) {
         _inherits(FBLoginButton, _React$Component2);
 
         function FBLoginButton() {
-            var _ref2;
+            var _ref;
 
-            var _temp2, _this3, _ret2;
+            var _temp, _this3, _ret;
 
             _classCallCheck(this, FBLoginButton);
 
-            for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-                args[_key2] = arguments[_key2];
+            for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+                args[_key] = arguments[_key];
             }
 
-            return _ret2 = (_temp2 = (_this3 = _possibleConstructorReturn(this, (_ref2 = FBLoginButton.__proto__ || Object.getPrototypeOf(FBLoginButton)).call.apply(_ref2, [this].concat(args))), _this3), _this3.onLogin = function () {
+            return _ret = (_temp = (_this3 = _possibleConstructorReturn(this, (_ref = FBLoginButton.__proto__ || Object.getPrototypeOf(FBLoginButton)).call.apply(_ref, [this].concat(args))), _this3), _this3.onLogin = function () {
                 (0, _actions.FBLogin)();
-            }, _temp2), _possibleConstructorReturn(_this3, _ret2);
+            }, _temp), _possibleConstructorReturn(_this3, _ret);
         }
 
         _createClass(FBLoginButton, [{
@@ -59087,7 +59090,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 51
+                            lineNumber: 65
                         }
                     },
                     _react3.default.createElement(_reactNativeElements.SocialIcon, {
@@ -59100,7 +59103,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         onPress: this.onLogin,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 52
+                            lineNumber: 66
                         }
                     })
                 );
