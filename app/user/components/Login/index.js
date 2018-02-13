@@ -1,6 +1,6 @@
 import React from 'react';
-import {styles} from '../../style';
-import {LoginForm, FBLoginButton} from './container';
+import { styles } from '../../style';
+import { LoginForm, FBLoginButton } from './container';
 
 import { Platform, View, Image } from 'react-native';
 import { Text } from 'react-native-elements';
@@ -31,5 +31,3 @@ export default class LoginUI extends React.Component {
     );
   }
 }
-
-

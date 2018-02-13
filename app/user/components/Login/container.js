@@ -1,7 +1,7 @@
 import React from 'react';
-import {styles} from '../../style';
+import { styles } from '../../style';
 import { login, FBLogin } from '../../actions';
-import { View, Image} from 'react-native';
+import { View } from 'react-native';
 import { 
     Button, 
     FormLabel, 
