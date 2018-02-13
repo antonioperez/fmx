@@ -19,11 +19,11 @@ export default class LoginUI extends React.Component {
   render() {
     return (
       <View style={styles.loginContainer}>
-        <Text h2 style={[styles.whiteText,styles.center]}>
-            FMx
-        </Text>
         <Text h4 style={[styles.whiteText,styles.center]}>
-            Merchant Portal
+            FMx Merchant Portal
+        </Text>
+        <Text style={[styles.whiteText,styles.center]}>
+            Invest Back Into Your Business!
         </Text>
         <LoginForm />
         <FBLoginButton />

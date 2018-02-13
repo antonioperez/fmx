@@ -58836,26 +58836,25 @@ __d(function (global, require, module, exports, _dependencyMap) {
           _react3.default.createElement(
             _reactNativeElements.Text,
             {
-              h2: true,
+              h4: true,
               style: [_style.styles.whiteText, _style.styles.center],
               __source: {
                 fileName: _jsxFileName,
                 lineNumber: 22
               }
             },
-            "FMx"
+            "FMx Merchant Portal"
           ),
           _react3.default.createElement(
             _reactNativeElements.Text,
             {
-              h4: true,
               style: [_style.styles.whiteText, _style.styles.center],
               __source: {
                 fileName: _jsxFileName,
                 lineNumber: 25
               }
             },
-            "Merchant Portal"
+            "Invest Back Into Your Business!"
           ),
           _react3.default.createElement(_container.LoginForm, {
             __source: {
