@@ -1,10 +1,9 @@
 import React from 'react';
-import { Platform, View, Image } from 'react-native';
 import {styles} from '../../style';
 import {LoginForm, FBLoginButton} from './container';
-import { 
-  Text
-} from 'react-native-elements';
+
+import { Platform, View, Image } from 'react-native';
+import { Text } from 'react-native-elements';
 
 export default class LoginUI extends React.Component {
   constructor() {
@@ -15,14 +14,7 @@ export default class LoginUI extends React.Component {
   }
 
   componentDidMount() {
-    // var users = firebase.database().ref('users')
-    //   var rooms = users.on("value", function (snapshot) {
-    //     snapshot.forEach(function (data) {
-    //       alert(data);
-    //     });
-    // }, function (errorObject) {
-    //     alert("The read failed: " + errorObject.code);
-    // });
+
   }
   render() {
     return (

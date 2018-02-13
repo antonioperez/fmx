@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
-import { login, FBLogin } from '../../actions';
+import React from 'react';
 import {styles} from '../../style';
+import { login, FBLogin } from '../../actions';
 import { View, Image} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import { 
     Button, 
     FormLabel, 
@@ -18,11 +17,16 @@ export class LoginForm extends React.Component {
     onLogin = () => {
         login("aperez2541@outlook.com", "reaper123");
     }
+
+    setEmail = () => {
+
+    }
+
     render() {
         return (
             <View>
                 <FormLabel labelStyle={styles.whiteText}>Email</FormLabel>
-                <FormInput />
+                <FormInput ref={input => this.input = input} onChangeText={this.setEmail}/>
                 <FormLabel labelStyle={styles.whiteText}>Password</FormLabel>
                 <FormInput />
                 <FormValidationMessage>Error message</FormValidationMessage>

@@ -58771,11 +58771,11 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-  var _reactNative = require(_dependencyMap[2], "react-native");
+  var _style = require(_dependencyMap[2], "../../style");
 
-  var _style = require(_dependencyMap[3], "../../style");
+  var _container = require(_dependencyMap[3], "./container");
 
-  var _container = require(_dependencyMap[4], "./container");
+  var _reactNative = require(_dependencyMap[4], "react-native");
 
   var _reactNativeElements = require(_dependencyMap[5], "react-native-elements");
 
@@ -58830,7 +58830,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             style: _style.styles.loginContainer,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 29
+              lineNumber: 21
             }
           },
           _react3.default.createElement(
@@ -58840,7 +58840,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               style: [_style.styles.whiteText, _style.styles.center],
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 31
+                lineNumber: 23
               }
             },
             "FMx"
@@ -58852,7 +58852,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               style: [_style.styles.whiteText, _style.styles.center],
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 34
+                lineNumber: 26
               }
             },
             "Merchant Portal"
@@ -58860,13 +58860,13 @@ __d(function (global, require, module, exports, _dependencyMap) {
           _react3.default.createElement(_container.LoginForm, {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 37
+              lineNumber: 29
             }
           }),
           _react3.default.createElement(_container.FBLoginButton, {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 38
+              lineNumber: 30
             }
           })
         );
@@ -58877,7 +58877,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = LoginUI;
-},493,[109,128,12,494,495,546],"fmx/app/user/components/Login/index.js");
+},493,[109,128,494,495,12,546],"fmx/app/user/components/Login/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -58925,17 +58925,13 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-    var _actions = require(_dependencyMap[2], "../../actions");
+    var _style = require(_dependencyMap[2], "../../style");
 
-    var _style = require(_dependencyMap[3], "../../style");
+    var _actions = require(_dependencyMap[3], "../../actions");
 
     var _reactNative = require(_dependencyMap[4], "react-native");
 
-    var _FontAwesome = require(_dependencyMap[5], "react-native-vector-icons/FontAwesome");
-
-    var _FontAwesome2 = _interopRequireDefault(_FontAwesome);
-
-    var _reactNativeElements = require(_dependencyMap[6], "react-native-elements");
+    var _reactNativeElements = require(_dependencyMap[5], "react-native-elements");
 
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -58983,18 +58979,20 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
             return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = LoginForm.__proto__ || Object.getPrototypeOf(LoginForm)).call.apply(_ref, [this].concat(args))), _this), _this.onLogin = function () {
                 (0, _actions.login)("aperez2541@outlook.com", "reaper123");
-            }, _temp), _possibleConstructorReturn(_this, _ret);
+            }, _this.setEmail = function () {}, _temp), _possibleConstructorReturn(_this, _ret);
         }
 
         _createClass(LoginForm, [{
             key: "render",
             value: function render() {
+                var _this2 = this;
+
                 return _react3.default.createElement(
                     _reactNative.View,
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 23
+                            lineNumber: 27
                         }
                     },
                     _react3.default.createElement(
@@ -59003,15 +59001,19 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             labelStyle: _style.styles.whiteText,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 24
+                                lineNumber: 28
                             }
                         },
                         "Email"
                     ),
                     _react3.default.createElement(_reactNativeElements.FormInput, {
+                        ref: function ref(input) {
+                            return _this2.input = input;
+                        },
+                        onChangeText: this.setEmail,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 25
+                            lineNumber: 29
                         }
                     }),
                     _react3.default.createElement(
@@ -59020,7 +59022,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             labelStyle: _style.styles.whiteText,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 26
+                                lineNumber: 30
                             }
                         },
                         "Password"
@@ -59028,7 +59030,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                     _react3.default.createElement(_reactNativeElements.FormInput, {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 27
+                            lineNumber: 31
                         }
                     }),
                     _react3.default.createElement(
@@ -59036,7 +59038,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 28
+                                lineNumber: 32
                             }
                         },
                         "Error message"
@@ -59048,7 +59050,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         accessibilityLabel: "Login",
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 29
+                            lineNumber: 33
                         }
                     })
                 );
@@ -59064,7 +59066,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
         function FBLoginButton() {
             var _ref2;
 
-            var _temp2, _this2, _ret2;
+            var _temp2, _this3, _ret2;
 
             _classCallCheck(this, FBLoginButton);
 
@@ -59072,9 +59074,9 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 args[_key2] = arguments[_key2];
             }
 
-            return _ret2 = (_temp2 = (_this2 = _possibleConstructorReturn(this, (_ref2 = FBLoginButton.__proto__ || Object.getPrototypeOf(FBLoginButton)).call.apply(_ref2, [this].concat(args))), _this2), _this2.onLogin = function () {
+            return _ret2 = (_temp2 = (_this3 = _possibleConstructorReturn(this, (_ref2 = FBLoginButton.__proto__ || Object.getPrototypeOf(FBLoginButton)).call.apply(_ref2, [this].concat(args))), _this3), _this3.onLogin = function () {
                 (0, _actions.FBLogin)();
-            }, _temp2), _possibleConstructorReturn(_this2, _ret2);
+            }, _temp2), _possibleConstructorReturn(_this3, _ret2);
         }
 
         _createClass(FBLoginButton, [{
@@ -59085,7 +59087,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 47
+                            lineNumber: 51
                         }
                     },
                     _react3.default.createElement(_reactNativeElements.SocialIcon, {
@@ -59098,7 +59100,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         onPress: this.onLogin,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 48
+                            lineNumber: 52
                         }
                     })
                 );
@@ -59107,7 +59109,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
         return FBLoginButton;
     }(_react3.default.Component));
-},495,[109,128,604,494,12,496,546],"fmx/app/user/components/Login/container.js");
+},495,[109,128,494,604,12,546],"fmx/app/user/components/Login/container.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
