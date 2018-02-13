@@ -24,7 +24,16 @@ export class LoginForm extends React.Component {
 
     onLogin = () => {
         if (this.state.email && this.state.pw) {
-            login(this.state.email, this.state.pw);
+            login(this.state.email, this.state.pw, 
+            (user) => {
+                alert(user.email);
+            },
+            (error) => {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                alert(errorMessage);
+            });
         } else {
             alert("Email and Password Required!")
         }
@@ -58,7 +67,14 @@ export class LoginForm extends React.Component {
 
 export class FBLoginButton extends React.Component {
     onLogin = () => {
-        FBLogin();
+        FBLogin((user) => {
+            alert(user.email);
+        },
+        (error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            alert(errorMessage);
+        });
     }
 
     render() {

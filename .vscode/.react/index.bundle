@@ -58972,7 +58972,13 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
             _this.onLogin = function () {
                 if (_this.state.email && _this.state.pw) {
-                    (0, _actions.login)(_this.state.email, _this.state.pw);
+                    (0, _actions.login)(_this.state.email, _this.state.pw, function (user) {
+                        alert(user.email);
+                    }, function (error) {
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+                        alert(errorMessage);
+                    });
                 } else {
                     alert("Email and Password Required!");
                 }
@@ -58995,7 +59001,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 34
+                            lineNumber: 43
                         }
                     },
                     _react3.default.createElement(
@@ -59004,7 +59010,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             labelStyle: _style.styles.whiteText,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 35
+                                lineNumber: 44
                             }
                         },
                         "Email"
@@ -59019,7 +59025,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         inputStyle: _style.styles.whiteText,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 36
+                            lineNumber: 45
                         }
                     }),
                     _react3.default.createElement(
@@ -59028,7 +59034,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             labelStyle: _style.styles.whiteText,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 41
+                                lineNumber: 50
                             }
                         },
                         "Password"
@@ -59044,7 +59050,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         inputStyle: _style.styles.whiteText,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 42
+                            lineNumber: 51
                         }
                     }),
                     _react3.default.createElement(_reactNativeElements.Button, {
@@ -59054,7 +59060,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         accessibilityLabel: "Login",
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 48
+                            lineNumber: 57
                         }
                     })
                 );
@@ -59079,7 +59085,13 @@ __d(function (global, require, module, exports, _dependencyMap) {
             }
 
             return _ret = (_temp = (_this3 = _possibleConstructorReturn(this, (_ref = FBLoginButton.__proto__ || Object.getPrototypeOf(FBLoginButton)).call.apply(_ref, [this].concat(args))), _this3), _this3.onLogin = function () {
-                (0, _actions.FBLogin)();
+                (0, _actions.FBLogin)(function (user) {
+                    alert(user.email);
+                }, function (error) {
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    alert(errorMessage);
+                });
             }, _temp), _possibleConstructorReturn(_this3, _ret);
         }
 
@@ -59091,7 +59103,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 66
+                            lineNumber: 82
                         }
                     },
                     _react3.default.createElement(_reactNativeElements.SocialIcon, {
@@ -59104,7 +59116,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         onPress: this.onLogin,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 67
+                            lineNumber: 83
                         }
                     })
                 );
@@ -73348,21 +73360,24 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-    var login = exports.login = function login(email, password) {
+    var login = exports.login = function login(email, password, callback, errorCallback) {
         if (email && password) {
             _reactNativeFirebase2.default.auth().signInWithEmailAndPassword(email, password).then(function (firebaseUser) {
                 var user = firebaseUser.toJSON();
-                alert(user.email);
+
+                if (callback) {
+                    callback(user);
+                }
             }).catch(function (error) {
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                alert(errorMessage);
+                if (errorCallback) {
+                    errorCallback(error);
+                }
             });
         }
     };
 
-    var FBLogin = exports.FBLogin = function FBLogin() {
-        var result, data, credential, currentUser;
+    var FBLogin = exports.FBLogin = function FBLogin(callback, errorCallback) {
+        var result, data, credential, currentUser, user;
         return regeneratorRuntime.async(function FBLogin$(_context) {
             while (1) {
                 switch (_context.prev = _context.next) {
@@ -73382,35 +73397,42 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         throw new Error('User cancelled request');
 
                     case 6:
-                        console.log("Login success with permissions: " + result.grantedPermissions.toString());
-                        _context.next = 9;
+                        _context.next = 8;
                         return regeneratorRuntime.awrap(_reactNativeFbsdk.AccessToken.getCurrentAccessToken());
 
-                    case 9:
+                    case 8:
                         data = _context.sent;
 
                         if (data) {
-                            _context.next = 12;
+                            _context.next = 11;
                             break;
                         }
 
                         throw new Error('Something went wrong obtaining the users access token');
 
-                    case 12:
+                    case 11:
                         credential = _reactNativeFirebase2.default.auth.FacebookAuthProvider.credential(data.accessToken);
-                        _context.next = 15;
+                        _context.next = 14;
                         return regeneratorRuntime.awrap(_reactNativeFirebase2.default.auth().signInWithCredential(credential));
 
-                    case 15:
+                    case 14:
                         currentUser = _context.sent;
-                        console.info(JSON.stringify(currentUser.toJSON()));
+                        user = currentUser.toJSON();
+
+                        if (callback) {
+                            callback(user);
+                        }
+
                         _context.next = 22;
                         break;
 
                     case 19:
                         _context.prev = 19;
                         _context.t0 = _context["catch"](0);
-                        console.error(_context.t0);
+
+                        if (errorCallback) {
+                            errorCallback(_context.t0);
+                        }
 
                     case 22:
                     case "end":
