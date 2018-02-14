@@ -1408,7 +1408,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var _App2 = _interopRequireDefault(_App);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},703,[12,502],"fmx/index.js");
+},11,[12,489],"fmx/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -58515,10 +58515,10 @@ __d(function (global, require, module, exports, _dependencyMap) {
             navigatorButtons: {}
         }
     });
-},502,[489,505],"fmx/app/App.js");
+},489,[490,503],"fmx/app/App.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   module.exports = require(_dependencyMap[0], './deprecated/indexDeprecated');
-},489,[490],"react-native-navigation/src/index.js");
+},490,[491],"react-native-navigation/src/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var _Navigation = require(_dependencyMap[0], "./../Navigation");
 
@@ -58550,7 +58550,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     ScreenVisibilityListener: _ScreenVisibilityListener2.default,
     Navigator: _Screen.Navigator
   };
-},490,[491,493,499,500,501,498],"react-native-navigation/src/deprecated/indexDeprecated.ios.js");
+},491,[492,494,500,501,502,499],"react-native-navigation/src/deprecated/indexDeprecated.ios.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -58929,7 +58929,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     isRootLaunched: isRootLaunched,
     getLaunchArgs: getLaunchArgs
   };
-},491,[109,12,492,498,497],"react-native-navigation/src/Navigation.js");
+},492,[109,12,493,499,498],"react-native-navigation/src/Navigation.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -59871,7 +59871,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     getCurrentlyVisibleScreenId: getCurrentlyVisibleScreenId,
     getLaunchArgs: getLaunchArgs
   };
-},492,[109,12,491,493,494,497],"react-native-navigation/src/deprecated/platformSpecificDeprecated.ios.js");
+},493,[109,12,492,494,495,498],"react-native-navigation/src/deprecated/platformSpecificDeprecated.ios.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -60374,7 +60374,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     Constants: Constants
   };
   module.exports = Controllers;
-},493,[494,12,495,496,324],"react-native-navigation/src/deprecated/controllers/index.js");
+},494,[495,12,496,497,324],"react-native-navigation/src/deprecated/controllers/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   /**
    * @license
@@ -67513,7 +67513,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
         root._ = _;
       }
   }).call(this);
-},494,[],"lodash/lodash.js");
+},495,[],"lodash/lodash.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var INFINITY = 1 / 0;
   var MAX_SAFE_INTEGER = 9007199254740991;
@@ -67595,7 +67595,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   module.exports = {
     flattenDeep: flattenDeep
   };
-},495,[],"react-native-navigation/src/deprecated/controllers/utils.js");
+},496,[],"react-native-navigation/src/deprecated/controllers/utils.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -67608,7 +67608,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var THE_SIDEBAR_FACEBOOK = exports.THE_SIDEBAR_FACEBOOK = 'facebook';
   var THE_SIDEBAR_LUVOCRACY = exports.THE_SIDEBAR_LUVOCRACY = 'luvocracy';
   var THE_SIDEBAR_WUNDER_LIST = exports.THE_SIDEBAR_WUNDER_LIST = 'wunder-list';
-},496,[],"react-native-navigation/src/deprecated/controllers/Constants.js");
+},497,[],"react-native-navigation/src/deprecated/controllers/Constants.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -67640,7 +67640,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   module.exports = new PropRegistry();
-},497,[],"react-native-navigation/src/PropRegistry.js");
+},498,[],"react-native-navigation/src/PropRegistry.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -68011,7 +68011,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react.Component), _class.navigatorStyle = {}, _class.navigatorButtons = {}, _temp);
   exports.Screen = Screen;
   exports.Navigator = Navigator;
-},498,[109,12,492,491],"react-native-navigation/src/Screen.js");
+},499,[109,12,493,492],"react-native-navigation/src/Screen.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -68103,7 +68103,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }, _temp));
 
   exports.default = SharedElementTransition;
-},499,[109,128,292,12],"react-native-navigation/src/views/sharedElementTransition.ios.js");
+},500,[109,128,292,12],"react-native-navigation/src/views/sharedElementTransition.ios.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -68134,7 +68134,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = NativeEventsReceiver;
-},500,[12],"react-native-navigation/src/NativeEventsReceiver.js");
+},501,[12],"react-native-navigation/src/NativeEventsReceiver.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -68193,7 +68193,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = ScreenVisibilityListener;
-},501,[12],"react-native-navigation/src/ScreenVisibilityListener.js");
+},502,[12],"react-native-navigation/src/ScreenVisibilityListener.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -68202,7 +68202,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var _screens = require(_dependencyMap[0], "./screens");
 
   exports.default = _screens.registerScreens;
-},505,[704],"fmx/app/user/index.js");
+},503,[504],"fmx/app/user/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -68215,14 +68215,22 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     var _LoginScreen2 = _interopRequireDefault(_LoginScreen);
 
+    var _dashboard = require(_dependencyMap[2], "./../components/dashboard");
+
+    var _dashboard2 = _interopRequireDefault(_dashboard);
+
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
     function registerScreens() {
         _reactNativeNavigation.Navigation.registerComponent('fmx.login', function () {
             return _LoginScreen2.default;
         });
+
+        _reactNativeNavigation.Navigation.registerComponent('fmx.dashboard', function () {
+            return _dashboard2.default;
+        });
     }
-},704,[489,705],"fmx/app/user/screens/index.js");
+},504,[490,505,704],"fmx/app/user/screens/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -68248,9 +68256,9 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _style = require(_dependencyMap[4], "./../../style");
 
-  var _Login = require(_dependencyMap[5], "./../../components/Login");
+  var _login = require(_dependencyMap[5], "./../../components/login");
 
-  var _Login2 = _interopRequireDefault(_Login);
+  var _login2 = _interopRequireDefault(_login);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -68282,10 +68290,10 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var LoginScreen = _wrapComponent("LoginScreen")(function (_React$Component) {
     _inherits(LoginScreen, _React$Component);
 
-    function LoginScreen() {
+    function LoginScreen(props) {
       _classCallCheck(this, LoginScreen);
 
-      var _this = _possibleConstructorReturn(this, (LoginScreen.__proto__ || Object.getPrototypeOf(LoginScreen)).call(this));
+      var _this = _possibleConstructorReturn(this, (LoginScreen.__proto__ || Object.getPrototypeOf(LoginScreen)).call(this, props));
 
       _this.lightTheme = ['#6651c1', '#8162cb', '#946ed1'];
       _this.darkTheme = ["#000", "#1d0c34"];
@@ -68294,8 +68302,13 @@ __d(function (global, require, module, exports, _dependencyMap) {
     }
 
     _createClass(LoginScreen, [{
-      key: "componentDidMount",
-      value: function componentDidMount() {}
+      key: "goToNextScreen",
+      value: function goToNextScreen() {
+        this.props.navigator.push({
+          screen: 'fmx.dashboard',
+          title: 'Pushed Screen'
+        });
+      }
     }, {
       key: "render",
       value: function render() {
@@ -68306,13 +68319,14 @@ __d(function (global, require, module, exports, _dependencyMap) {
             style: _style.globalStyles.background,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 23
+              lineNumber: 27
             }
           },
-          _react3.default.createElement(_Login2.default, {
+          _react3.default.createElement(_login2.default, {
+            onSucess: this.goToNextScreen.bind(this),
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 24
+              lineNumber: 28
             }
           })
         );
@@ -68323,7 +68337,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = LoginScreen;
-},705,[109,128,12,503,507,506],"fmx/app/user/screens/types/LoginScreen.js");
+},505,[109,128,12,506,507,508],"fmx/app/user/screens/types/LoginScreen.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -68451,7 +68465,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   exports.default = LinearGradient;
   var NativeLinearGradient = (0, _reactNative.requireNativeComponent)('BVLinearGradient', null);
-},503,[109,128,292,12,297],"react-native-linear-gradient/index.ios.js");
+},506,[109,128,292,12,297],"react-native-linear-gradient/index.ios.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -68485,133 +68499,9 @@ __d(function (global, require, module, exports, _dependencyMap) {
   });
 },507,[12],"fmx/app/user/style.js");
 __d(function (global, require, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-
-  var _react2 = require(_dependencyMap[0], "react");
-
-  var _react3 = _interopRequireDefault(_react2);
-
-  var _index = require(_dependencyMap[1], "./../../../../node_modules/react-transform-hmr/lib/index.js");
-
-  var _index2 = _interopRequireDefault(_index);
-
-  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/Login/index.js";
-
-  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-  var _style = require(_dependencyMap[2], "../../style");
-
-  var _container = require(_dependencyMap[3], "./container");
-
-  var _reactNative = require(_dependencyMap[4], "react-native");
-
-  var _reactNativeElements = require(_dependencyMap[5], "react-native-elements");
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-  var _components = {
-    LoginUI: {
-      displayName: "LoginUI"
-    }
-  };
-
-  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/Login/index.js",
-    components: _components,
-    locals: [module],
-    imports: [_react3.default]
-  });
-
-  function _wrapComponent(id) {
-    return function (Component) {
-      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
-    };
-  }
-
-  var LoginUI = _wrapComponent("LoginUI")(function (_React$Component) {
-    _inherits(LoginUI, _React$Component);
-
-    function LoginUI() {
-      _classCallCheck(this, LoginUI);
-
-      var _this = _possibleConstructorReturn(this, (LoginUI.__proto__ || Object.getPrototypeOf(LoginUI)).call(this));
-
-      _this.state = {};
-      return _this;
-    }
-
-    _createClass(LoginUI, [{
-      key: "componentDidMount",
-      value: function componentDidMount() {}
-    }, {
-      key: "render",
-      value: function render() {
-        return _react3.default.createElement(
-          _reactNative.View,
-          {
-            style: _style.styles.loginContainer,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 21
-            }
-          },
-          _react3.default.createElement(
-            _reactNativeElements.Text,
-            {
-              h4: true,
-              style: [_style.styles.whiteText, _style.styles.center],
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 22
-              }
-            },
-            "FMx Merchant Portal"
-          ),
-          _react3.default.createElement(
-            _reactNativeElements.Text,
-            {
-              style: [_style.styles.whiteText, _style.styles.center],
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 25
-              }
-            },
-            "Save time. Save money. Scale Your Business."
-          ),
-          _react3.default.createElement(_container.LoginForm, {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 28
-            }
-          }),
-          _react3.default.createElement(_container.FBLoginButton, {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 29
-            }
-          })
-        );
-      }
-    }]);
-
-    return LoginUI;
-  }(_react3.default.Component));
-
-  exports.default = LoginUI;
-},506,[109,128,507,508,12,594],"fmx/app/user/components/Login/index.js");
-__d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
-    exports.FBLoginButton = exports.LoginForm = undefined;
 
     var _react2 = require(_dependencyMap[0], "react");
 
@@ -68621,7 +68511,203 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     var _index2 = _interopRequireDefault(_index);
 
-    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/Login/container.js";
+    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/login/index.js";
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    var _style = require(_dependencyMap[2], "../../style");
+
+    var _actions = require(_dependencyMap[3], "../../actions");
+
+    var _container = require(_dependencyMap[4], "./container");
+
+    var _reactNative = require(_dependencyMap[5], "react-native");
+
+    var _reactNativeElements = require(_dependencyMap[6], "react-native-elements");
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    var _components = {
+        LoginUI: {
+            displayName: "LoginUI"
+        }
+    };
+
+    var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+        filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/login/index.js",
+        components: _components,
+        locals: [module],
+        imports: [_react3.default]
+    });
+
+    function _wrapComponent(id) {
+        return function (Component) {
+            return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+        };
+    }
+
+    var LoginUI = _wrapComponent("LoginUI")(function (_React$Component) {
+        _inherits(LoginUI, _React$Component);
+
+        function LoginUI(props) {
+            _classCallCheck(this, LoginUI);
+
+            var _this = _possibleConstructorReturn(this, (LoginUI.__proto__ || Object.getPrototypeOf(LoginUI)).call(this, props));
+
+            _this.onLogin = function () {
+                if (_this.state.email && _this.state.pw) {
+                    (0, _actions.login)(_this.state.email, _this.state.pw, function (user) {
+                        _this.props.onSucess();
+                    }, function (error) {
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+                        alert(errorMessage);
+                    });
+                } else {
+                    alert("Email and Password Required!");
+                }
+            };
+
+            _this.state = {
+                email: '',
+                pw: ''
+            };
+            return _this;
+        }
+
+        _createClass(LoginUI, [{
+            key: "render",
+            value: function render() {
+                var _this2 = this;
+
+                return _react3.default.createElement(
+                    _reactNative.View,
+                    {
+                        style: _style.globalStyles.loginContainer,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 44
+                        }
+                    },
+                    _react3.default.createElement(
+                        _reactNativeElements.Text,
+                        {
+                            h4: true,
+                            style: [_style.globalStyles.whiteText, _style.globalStyles.center],
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 45
+                            }
+                        },
+                        "FMx Merchant Portal"
+                    ),
+                    _react3.default.createElement(
+                        _reactNativeElements.Text,
+                        {
+                            style: [_style.globalStyles.whiteText, _style.globalStyles.center],
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 48
+                            }
+                        },
+                        "Save time. Save money. Scale Your Business."
+                    ),
+                    _react3.default.createElement(
+                        _reactNativeElements.FormLabel,
+                        {
+                            labelStyle: _style.globalStyles.whiteText,
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 51
+                            }
+                        },
+                        "Email"
+                    ),
+                    _react3.default.createElement(_reactNativeElements.FormInput, {
+                        onChangeText: function onChangeText(email) {
+                            return _this2.setState({
+                                email: email
+                            });
+                        },
+                        clearButtonMode: "always",
+                        inputStyle: _style.globalStyles.whiteText,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 52
+                        }
+                    }),
+                    _react3.default.createElement(
+                        _reactNativeElements.FormLabel,
+                        {
+                            labelStyle: _style.globalStyles.whiteText,
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 57
+                            }
+                        },
+                        "Password"
+                    ),
+                    _react3.default.createElement(_reactNativeElements.FormInput, {
+                        onChangeText: function onChangeText(pw) {
+                            return _this2.setState({
+                                pw: pw
+                            });
+                        },
+                        clearButtonMode: "always",
+                        secureTextEntry: true,
+                        inputStyle: _style.globalStyles.whiteText,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 58
+                        }
+                    }),
+                    _react3.default.createElement(_reactNativeElements.Button, {
+                        buttonStyle: _style.globalStyles.clearButton,
+                        onPress: this.onLogin,
+                        title: "Login",
+                        accessibilityLabel: "Login",
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 64
+                        }
+                    }),
+                    _react3.default.createElement(_container.FBLoginButton, {
+                        onSucess: this.props.onSucess,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 70
+                        }
+                    })
+                );
+            }
+        }]);
+
+        return LoginUI;
+    }(_react3.default.Component));
+
+    exports.default = LoginUI;
+},508,[109,128,507,510,509,12,595],"fmx/app/user/components/login/index.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.FBLoginButton = undefined;
+
+    var _react2 = require(_dependencyMap[0], "react");
+
+    var _react3 = _interopRequireDefault(_react2);
+
+    var _index = require(_dependencyMap[1], "./../../../../node_modules/react-transform-hmr/lib/index.js");
+
+    var _index2 = _interopRequireDefault(_index);
+
+    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/login/container.js";
 
     var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -68642,16 +68728,13 @@ __d(function (global, require, module, exports, _dependencyMap) {
     function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
     var _components = {
-        LoginForm: {
-            displayName: "LoginForm"
-        },
         FBLoginButton: {
             displayName: "FBLoginButton"
         }
     };
 
     var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-        filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/Login/container.js",
+        filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/login/container.js",
         components: _components,
         locals: [module],
         imports: [_react3.default]
@@ -68663,137 +68746,25 @@ __d(function (global, require, module, exports, _dependencyMap) {
         };
     }
 
-    var LoginForm = exports.LoginForm = _wrapComponent("LoginForm")(function (_React$Component) {
-        _inherits(LoginForm, _React$Component);
+    var FBLoginButton = exports.FBLoginButton = _wrapComponent("FBLoginButton")(function (_React$Component) {
+        _inherits(FBLoginButton, _React$Component);
 
-        function LoginForm(props) {
-            _classCallCheck(this, LoginForm);
-
-            var _this = _possibleConstructorReturn(this, (LoginForm.__proto__ || Object.getPrototypeOf(LoginForm)).call(this, props));
-
-            _this.onLogin = function () {
-                if (_this.state.email && _this.state.pw) {
-                    (0, _actions.login)(_this.state.email, _this.state.pw, function (user) {
-                        alert(user.email);
-                    }, function (error) {
-                        var errorCode = error.code;
-                        var errorMessage = error.message;
-                        alert(errorMessage);
-                    });
-                } else {
-                    alert("Email and Password Required!");
-                }
-            };
-
-            _this.state = {
-                email: '',
-                pw: ''
-            };
-            return _this;
-        }
-
-        _createClass(LoginForm, [{
-            key: "render",
-            value: function render() {
-                var _this2 = this;
-
-                return _react3.default.createElement(
-                    _reactNative.View,
-                    {
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 42
-                        }
-                    },
-                    _react3.default.createElement(
-                        _reactNativeElements.FormLabel,
-                        {
-                            labelStyle: _style.styles.whiteText,
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 43
-                            }
-                        },
-                        "Email"
-                    ),
-                    _react3.default.createElement(_reactNativeElements.FormInput, {
-                        onChangeText: function onChangeText(email) {
-                            return _this2.setState({
-                                email: email
-                            });
-                        },
-                        clearButtonMode: "always",
-                        inputStyle: _style.styles.whiteText,
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 44
-                        }
-                    }),
-                    _react3.default.createElement(
-                        _reactNativeElements.FormLabel,
-                        {
-                            labelStyle: _style.styles.whiteText,
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 49
-                            }
-                        },
-                        "Password"
-                    ),
-                    _react3.default.createElement(_reactNativeElements.FormInput, {
-                        onChangeText: function onChangeText(pw) {
-                            return _this2.setState({
-                                pw: pw
-                            });
-                        },
-                        clearButtonMode: "always",
-                        secureTextEntry: true,
-                        inputStyle: _style.styles.whiteText,
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 50
-                        }
-                    }),
-                    _react3.default.createElement(_reactNativeElements.Button, {
-                        buttonStyle: _style.styles.clearButton,
-                        onPress: this.onLogin,
-                        title: "Login",
-                        accessibilityLabel: "Login",
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 56
-                        }
-                    })
-                );
-            }
-        }]);
-
-        return LoginForm;
-    }(_react3.default.Component));
-
-    var FBLoginButton = exports.FBLoginButton = _wrapComponent("FBLoginButton")(function (_React$Component2) {
-        _inherits(FBLoginButton, _React$Component2);
-
-        function FBLoginButton() {
-            var _ref;
-
-            var _temp, _this3, _ret;
-
+        function FBLoginButton(props) {
             _classCallCheck(this, FBLoginButton);
 
-            for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-                args[_key] = arguments[_key];
-            }
+            var _this = _possibleConstructorReturn(this, (FBLoginButton.__proto__ || Object.getPrototypeOf(FBLoginButton)).call(this, props));
 
-            return _ret = (_temp = (_this3 = _possibleConstructorReturn(this, (_ref = FBLoginButton.__proto__ || Object.getPrototypeOf(FBLoginButton)).call.apply(_ref, [this].concat(args))), _this3), _this3.onLogin = function () {
+            _this.onLogin = function () {
                 (0, _actions.FBLogin)(function (user) {
-                    alert(user.email);
+                    _this.props.onSucess();
                 }, function (error) {
                     var errorCode = error.code;
                     var errorMessage = error.message;
                     alert(errorMessage);
                 });
-            }, _temp), _possibleConstructorReturn(_this3, _ret);
+            };
+
+            return _this;
         }
 
         _createClass(FBLoginButton, [{
@@ -68804,7 +68775,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 81
+                            lineNumber: 27
                         }
                     },
                     _react3.default.createElement(_reactNativeElements.SocialIcon, {
@@ -68817,7 +68788,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         onPress: this.onLogin,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 82
+                            lineNumber: 28
                         }
                     })
                 );
@@ -68826,7 +68797,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
         return FBLoginButton;
     }(_react3.default.Component));
-},508,[109,128,507,509,12,594],"fmx/app/user/components/Login/container.js");
+},509,[109,128,507,510,12,595],"fmx/app/user/components/login/container.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -68924,7 +68895,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             }
         }, null, _this, [[0, 19]]);
     };
-},509,[510,528],"fmx/app/user/actions/index.js");
+},510,[511,529],"fmx/app/user/actions/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -68998,7 +68969,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     }
 
   };
-},510,[511,513,512,514,515,516,517,518,519,520,521,522,523,524,525,526,527],"react-native-fbsdk/js/index.js");
+},511,[512,514,513,515,516,517,518,519,520,521,522,523,524,525,526,527,528],"react-native-fbsdk/js/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -69026,7 +68997,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(ShareOpenGraphValueContainer);
 
   module.exports = ShareOpenGraphAction;
-},511,[512],"react-native-fbsdk/js/models/FBShareOpenGraphAction.js");
+},512,[513],"react-native-fbsdk/js/models/FBShareOpenGraphAction.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -69084,7 +69055,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   module.exports = ShareOpenGraphValueContainer;
-},512,[],"react-native-fbsdk/js/models/FBShareOpenGraphValueContainer.js");
+},513,[],"react-native-fbsdk/js/models/FBShareOpenGraphValueContainer.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -69109,7 +69080,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(ShareOpenGraphValueContainer);
 
   module.exports = ShareOpenGraphObject;
-},513,[512],"react-native-fbsdk/js/models/FBShareOpenGraphObject.js");
+},514,[513],"react-native-fbsdk/js/models/FBShareOpenGraphObject.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -69193,7 +69164,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   module.exports = FBAccessToken;
-},514,[12],"react-native-fbsdk/js/FBAccessToken.js");
+},515,[12],"react-native-fbsdk/js/FBAccessToken.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -69262,7 +69233,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       AppEventsLogger.setPushNotificationsRegistrationId(registrationId);
     }
   };
-},515,[12],"react-native-fbsdk/js/FBAppEventsLogger.js");
+},516,[12],"react-native-fbsdk/js/FBAppEventsLogger.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -69276,7 +69247,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       return AppInviteDialog.show(appInviteContent);
     }
   };
-},516,[12],"react-native-fbsdk/js/FBAppInviteDialog.js");
+},517,[12],"react-native-fbsdk/js/FBAppInviteDialog.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -69290,7 +69261,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       return GameRequestDialog.show(gameRequestContent);
     }
   };
-},517,[12],"react-native-fbsdk/js/FBGameRequestDialog.js");
+},518,[12],"react-native-fbsdk/js/FBGameRequestDialog.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -69322,7 +69293,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   module.exports = FBGraphRequest;
-},518,[],"react-native-fbsdk/js/FBGraphRequest.js");
+},519,[],"react-native-fbsdk/js/FBGraphRequest.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -69396,7 +69367,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   module.exports = FBGraphRequestManager;
-},519,[12],"react-native-fbsdk/js/FBGraphRequestManager.js");
+},520,[12],"react-native-fbsdk/js/FBGraphRequestManager.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -69425,7 +69396,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       LoginManager.logOut();
     }
   };
-},520,[12],"react-native-fbsdk/js/FBLoginManager.js");
+},521,[12],"react-native-fbsdk/js/FBLoginManager.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -69442,7 +69413,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       MessageDialog.setShouldFailOnDataError(shouldFailOnDataError);
     }
   };
-},521,[12],"react-native-fbsdk/js/FBMessageDialog.js");
+},522,[12],"react-native-fbsdk/js/FBMessageDialog.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -69461,7 +69432,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       return ShareApi.share(shareContent, graphNode, message);
     }
   };
-},522,[12,513],"react-native-fbsdk/js/FBShareApi.js");
+},523,[12,514],"react-native-fbsdk/js/FBShareApi.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -69481,7 +69452,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       ShareDialog.setShouldFailOnDataError(shouldFailOnDataError);
     }
   };
-},523,[12],"react-native-fbsdk/js/FBShareDialog.js");
+},524,[12],"react-native-fbsdk/js/FBShareDialog.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -69579,7 +69550,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   };
   var RCTFBLikeView = (0, _reactNative.requireNativeComponent)('RCTFBLikeView', LikeView);
   module.exports = LikeView;
-},524,[109,128,292,12],"react-native-fbsdk/js/FBLikeView.js");
+},525,[109,128,292,12],"react-native-fbsdk/js/FBLikeView.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -69699,7 +69670,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     }
   });
   module.exports = LoginButton;
-},525,[109,128,292,12],"react-native-fbsdk/js/FBLoginButton.js");
+},526,[109,128,292,12],"react-native-fbsdk/js/FBLoginButton.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -69792,7 +69763,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   };
   var RCTFBSendButton = (0, _reactNative.requireNativeComponent)('RCTFBSendButton', SendButton);
   module.exports = SendButton;
-},526,[109,128,292,12],"react-native-fbsdk/js/FBSendButton.js");
+},527,[109,128,292,12],"react-native-fbsdk/js/FBSendButton.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -69885,7 +69856,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   };
   var RCTFBShareButton = (0, _reactNative.requireNativeComponent)('RCTFBShareButton', ShareButton);
   module.exports = ShareButton;
-},527,[109,128,292,12],"react-native-fbsdk/js/FBShareButton.js");
+},528,[109,128,292,12],"react-native-fbsdk/js/FBShareButton.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -69901,7 +69872,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var AdMob = exports.AdMob = require(_dependencyMap[1], './modules/admob');
 
   exports.default = _firebase2.default;
-},528,[529,547],"react-native-firebase/dist/index.js");
+},529,[530,548],"react-native-firebase/dist/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -70141,7 +70112,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = new FirebaseCore();
-},529,[12,530,546,537,547,556,566,567,568,569,570,572,584,585,587,589,592],"react-native-firebase/dist/modules/core/firebase.js");
+},530,[12,531,547,538,548,557,567,568,569,570,571,573,585,586,588,590,593],"react-native-firebase/dist/modules/core/firebase.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -70299,7 +70270,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       });
     }
   };
-},530,[12,531,535,540],"react-native-firebase/dist/utils/internals.js");
+},531,[12,532,536,541],"react-native-firebase/dist/utils/internals.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -70408,7 +70379,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   module.exports = EventEmitter;
-},531,[532,534,57,13],"react-native-firebase/dist/utils/emitter/EventEmitter.js");
+},532,[533,535,57,13],"react-native-firebase/dist/utils/emitter/EventEmitter.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -70447,7 +70418,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(EventSubscription);
 
   module.exports = EmitterSubscription;
-},532,[533],"react-native-firebase/dist/utils/emitter/EmitterSubscription.js");
+},533,[534],"react-native-firebase/dist/utils/emitter/EmitterSubscription.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -70473,7 +70444,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   module.exports = EventSubscription;
-},533,[],"react-native-firebase/dist/utils/emitter/EventSubscription.js");
+},534,[],"react-native-firebase/dist/utils/emitter/EventSubscription.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -70539,7 +70510,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   module.exports = EventSubscriptionVendor;
-},534,[13],"react-native-firebase/dist/utils/emitter/EventSubscriptionVendor.js");
+},535,[13],"react-native-firebase/dist/utils/emitter/EventSubscriptionVendor.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -70693,7 +70664,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = ModuleBase;
-},535,[12,536,530,529,537],"react-native-firebase/dist/utils/ModuleBase.js");
+},536,[12,537,531,530,538],"react-native-firebase/dist/utils/ModuleBase.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -70733,7 +70704,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = Log;
-},536,[537,538],"react-native-firebase/dist/utils/log.js");
+},537,[538,539],"react-native-firebase/dist/utils/log.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -70985,7 +70956,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     return autoId;
   }
-},537,[12],"react-native-firebase/dist/utils/index.js");
+},538,[12],"react-native-firebase/dist/utils/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   (function () {
     function checkColorSupport() {
@@ -71110,7 +71081,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       window.bows = bows;
     }
   }).call();
-},538,[539],"bows/bows.js");
+},539,[540],"bows/bows.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     (function () {
         var inNode = typeof window === 'undefined',
@@ -71142,7 +71113,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             window.console = out;
         }
     })();
-},539,[],"andlog/andlog.js");
+},540,[],"andlog/andlog.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -71385,7 +71356,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = SyncTree;
-},540,[12,530,541,542,537],"react-native-firebase/dist/utils/SyncTree.js");
+},541,[12,531,542,543,538],"react-native-firebase/dist/utils/SyncTree.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -71489,7 +71460,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = Snapshot;
-},541,[537],"react-native-firebase/dist/modules/database/snapshot.js");
+},542,[538],"react-native-firebase/dist/modules/database/snapshot.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -71976,7 +71947,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_ReferenceBase3.default);
 
   exports.default = Reference;
-},542,[543,541,544,545,537,530],"react-native-firebase/dist/modules/database/reference.js");
+},543,[544,542,545,546,538,531],"react-native-firebase/dist/modules/database/reference.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -72063,7 +72034,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = Query;
-},543,[537],"react-native-firebase/dist/modules/database/query.js");
+},544,[538],"react-native-firebase/dist/modules/database/query.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -72114,7 +72085,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = Disconnect;
-},544,[537],"react-native-firebase/dist/modules/database/disconnect.js");
+},545,[538],"react-native-firebase/dist/modules/database/disconnect.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -72155,7 +72126,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = ReferenceBase;
-},545,[536],"react-native-firebase/dist/utils/ReferenceBase.js");
+},546,[537],"react-native-firebase/dist/utils/ReferenceBase.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -72361,7 +72332,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = FirebaseApp;
-},546,[12,530,537,547,556,566,567,568,569,570,572,584,585,587,589,592],"react-native-firebase/dist/modules/core/firebase-app.js");
+},547,[12,531,538,548,557,567,568,569,570,571,573,585,586,588,590,593],"react-native-firebase/dist/modules/core/firebase-app.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -72504,7 +72475,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     RewardedVideoEventTypes: _EventTypes.RewardedVideoEventTypes,
     NativeExpressEventTypes: _EventTypes.NativeExpressEventTypes
   };
-},547,[535,548,550,549,551,552,555,554],"react-native-firebase/dist/modules/admob/index.js");
+},548,[536,549,551,550,552,553,556,555],"react-native-firebase/dist/modules/admob/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -72617,7 +72588,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = Interstitial;
-},548,[12,547,549,537],"react-native-firebase/dist/modules/admob/Interstitial.js");
+},549,[12,548,550,538],"react-native-firebase/dist/modules/admob/Interstitial.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -72703,7 +72674,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = AdRequest;
-},549,[],"react-native-firebase/dist/modules/admob/AdRequest.js");
+},550,[],"react-native-firebase/dist/modules/admob/AdRequest.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -72814,7 +72785,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = RewardedVideo;
-},550,[12,547,549,537],"react-native-firebase/dist/modules/admob/RewardedVideo.js");
+},551,[12,548,550,538],"react-native-firebase/dist/modules/admob/RewardedVideo.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -72851,7 +72822,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = VideoOptions;
-},551,[],"react-native-firebase/dist/modules/admob/VideoOptions.js");
+},552,[],"react-native-firebase/dist/modules/admob/VideoOptions.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -72890,7 +72861,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     size: 'SMART_BANNER'
   };
   exports.default = Banner;
-},552,[109,553],"react-native-firebase/dist/modules/admob/Banner.js");
+},553,[109,554],"react-native-firebase/dist/modules/admob/Banner.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -73050,7 +73021,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }, _temp));
 
   exports.default = AdMobComponent;
-},553,[109,128,12,292,554,537,549,551],"react-native-firebase/dist/modules/admob/AdMobComponent.js");
+},554,[109,128,12,292,555,538,550,552],"react-native-firebase/dist/modules/admob/AdMobComponent.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -73073,7 +73044,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     onRewarded: 'onRewarded',
     onRewardedVideoStarted: 'onRewardedVideoStarted'
   };
-},554,[],"react-native-firebase/dist/modules/admob/EventTypes.js");
+},555,[],"react-native-firebase/dist/modules/admob/EventTypes.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -73112,7 +73083,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     size: 'SMART_BANNER'
   };
   exports.default = NativeExpress;
-},555,[109,553],"react-native-firebase/dist/modules/admob/NativeExpress.js");
+},556,[109,554],"react-native-firebase/dist/modules/admob/NativeExpress.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -73418,7 +73389,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       ERROR: 'error'
     }
   };
-},556,[557,535,530,558,559,560,561,562,563,564,565],"react-native-firebase/dist/modules/auth/index.js");
+},557,[558,536,531,559,560,561,562,563,564,565,566],"react-native-firebase/dist/modules/auth/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -73605,7 +73576,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = User;
-},557,[530],"react-native-firebase/dist/modules/auth/User.js");
+},558,[531],"react-native-firebase/dist/modules/auth/User.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -73639,7 +73610,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = ConfirmationResult;
-},558,[],"react-native-firebase/dist/modules/auth/ConfirmationResult.js");
+},559,[],"react-native-firebase/dist/modules/auth/ConfirmationResult.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -73678,7 +73649,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = EmailAuthProvider;
-},559,[],"react-native-firebase/dist/modules/auth/providers/EmailAuthProvider.js");
+},560,[],"react-native-firebase/dist/modules/auth/providers/EmailAuthProvider.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -73717,7 +73688,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = PhoneAuthProvider;
-},560,[],"react-native-firebase/dist/modules/auth/providers/PhoneAuthProvider.js");
+},561,[],"react-native-firebase/dist/modules/auth/providers/PhoneAuthProvider.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -73756,7 +73727,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = GoogleAuthProvider;
-},561,[],"react-native-firebase/dist/modules/auth/providers/GoogleAuthProvider.js");
+},562,[],"react-native-firebase/dist/modules/auth/providers/GoogleAuthProvider.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -73795,7 +73766,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = GithubAuthProvider;
-},562,[],"react-native-firebase/dist/modules/auth/providers/GithubAuthProvider.js");
+},563,[],"react-native-firebase/dist/modules/auth/providers/GithubAuthProvider.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -73834,7 +73805,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = TwitterAuthProvider;
-},563,[],"react-native-firebase/dist/modules/auth/providers/TwitterAuthProvider.js");
+},564,[],"react-native-firebase/dist/modules/auth/providers/TwitterAuthProvider.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -73873,7 +73844,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = FacebookAuthProvider;
-},564,[],"react-native-firebase/dist/modules/auth/providers/FacebookAuthProvider.js");
+},565,[],"react-native-firebase/dist/modules/auth/providers/FacebookAuthProvider.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -74115,7 +74086,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = PhoneAuthListener;
-},565,[530,537],"react-native-firebase/dist/modules/auth/PhoneAuthListener.js");
+},566,[531,538],"react-native-firebase/dist/modules/auth/PhoneAuthListener.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -74228,7 +74199,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_ModuleBase3.default), _class._NAMESPACE = 'analytics', _class._NATIVE_MODULE = 'RNFirebaseAnalytics', _temp);
   exports.default = Analytics;
   var statics = exports.statics = {};
-},566,[535],"react-native-firebase/dist/modules/analytics/index.js");
+},567,[536],"react-native-firebase/dist/modules/analytics/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -74347,7 +74318,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_ModuleBase3.default), _class._NAMESPACE = 'config', _class._NATIVE_MODULE = 'RNFirebaseRemoteConfig', _temp);
   exports.default = RemoteConfig;
   var statics = exports.statics = {};
-},567,[535],"react-native-firebase/dist/modules/config/index.js");
+},568,[536],"react-native-firebase/dist/modules/config/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -74428,7 +74399,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_ModuleBase3.default), _class._NAMESPACE = 'crash', _class._NATIVE_MODULE = 'RNFirebaseCrash', _temp);
   exports.default = Crash;
   var statics = exports.statics = {};
-},568,[535],"react-native-firebase/dist/modules/crash/index.js");
+},569,[536],"react-native-firebase/dist/modules/crash/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -74508,7 +74479,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_ModuleBase3.default), _class._NAMESPACE = 'crashlytics', _class._NATIVE_MODULE = 'RNFirebaseCrashlytics', _temp);
   exports.default = Crashlytics;
   var statics = exports.statics = {};
-},569,[535],"react-native-firebase/dist/modules/fabric/crashlytics/index.js");
+},570,[536],"react-native-firebase/dist/modules/fabric/crashlytics/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -74605,7 +74576,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       }
     }
   };
-},570,[12,542,571,535],"react-native-firebase/dist/modules/database/index.js");
+},571,[12,543,572,536],"react-native-firebase/dist/modules/database/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -74743,7 +74714,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = TransactionHandler;
-},571,[],"react-native-firebase/dist/modules/database/transaction.js");
+},572,[],"react-native-firebase/dist/modules/database/transaction.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -74913,7 +74884,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       }
     }
   };
-},572,[12,535,573,574,578,579,576,583,530],"react-native-firebase/dist/modules/firestore/index.js");
+},573,[12,536,574,575,579,580,577,584,531],"react-native-firebase/dist/modules/firestore/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -75050,7 +75021,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = CollectionReference;
-},573,[574,580,537],"react-native-firebase/dist/modules/firestore/CollectionReference.js");
+},574,[575,581,538],"react-native-firebase/dist/modules/firestore/CollectionReference.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -75261,7 +75232,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = DocumentReference;
-},574,[573,575,577,537],"react-native-firebase/dist/modules/firestore/DocumentReference.js");
+},575,[574,576,578,538],"react-native-firebase/dist/modules/firestore/DocumentReference.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -75329,7 +75300,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = DocumentSnapshot;
-},575,[574,576,577],"react-native-firebase/dist/modules/firestore/DocumentSnapshot.js");
+},576,[575,577,578],"react-native-firebase/dist/modules/firestore/DocumentSnapshot.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -75401,7 +75372,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = Path;
-},576,[],"react-native-firebase/dist/modules/firestore/Path.js");
+},577,[],"react-native-firebase/dist/modules/firestore/Path.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -75565,7 +75536,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     console.warn("Unknown data type received " + type);
     return value;
   };
-},577,[574,578,579,576,537],"react-native-firebase/dist/modules/firestore/utils/serialize.js");
+},578,[575,579,580,577,538],"react-native-firebase/dist/modules/firestore/utils/serialize.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -75598,7 +75569,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   exports.default = FieldValue;
   var DELETE_FIELD_VALUE = exports.DELETE_FIELD_VALUE = new FieldValue();
   var SERVER_TIMESTAMP_FIELD_VALUE = exports.SERVER_TIMESTAMP_FIELD_VALUE = new FieldValue();
-},578,[],"react-native-firebase/dist/modules/firestore/FieldValue.js");
+},579,[],"react-native-firebase/dist/modules/firestore/FieldValue.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -75632,7 +75603,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = GeoPoint;
-},579,[],"react-native-firebase/dist/modules/firestore/GeoPoint.js");
+},580,[],"react-native-firebase/dist/modules/firestore/GeoPoint.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -75903,7 +75874,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = Query;
-},580,[575,581,577,537],"react-native-firebase/dist/modules/firestore/Query.js");
+},581,[576,582,578,538],"react-native-firebase/dist/modules/firestore/Query.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -75981,7 +75952,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = QuerySnapshot;
-},581,[582,575],"react-native-firebase/dist/modules/firestore/QuerySnapshot.js");
+},582,[583,576],"react-native-firebase/dist/modules/firestore/QuerySnapshot.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -76034,7 +76005,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = DocumentChange;
-},582,[575],"react-native-firebase/dist/modules/firestore/DocumentChange.js");
+},583,[576],"react-native-firebase/dist/modules/firestore/DocumentChange.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -76128,7 +76099,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = WriteBatch;
-},583,[577,537],"react-native-firebase/dist/modules/firestore/WriteBatch.js");
+},584,[578,538],"react-native-firebase/dist/modules/firestore/WriteBatch.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -76272,7 +76243,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var statics = exports.statics = {
     EVENT_TYPE: EVENT_TYPE
   };
-},584,[535,537],"react-native-firebase/dist/modules/links/index.js");
+},585,[536,538],"react-native-firebase/dist/modules/links/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -76534,7 +76505,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     WILL_PRESENT_RESULT: WILL_PRESENT_RESULT,
     RemoteMessage: _RemoteMessage2.default
   };
-},585,[12,535,586],"react-native-firebase/dist/modules/messaging/index.js");
+},586,[12,536,587],"react-native-firebase/dist/modules/messaging/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -76615,7 +76586,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = RemoteMessage;
-},586,[537],"react-native-firebase/dist/modules/messaging/RemoteMessage.js");
+},587,[538],"react-native-firebase/dist/modules/messaging/RemoteMessage.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -76669,7 +76640,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_ModuleBase3.default), _class._NAMESPACE = 'perf', _class._NATIVE_MODULE = 'RNFirebasePerformance', _temp);
   exports.default = PerformanceMonitoring;
   var statics = exports.statics = {};
-},587,[588,535],"react-native-firebase/dist/modules/perf/index.js");
+},588,[589,536],"react-native-firebase/dist/modules/perf/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -76708,7 +76679,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = Trace;
-},588,[],"react-native-firebase/dist/modules/perf/Trace.js");
+},589,[],"react-native-firebase/dist/modules/perf/Trace.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -76841,7 +76812,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       FILETYPE_DIRECTORY: FirebaseStorage.FILETYPE_DIRECTORY
     } : {}
   };
-},589,[12,590,535],"react-native-firebase/dist/modules/storage/index.js");
+},590,[12,591,536],"react-native-firebase/dist/modules/storage/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -76939,7 +76910,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_ReferenceBase3.default);
 
   exports.default = StorageReference;
-},590,[545,591],"react-native-firebase/dist/modules/storage/reference.js");
+},591,[546,592],"react-native-firebase/dist/modules/storage/reference.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -77078,7 +77049,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   exports.default = StorageTask;
-},591,[589,537],"react-native-firebase/dist/modules/storage/task.js");
+},592,[590,538],"react-native-firebase/dist/modules/storage/task.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -77214,7 +77185,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var statics = exports.statics = {
     DEFAULT_APP_NAME: _internals2.default.STRINGS.DEFAULT_APP_NAME
   };
-},592,[12,530,537,535,593],"react-native-firebase/dist/modules/utils/index.js");
+},593,[12,531,538,536,594],"react-native-firebase/dist/modules/utils/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   module.exports = {
     "_args": [["react-native-firebase@3.2.2", "/Users/antonioperez/Desktop/react-native-firebase-starter"]],
@@ -77329,7 +77300,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     "types": "dist/index.d.ts",
     "version": "3.2.2"
   };
-},593,[],"react-native-firebase/package.json");
+},594,[],"react-native-firebase/package.json");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -77459,7 +77430,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   exports.Avatar = _Avatar2.default;
   exports.Rating = _Rating2.default;
   exports.Header = _Header2.default;
-},594,[595,672,673,674,677,676,678,679,680,681,682,684,675,686,692,697,698,699,700,701,597,596,650,599],"react-native-elements/src/index.js");
+},595,[596,673,674,675,678,677,679,680,681,682,683,685,676,687,693,698,699,700,701,702,598,597,651,600],"react-native-elements/src/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -77835,7 +77806,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var styles = _reactNative.StyleSheet.create(stylesObject);
 
   exports.default = Button;
-},595,[292,109,12,596,597,600,650,599,671],"react-native-elements/src/buttons/Button.js");
+},596,[292,109,12,597,598,601,651,600,672],"react-native-elements/src/buttons/Button.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -77860,7 +77831,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     white: '#ffffff',
     error: '#ff190c'
   };
-},596,[],"react-native-elements/src/config/colors.js");
+},597,[],"react-native-elements/src/config/colors.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -77944,7 +77915,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     children: _propTypes2.default.any
   };
   exports.default = TextElement;
-},597,[292,109,12,598,599],"react-native-elements/src/text/Text.js");
+},598,[292,109,12,599,600],"react-native-elements/src/text/Text.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -77981,7 +77952,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       }
     }
   };
-},598,[],"react-native-elements/src/config/fonts.js");
+},599,[],"react-native-elements/src/config/fonts.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var React = require(_dependencyMap[0], 'react-native');
 
@@ -78036,7 +78007,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   };
 
   module.exports = normalize;
-},599,[12],"react-native-elements/src/helpers/normalizeText.js");
+},600,[12],"react-native-elements/src/helpers/normalizeText.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -78060,7 +78031,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var TabBarItemIOS = exports.TabBarItemIOS = iconSet.TabBarItemIOS;
   var ToolbarAndroid = exports.ToolbarAndroid = iconSet.ToolbarAndroid;
   var getImageSource = exports.getImageSource = iconSet.getImageSource;
-},600,[601,649],"react-native-vector-icons/MaterialIcons.js");
+},601,[602,650],"react-native-vector-icons/MaterialIcons.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -78311,7 +78282,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     Icon.loadFont = loadFont;
     return Icon;
   }
-},601,[109,128,292,602,603,646,648],"react-native-vector-icons/lib/create-icon-set.js");
+},602,[109,128,292,603,604,647,649],"react-native-vector-icons/lib/create-icon-set.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -78328,7 +78299,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       }
     });
   });
-},602,[12],"react-native-vector-icons/lib/react-native.js");
+},603,[12],"react-native-vector-icons/lib/react-native.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -78504,7 +78475,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       size: 20
     }, _temp));
   }
-},603,[109,128,604,605,642,292,602],"react-native-vector-icons/lib/icon-button.js");
+},604,[109,128,605,606,643,292,603],"react-native-vector-icons/lib/icon-button.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     var baseGetTag = require(_dependencyMap[0], './_baseGetTag'),
         isArray = require(_dependencyMap[1], './isArray'),
@@ -78517,7 +78488,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     }
 
     module.exports = isString;
-},604,[155,197,206],"lodash/isString.js");
+},605,[155,197,206],"lodash/isString.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var arrayMap = require(_dependencyMap[0], './_arrayMap'),
       baseClone = require(_dependencyMap[1], './_baseClone'),
@@ -78559,7 +78530,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     return result;
   });
   module.exports = omit;
-},605,[239,606,634,231,258,638,640,619],"lodash/omit.js");
+},606,[239,607,635,231,258,639,641,620],"lodash/omit.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var Stack = require(_dependencyMap[0], './_Stack'),
       arrayEach = require(_dependencyMap[1], './_arrayEach'),
@@ -78685,7 +78656,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = baseClone;
-},606,[137,607,255,608,609,613,614,615,616,194,619,220,620,621,632,197,207,161,201],"lodash/_baseClone.js");
+},607,[137,608,255,609,610,614,615,616,617,194,620,220,621,622,633,197,207,161,201],"lodash/_baseClone.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   function arrayEach(array, iteratee) {
     var index = -1,
@@ -78701,7 +78672,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = arrayEach;
-},607,[],"lodash/_arrayEach.js");
+},608,[],"lodash/_arrayEach.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var copyObject = require(_dependencyMap[0], './_copyObject'),
       keys = require(_dependencyMap[1], './keys');
@@ -78711,7 +78682,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = baseAssign;
-},608,[258,201],"lodash/_baseAssign.js");
+},609,[258,201],"lodash/_baseAssign.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var copyObject = require(_dependencyMap[0], './_copyObject'),
       keysIn = require(_dependencyMap[1], './keysIn');
@@ -78721,7 +78692,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = baseAssignIn;
-},609,[258,610],"lodash/_baseAssignIn.js");
+},610,[258,611],"lodash/_baseAssignIn.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var arrayLikeKeys = require(_dependencyMap[0], './_arrayLikeKeys'),
       baseKeysIn = require(_dependencyMap[1], './_baseKeysIn'),
@@ -78732,7 +78703,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = keysIn;
-},610,[202,611,219],"lodash/keysIn.js");
+},611,[202,612,219],"lodash/keysIn.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var isObject = require(_dependencyMap[0], './isObject'),
       isPrototype = require(_dependencyMap[1], './_isPrototype'),
@@ -78759,7 +78730,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = baseKeysIn;
-},611,[161,216,612],"lodash/_baseKeysIn.js");
+},612,[161,216,613],"lodash/_baseKeysIn.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   function nativeKeysIn(object) {
     var result = [];
@@ -78774,7 +78745,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = nativeKeysIn;
-},612,[],"lodash/_nativeKeysIn.js");
+},613,[],"lodash/_nativeKeysIn.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var root = require(_dependencyMap[0], './_root');
 
@@ -78796,7 +78767,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = cloneBuffer;
-},613,[157],"lodash/_cloneBuffer.js");
+},614,[157],"lodash/_cloneBuffer.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   function copyArray(source, array) {
     var index = -1,
@@ -78811,7 +78782,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = copyArray;
-},614,[],"lodash/_copyArray.js");
+},615,[],"lodash/_copyArray.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var copyObject = require(_dependencyMap[0], './_copyObject'),
       getSymbols = require(_dependencyMap[1], './_getSymbols');
@@ -78821,7 +78792,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = copySymbols;
-},615,[258,198],"lodash/_copySymbols.js");
+},616,[258,198],"lodash/_copySymbols.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var copyObject = require(_dependencyMap[0], './_copyObject'),
       getSymbolsIn = require(_dependencyMap[1], './_getSymbolsIn');
@@ -78831,7 +78802,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = copySymbolsIn;
-},616,[258,617],"lodash/_copySymbolsIn.js");
+},617,[258,618],"lodash/_copySymbolsIn.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var arrayPush = require(_dependencyMap[0], './_arrayPush'),
       getPrototype = require(_dependencyMap[1], './_getPrototype'),
@@ -78850,13 +78821,13 @@ __d(function (global, require, module, exports, _dependencyMap) {
     return result;
   };
   module.exports = getSymbolsIn;
-},617,[196,618,198,200],"lodash/_getSymbolsIn.js");
+},618,[196,619,198,200],"lodash/_getSymbolsIn.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var overArg = require(_dependencyMap[0], './_overArg');
 
   var getPrototype = overArg(Object.getPrototypeOf, Object);
   module.exports = getPrototype;
-},618,[218],"lodash/_getPrototype.js");
+},619,[218],"lodash/_getPrototype.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var baseGetAllKeys = require(_dependencyMap[0], './_baseGetAllKeys'),
       getSymbolsIn = require(_dependencyMap[1], './_getSymbolsIn'),
@@ -78867,7 +78838,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = getAllKeysIn;
-},619,[195,617,610],"lodash/_getAllKeysIn.js");
+},620,[195,618,611],"lodash/_getAllKeysIn.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var objectProto = Object.prototype;
   var hasOwnProperty = objectProto.hasOwnProperty;
@@ -78885,7 +78856,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = initCloneArray;
-},620,[],"lodash/_initCloneArray.js");
+},621,[],"lodash/_initCloneArray.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var cloneArrayBuffer = require(_dependencyMap[0], './_cloneArrayBuffer'),
       cloneDataView = require(_dependencyMap[1], './_cloneDataView'),
@@ -78959,7 +78930,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = initCloneByTag;
-},621,[622,623,624,627,628,630,631],"lodash/_initCloneByTag.js");
+},622,[623,624,625,628,629,631,632],"lodash/_initCloneByTag.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var Uint8Array = require(_dependencyMap[0], './_Uint8Array');
 
@@ -78970,7 +78941,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = cloneArrayBuffer;
-},622,[190],"lodash/_cloneArrayBuffer.js");
+},623,[190],"lodash/_cloneArrayBuffer.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var cloneArrayBuffer = require(_dependencyMap[0], './_cloneArrayBuffer');
 
@@ -78980,7 +78951,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = cloneDataView;
-},623,[622],"lodash/_cloneDataView.js");
+},624,[623],"lodash/_cloneDataView.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var addMapEntry = require(_dependencyMap[0], './_addMapEntry'),
       arrayReduce = require(_dependencyMap[1], './_arrayReduce'),
@@ -78994,7 +78965,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = cloneMap;
-},624,[625,626,191],"lodash/_cloneMap.js");
+},625,[626,627,191],"lodash/_cloneMap.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   function addMapEntry(map, pair) {
     map.set(pair[0], pair[1]);
@@ -79002,7 +78973,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = addMapEntry;
-},625,[],"lodash/_addMapEntry.js");
+},626,[],"lodash/_addMapEntry.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   function arrayReduce(array, iteratee, accumulator, initAccum) {
     var index = -1,
@@ -79020,7 +78991,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = arrayReduce;
-},626,[],"lodash/_arrayReduce.js");
+},627,[],"lodash/_arrayReduce.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var reFlags = /\w*$/;
 
@@ -79031,7 +79002,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = cloneRegExp;
-},627,[],"lodash/_cloneRegExp.js");
+},628,[],"lodash/_cloneRegExp.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var addSetEntry = require(_dependencyMap[0], './_addSetEntry'),
       arrayReduce = require(_dependencyMap[1], './_arrayReduce'),
@@ -79045,7 +79016,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = cloneSet;
-},628,[629,626,192],"lodash/_cloneSet.js");
+},629,[630,627,192],"lodash/_cloneSet.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   function addSetEntry(set, value) {
     set.add(value);
@@ -79053,7 +79024,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = addSetEntry;
-},629,[],"lodash/_addSetEntry.js");
+},630,[],"lodash/_addSetEntry.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var Symbol = require(_dependencyMap[0], './_Symbol');
 
@@ -79065,7 +79036,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = cloneSymbol;
-},630,[156],"lodash/_cloneSymbol.js");
+},631,[156],"lodash/_cloneSymbol.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var cloneArrayBuffer = require(_dependencyMap[0], './_cloneArrayBuffer');
 
@@ -79075,7 +79046,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = cloneTypedArray;
-},631,[622],"lodash/_cloneTypedArray.js");
+},632,[623],"lodash/_cloneTypedArray.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     var baseCreate = require(_dependencyMap[0], './_baseCreate'),
         getPrototype = require(_dependencyMap[1], './_getPrototype'),
@@ -79086,7 +79057,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     }
 
     module.exports = initCloneObject;
-},632,[633,618,216],"lodash/_initCloneObject.js");
+},633,[634,619,216],"lodash/_initCloneObject.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var isObject = require(_dependencyMap[0], './isObject');
 
@@ -79112,7 +79083,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }();
 
   module.exports = baseCreate;
-},633,[161],"lodash/_baseCreate.js");
+},634,[161],"lodash/_baseCreate.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var castPath = require(_dependencyMap[0], './_castPath'),
       last = require(_dependencyMap[1], './last'),
@@ -79126,7 +79097,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = baseUnset;
-},634,[231,635,636,240],"lodash/_baseUnset.js");
+},635,[231,636,637,240],"lodash/_baseUnset.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   function last(array) {
     var length = array == null ? 0 : array.length;
@@ -79134,7 +79105,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = last;
-},635,[],"lodash/last.js");
+},636,[],"lodash/last.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var baseGet = require(_dependencyMap[0], './_baseGet'),
       baseSlice = require(_dependencyMap[1], './_baseSlice');
@@ -79144,7 +79115,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = parent;
-},636,[230,637],"lodash/_parent.js");
+},637,[230,638],"lodash/_parent.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   function baseSlice(array, start, end) {
     var index = -1,
@@ -79172,7 +79143,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = baseSlice;
-},637,[],"lodash/_baseSlice.js");
+},638,[],"lodash/_baseSlice.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var isPlainObject = require(_dependencyMap[0], './isPlainObject');
 
@@ -79181,7 +79152,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = customOmitClone;
-},638,[639],"lodash/_customOmitClone.js");
+},639,[640],"lodash/_customOmitClone.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var baseGetTag = require(_dependencyMap[0], './_baseGetTag'),
       getPrototype = require(_dependencyMap[1], './_getPrototype'),
@@ -79210,7 +79181,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = isPlainObject;
-},639,[155,618,206],"lodash/isPlainObject.js");
+},640,[155,619,206],"lodash/isPlainObject.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var flatten = require(_dependencyMap[0], './flatten'),
       overRest = require(_dependencyMap[1], './_overRest'),
@@ -79221,7 +79192,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = flatRest;
-},640,[641,261,263],"lodash/_flatRest.js");
+},641,[642,261,263],"lodash/_flatRest.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var baseFlatten = require(_dependencyMap[0], './_baseFlatten');
 
@@ -79231,7 +79202,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = flatten;
-},641,[275],"lodash/flatten.js");
+},642,[275],"lodash/flatten.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var basePick = require(_dependencyMap[0], './_basePick'),
       flatRest = require(_dependencyMap[1], './_flatRest');
@@ -79240,7 +79211,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     return object == null ? {} : basePick(object, paths);
   });
   module.exports = pick;
-},642,[643,640],"lodash/pick.js");
+},643,[644,641],"lodash/pick.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var basePickBy = require(_dependencyMap[0], './_basePickBy'),
       hasIn = require(_dependencyMap[1], './hasIn');
@@ -79252,7 +79223,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = basePick;
-},643,[644,241],"lodash/_basePick.js");
+},644,[645,241],"lodash/_basePick.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     var baseGet = require(_dependencyMap[0], './_baseGet'),
         baseSet = require(_dependencyMap[1], './_baseSet'),
@@ -79276,7 +79247,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     }
 
     module.exports = basePickBy;
-},644,[230,645,231],"lodash/_basePickBy.js");
+},645,[230,646,231],"lodash/_basePickBy.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var assignValue = require(_dependencyMap[0], './_assignValue'),
       castPath = require(_dependencyMap[1], './_castPath'),
@@ -79316,7 +79287,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = baseSet;
-},645,[255,231,209,161,240],"lodash/_baseSet.js");
+},646,[255,231,209,161,240],"lodash/_baseSet.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -79452,7 +79423,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       iconSize: 30
     }, _temp));
   }
-},646,[109,128,647,642,292,602],"react-native-vector-icons/lib/tab-bar-item-ios.js");
+},647,[109,128,648,643,292,603],"react-native-vector-icons/lib/tab-bar-item-ios.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var baseIsEqual = require(_dependencyMap[0], './_baseIsEqual');
 
@@ -79461,7 +79432,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = isEqual;
-},647,[181],"lodash/isEqual.js");
+},648,[181],"lodash/isEqual.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -79652,7 +79623,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       iconSize: 24
     }, _temp));
   }
-},648,[109,128,647,642,292,602],"react-native-vector-icons/lib/toolbar-android.js");
+},649,[109,128,648,643,292,603],"react-native-vector-icons/lib/toolbar-android.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   module.exports = {
     "3d-rotation": 59469,
@@ -80588,7 +80559,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     "zoom-out": 59648,
     "zoom-out-map": 58731
   };
-},649,[],"react-native-vector-icons/glyphmaps/MaterialIcons.json");
+},650,[],"react-native-vector-icons/glyphmaps/MaterialIcons.json");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -80690,7 +80661,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
         return _MaterialIcons2.default;
     }
   };
-},650,[651,653,600,655,657,659,661,663,665,667,669],"react-native-elements/src/helpers/getIconType.js");
+},651,[652,654,601,656,658,660,662,664,666,668,670],"react-native-elements/src/helpers/getIconType.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -80714,7 +80685,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var TabBarItemIOS = exports.TabBarItemIOS = iconSet.TabBarItemIOS;
   var ToolbarAndroid = exports.ToolbarAndroid = iconSet.ToolbarAndroid;
   var getImageSource = exports.getImageSource = iconSet.getImageSource;
-},651,[601,652],"react-native-vector-icons/Zocial.js");
+},652,[602,653],"react-native-vector-icons/Zocial.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   module.exports = {
     "acrobat": 61696,
@@ -80818,7 +80789,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     "yelp": 61794,
     "youtube": 61795
   };
-},652,[],"react-native-vector-icons/glyphmaps/Zocial.json");
+},653,[],"react-native-vector-icons/glyphmaps/Zocial.json");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -80842,7 +80813,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var TabBarItemIOS = exports.TabBarItemIOS = iconSet.TabBarItemIOS;
   var ToolbarAndroid = exports.ToolbarAndroid = iconSet.ToolbarAndroid;
   var getImageSource = exports.getImageSource = iconSet.getImageSource;
-},653,[601,654],"react-native-vector-icons/Octicons.js");
+},654,[602,655],"react-native-vector-icons/Octicons.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   module.exports = {
     "alert": 61696,
@@ -81023,7 +80994,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     "x": 61871,
     "zap": 61872
   };
-},654,[],"react-native-vector-icons/glyphmaps/Octicons.json");
+},655,[],"react-native-vector-icons/glyphmaps/Octicons.json");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -81047,7 +81018,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var TabBarItemIOS = exports.TabBarItemIOS = iconSet.TabBarItemIOS;
   var ToolbarAndroid = exports.ToolbarAndroid = iconSet.ToolbarAndroid;
   var getImageSource = exports.getImageSource = iconSet.getImageSource;
-},655,[601,656],"react-native-vector-icons/MaterialCommunityIcons.js");
+},656,[602,657],"react-native-vector-icons/MaterialCommunityIcons.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   module.exports = {
     "access-point": 61442,
@@ -83171,7 +83142,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     "zip-box": 62916,
     "blank": 63116
   };
-},656,[],"react-native-vector-icons/glyphmaps/MaterialCommunityIcons.json");
+},657,[],"react-native-vector-icons/glyphmaps/MaterialCommunityIcons.json");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -83195,7 +83166,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var TabBarItemIOS = exports.TabBarItemIOS = iconSet.TabBarItemIOS;
   var ToolbarAndroid = exports.ToolbarAndroid = iconSet.ToolbarAndroid;
   var getImageSource = exports.getImageSource = iconSet.getImageSource;
-},657,[601,658],"react-native-vector-icons/Ionicons.js");
+},658,[602,659],"react-native-vector-icons/Ionicons.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   module.exports = {
     "ios-add": 61698,
@@ -84133,7 +84104,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     "md-wine": 62377,
     "md-woman": 62378
   };
-},658,[],"react-native-vector-icons/glyphmaps/Ionicons.json");
+},659,[],"react-native-vector-icons/glyphmaps/Ionicons.json");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -84157,7 +84128,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var TabBarItemIOS = exports.TabBarItemIOS = iconSet.TabBarItemIOS;
   var ToolbarAndroid = exports.ToolbarAndroid = iconSet.ToolbarAndroid;
   var getImageSource = exports.getImageSource = iconSet.getImageSource;
-},659,[601,660],"react-native-vector-icons/Foundation.js");
+},660,[602,661],"react-native-vector-icons/Foundation.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   module.exports = {
     "address-book": 61696,
@@ -84444,7 +84415,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     "zoom-in": 61977,
     "zoom-out": 61978
   };
-},660,[],"react-native-vector-icons/glyphmaps/Foundation.json");
+},661,[],"react-native-vector-icons/glyphmaps/Foundation.json");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -84468,7 +84439,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var TabBarItemIOS = exports.TabBarItemIOS = iconSet.TabBarItemIOS;
   var ToolbarAndroid = exports.ToolbarAndroid = iconSet.ToolbarAndroid;
   var getImageSource = exports.getImageSource = iconSet.getImageSource;
-},661,[601,662],"react-native-vector-icons/EvilIcons.js");
+},662,[602,663],"react-native-vector-icons/EvilIcons.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   module.exports = {
     "archive": 61696,
@@ -84542,7 +84513,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     "unlock": 61764,
     "user": 61765
   };
-},662,[],"react-native-vector-icons/glyphmaps/EvilIcons.json");
+},663,[],"react-native-vector-icons/glyphmaps/EvilIcons.json");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -84566,7 +84537,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var TabBarItemIOS = exports.TabBarItemIOS = iconSet.TabBarItemIOS;
   var ToolbarAndroid = exports.ToolbarAndroid = iconSet.ToolbarAndroid;
   var getImageSource = exports.getImageSource = iconSet.getImageSource;
-},663,[601,664],"react-native-vector-icons/Entypo.js");
+},664,[602,665],"react-native-vector-icons/Entypo.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   module.exports = {
     "500px": 61696,
@@ -84981,7 +84952,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     "youtube": 62105,
     "youtube-with-circle": 62106
   };
-},664,[],"react-native-vector-icons/glyphmaps/Entypo.json");
+},665,[],"react-native-vector-icons/glyphmaps/Entypo.json");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -85005,7 +84976,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var TabBarItemIOS = exports.TabBarItemIOS = iconSet.TabBarItemIOS;
   var ToolbarAndroid = exports.ToolbarAndroid = iconSet.ToolbarAndroid;
   var getImageSource = exports.getImageSource = iconSet.getImageSource;
-},665,[601,666],"react-native-vector-icons/FontAwesome.js");
+},666,[602,667],"react-native-vector-icons/FontAwesome.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   module.exports = {
     "glass": 61440,
@@ -85795,7 +85766,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     "wpexplorer": 62174,
     "meetup": 62176
   };
-},666,[],"react-native-vector-icons/glyphmaps/FontAwesome.json");
+},667,[],"react-native-vector-icons/glyphmaps/FontAwesome.json");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -85819,7 +85790,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var TabBarItemIOS = exports.TabBarItemIOS = iconSet.TabBarItemIOS;
   var ToolbarAndroid = exports.ToolbarAndroid = iconSet.ToolbarAndroid;
   var getImageSource = exports.getImageSource = iconSet.getImageSource;
-},667,[601,668],"react-native-vector-icons/SimpleLineIcons.js");
+},668,[602,669],"react-native-vector-icons/SimpleLineIcons.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   module.exports = {
     "user": 57349,
@@ -86012,7 +85983,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     "social-vkontakte": 58904,
     "social-steam": 58912
   };
-},668,[],"react-native-vector-icons/glyphmaps/SimpleLineIcons.json");
+},669,[],"react-native-vector-icons/glyphmaps/SimpleLineIcons.json");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -86036,7 +86007,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var TabBarItemIOS = exports.TabBarItemIOS = iconSet.TabBarItemIOS;
   var ToolbarAndroid = exports.ToolbarAndroid = iconSet.ToolbarAndroid;
   var getImageSource = exports.getImageSource = iconSet.getImageSource;
-},669,[601,670],"react-native-vector-icons/Feather.js");
+},670,[602,671],"react-native-vector-icons/Feather.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   module.exports = {
     "activity": 59648,
@@ -86280,7 +86251,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     "zoom-in": 59886,
     "zoom-out": 59887
   };
-},670,[],"react-native-vector-icons/glyphmaps/Feather.json");
+},671,[],"react-native-vector-icons/glyphmaps/Feather.json");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -86290,7 +86261,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var ViewPropTypes = _reactNative.ViewPropTypes || _reactNative.View.propTypes;
   exports.default = ViewPropTypes;
-},671,[12],"react-native-elements/src/config/ViewPropTypes.js");
+},672,[12],"react-native-elements/src/config/ViewPropTypes.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -86433,7 +86404,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   });
 
   exports.default = Icon;
-},672,[292,109,12,650,671],"react-native-elements/src/icons/Icon.js");
+},673,[292,109,12,651,672],"react-native-elements/src/icons/Icon.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -86498,7 +86469,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   });
 
   exports.default = List;
-},673,[292,109,12,596,671],"react-native-elements/src/list/List.js");
+},674,[292,109,12,597,672],"react-native-elements/src/list/List.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -87044,7 +87015,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   });
 
   exports.default = ListItem;
-},674,[292,109,12,675,676,672,597,596,598,599,671],"react-native-elements/src/list/ListItem.js");
+},675,[292,109,12,676,677,673,598,597,599,600,672],"react-native-elements/src/list/ListItem.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -87354,7 +87325,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   };
   Avatar.defaultProps = defaultProps;
   exports.default = Avatar;
-},675,[292,109,12,671,672,597],"react-native-elements/src/avatar/Avatar.js");
+},676,[292,109,12,672,673,598],"react-native-elements/src/avatar/Avatar.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -87483,7 +87454,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   });
 
   exports.default = Badge;
-},676,[292,109,12,596,671],"react-native-elements/src/badge/badge.js");
+},677,[292,109,12,597,672],"react-native-elements/src/badge/badge.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -87713,7 +87684,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   });
 
   exports.default = SocialIcon;
-},677,[292,109,12,665,597,598,671],"react-native-elements/src/social/SocialIcon.js");
+},678,[292,109,12,666,598,599,672],"react-native-elements/src/social/SocialIcon.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -87922,7 +87893,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   });
 
   exports.default = CheckBox;
-},678,[292,109,12,597,598,596,665,650,671],"react-native-elements/src/checkbox/CheckBox.js");
+},679,[292,109,12,598,599,597,666,651,672],"react-native-elements/src/checkbox/CheckBox.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -87968,7 +87939,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     }
   });
   exports.default = Divider;
-},679,[109,12,596,671],"react-native-elements/src/divider/Divider.js");
+},680,[109,12,597,672],"react-native-elements/src/divider/Divider.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -88496,7 +88467,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       opacity: 0.5
     }
   });
-},680,[109,128,292,12,671],"react-native-elements/src/slider/Slider.js");
+},681,[109,128,292,12,672],"react-native-elements/src/slider/Slider.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -88692,7 +88663,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     disableSelected: _propTypes2.default.bool
   };
   exports.default = ButtonGroup;
-},681,[292,109,12,596,597,599,671],"react-native-elements/src/buttons/ButtonGroup.js");
+},682,[292,109,12,597,598,600,672],"react-native-elements/src/buttons/ButtonGroup.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -88991,7 +88962,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   });
 
   exports.default = Card;
-},682,[292,109,12,598,596,597,679,599,671,683],"react-native-elements/src/card/Card.js");
+},683,[292,109,12,599,597,598,680,600,672,684],"react-native-elements/src/card/Card.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -89001,7 +88972,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var BackgroundImage = _reactNative.ImageBackground || _reactNative.Image;
   exports.default = BackgroundImage;
-},683,[12],"react-native-elements/src/config/BackgroundImage.js");
+},684,[12],"react-native-elements/src/config/BackgroundImage.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -89213,7 +89184,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     titleNumberOfLines: _propTypes2.default.number
   };
   exports.default = Tile;
-},684,[292,109,12,597,672,685,671,683],"react-native-elements/src/tile/Tile.js");
+},685,[292,109,12,598,673,686,672,684],"react-native-elements/src/tile/Tile.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -89407,7 +89378,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     height: _propTypes2.default.number
   };
   exports.default = FeaturedTile;
-},685,[292,109,12,597,672,671,683],"react-native-elements/src/tile/FeaturedTile.js");
+},686,[292,109,12,598,673,672,684],"react-native-elements/src/tile/FeaturedTile.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -89935,7 +89906,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     startingValue: _propTypes2.default.number,
     fractions: fractionsType
   };
-},686,[109,128,687,292,12,597,671,688,689,690,691],"react-native-elements/src/rating/Rating.js");
+},687,[109,128,688,292,12,598,672,689,690,691,692],"react-native-elements/src/rating/Rating.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var INFINITY = 1 / 0,
       MAX_SAFE_INTEGER = 9007199254740991,
@@ -90046,7 +90017,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = times;
-},687,[],"lodash.times/index.js");
+},688,[],"lodash.times/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
    module.exports = require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
       "__packager_asset": true,
@@ -90058,7 +90029,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       "name": "star",
       "type": "png"
    });
-},688,[325],"node_modules/react-native-elements/src/rating/images/star.png");
+},689,[325],"node_modules/react-native-elements/src/rating/images/star.png");
 __d(function (global, require, module, exports, _dependencyMap) {
    module.exports = require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
       "__packager_asset": true,
@@ -90070,7 +90041,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       "name": "heart",
       "type": "png"
    });
-},689,[325],"node_modules/react-native-elements/src/rating/images/heart.png");
+},690,[325],"node_modules/react-native-elements/src/rating/images/heart.png");
 __d(function (global, require, module, exports, _dependencyMap) {
    module.exports = require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
       "__packager_asset": true,
@@ -90082,7 +90053,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       "name": "rocket",
       "type": "png"
    });
-},690,[325],"node_modules/react-native-elements/src/rating/images/rocket.png");
+},691,[325],"node_modules/react-native-elements/src/rating/images/rocket.png");
 __d(function (global, require, module, exports, _dependencyMap) {
    module.exports = require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
       "__packager_asset": true,
@@ -90094,7 +90065,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       "name": "bell",
       "type": "png"
    });
-},691,[325],"node_modules/react-native-elements/src/rating/images/bell.png");
+},692,[325],"node_modules/react-native-elements/src/rating/images/bell.png");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -90265,7 +90236,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   });
 
   exports.default = Header;
-},692,[109,292,12,693,694,695,696,671],"react-native-elements/src/header/Header.js");
+},693,[109,292,12,694,695,696,697,672],"react-native-elements/src/header/Header.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var MAX_SAFE_INTEGER = 9007199254740991;
   var argsTag = '[object Arguments]',
@@ -90475,7 +90446,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }
 
   module.exports = isEmpty;
-},693,[],"lodash.isempty/index.js");
+},694,[],"lodash.isempty/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -90508,7 +90479,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   });
 
   exports.default = DummyNavButton;
-},694,[109,12],"react-native-elements/src/header/DummyNavButton.js");
+},695,[109,12],"react-native-elements/src/header/DummyNavButton.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -90551,7 +90522,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     icon: _propTypes2.default.string
   };
   exports.default = NavButton;
-},695,[109,292,672],"react-native-elements/src/header/NavButton.js");
+},696,[109,292,673],"react-native-elements/src/header/NavButton.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -90599,7 +90570,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     text: _propTypes2.default.string
   };
   exports.default = Title;
-},696,[109,292,597],"react-native-elements/src/header/Title.js");
+},697,[109,292,598],"react-native-elements/src/header/Title.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -90825,7 +90796,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   });
 
   exports.default = PricingCard;
-},697,[292,109,12,597,598,596,595,599,671],"react-native-elements/src/pricing/PricingCard.js");
+},698,[292,109,12,598,599,597,596,600,672],"react-native-elements/src/pricing/PricingCard.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -91051,7 +91022,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   });
 
   exports.default = FormInput;
-},698,[109,128,292,12,596,599,671],"react-native-elements/src/form/FormInput.js");
+},699,[109,128,292,12,597,600,672],"react-native-elements/src/form/FormInput.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -91152,7 +91123,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   });
 
   exports.default = FormLabel;
-},699,[292,109,12,596,598,597,599,671],"react-native-elements/src/form/FormLabel.js");
+},700,[292,109,12,597,599,598,600,672],"react-native-elements/src/form/FormLabel.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -91244,7 +91215,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   });
 
   exports.default = FormValidationMessage;
-},700,[292,109,12,596,597,599,671],"react-native-elements/src/form/FormValidationMessage.js");
+},701,[292,109,12,597,598,600,672],"react-native-elements/src/form/FormValidationMessage.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -91547,7 +91518,115 @@ __d(function (global, require, module, exports, _dependencyMap) {
   });
 
   exports.default = Search;
-},701,[109,128,292,12,600,596,599,671,650],"react-native-elements/src/input/Search.js");
+},702,[109,128,292,12,601,597,600,672,651],"react-native-elements/src/input/Search.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react2 = require(_dependencyMap[0], "react");
+
+  var _react3 = _interopRequireDefault(_react2);
+
+  var _index = require(_dependencyMap[1], "./../../../../node_modules/react-transform-hmr/lib/index.js");
+
+  var _index2 = _interopRequireDefault(_index);
+
+  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/dashboard/index.js";
+
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  var _style = require(_dependencyMap[2], "../../style");
+
+  var _reactNative = require(_dependencyMap[3], "react-native");
+
+  var _reactNativeElements = require(_dependencyMap[4], "react-native-elements");
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var _components = {
+    DashboardUI: {
+      displayName: "DashboardUI"
+    }
+  };
+
+  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/dashboard/index.js",
+    components: _components,
+    locals: [module],
+    imports: [_react3.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var DashboardUI = _wrapComponent("DashboardUI")(function (_React$Component) {
+    _inherits(DashboardUI, _React$Component);
+
+    function DashboardUI(props) {
+      _classCallCheck(this, DashboardUI);
+
+      var _this = _possibleConstructorReturn(this, (DashboardUI.__proto__ || Object.getPrototypeOf(DashboardUI)).call(this, props));
+
+      _this.state = {};
+      return _this;
+    }
+
+    _createClass(DashboardUI, [{
+      key: "componentDidMount",
+      value: function componentDidMount() {}
+    }, {
+      key: "render",
+      value: function render() {
+        return _react3.default.createElement(
+          _reactNative.View,
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 20
+            }
+          },
+          _react3.default.createElement(
+            _reactNativeElements.Text,
+            {
+              h4: true,
+              style: [_style.globalStyles.center],
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 21
+              }
+            },
+            "Dashboard Test"
+          ),
+          _react3.default.createElement(
+            _reactNativeElements.Text,
+            {
+              style: [_style.globalStyles.center],
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 24
+              }
+            },
+            "Save time. Save money. Scale Your Business."
+          )
+        );
+      }
+    }]);
+
+    return DashboardUI;
+  }(_react3.default.Component));
+
+  exports.default = DashboardUI;
+},704,[109,128,507,12,595],"fmx/app/user/components/dashboard/index.js");
 require(23);
-require(703);
+require(11);
 //# sourceMappingURL=index.map
