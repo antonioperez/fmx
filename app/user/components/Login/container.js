@@ -1,5 +1,5 @@
 import React from 'react';
-import { styles } from '../../style';
+import { globalStyles } from '../../style';
 import { login, FBLogin } from '../../actions';
 import { View } from 'react-native';
 import { 
@@ -12,7 +12,6 @@ import {
     SocialIcon
 } from 'react-native-elements';
 
-
 export class LoginForm extends React.Component {
     constructor(props) {
         super(props);
@@ -21,7 +20,7 @@ export class LoginForm extends React.Component {
             pw: '', 
         };
     }
-
+    
     onLogin = () => {
         if (this.state.email && this.state.pw) {
             login(this.state.email, this.state.pw, 
@@ -41,21 +40,21 @@ export class LoginForm extends React.Component {
     render() {
         return (
             <View>
-                <FormLabel labelStyle={styles.whiteText}>Email</FormLabel>
+                <FormLabel labelStyle={globalStyles.whiteText}>Email</FormLabel>
                 <FormInput 
                     onChangeText={(email) => this.setState({email})}
                     clearButtonMode='always'
-                    inputStyle={styles.whiteText}
+                    inputStyle={globalStyles.whiteText}
                 />
-                <FormLabel labelStyle={styles.whiteText}>Password</FormLabel>
+                <FormLabel labelStyle={globalStyles.whiteText}>Password</FormLabel>
                 <FormInput 
                     onChangeText={(pw) => this.setState({pw})}
                     clearButtonMode='always'
                     secureTextEntry={true}
-                    inputStyle={styles.whiteText}
+                    inputStyle={globalStyles.whiteText}
                 />
                 <Button 
-                    buttonStyle={styles.clearButton}
+                    buttonStyle={globalStyles.clearButton}
                     onPress={this.onLogin} 
                     title="Login" 
                     accessibilityLabel="Login"

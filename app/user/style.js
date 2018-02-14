@@ -1,6 +1,9 @@
 import { StyleSheet } from 'react-native';
 
-export const styles = StyleSheet.create({
+export const globalStyles = StyleSheet.create({
+    background: {
+      flex: 1,
+    },
     loginContainer: {
       flex: 1,
       justifyContent: 'center'

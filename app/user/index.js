@@ -1,3 +1,3 @@
+import {registerScreens} from './screens';
 
-import LoginUI from './components/Login';
-export default LoginUI;
+export default registerScreens;
