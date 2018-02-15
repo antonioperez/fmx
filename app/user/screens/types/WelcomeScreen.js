@@ -9,16 +9,19 @@ export default class WelcomeScreen extends React.Component {
     };
   }
 
-  goToNextScreen() {
-    this.props.navigator.resetTo({
+  goToLogin() {
+    this.props.navigator.showModal({
       screen: 'fmx.login',
-      title: 'Pushed Screen'
+      navigatorStyle: {
+        navBarHidden: false,
+        navBarBackgroundColor: "#000"
+      },
     });
   }
 
   render() {
     return (
-      <WelcomeUI onSucess={this.goToNextScreen.bind(this)} />
+      <WelcomeUI goToLogin ={this.goToLogin.bind(this)} />
     );
   }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { globalStyles } from '../../style';
 import { View, Text } from 'react-native';
+import { Icon } from 'react-native-elements';
 
 export class Card extends React.Component {
 
@@ -27,6 +28,11 @@ export class Card extends React.Component {
                 <Text h4 style={[globalStyles.center, globalStyles.whiteText]}>
                     {this.state.info.image}
                 </Text>
+                {/* <Icon 
+                    name={this.state.info.image} 
+                    iconStyle={[globalStyles.center, globalStyles.whiteText]}
+                    size={100}
+                /> */}
                 <Text h4 style={[globalStyles.center, globalStyles.whiteText]}>
                     {this.state.info.title}
                 </Text>

@@ -29,6 +29,14 @@ export default class WelcomeUI extends React.Component {
     });
   }
 
+  showNextCard = () => {
+    this.setState(() => {
+      return {
+        activeCard: this.state.cards[1].data
+      }
+    });
+  }
+
   componentDidMount() {
       let _this = this;
       listenForFirebase(this.welcomeRef, (data) => {
@@ -37,9 +45,9 @@ export default class WelcomeUI extends React.Component {
   }
 
   render() {
-    console.log(this.state.activeCard);
+
     return (
-        <LinearGradient colors={globalThemes.dark} style={globalStyles.background}>
+        <LinearGradient colors={globalThemes.dark} style={[globalStyles.background, globalStyles.centerContainer]} >
             <Card info = {this.state.activeCard} />
             <Text style={globalStyles.whiteText}>
             </Text>
@@ -48,9 +56,11 @@ export default class WelcomeUI extends React.Component {
               title="Sign up" 
               accessibilityLabel="Sign up"
             />
+            
             <Button 
               buttonStyle={globalStyles.clearButton}
               title="Login" 
+              onPress={this.props.goToLogin} 
               accessibilityLabel="Login"
             />
         </LinearGradient>

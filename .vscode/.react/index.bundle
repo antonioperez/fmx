@@ -68260,6 +68260,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _login2 = _interopRequireDefault(_login);
 
+  var _reactNative = require(_dependencyMap[3], "react-native");
+
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -68310,13 +68312,22 @@ __d(function (global, require, module, exports, _dependencyMap) {
     }, {
       key: "render",
       value: function render() {
-        return _react3.default.createElement(_login2.default, {
-          onSucess: this.goToNextScreen.bind(this),
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 21
-          }
-        });
+        return _react3.default.createElement(
+          _reactNative.View,
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 22
+            }
+          },
+          _react3.default.createElement(_login2.default, {
+            onSucess: this.goToNextScreen.bind(this),
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 23
+            }
+          })
+        );
       }
     }]);
 
@@ -68324,7 +68335,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = LoginScreen;
-},505,[109,128,508],"fmx/app/user/screens/types/LoginScreen.js");
+},505,[109,128,508,12],"fmx/app/user/screens/types/LoginScreen.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -68472,7 +68483,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     background: {
       flex: 1
     },
-    loginContainer: {
+    centerContainer: {
       flex: 1,
       justifyContent: 'center'
     },
@@ -68588,111 +68599,101 @@ __d(function (global, require, module, exports, _dependencyMap) {
                     _reactNativeLinearGradient2.default,
                     {
                         colors: _style.globalThemes.dark,
-                        style: _style.globalStyles.background,
+                        style: [_style.globalStyles.background, _style.globalStyles.centerContainer],
                         __source: {
                             fileName: _jsxFileName,
                             lineNumber: 45
                         }
                     },
                     _react3.default.createElement(
-                        _reactNative.View,
+                        _reactNativeElements.Text,
                         {
-                            style: _style.globalStyles.loginContainer,
+                            h4: true,
+                            style: [_style.globalStyles.whiteText, _style.globalStyles.center],
                             __source: {
                                 fileName: _jsxFileName,
                                 lineNumber: 46
                             }
                         },
-                        _react3.default.createElement(
-                            _reactNativeElements.Text,
-                            {
-                                h4: true,
-                                style: [_style.globalStyles.whiteText, _style.globalStyles.center],
-                                __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 47
-                                }
-                            },
-                            "FMx Merchant Portal"
-                        ),
-                        _react3.default.createElement(
-                            _reactNativeElements.Text,
-                            {
-                                style: [_style.globalStyles.whiteText, _style.globalStyles.center],
-                                __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 50
-                                }
-                            },
-                            "Save time. Save money. Scale Your Business."
-                        ),
-                        _react3.default.createElement(
-                            _reactNativeElements.FormLabel,
-                            {
-                                labelStyle: _style.globalStyles.whiteText,
-                                __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 53
-                                }
-                            },
-                            "Email"
-                        ),
-                        _react3.default.createElement(_reactNativeElements.FormInput, {
-                            onChangeText: function onChangeText(email) {
-                                return _this2.setState({
-                                    email: email
-                                });
-                            },
-                            clearButtonMode: "always",
-                            inputStyle: _style.globalStyles.whiteText,
+                        "FMx Merchant Portal"
+                    ),
+                    _react3.default.createElement(
+                        _reactNativeElements.Text,
+                        {
+                            style: [_style.globalStyles.whiteText, _style.globalStyles.center],
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 54
+                                lineNumber: 49
                             }
-                        }),
-                        _react3.default.createElement(
-                            _reactNativeElements.FormLabel,
-                            {
-                                labelStyle: _style.globalStyles.whiteText,
-                                __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 59
-                                }
-                            },
-                            "Password"
-                        ),
-                        _react3.default.createElement(_reactNativeElements.FormInput, {
-                            onChangeText: function onChangeText(pw) {
-                                return _this2.setState({
-                                    pw: pw
-                                });
-                            },
-                            clearButtonMode: "always",
-                            secureTextEntry: true,
-                            inputStyle: _style.globalStyles.whiteText,
+                        },
+                        "Save time. Save money. Scale Your Business."
+                    ),
+                    _react3.default.createElement(
+                        _reactNativeElements.FormLabel,
+                        {
+                            labelStyle: _style.globalStyles.whiteText,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 60
+                                lineNumber: 52
                             }
-                        }),
-                        _react3.default.createElement(_reactNativeElements.Button, {
-                            buttonStyle: _style.globalStyles.clearButton,
-                            onPress: this.onLogin,
-                            title: "Login",
-                            accessibilityLabel: "Login",
+                        },
+                        "Email"
+                    ),
+                    _react3.default.createElement(_reactNativeElements.FormInput, {
+                        onChangeText: function onChangeText(email) {
+                            return _this2.setState({
+                                email: email
+                            });
+                        },
+                        clearButtonMode: "always",
+                        inputStyle: _style.globalStyles.whiteText,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 53
+                        }
+                    }),
+                    _react3.default.createElement(
+                        _reactNativeElements.FormLabel,
+                        {
+                            labelStyle: _style.globalStyles.whiteText,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 66
+                                lineNumber: 58
                             }
-                        }),
-                        _react3.default.createElement(_container.FBLoginButton, {
-                            onSucess: this.props.onSucess,
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 72
-                            }
-                        })
-                    )
+                        },
+                        "Password"
+                    ),
+                    _react3.default.createElement(_reactNativeElements.FormInput, {
+                        onChangeText: function onChangeText(pw) {
+                            return _this2.setState({
+                                pw: pw
+                            });
+                        },
+                        clearButtonMode: "always",
+                        secureTextEntry: true,
+                        inputStyle: _style.globalStyles.whiteText,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 59
+                        }
+                    }),
+                    _react3.default.createElement(_reactNativeElements.Button, {
+                        buttonStyle: _style.globalStyles.clearButton,
+                        onPress: this.onLogin,
+                        title: "Login",
+                        accessibilityLabel: "Login",
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 65
+                        }
+                    }),
+                    _react3.default.createElement(_container.FBLoginButton, {
+                        onSucess: this.props.onSucess,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 71
+                        }
+                    })
                 );
             }
         }]);
@@ -91749,21 +91750,24 @@ __d(function (global, require, module, exports, _dependencyMap) {
     }
 
     _createClass(WelcomeScreen, [{
-      key: "goToNextScreen",
-      value: function goToNextScreen() {
-        this.props.navigator.resetTo({
+      key: "goToLogin",
+      value: function goToLogin() {
+        this.props.navigator.showModal({
           screen: 'fmx.login',
-          title: 'Pushed Screen'
+          navigatorStyle: {
+            navBarHidden: false,
+            navBarBackgroundColor: "#000"
+          }
         });
       }
     }, {
       key: "render",
       value: function render() {
         return _react3.default.createElement(_welcome2.default, {
-          onSucess: this.goToNextScreen.bind(this),
+          goToLogin: this.goToLogin.bind(this),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 21
+            lineNumber: 24
           }
         });
       }
@@ -91842,6 +91846,14 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
       var _this2 = _possibleConstructorReturn(this, (WelcomeUI.__proto__ || Object.getPrototypeOf(WelcomeUI)).call(this, props));
 
+      _this2.showNextCard = function () {
+        _this2.setState(function () {
+          return {
+            activeCard: _this2.state.cards[1].data
+          };
+        });
+      };
+
       _this2.welcomeRef = _reactNativeFirebase2.default.database().ref('welcome');
       _this2.state = {
         activeCard: {},
@@ -91873,29 +91885,28 @@ __d(function (global, require, module, exports, _dependencyMap) {
     }, {
       key: "render",
       value: function render() {
-        console.log(this.state.activeCard);
         return _react3.default.createElement(
           _reactNativeLinearGradient2.default,
           {
             colors: _style.globalThemes.dark,
-            style: _style.globalStyles.background,
+            style: [_style.globalStyles.background, _style.globalStyles.centerContainer],
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 42
+              lineNumber: 50
             }
           },
           _react3.default.createElement(_container.Card, {
             info: this.state.activeCard,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 43
+              lineNumber: 51
             }
           }),
           _react3.default.createElement(_reactNativeElements.Text, {
             style: _style.globalStyles.whiteText,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 44
+              lineNumber: 52
             }
           }),
           _react3.default.createElement(_reactNativeElements.Button, {
@@ -91904,16 +91915,17 @@ __d(function (global, require, module, exports, _dependencyMap) {
             accessibilityLabel: "Sign up",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 46
+              lineNumber: 54
             }
           }),
           _react3.default.createElement(_reactNativeElements.Button, {
             buttonStyle: _style.globalStyles.clearButton,
             title: "Login",
+            onPress: this.props.goToLogin,
             accessibilityLabel: "Login",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 51
+              lineNumber: 60
             }
           })
         );
@@ -91946,6 +91958,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
     var _style = require(_dependencyMap[2], "../../style");
 
     var _reactNative = require(_dependencyMap[3], "react-native");
+
+    var _reactNativeElements = require(_dependencyMap[4], "react-native-elements");
 
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -92008,7 +92022,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 26
+                            lineNumber: 27
                         }
                     },
                     _react3.default.createElement(
@@ -92018,7 +92032,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             style: [_style.globalStyles.center, _style.globalStyles.whiteText],
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 27
+                                lineNumber: 28
                             }
                         },
                         this.state.info.image
@@ -92030,7 +92044,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             style: [_style.globalStyles.center, _style.globalStyles.whiteText],
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 30
+                                lineNumber: 36
                             }
                         },
                         this.state.info.title
@@ -92041,7 +92055,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             style: [_style.globalStyles.center, _style.globalStyles.whiteText],
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 33
+                                lineNumber: 39
                             }
                         },
                         this.state.info.text
@@ -92052,7 +92066,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
         return Card;
     }(_react3.default.Component));
-},707,[109,128,507,12],"fmx/app/user/components/welcome/container.js");
+},707,[109,128,507,12,595],"fmx/app/user/components/welcome/container.js");
 require(23);
 require(11);
 //# sourceMappingURL=index.map

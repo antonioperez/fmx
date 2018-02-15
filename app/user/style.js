@@ -12,7 +12,7 @@ export const globalStyles = StyleSheet.create({
     background: {
       flex: 1,
     },
-    loginContainer: {
+    centerContainer: {
       flex: 1,
       justifyContent: 'center'
     },

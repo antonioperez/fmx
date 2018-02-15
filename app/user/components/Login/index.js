@@ -42,8 +42,7 @@ export default class LoginUI extends React.Component {
 
   render() {
     return (
-      <LinearGradient colors={globalThemes.dark} style={globalStyles.background}>
-        <View style={globalStyles.loginContainer}>
+      <LinearGradient colors={globalThemes.dark} style={[globalStyles.background, globalStyles.centerContainer]}>
           <Text h4 style={[globalStyles.whiteText,globalStyles.center]}>
               FMx Merchant Portal
           </Text>
@@ -70,7 +69,6 @@ export default class LoginUI extends React.Component {
               accessibilityLabel="Login"
           />
           <FBLoginButton onSucess = {this.props.onSucess}/>
-        </View>
       </LinearGradient>
     );
   }

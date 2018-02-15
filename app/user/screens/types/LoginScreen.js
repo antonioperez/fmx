@@ -1,5 +1,6 @@
 import React from 'react';
 import LoginUI  from './../../components/login';
+import { View } from 'react-native';
 
 export default class LoginScreen extends React.Component {
   constructor(props) {
@@ -18,7 +19,9 @@ export default class LoginScreen extends React.Component {
 
   render() {
     return (
-        <LoginUI onSucess = {this.goToNextScreen.bind(this)} />
+        <View>
+          <LoginUI onSucess = {this.goToNextScreen.bind(this)} />
+        </View>
     );
   }
 }
