@@ -1,8 +1,9 @@
 import React from 'react';
-import { globalStyles } from '../../style';
+import { globalStyles, globalThemes } from '../../style';
 import { login } from '../../actions';
 import { FBLoginButton } from './container';
 
+import LinearGradient from 'react-native-linear-gradient';
 import { Platform, View, Image } from 'react-native';
 import { 
   Button, 
@@ -41,34 +42,36 @@ export default class LoginUI extends React.Component {
 
   render() {
     return (
-      <View style={globalStyles.loginContainer}>
-        <Text h4 style={[globalStyles.whiteText,globalStyles.center]}>
-            FMx Merchant Portal
-        </Text>
-        <Text style={[globalStyles.whiteText,globalStyles.center]}>
-          Save time. Save money. Scale Your Business.
-        </Text>
-        <FormLabel labelStyle={globalStyles.whiteText}>Email</FormLabel>
-        <FormInput 
-            onChangeText={(email) => this.setState({email})}
-            clearButtonMode='always'
-            inputStyle={globalStyles.whiteText}
-        />
-        <FormLabel labelStyle={globalStyles.whiteText}>Password</FormLabel>
-        <FormInput 
-            onChangeText={(pw) => this.setState({pw})}
-            clearButtonMode='always'
-            secureTextEntry={true}
-            inputStyle={globalStyles.whiteText}
-        />
-        <Button 
-            buttonStyle={globalStyles.clearButton}
-            onPress={this.onLogin} 
-            title="Login" 
-            accessibilityLabel="Login"
-        />
-        <FBLoginButton onSucess = {this.props.onSucess}/>
-      </View>
+      <LinearGradient colors={globalThemes.dark} style={globalStyles.background}>
+        <View style={globalStyles.loginContainer}>
+          <Text h4 style={[globalStyles.whiteText,globalStyles.center]}>
+              FMx Merchant Portal
+          </Text>
+          <Text style={[globalStyles.whiteText,globalStyles.center]}>
+            Save time. Save money. Scale Your Business.
+          </Text>
+          <FormLabel labelStyle={globalStyles.whiteText}>Email</FormLabel>
+          <FormInput 
+              onChangeText={(email) => this.setState({email})}
+              clearButtonMode='always'
+              inputStyle={globalStyles.whiteText}
+          />
+          <FormLabel labelStyle={globalStyles.whiteText}>Password</FormLabel>
+          <FormInput 
+              onChangeText={(pw) => this.setState({pw})}
+              clearButtonMode='always'
+              secureTextEntry={true}
+              inputStyle={globalStyles.whiteText}
+          />
+          <Button 
+              buttonStyle={globalStyles.clearButton}
+              onPress={this.onLogin} 
+              title="Login" 
+              accessibilityLabel="Login"
+          />
+          <FBLoginButton onSucess = {this.props.onSucess}/>
+        </View>
+      </LinearGradient>
     );
   }
 }
