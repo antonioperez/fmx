@@ -1,6 +1,4 @@
 import React from 'react';
-import LinearGradient from 'react-native-linear-gradient';
-
 import LoginUI  from './../../components/login';
 
 export default class LoginScreen extends React.Component {
@@ -20,7 +18,7 @@ export default class LoginScreen extends React.Component {
 
   render() {
     return (
-        <LoginUI onSucess = {this.goToNextScreen.bind(this)}/>
+        <LoginUI onSucess = {this.goToNextScreen.bind(this)} />
     );
   }
 }

@@ -58507,7 +58507,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     _reactNativeNavigation.Navigation.startSingleScreenApp({
         screen: {
-            screen: 'fmx.login',
+            screen: 'fmx.welcome',
             title: '',
             navigatorStyle: {
                 navBarHidden: true
@@ -68256,11 +68256,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-  var _reactNativeLinearGradient = require(_dependencyMap[2], "react-native-linear-gradient");
-
-  var _reactNativeLinearGradient2 = _interopRequireDefault(_reactNativeLinearGradient);
-
-  var _login = require(_dependencyMap[3], "./../../components/login");
+  var _login = require(_dependencyMap[2], "./../../components/login");
 
   var _login2 = _interopRequireDefault(_login);
 
@@ -68318,7 +68314,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
           onSucess: this.goToNextScreen.bind(this),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 23
+            lineNumber: 21
           }
         });
       }
@@ -68328,7 +68324,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = LoginScreen;
-},505,[109,128,506,508],"fmx/app/user/screens/types/LoginScreen.js");
+},505,[109,128,508],"fmx/app/user/screens/types/LoginScreen.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -68491,8 +68487,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
       borderRadius: 10,
       borderColor: "#fff",
       borderWidth: 1,
-      marginTop: 30,
-      marginBottom: 20
+      marginTop: 5,
+      marginBottom: 5
     }
   });
 },507,[12],"fmx/app/user/style.js");
@@ -68815,9 +68811,13 @@ __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
-    exports.FBLogin = exports.login = undefined;
+    exports.listenForFirebase = exports.FBLogin = exports.login = undefined;
 
     var _this = this;
+
+    exports.register = register;
+    exports.resetPassword = resetPassword;
+    exports.signOut = signOut;
 
     var _reactNativeFbsdk = require(_dependencyMap[0], "react-native-fbsdk");
 
@@ -68827,23 +68827,31 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-    var login = exports.login = function login(email, password, callback, errorCallback) {
+    function register(email, password, successCB, errorCB) {
+        auth.createUserWithEmailAndPassword(email, password).then(function (user) {
+            return successCB(user);
+        }).catch(function (error) {
+            return errorCB(error);
+        });
+    }
+
+    var login = exports.login = function login(email, password, successCB, errorCB) {
         if (email && password) {
             _reactNativeFirebase2.default.auth().signInWithEmailAndPassword(email, password).then(function (firebaseUser) {
                 var user = firebaseUser.toJSON();
 
-                if (callback) {
-                    callback(user);
+                if (successCB) {
+                    successCB(user);
                 }
             }).catch(function (error) {
-                if (errorCallback) {
-                    errorCallback(error);
+                if (errorCB) {
+                    errorCB(error);
                 }
             });
         }
     };
 
-    var FBLogin = exports.FBLogin = function FBLogin(callback, errorCallback) {
+    var FBLogin = exports.FBLogin = function FBLogin(successCB, errorCB) {
         var result, data, credential, currentUser, user;
         return regeneratorRuntime.async(function FBLogin$(_context) {
             while (1) {
@@ -68886,8 +68894,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         currentUser = _context.sent;
                         user = currentUser.toJSON();
 
-                        if (callback) {
-                            callback(user);
+                        if (successCB) {
+                            successCB(user);
                         }
 
                         _context.next = 22;
@@ -68897,8 +68905,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         _context.prev = 19;
                         _context.t0 = _context["catch"](0);
 
-                        if (errorCallback) {
-                            errorCallback(_context.t0);
+                        if (errorCB) {
+                            errorCB(_context.t0);
                         }
 
                     case 22:
@@ -68907,6 +68915,46 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 }
             }
         }, null, _this, [[0, 19]]);
+    };
+
+    function resetPassword(email, successCB, errorCB) {
+        _reactNativeFirebase2.default.auth().sendPasswordResetEmail(email).then(function (user) {
+            return successCB(user);
+        }).catch(function (error) {
+            return errorCB(error);
+        });
+    }
+
+    function signOut(successCB, errorCB) {
+        _reactNativeFirebase2.default.auth().signOut().then(function () {
+            if (successCB) successCB();
+        }).catch(function (error) {
+            if (errorCB) errorCB(error);
+        });
+    }
+
+    var listenForFirebase = exports.listenForFirebase = function listenForFirebase(ref, successCB, errorCB) {
+        var currData = [];
+        ref.on("value", function (snapshot) {
+            snapshot.forEach(function (data) {
+                var val = data.val();
+                currData.push({
+                    data: val,
+                    _key: data.key
+                });
+            });
+
+            if (successCB) {
+                successCB(currData);
+            }
+        }, function (errorObject) {
+            console.log("The read failed: " + errorObject.code);
+
+            if (errorCB) {
+                errorCB(errorObject);
+            }
+        });
+        return currData;
     };
 },510,[511,529],"fmx/app/user/actions/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
@@ -91657,13 +91705,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-  var _reactNativeLinearGradient = require(_dependencyMap[2], "react-native-linear-gradient");
-
-  var _reactNativeLinearGradient2 = _interopRequireDefault(_reactNativeLinearGradient);
-
-  var _style = require(_dependencyMap[3], "./../../style");
-
-  var _welcome = require(_dependencyMap[4], "./../../components/welcome");
+  var _welcome = require(_dependencyMap[2], "./../../components/welcome");
 
   var _welcome2 = _interopRequireDefault(_welcome);
 
@@ -91718,9 +91760,10 @@ __d(function (global, require, module, exports, _dependencyMap) {
       key: "render",
       value: function render() {
         return _react3.default.createElement(_welcome2.default, {
+          onSucess: this.goToNextScreen.bind(this),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 24
+            lineNumber: 21
           }
         });
       }
@@ -91730,11 +91773,163 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = WelcomeScreen;
-},705,[109,128,506,507,706],"fmx/app/user/screens/types/WelcomeScreen.js");
+},705,[109,128,706],"fmx/app/user/screens/types/WelcomeScreen.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react2 = require(_dependencyMap[0], "react");
+
+  var _react3 = _interopRequireDefault(_react2);
+
+  var _index = require(_dependencyMap[1], "./../../../../node_modules/react-transform-hmr/lib/index.js");
+
+  var _index2 = _interopRequireDefault(_index);
+
+  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/welcome/index.js";
+
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  var _reactNativeFirebase = require(_dependencyMap[2], "react-native-firebase");
+
+  var _reactNativeFirebase2 = _interopRequireDefault(_reactNativeFirebase);
+
+  var _reactNativeLinearGradient = require(_dependencyMap[3], "react-native-linear-gradient");
+
+  var _reactNativeLinearGradient2 = _interopRequireDefault(_reactNativeLinearGradient);
+
+  var _style = require(_dependencyMap[4], "../../style");
+
+  var _actions = require(_dependencyMap[5], "../../actions");
+
+  var _container = require(_dependencyMap[6], "./container");
+
+  var _reactNativeElements = require(_dependencyMap[7], "react-native-elements");
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var _components = {
+    WelcomeUI: {
+      displayName: "WelcomeUI"
+    }
+  };
+
+  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/welcome/index.js",
+    components: _components,
+    locals: [module],
+    imports: [_react3.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var WelcomeUI = _wrapComponent("WelcomeUI")(function (_React$Component) {
+    _inherits(WelcomeUI, _React$Component);
+
+    function WelcomeUI(props) {
+      _classCallCheck(this, WelcomeUI);
+
+      var _this2 = _possibleConstructorReturn(this, (WelcomeUI.__proto__ || Object.getPrototypeOf(WelcomeUI)).call(this, props));
+
+      _this2.welcomeRef = _reactNativeFirebase2.default.database().ref('welcome');
+      _this2.state = {
+        activeCard: {},
+        cards: []
+      };
+      _this2.populateCards = _this2.populateCards.bind(_this2);
+      return _this2;
+    }
+
+    _createClass(WelcomeUI, [{
+      key: "populateCards",
+      value: function populateCards(data) {
+        this.setState(function () {
+          return {
+            cards: data,
+            activeCard: data[0].data
+          };
+        });
+      }
+    }, {
+      key: "componentDidMount",
+      value: function componentDidMount() {
+        var _this = this;
+
+        (0, _actions.listenForFirebase)(this.welcomeRef, function (data) {
+          _this.populateCards(data);
+        });
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        console.log(this.state.activeCard);
+        return _react3.default.createElement(
+          _reactNativeLinearGradient2.default,
+          {
+            colors: _style.globalThemes.dark,
+            style: _style.globalStyles.background,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 42
+            }
+          },
+          _react3.default.createElement(_container.Card, {
+            info: this.state.activeCard,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 43
+            }
+          }),
+          _react3.default.createElement(_reactNativeElements.Text, {
+            style: _style.globalStyles.whiteText,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 44
+            }
+          }),
+          _react3.default.createElement(_reactNativeElements.Button, {
+            buttonStyle: _style.globalStyles.clearButton,
+            title: "Sign up",
+            accessibilityLabel: "Sign up",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 46
+            }
+          }),
+          _react3.default.createElement(_reactNativeElements.Button, {
+            buttonStyle: _style.globalStyles.clearButton,
+            title: "Login",
+            accessibilityLabel: "Login",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 51
+            }
+          })
+        );
+      }
+    }]);
+
+    return WelcomeUI;
+  }(_react3.default.Component));
+
+  exports.default = WelcomeUI;
+},706,[109,128,529,506,507,510,707,595],"fmx/app/user/components/welcome/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
+    exports.Card = undefined;
 
     var _react2 = require(_dependencyMap[0], "react");
 
@@ -91744,15 +91939,13 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     var _index2 = _interopRequireDefault(_index);
 
-    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/welcome/index.js";
+    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/welcome/container.js";
 
     var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
     var _style = require(_dependencyMap[2], "../../style");
 
     var _reactNative = require(_dependencyMap[3], "react-native");
-
-    var _reactNativeElements = require(_dependencyMap[4], "react-native-elements");
 
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -91763,13 +91956,13 @@ __d(function (global, require, module, exports, _dependencyMap) {
     function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
     var _components = {
-        WelcomeCard: {
-            displayName: "WelcomeCard"
+        Card: {
+            displayName: "Card"
         }
     };
 
     var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-        filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/welcome/index.js",
+        filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/welcome/container.js",
         components: _components,
         locals: [module],
         imports: [_react3.default]
@@ -91781,78 +91974,85 @@ __d(function (global, require, module, exports, _dependencyMap) {
         };
     }
 
-    var WelcomeCard = _wrapComponent("WelcomeCard")(function (_React$Component) {
-        _inherits(WelcomeCard, _React$Component);
+    var Card = exports.Card = _wrapComponent("Card")(function (_React$Component) {
+        _inherits(Card, _React$Component);
 
-        function WelcomeCard(props) {
-            _classCallCheck(this, WelcomeCard);
+        function Card(props) {
+            _classCallCheck(this, Card);
 
-            var _this = _possibleConstructorReturn(this, (WelcomeCard.__proto__ || Object.getPrototypeOf(WelcomeCard)).call(this, props));
+            var _this = _possibleConstructorReturn(this, (Card.__proto__ || Object.getPrototypeOf(Card)).call(this, props));
 
-            _this.state = {};
+            _this.data = props.card;
+            _this.state = {
+                info: {
+                    title: "",
+                    image: "",
+                    text: ""
+                }
+            };
             return _this;
         }
 
-        _createClass(WelcomeCard, [{
-            key: "componentDidMount",
-            value: function componentDidMount() {}
+        _createClass(Card, [{
+            key: "componentWillReceiveProps",
+            value: function componentWillReceiveProps(newProps) {
+                this.setState({
+                    info: newProps.info
+                });
+            }
         }, {
             key: "render",
             value: function render() {
                 return _react3.default.createElement(
-                    LinearGradient,
+                    _reactNative.View,
                     {
-                        colors: _style.globalThemes.darkTheme,
-                        style: _style.globalStyles.background,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 20
+                            lineNumber: 26
                         }
                     },
                     _react3.default.createElement(
-                        _reactNativeElements.Text,
+                        _reactNative.Text,
                         {
                             h4: true,
-                            style: [_style.globalStyles.center],
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 21
-                            }
-                        },
-                        this.props.card.image
-                    ),
-                    _react3.default.createElement(
-                        _reactNativeElements.Text,
-                        {
-                            h4: true,
-                            style: [_style.globalStyles.center],
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 24
-                            }
-                        },
-                        this.props.card.title
-                    ),
-                    _react3.default.createElement(
-                        _reactNativeElements.Text,
-                        {
-                            style: [_style.globalStyles.center],
+                            style: [_style.globalStyles.center, _style.globalStyles.whiteText],
                             __source: {
                                 fileName: _jsxFileName,
                                 lineNumber: 27
                             }
                         },
-                        this.props.card.text
+                        this.state.info.image
+                    ),
+                    _react3.default.createElement(
+                        _reactNative.Text,
+                        {
+                            h4: true,
+                            style: [_style.globalStyles.center, _style.globalStyles.whiteText],
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 30
+                            }
+                        },
+                        this.state.info.title
+                    ),
+                    _react3.default.createElement(
+                        _reactNative.Text,
+                        {
+                            style: [_style.globalStyles.center, _style.globalStyles.whiteText],
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 33
+                            }
+                        },
+                        this.state.info.text
                     )
                 );
             }
         }]);
 
-        return WelcomeCard;
+        return Card;
     }(_react3.default.Component));
-
-    exports.default = WelcomeCard;
-},706,[109,128,507,12,595],"fmx/app/user/components/welcome/index.js");
+},707,[109,128,507,12],"fmx/app/user/components/welcome/container.js");
 require(23);
 require(11);
 //# sourceMappingURL=index.map

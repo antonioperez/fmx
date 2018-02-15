@@ -27,7 +27,7 @@ export const globalStyles = StyleSheet.create({
       borderRadius: 10,  
       borderColor: "#fff",
       borderWidth: 1,
-      marginTop: 30,
-      marginBottom: 20
+      marginTop: 5,
+      marginBottom: 5
     }
   });

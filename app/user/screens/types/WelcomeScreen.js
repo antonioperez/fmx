@@ -1,8 +1,5 @@
 import React from 'react';
-
-import LinearGradient from 'react-native-linear-gradient';
-import {globalStyles} from './../../style';
-import WelcomeCard  from './../../components/welcome';
+import WelcomeUI from './../../components/welcome';
 
 export default class WelcomeScreen extends React.Component {
   constructor(props) {
@@ -21,7 +18,7 @@ export default class WelcomeScreen extends React.Component {
 
   render() {
     return (
-      <WelcomeCard />
+      <WelcomeUI onSucess={this.goToNextScreen.bind(this)} />
     );
   }
 }
