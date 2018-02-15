@@ -92026,7 +92026,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         }
                     },
                     _react3.default.createElement(
-                        _reactNative.Text,
+                        _reactNativeElements.Text,
                         {
                             h4: true,
                             style: [_style.globalStyles.center, _style.globalStyles.whiteText],
@@ -92038,7 +92038,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         this.state.info.image
                     ),
                     _react3.default.createElement(
-                        _reactNative.Text,
+                        _reactNativeElements.Text,
                         {
                             h4: true,
                             style: [_style.globalStyles.center, _style.globalStyles.whiteText],
@@ -92050,7 +92050,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         this.state.info.title
                     ),
                     _react3.default.createElement(
-                        _reactNative.Text,
+                        _reactNativeElements.Text,
                         {
                             style: [_style.globalStyles.center, _style.globalStyles.whiteText],
                             __source: {

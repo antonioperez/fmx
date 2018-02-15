@@ -1,7 +1,7 @@
 import React from 'react';
 import { globalStyles } from '../../style';
-import { View, Text } from 'react-native';
-import { Icon } from 'react-native-elements';
+import { View } from 'react-native';
+import { Icon, Text } from 'react-native-elements';
 
 export class Card extends React.Component {
 
