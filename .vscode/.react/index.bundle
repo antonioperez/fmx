@@ -68561,8 +68561,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
       borderRadius: 10,
       borderColor: "#fff",
       borderWidth: 1,
-      marginTop: 5,
-      marginBottom: 5
+      marginTop: 10,
+      marginBottom: 10
     }
   });
 },507,[12],"fmx/app/user/style.js");
