@@ -12,9 +12,6 @@ export default class DashboardUI extends React.Component {
     };
   }
 
-  componentDidMount() {
-    
-  }
   render() {
     return (
       <View >

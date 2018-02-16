@@ -1,5 +1,5 @@
 import React from 'react';
-import { LoginUI }  from './../../components/login';
+import LoginUI from './../../components/login';
 import LinearGradient from 'react-native-linear-gradient';
 import { globalStyles, globalThemes } from '../../style';
 
