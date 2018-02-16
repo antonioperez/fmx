@@ -91998,17 +91998,20 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         },
                         this.state.info.title
                     ),
-                    _react3.default.createElement(
-                        _reactNativeElements.Text,
-                        {
-                            style: [_style.globalStyles.center, _style.globalStyles.whiteText],
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 31
-                            }
-                        },
-                        this.state.info.text
-                    )
+                    this.state.info.tags.map(function (data, index) {
+                        return _react3.default.createElement(
+                            _reactNativeElements.Text,
+                            {
+                                key: index,
+                                style: [_style.globalStyles.center, _style.globalStyles.whiteText],
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 33
+                                }
+                            },
+                            data
+                        );
+                    })
                 );
             }
         }]);

@@ -28,9 +28,14 @@ export class Card extends React.Component {
                 <Text h4 style={[globalStyles.center, globalStyles.whiteText]}>
                     {this.state.info.title}
                 </Text>
-                <Text style={[globalStyles.center, globalStyles.whiteText]}>
-                    {this.state.info.text}
-                </Text>
+                {this.state.info.tags.map((data, index) => {
+                    return (
+                        <Text key={index} style={[globalStyles.center, globalStyles.whiteText]}>
+                            {data}
+                        </Text>
+                    )
+                  })} 
+
             </View>
         )
     }
