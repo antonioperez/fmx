@@ -29,8 +29,9 @@ export class Card extends React.Component {
                     {this.state.info.title}
                 </Text>
                 {this.state.info.tags.map((data, index) => {
+                    var key = new Date().getTime() + index;
                     return (
-                        <Text key={index} style={[globalStyles.center, globalStyles.whiteText]}>
+                        <Text key={key} style={[globalStyles.center, globalStyles.whiteText]}>
                             {data}
                         </Text>
                     )

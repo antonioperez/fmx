@@ -91999,14 +91999,15 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         this.state.info.title
                     ),
                     this.state.info.tags.map(function (data, index) {
+                        var key = new Date().getTime() + index;
                         return _react3.default.createElement(
                             _reactNativeElements.Text,
                             {
-                                key: index,
+                                key: key,
                                 style: [_style.globalStyles.center, _style.globalStyles.whiteText],
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 33
+                                    lineNumber: 34
                                 }
                             },
                             data
