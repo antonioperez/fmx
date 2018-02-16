@@ -68252,9 +68252,11 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/screens/types/LoginScreen.js";
-
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  var _class,
+      _temp,
+      _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/screens/types/LoginScreen.js";
 
   var _login = require(_dependencyMap[2], "./../../components/login");
 
@@ -68289,7 +68291,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     };
   }
 
-  var LoginScreen = _wrapComponent("LoginScreen")(function (_React$Component) {
+  var LoginScreen = _wrapComponent("LoginScreen")((_temp = _class = function (_React$Component) {
     _inherits(LoginScreen, _React$Component);
 
     function LoginScreen(props) {
@@ -68297,11 +68299,26 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
       var _this = _possibleConstructorReturn(this, (LoginScreen.__proto__ || Object.getPrototypeOf(LoginScreen)).call(this, props));
 
+      _this.props.navigator.setOnNavigatorEvent(_this.onNavigatorEvent.bind(_this));
+
       _this.state = {};
       return _this;
     }
 
     _createClass(LoginScreen, [{
+      key: "onNavigatorEvent",
+      value: function onNavigatorEvent(event) {
+        if (event.type == 'NavBarButtonPress') {
+          if (event.id == 'forgotPassword') {
+            alert('NavBar', 'Edit button pressed');
+          }
+
+          if (event.id == 'add') {
+            alert('NavBar', 'Add button pressed');
+          }
+        }
+      }
+    }, {
       key: "goToNextScreen",
       value: function goToNextScreen() {
         this.props.navigator.resetTo({
@@ -68316,14 +68333,22 @@ __d(function (global, require, module, exports, _dependencyMap) {
           onSucess: this.goToNextScreen.bind(this),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 22
+            lineNumber: 47
           }
         });
       }
     }]);
 
     return LoginScreen;
-  }(_react3.default.Component));
+  }(_react3.default.Component), _class.navigatorButtons = {
+    rightButtons: [{
+      title: 'Forgot Password?',
+      id: 'forgotPassword',
+      buttonColor: 'white',
+      buttonFontSize: 14,
+      buttonFontWeight: '600'
+    }]
+  }, _temp));
 
   exports.default = LoginScreen;
 },505,[109,128,506,12],"fmx/app/user/screens/types/LoginScreen.js");
