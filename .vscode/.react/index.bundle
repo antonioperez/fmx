@@ -91841,19 +91841,19 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _reactNativeFirebase2 = _interopRequireDefault(_reactNativeFirebase);
 
-  var _reactNative = require(_dependencyMap[3], "react-native");
-
-  var _reactNativeSwiper = require(_dependencyMap[4], "react-native-swiper");
+  var _reactNativeSwiper = require(_dependencyMap[3], "react-native-swiper");
 
   var _reactNativeSwiper2 = _interopRequireDefault(_reactNativeSwiper);
 
-  var _container = require(_dependencyMap[5], "./container");
+  var _reactNative = require(_dependencyMap[4], "react-native");
 
-  var _style = require(_dependencyMap[6], "../../style");
+  var _style = require(_dependencyMap[5], "../../style");
 
-  var _actions = require(_dependencyMap[7], "../../actions");
+  var _actions = require(_dependencyMap[6], "../../actions");
 
-  var _reactNativeElements = require(_dependencyMap[8], "react-native-elements");
+  var _reactNativeElements = require(_dependencyMap[7], "react-native-elements");
+
+  var _container = require(_dependencyMap[8], "./container");
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -91925,7 +91925,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             style: _style.globalStyles.centerContainer,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 42
+              lineNumber: 40
             }
           },
           _react3.default.createElement(
@@ -91943,7 +91943,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 },
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 44
+                  lineNumber: 42
                 }
               }),
               activeDot: _react3.default.createElement(_reactNative.View, {
@@ -91957,12 +91957,12 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 },
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 45
+                  lineNumber: 43
                 }
               }),
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 43
+                lineNumber: 41
               }
             },
             this.state.cards.map(function (data) {
@@ -91971,7 +91971,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 key: data._key,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 49
+                  lineNumber: 47
                 }
               });
             })
@@ -91982,7 +91982,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             accessibilityLabel: "Sign up",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 53
+              lineNumber: 51
             }
           }),
           _react3.default.createElement(_reactNativeElements.Button, {
@@ -91992,7 +91992,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             accessibilityLabel: "Login",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 58
+              lineNumber: 56
             }
           })
         );
@@ -92003,7 +92003,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = WelcomeUI;
-},704,[109,128,527,12,706,705,507,508,594],"fmx/app/user/components/welcome/index.js");
+},704,[109,128,527,706,12,507,508,594,705],"fmx/app/user/components/welcome/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true

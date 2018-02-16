@@ -1,16 +1,14 @@
 import React from 'react';
 import firebase from 'react-native-firebase';
-import { ScrollView, View } from 'react-native';
 import Swiper from 'react-native-swiper';
-import { Card } from './container';
-
+import { ScrollView, View } from 'react-native';
 import { globalStyles, globalThemes } from '../../style';
 import { listenForFirebase } from '../../actions';
-
 import { 
   Button,
   Text
 } from 'react-native-elements';
+import { Card } from './container';
 
 export default class WelcomeUI extends React.Component {
   constructor(props) {
