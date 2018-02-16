@@ -7,8 +7,5 @@ export const welcomeStyle = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
-    },
-    wrapper: {
-
-    },
+    }
 });

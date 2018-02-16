@@ -42,7 +42,10 @@ export default class WelcomeUI extends React.Component {
     return (
         <LinearGradient colors={globalThemes.dark} style={[globalStyles.background]} >
             <View style={globalStyles.centerContainer}>
-              <Swiper autoplay={true} >
+              <Swiper autoplay={true}
+                    dot={<View style={{backgroundColor: 'rgba(255,255,255,.3)', width: 5, height: 5, borderRadius: 7, marginLeft: 4, marginRight: 4}} />}
+                    activeDot={<View style={{backgroundColor: '#fff', width: 5, height: 5, borderRadius: 7, marginLeft: 4, marginRight: 4}} />}
+              >
                   {this.state.cards.map(data => {
                     return (
                       <Card info={data.data} key={data._key} />

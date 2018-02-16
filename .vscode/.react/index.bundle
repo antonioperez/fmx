@@ -91787,6 +91787,34 @@ __d(function (global, require, module, exports, _dependencyMap) {
               _reactNativeSwiper2.default,
               {
                 autoplay: true,
+                dot: _react3.default.createElement(_reactNative.View, {
+                  style: {
+                    backgroundColor: 'rgba(255,255,255,.3)',
+                    width: 5,
+                    height: 5,
+                    borderRadius: 7,
+                    marginLeft: 4,
+                    marginRight: 4
+                  },
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 46
+                  }
+                }),
+                activeDot: _react3.default.createElement(_reactNative.View, {
+                  style: {
+                    backgroundColor: '#fff',
+                    width: 5,
+                    height: 5,
+                    borderRadius: 7,
+                    marginLeft: 4,
+                    marginRight: 4
+                  },
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 47
+                  }
+                }),
                 __source: {
                   fileName: _jsxFileName,
                   lineNumber: 45
@@ -91798,7 +91826,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                   key: data._key,
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 48
+                    lineNumber: 51
                   }
                 });
               })
@@ -91809,7 +91837,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               accessibilityLabel: "Sign up",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 52
+                lineNumber: 55
               }
             }),
             _react3.default.createElement(_reactNativeElements.Button, {
@@ -91819,7 +91847,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               accessibilityLabel: "Login",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 57
+                lineNumber: 60
               }
             })
           )
@@ -92879,8 +92907,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             flex: 1,
             justifyContent: 'center',
             alignItems: 'center'
-        },
-        wrapper: {}
+        }
     });
 },711,[12],"fmx/app/user/components/welcome/style.js");
 require(23);
