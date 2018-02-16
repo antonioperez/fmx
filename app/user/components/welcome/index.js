@@ -4,6 +4,9 @@ import LinearGradient from 'react-native-linear-gradient';
 import { globalStyles, globalThemes } from '../../style';
 import { listenForFirebase } from '../../actions';
 import { Card } from './container';
+import { ScrollView } from 'react-native';
+import Swiper from 'react-native-swiper';
+
 import { 
   Button,
   Text
@@ -44,19 +47,25 @@ export default class WelcomeUI extends React.Component {
       });
   }
 
-  render() {
+  renderWelcomeCard(data) {
+    return (<Card info={data.data} key={data._key}/>)
+  }
 
+  render() {
     return (
         <LinearGradient colors={globalThemes.dark} style={[globalStyles.background, globalStyles.centerContainer]} >
-            <Card info = {this.state.activeCard} />
-            <Text style={globalStyles.whiteText}>
-            </Text>
+            <Swiper autoplay={true}  style={globalStyles.centerContainer}>
+                {this.state.cards.map((data, key) => {
+                  return (
+                    <Card info={data.data} key={data._key}/>
+                  )
+                })}
+            </Swiper>
             <Button 
               buttonStyle={globalStyles.clearButton}
               title="Sign up" 
               accessibilityLabel="Sign up"
             />
-            
             <Button 
               buttonStyle={globalStyles.clearButton}
               title="Login" 
