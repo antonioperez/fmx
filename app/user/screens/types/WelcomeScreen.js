@@ -1,5 +1,7 @@
 import React from 'react';
 import WelcomeUI from './../../components/welcome';
+import LinearGradient from 'react-native-linear-gradient';
+import { globalStyles, globalThemes } from '../../style';
 
 export default class WelcomeScreen extends React.Component {
   constructor(props) {
@@ -21,7 +23,9 @@ export default class WelcomeScreen extends React.Component {
 
   render() {
     return (
-      <WelcomeUI goToLogin ={this.goToLogin.bind(this)} />
+      <LinearGradient colors={globalThemes.dark} style={globalStyles.background} >
+        <WelcomeUI goToLogin ={this.goToLogin.bind(this)} />
+      </LinearGradient>
     );
   }
 }

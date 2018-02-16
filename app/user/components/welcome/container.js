@@ -35,8 +35,7 @@ export class Card extends React.Component {
                             {data}
                         </Text>
                     )
-                  })} 
-
+                  })}
             </View>
         )
     }

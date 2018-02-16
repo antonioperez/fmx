@@ -2,7 +2,7 @@ import React from 'react';
 import { globalStyles } from '../../style';
 import { login, FBLogin } from '../../actions';
 import { View } from 'react-native';
-import { SocialIcon } from 'react-native-elements';
+import { SocialIcon, Icon, Text } from 'react-native-elements';
 
 
 export class FBLoginButton extends React.Component {
@@ -36,3 +36,4 @@ export class FBLoginButton extends React.Component {
         )
     }
 }
+

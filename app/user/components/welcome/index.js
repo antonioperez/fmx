@@ -1,6 +1,5 @@
 import React from 'react';
 import firebase from 'react-native-firebase';
-import LinearGradient from 'react-native-linear-gradient';
 import { ScrollView, View } from 'react-native';
 import Swiper from 'react-native-swiper';
 import { Card } from './container';
@@ -40,31 +39,29 @@ export default class WelcomeUI extends React.Component {
 
   render() {
     return (
-        <LinearGradient colors={globalThemes.dark} style={[globalStyles.background]} >
-            <View style={globalStyles.centerContainer}>
-              <Swiper autoplay={true}
-                    dot={<View style={{backgroundColor: 'rgba(255,255,255,.3)', width: 5, height: 5, borderRadius: 7, marginLeft: 4, marginRight: 4}} />}
-                    activeDot={<View style={{backgroundColor: '#fff', width: 5, height: 5, borderRadius: 7, marginLeft: 4, marginRight: 4}} />}
-              >
-                  {this.state.cards.map(data => {
-                    return (
-                      <Card info={data.data} key={data._key} />
-                    )
-                  })} 
-              </Swiper>
-              <Button 
-                buttonStyle={globalStyles.clearButton}
-                title="Sign up" 
-                accessibilityLabel="Sign up"
-              />
-              <Button 
-                buttonStyle={globalStyles.clearButton}
-                title="Login" 
-                onPress={this.props.goToLogin} 
-                accessibilityLabel="Login"
-              />
-            </View>
-        </LinearGradient>
+      <View style={globalStyles.centerContainer}>
+        <Swiper autoplay={true}
+              dot={<View style={{backgroundColor: 'rgba(255,255,255,.3)', width: 5, height: 5, borderRadius: 7, marginLeft: 4, marginRight: 4}} />}
+              activeDot={<View style={{backgroundColor: '#fff', width: 5, height: 5, borderRadius: 7, marginLeft: 4, marginRight: 4}} />}
+        >
+            {this.state.cards.map(data => {
+              return (
+                <Card info={data.data} key={data._key} />
+              )
+            })} 
+        </Swiper>
+        <Button 
+          buttonStyle={globalStyles.clearButton}
+          title="Sign up" 
+          accessibilityLabel="Sign up"
+        />
+        <Button 
+          buttonStyle={globalStyles.clearButton}
+          title="Login" 
+          onPress={this.props.goToLogin} 
+          accessibilityLabel="Login"
+        />
+      </View>
     );
   }
 }
