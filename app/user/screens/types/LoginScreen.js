@@ -13,6 +13,15 @@ export default class LoginScreen extends React.Component {
         buttonFontSize: 14, 
         buttonFontWeight: '600', 
       }
+    ],
+    leftButtons: [
+      {
+        title: 'X', 
+        id: 'cancel', 
+        buttonColor: 'white', 
+        buttonFontSize: 18, 
+        buttonFontWeight: '800', 
+      }
     ]
   };
 
@@ -29,8 +38,10 @@ export default class LoginScreen extends React.Component {
       if (event.id == 'forgotPassword') { 
         alert('NavBar', 'Edit button pressed');
       }
-      if (event.id == 'add') {
-        alert('NavBar', 'Add button pressed');
+      if (event.id == 'cancel') {
+        this.props.navigator.dismissModal({
+          animationType: 'slide-down' 
+        });
       }
     }
   }
