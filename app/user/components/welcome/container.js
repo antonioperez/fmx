@@ -2,6 +2,7 @@ import React from 'react';
 import { globalStyles } from '../../style';
 import { View } from 'react-native';
 import { Icon, Text } from 'react-native-elements';
+import { welcomeStyle } from './style';
 
 export class Card extends React.Component {
 
@@ -15,7 +16,7 @@ export class Card extends React.Component {
 
     render() {
         return (
-            <View>
+            <View style={welcomeStyle.centerSlider}>
                 <Text h4 style={[globalStyles.center, globalStyles.whiteText]}>
                     {this.state.info.image}
                 </Text>

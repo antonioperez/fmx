@@ -1,11 +1,12 @@
 import React from 'react';
 import firebase from 'react-native-firebase';
 import LinearGradient from 'react-native-linear-gradient';
-import { globalStyles, globalThemes } from '../../style';
-import { listenForFirebase } from '../../actions';
-import { Card } from './container';
 import { ScrollView, View } from 'react-native';
 import Swiper from 'react-native-swiper';
+import { Card } from './container';
+
+import { globalStyles, globalThemes } from '../../style';
+import { listenForFirebase } from '../../actions';
 
 import { 
   Button,
@@ -46,7 +47,7 @@ export default class WelcomeUI extends React.Component {
                     return (
                       <Card info={data.data} key={data._key} />
                     )
-                  })}
+                  })} 
               </Swiper>
               <Button 
                 buttonStyle={globalStyles.clearButton}

@@ -91686,17 +91686,17 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _reactNativeLinearGradient2 = _interopRequireDefault(_reactNativeLinearGradient);
 
-  var _style = require(_dependencyMap[4], "../../style");
+  var _reactNative = require(_dependencyMap[4], "react-native");
 
-  var _actions = require(_dependencyMap[5], "../../actions");
+  var _reactNativeSwiper = require(_dependencyMap[5], "react-native-swiper");
+
+  var _reactNativeSwiper2 = _interopRequireDefault(_reactNativeSwiper);
 
   var _container = require(_dependencyMap[6], "./container");
 
-  var _reactNative = require(_dependencyMap[7], "react-native");
+  var _style = require(_dependencyMap[7], "../../style");
 
-  var _reactNativeSwiper = require(_dependencyMap[8], "react-native-swiper");
-
-  var _reactNativeSwiper2 = _interopRequireDefault(_reactNativeSwiper);
+  var _actions = require(_dependencyMap[8], "../../actions");
 
   var _reactNativeElements = require(_dependencyMap[9], "react-native-elements");
 
@@ -91771,7 +91771,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             style: [_style.globalStyles.background],
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 42
+              lineNumber: 43
             }
           },
           _react3.default.createElement(
@@ -91780,7 +91780,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               style: _style.globalStyles.centerContainer,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 43
+                lineNumber: 44
               }
             },
             _react3.default.createElement(
@@ -91789,7 +91789,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 autoplay: true,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 44
+                  lineNumber: 45
                 }
               },
               this.state.cards.map(function (data) {
@@ -91798,7 +91798,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                   key: data._key,
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 47
+                    lineNumber: 48
                   }
                 });
               })
@@ -91809,7 +91809,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               accessibilityLabel: "Sign up",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 51
+                lineNumber: 52
               }
             }),
             _react3.default.createElement(_reactNativeElements.Button, {
@@ -91819,7 +91819,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               accessibilityLabel: "Login",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 56
+                lineNumber: 57
               }
             })
           )
@@ -91831,7 +91831,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = WelcomeUI;
-},704,[109,128,527,702,507,508,705,12,706,594],"fmx/app/user/components/welcome/index.js");
+},704,[109,128,527,702,12,706,705,507,508,594],"fmx/app/user/components/welcome/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -91855,6 +91855,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
     var _reactNative = require(_dependencyMap[3], "react-native");
 
     var _reactNativeElements = require(_dependencyMap[4], "react-native-elements");
+
+    var _style2 = require(_dependencyMap[5], "./style");
 
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -91904,9 +91906,10 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 return _react3.default.createElement(
                     _reactNative.View,
                     {
+                        style: _style2.welcomeStyle.centerSlider,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 18
+                            lineNumber: 19
                         }
                     },
                     _react3.default.createElement(
@@ -91916,7 +91919,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             style: [_style.globalStyles.center, _style.globalStyles.whiteText],
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 19
+                                lineNumber: 20
                             }
                         },
                         this.state.info.image
@@ -91928,7 +91931,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             style: [_style.globalStyles.center, _style.globalStyles.whiteText],
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 27
+                                lineNumber: 28
                             }
                         },
                         this.state.info.title
@@ -91939,7 +91942,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             style: [_style.globalStyles.center, _style.globalStyles.whiteText],
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 30
+                                lineNumber: 31
                             }
                         },
                         this.state.info.text
@@ -91950,7 +91953,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
         return Card;
     }(_react3.default.Component));
-},705,[109,128,507,12,594],"fmx/app/user/components/welcome/container.js");
+},705,[109,128,507,12,594,711],"fmx/app/user/components/welcome/container.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var _src = require(_dependencyMap[0], "./src/");
 
@@ -92863,6 +92866,23 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   exports.default = DashboardUI;
 },708,[109,128,507,12,594],"fmx/app/user/components/dashboard/index.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.welcomeStyle = undefined;
+
+    var _reactNative = require(_dependencyMap[0], "react-native");
+
+    var welcomeStyle = exports.welcomeStyle = _reactNative.StyleSheet.create({
+        centerSlider: {
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center'
+        },
+        wrapper: {}
+    });
+},711,[12],"fmx/app/user/components/welcome/style.js");
 require(23);
 require(710);
 //# sourceMappingURL=index.map
