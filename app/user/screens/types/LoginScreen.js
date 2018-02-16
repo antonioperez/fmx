@@ -19,9 +19,7 @@ export default class LoginScreen extends React.Component {
 
   render() {
     return (
-        <View>
-          <LoginUI onSucess = {this.goToNextScreen.bind(this)} />
-        </View>
+        <LoginUI onSucess = {this.goToNextScreen.bind(this)} />
     );
   }
 }

@@ -7,24 +7,15 @@ export class Card extends React.Component {
 
     constructor(props) {
         super(props);
-        this.data = props.card;
+        var data = props.info;
         this.state = {
-            info : {
-                title : "",
-                image : "",
-                text : ""
-            }
+            info : data
         }
     }
 
-    componentWillReceiveProps(newProps) {
-        
-        this.setState({info: newProps.info});
-    }
-    
     render() {
         return (
-            <View >
+            <View>
                 <Text h4 style={[globalStyles.center, globalStyles.whiteText]}>
                     {this.state.info.image}
                 </Text>
