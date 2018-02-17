@@ -1,7 +1,6 @@
 import React from 'react';
 import { globalStyles } from '../../style';
-
-import { Platform, View, Image } from 'react-native';
+import { View } from 'react-native';
 import { Text } from 'react-native-elements';
 
 export default class DashboardUI extends React.Component {

@@ -68219,7 +68219,11 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     var _WelcomeScreen2 = _interopRequireDefault(_WelcomeScreen);
 
-    var _dashboard = require(_dependencyMap[3], "./../components/dashboard");
+    var _PasswordReset = require(_dependencyMap[3], "./types/PasswordReset");
+
+    var _PasswordReset2 = _interopRequireDefault(_PasswordReset);
+
+    var _dashboard = require(_dependencyMap[4], "./../components/dashboard");
 
     var _dashboard2 = _interopRequireDefault(_dashboard);
 
@@ -68237,8 +68241,12 @@ __d(function (global, require, module, exports, _dependencyMap) {
         _reactNativeNavigation.Navigation.registerComponent('fmx.welcome', function () {
             return _WelcomeScreen2.default;
         });
+
+        _reactNativeNavigation.Navigation.registerComponent('fmx.passwordReset', function () {
+            return _PasswordReset2.default;
+        });
     }
-},504,[490,505,703,708],"fmx/app/user/screens/index.js");
+},504,[490,505,703,712,708],"fmx/app/user/screens/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -68259,8 +68267,6 @@ __d(function (global, require, module, exports, _dependencyMap) {
       _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/screens/types/LoginScreen.js";
 
   var _login = require(_dependencyMap[2], "./../../components/login");
-
-  var _login2 = _interopRequireDefault(_login);
 
   var _reactNativeLinearGradient = require(_dependencyMap[3], "react-native-linear-gradient");
 
@@ -68314,7 +68320,13 @@ __d(function (global, require, module, exports, _dependencyMap) {
       value: function onNavigatorEvent(event) {
         if (event.type == 'NavBarButtonPress') {
           if (event.id == 'forgotPassword') {
-            alert('NavBar', 'Edit button pressed');
+            this.props.navigator.showModal({
+              screen: 'fmx.passwordReset',
+              navigatorStyle: {
+                navBarHidden: false,
+                navBarBackgroundColor: "#000"
+              }
+            });
           }
 
           if (event.id == 'cancel') {
@@ -68342,14 +68354,14 @@ __d(function (global, require, module, exports, _dependencyMap) {
             style: _style.globalStyles.background,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 59
+              lineNumber: 61
             }
           },
-          _react3.default.createElement(_login2.default, {
+          _react3.default.createElement(_login.LoginUI, {
             onSucess: this.goToNextScreen.bind(this),
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 60
+              lineNumber: 62
             }
           })
         );
@@ -68380,6 +68392,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
+    exports.PasswordRecoverUI = exports.LoginUI = undefined;
 
     var _react2 = require(_dependencyMap[0], "react");
 
@@ -68414,6 +68427,9 @@ __d(function (global, require, module, exports, _dependencyMap) {
     var _components = {
         LoginUI: {
             displayName: "LoginUI"
+        },
+        PasswordRecoverUI: {
+            displayName: "PasswordRecoverUI"
         }
     };
 
@@ -68430,7 +68446,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
         };
     }
 
-    var LoginUI = _wrapComponent("LoginUI")(function (_React$Component) {
+    var LoginUI = exports.LoginUI = _wrapComponent("LoginUI")(function (_React$Component) {
         _inherits(LoginUI, _React$Component);
 
         function LoginUI(props) {
@@ -68569,7 +68585,100 @@ __d(function (global, require, module, exports, _dependencyMap) {
         return LoginUI;
     }(_react3.default.Component));
 
-    exports.default = LoginUI;
+    var PasswordRecoverUI = exports.PasswordRecoverUI = _wrapComponent("PasswordRecoverUI")(function (_React$Component2) {
+        _inherits(PasswordRecoverUI, _React$Component2);
+
+        function PasswordRecoverUI(props) {
+            _classCallCheck(this, PasswordRecoverUI);
+
+            var _this3 = _possibleConstructorReturn(this, (PasswordRecoverUI.__proto__ || Object.getPrototypeOf(PasswordRecoverUI)).call(this, props));
+
+            _this3.onSubmit = function () {
+                if (_this3.state.email) {
+                    (0, _actions.resetPassword)(_this3.state.email, function (user) {
+                        _this3.props.onSucess();
+                    }, function (error) {
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+                        alert(errorMessage);
+                    });
+                } else {
+                    alert("Email Required!");
+                }
+            };
+
+            _this3.state = {
+                email: ''
+            };
+            return _this3;
+        }
+
+        _createClass(PasswordRecoverUI, [{
+            key: "render",
+            value: function render() {
+                var _this4 = this;
+
+                return _react3.default.createElement(
+                    _reactNative.View,
+                    {
+                        style: _style.globalStyles.centerContainer,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 102
+                        }
+                    },
+                    _react3.default.createElement(
+                        _reactNativeElements.Text,
+                        {
+                            h4: true,
+                            style: [_style.globalStyles.whiteText, _style.globalStyles.center],
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 103
+                            }
+                        },
+                        "FMx Password Recovery"
+                    ),
+                    _react3.default.createElement(
+                        _reactNativeElements.FormLabel,
+                        {
+                            labelStyle: _style.globalStyles.whiteText,
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 106
+                            }
+                        },
+                        "Email"
+                    ),
+                    _react3.default.createElement(_reactNativeElements.FormInput, {
+                        onChangeText: function onChangeText(email) {
+                            return _this4.setState({
+                                email: email
+                            });
+                        },
+                        clearButtonMode: "always",
+                        inputStyle: _style.globalStyles.whiteText,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 107
+                        }
+                    }),
+                    _react3.default.createElement(_reactNativeElements.Button, {
+                        buttonStyle: _style.globalStyles.clearButton,
+                        onPress: this.onSubmit,
+                        title: "Reset Password",
+                        accessibilityLabel: "Reset Password",
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 112
+                        }
+                    })
+                );
+            }
+        }]);
+
+        return PasswordRecoverUI;
+    }(_react3.default.Component));
 },506,[109,128,507,508,593,12,594],"fmx/app/user/components/login/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
@@ -77169,7 +77278,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
-    exports.PasswordRecoverUI = exports.FBLoginButton = undefined;
+    exports.FBLoginButton = undefined;
 
     var _react2 = require(_dependencyMap[0], "react");
 
@@ -77202,9 +77311,6 @@ __d(function (global, require, module, exports, _dependencyMap) {
     var _components = {
         FBLoginButton: {
             displayName: "FBLoginButton"
-        },
-        PasswordRecoverUI: {
-            displayName: "PasswordRecoverUI"
         }
     };
 
@@ -77271,101 +77377,6 @@ __d(function (global, require, module, exports, _dependencyMap) {
         }]);
 
         return FBLoginButton;
-    }(_react3.default.Component));
-
-    var PasswordRecoverUI = exports.PasswordRecoverUI = _wrapComponent("PasswordRecoverUI")(function (_React$Component2) {
-        _inherits(PasswordRecoverUI, _React$Component2);
-
-        function PasswordRecoverUI(props) {
-            _classCallCheck(this, PasswordRecoverUI);
-
-            var _this2 = _possibleConstructorReturn(this, (PasswordRecoverUI.__proto__ || Object.getPrototypeOf(PasswordRecoverUI)).call(this, props));
-
-            _this2.onSubmit = function () {
-                if (_this2.state.email) {
-                    resetPassword(_this2.state.email, function (user) {
-                        _this2.props.onSucess();
-                    }, function (error) {
-                        var errorCode = error.code;
-                        var errorMessage = error.message;
-                        alert(errorMessage);
-                    });
-                } else {
-                    alert("Email Required!");
-                }
-            };
-
-            _this2.state = {
-                email: ''
-            };
-            return _this2;
-        }
-
-        _createClass(PasswordRecoverUI, [{
-            key: "render",
-            value: function render() {
-                var _this3 = this;
-
-                return _react3.default.createElement(
-                    _reactNative.View,
-                    {
-                        style: _style.globalStyles.centerContainer,
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 67
-                        }
-                    },
-                    _react3.default.createElement(
-                        _reactNativeElements.Text,
-                        {
-                            h4: true,
-                            style: [_style.globalStyles.whiteText, _style.globalStyles.center],
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 68
-                            }
-                        },
-                        "FMx Password Recovery"
-                    ),
-                    _react3.default.createElement(
-                        FormLabel,
-                        {
-                            labelStyle: _style.globalStyles.whiteText,
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 71
-                            }
-                        },
-                        "Email"
-                    ),
-                    _react3.default.createElement(FormInput, {
-                        onChangeText: function onChangeText(email) {
-                            return _this3.setState({
-                                email: email
-                            });
-                        },
-                        clearButtonMode: "always",
-                        inputStyle: _style.globalStyles.whiteText,
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 72
-                        }
-                    }),
-                    _react3.default.createElement(Button, {
-                        buttonStyle: _style.globalStyles.clearButton,
-                        onPress: this.onSubmit,
-                        title: "Reset Password",
-                        accessibilityLabel: "Reset Password",
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 77
-                        }
-                    })
-                );
-            }
-        }]);
-
-        return PasswordRecoverUI;
     }(_react3.default.Component));
 },593,[109,128,507,508,12,594],"fmx/app/user/components/login/container.js");
 __d(function (global, require, module, exports, _dependencyMap) {
@@ -92005,132 +92016,6 @@ __d(function (global, require, module, exports, _dependencyMap) {
   exports.default = WelcomeUI;
 },704,[109,128,527,706,12,507,508,594,705],"fmx/app/user/components/welcome/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
-    exports.Card = undefined;
-
-    var _react2 = require(_dependencyMap[0], "react");
-
-    var _react3 = _interopRequireDefault(_react2);
-
-    var _index = require(_dependencyMap[1], "./../../../../node_modules/react-transform-hmr/lib/index.js");
-
-    var _index2 = _interopRequireDefault(_index);
-
-    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/welcome/container.js";
-
-    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-    var _style = require(_dependencyMap[2], "../../style");
-
-    var _reactNative = require(_dependencyMap[3], "react-native");
-
-    var _reactNativeElements = require(_dependencyMap[4], "react-native-elements");
-
-    var _style2 = require(_dependencyMap[5], "./style");
-
-    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-    var _components = {
-        Card: {
-            displayName: "Card"
-        }
-    };
-
-    var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-        filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/welcome/container.js",
-        components: _components,
-        locals: [module],
-        imports: [_react3.default]
-    });
-
-    function _wrapComponent(id) {
-        return function (Component) {
-            return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
-        };
-    }
-
-    var Card = exports.Card = _wrapComponent("Card")(function (_React$Component) {
-        _inherits(Card, _React$Component);
-
-        function Card(props) {
-            _classCallCheck(this, Card);
-
-            var _this = _possibleConstructorReturn(this, (Card.__proto__ || Object.getPrototypeOf(Card)).call(this, props));
-
-            var data = props.info;
-            _this.state = {
-                info: data
-            };
-            return _this;
-        }
-
-        _createClass(Card, [{
-            key: "render",
-            value: function render() {
-                return _react3.default.createElement(
-                    _reactNative.View,
-                    {
-                        style: _style2.welcomeStyle.centerSlider,
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 19
-                        }
-                    },
-                    _react3.default.createElement(
-                        _reactNativeElements.Text,
-                        {
-                            h4: true,
-                            style: [_style.globalStyles.center, _style.globalStyles.whiteText],
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 20
-                            }
-                        },
-                        this.state.info.image
-                    ),
-                    _react3.default.createElement(
-                        _reactNativeElements.Text,
-                        {
-                            h4: true,
-                            style: [_style.globalStyles.center, _style.globalStyles.whiteText],
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 28
-                            }
-                        },
-                        this.state.info.title
-                    ),
-                    this.state.info.tags.map(function (data, index) {
-                        var key = new Date().getTime() + index;
-                        return _react3.default.createElement(
-                            _reactNativeElements.Text,
-                            {
-                                key: key,
-                                style: [_style.globalStyles.center, _style.globalStyles.whiteText],
-                                __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 34
-                                }
-                            },
-                            data
-                        );
-                    })
-                );
-            }
-        }]);
-
-        return Card;
-    }(_react3.default.Component));
-},705,[109,128,507,12,594,711],"fmx/app/user/components/welcome/container.js");
-__d(function (global, require, module, exports, _dependencyMap) {
   var _src = require(_dependencyMap[0], "./src/");
 
   var _src2 = _interopRequireDefault(_src);
@@ -92935,6 +92820,271 @@ __d(function (global, require, module, exports, _dependencyMap) {
   exports.default = _component;
 },707,[109,128,292,12],"react-native-swiper/src/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.Card = undefined;
+
+    var _react2 = require(_dependencyMap[0], "react");
+
+    var _react3 = _interopRequireDefault(_react2);
+
+    var _index = require(_dependencyMap[1], "./../../../../node_modules/react-transform-hmr/lib/index.js");
+
+    var _index2 = _interopRequireDefault(_index);
+
+    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/welcome/container.js";
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    var _style = require(_dependencyMap[2], "../../style");
+
+    var _reactNative = require(_dependencyMap[3], "react-native");
+
+    var _reactNativeElements = require(_dependencyMap[4], "react-native-elements");
+
+    var _style2 = require(_dependencyMap[5], "./style");
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    var _components = {
+        Card: {
+            displayName: "Card"
+        }
+    };
+
+    var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+        filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/welcome/container.js",
+        components: _components,
+        locals: [module],
+        imports: [_react3.default]
+    });
+
+    function _wrapComponent(id) {
+        return function (Component) {
+            return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+        };
+    }
+
+    var Card = exports.Card = _wrapComponent("Card")(function (_React$Component) {
+        _inherits(Card, _React$Component);
+
+        function Card(props) {
+            _classCallCheck(this, Card);
+
+            var _this = _possibleConstructorReturn(this, (Card.__proto__ || Object.getPrototypeOf(Card)).call(this, props));
+
+            var data = props.info;
+            _this.state = {
+                info: data
+            };
+            return _this;
+        }
+
+        _createClass(Card, [{
+            key: "render",
+            value: function render() {
+                return _react3.default.createElement(
+                    _reactNative.View,
+                    {
+                        style: _style2.welcomeStyle.centerSlider,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 19
+                        }
+                    },
+                    _react3.default.createElement(
+                        _reactNativeElements.Text,
+                        {
+                            h4: true,
+                            style: [_style.globalStyles.center, _style.globalStyles.whiteText],
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 20
+                            }
+                        },
+                        this.state.info.image
+                    ),
+                    _react3.default.createElement(
+                        _reactNativeElements.Text,
+                        {
+                            h4: true,
+                            style: [_style.globalStyles.center, _style.globalStyles.whiteText],
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 28
+                            }
+                        },
+                        this.state.info.title
+                    ),
+                    this.state.info.tags.map(function (data, index) {
+                        var key = new Date().getTime() + index;
+                        return _react3.default.createElement(
+                            _reactNativeElements.Text,
+                            {
+                                key: key,
+                                style: [_style.globalStyles.center, _style.globalStyles.whiteText],
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 34
+                                }
+                            },
+                            data
+                        );
+                    })
+                );
+            }
+        }]);
+
+        return Card;
+    }(_react3.default.Component));
+},705,[109,128,507,12,594,711],"fmx/app/user/components/welcome/container.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.welcomeStyle = undefined;
+
+    var _reactNative = require(_dependencyMap[0], "react-native");
+
+    var welcomeStyle = exports.welcomeStyle = _reactNative.StyleSheet.create({
+        centerSlider: {
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center'
+        }
+    });
+},711,[12],"fmx/app/user/components/welcome/style.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+
+    var _react2 = require(_dependencyMap[0], "react");
+
+    var _react3 = _interopRequireDefault(_react2);
+
+    var _index = require(_dependencyMap[1], "./../../../../node_modules/react-transform-hmr/lib/index.js");
+
+    var _index2 = _interopRequireDefault(_index);
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    var _class,
+        _temp,
+        _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/screens/types/PasswordReset.js";
+
+    var _login = require(_dependencyMap[2], "./../../components/login");
+
+    var _reactNativeLinearGradient = require(_dependencyMap[3], "react-native-linear-gradient");
+
+    var _reactNativeLinearGradient2 = _interopRequireDefault(_reactNativeLinearGradient);
+
+    var _style = require(_dependencyMap[4], "../../style");
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    var _components = {
+        PWRecoverScreen: {
+            displayName: "PWRecoverScreen"
+        }
+    };
+
+    var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+        filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/screens/types/PasswordReset.js",
+        components: _components,
+        locals: [module],
+        imports: [_react3.default]
+    });
+
+    function _wrapComponent(id) {
+        return function (Component) {
+            return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+        };
+    }
+
+    var PWRecoverScreen = _wrapComponent("PWRecoverScreen")((_temp = _class = function (_React$Component) {
+        _inherits(PWRecoverScreen, _React$Component);
+
+        function PWRecoverScreen(props) {
+            _classCallCheck(this, PWRecoverScreen);
+
+            var _this = _possibleConstructorReturn(this, (PWRecoverScreen.__proto__ || Object.getPrototypeOf(PWRecoverScreen)).call(this, props));
+
+            _this.props.navigator.setOnNavigatorEvent(_this.onNavigatorEvent.bind(_this));
+
+            return _this;
+        }
+
+        _createClass(PWRecoverScreen, [{
+            key: "onNavigatorEvent",
+            value: function onNavigatorEvent(event) {
+                if (event.type == 'NavBarButtonPress') {
+                    if (event.id == 'cancel') {
+                        this.props.navigator.dismissModal({
+                            animationType: 'slide-down'
+                        });
+                    }
+                }
+            }
+        }, {
+            key: "goToNextScreen",
+            value: function goToNextScreen() {
+                this.props.navigator.resetTo({
+                    screen: 'fmx.login',
+                    title: ''
+                });
+            }
+        }, {
+            key: "render",
+            value: function render() {
+                return _react3.default.createElement(
+                    _reactNativeLinearGradient2.default,
+                    {
+                        colors: _style.globalThemes.dark,
+                        style: _style.globalStyles.background,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 43
+                        }
+                    },
+                    _react3.default.createElement(_login.PasswordRecoverUI, {
+                        onSucess: this.goToNextScreen.bind(this),
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 44
+                        }
+                    })
+                );
+            }
+        }]);
+
+        return PWRecoverScreen;
+    }(_react3.default.Component), _class.navigatorButtons = {
+        leftButtons: [{
+            title: 'X',
+            id: 'cancel',
+            buttonColor: 'white',
+            buttonFontSize: 18,
+            buttonFontWeight: '800'
+        }]
+    }, _temp));
+
+    exports.default = PWRecoverScreen;
+},712,[109,128,506,702,507],"fmx/app/user/screens/types/PasswordReset.js");
+__d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
@@ -93004,7 +93154,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 17
+              lineNumber: 16
             }
           },
           _react3.default.createElement(
@@ -93014,7 +93164,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               style: [_style.globalStyles.center],
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 18
+                lineNumber: 17
               }
             },
             "Dashboard Test"
@@ -93025,7 +93175,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               style: [_style.globalStyles.center],
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 21
+                lineNumber: 20
               }
             },
             "Save time. Save money. Scale Your Business."
@@ -93039,22 +93189,6 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   exports.default = DashboardUI;
 },708,[109,128,507,12,594],"fmx/app/user/components/dashboard/index.js");
-__d(function (global, require, module, exports, _dependencyMap) {
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
-    exports.welcomeStyle = undefined;
-
-    var _reactNative = require(_dependencyMap[0], "react-native");
-
-    var welcomeStyle = exports.welcomeStyle = _reactNative.StyleSheet.create({
-        centerSlider: {
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center'
-        }
-    });
-},711,[12],"fmx/app/user/components/welcome/style.js");
 require(23);
 require(710);
 //# sourceMappingURL=index.map
