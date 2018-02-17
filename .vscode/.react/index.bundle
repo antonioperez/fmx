@@ -68597,6 +68597,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 if (_this3.state.email) {
                     (0, _actions.resetPassword)(_this3.state.email, function (user) {
                         _this3.props.onSucess();
+
+                        alert("Check your email!");
                     }, function (error) {
                         var errorCode = error.code;
                         var errorMessage = error.message;
@@ -68624,7 +68626,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         style: _style.globalStyles.centerContainer,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 102
+                            lineNumber: 103
                         }
                     },
                     _react3.default.createElement(
@@ -68634,7 +68636,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             style: [_style.globalStyles.whiteText, _style.globalStyles.center],
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 103
+                                lineNumber: 104
                             }
                         },
                         "FMx Password Recovery"
@@ -68645,7 +68647,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             labelStyle: _style.globalStyles.whiteText,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 106
+                                lineNumber: 107
                             }
                         },
                         "Email"
@@ -68660,7 +68662,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         inputStyle: _style.globalStyles.whiteText,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 107
+                            lineNumber: 108
                         }
                     }),
                     _react3.default.createElement(_reactNativeElements.Button, {
@@ -68670,7 +68672,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         accessibilityLabel: "Reset Password",
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 112
+                            lineNumber: 113
                         }
                     })
                 );
@@ -93042,9 +93044,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
         }, {
             key: "goToNextScreen",
             value: function goToNextScreen() {
-                this.props.navigator.resetTo({
-                    screen: 'fmx.login',
-                    title: ''
+                this.props.navigator.dismissModal({
+                    animationType: 'slide-down'
                 });
             }
         }, {

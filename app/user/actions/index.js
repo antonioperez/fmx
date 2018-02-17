@@ -56,7 +56,6 @@ export const FBLogin = async (successCB, errorCB) => {
 }
 
 export function resetPassword(email, successCB, errorCB) {
-
     firebase.auth().sendPasswordResetEmail(email)
         .then((user) => successCB(user))
         .catch((error) => errorCB(error));

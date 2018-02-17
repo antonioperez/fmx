@@ -86,6 +86,7 @@ export class PasswordRecoverUI extends React.Component {
         resetPassword(this.state.email, 
         (user) => {
             this.props.onSucess();
+            alert("Check your email!");
         },
         (error) => {
             var errorCode = error.code;

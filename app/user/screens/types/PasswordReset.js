@@ -21,6 +21,7 @@ export default class PWRecoverScreen extends React.Component {
         super(props);
         this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent.bind(this));
     }
+
     onNavigatorEvent(event) {
         if (event.type == 'NavBarButtonPress') {
             if (event.id == 'cancel') {
@@ -32,9 +33,8 @@ export default class PWRecoverScreen extends React.Component {
     }
 
     goToNextScreen() {
-        this.props.navigator.resetTo({
-            screen: 'fmx.login',
-            title: ''
+        this.props.navigator.dismissModal({
+            animationType: 'slide-down'
         });
     }
 
