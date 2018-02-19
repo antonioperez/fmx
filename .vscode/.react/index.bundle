@@ -68734,7 +68734,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
-    exports.listenForFirebase = exports.FBLogin = exports.login = undefined;
+    exports.getFirebaseData = exports.FBLogin = exports.login = undefined;
 
     var _this = this;
 
@@ -68856,7 +68856,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
         });
     }
 
-    var listenForFirebase = exports.listenForFirebase = function listenForFirebase(ref, successCB, errorCB) {
+    var getFirebaseData = exports.getFirebaseData = function getFirebaseData(ref, successCB, errorCB) {
         var currData = [];
         ref.on("value", function (snapshot) {
             snapshot.forEach(function (data) {
@@ -91946,7 +91946,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       value: function componentDidMount() {
         var _this = this;
 
-        (0, _actions.listenForFirebase)(this.welcomeRef, function (data) {
+        (0, _actions.getFirebaseData)(this.welcomeRef, function (data) {
           _this.populateCards(data);
         });
       }
@@ -93392,6 +93392,18 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 }
             };
 
+            _this.nextStep = function () {
+                _this.setState({
+                    step: _this.state.step + 1
+                });
+            };
+
+            _this.previousStep = function () {
+                _this.setState({
+                    step: _this.state.step - 1
+                });
+            };
+
             _this.state = {
                 email: '',
                 pw: ''
@@ -93410,7 +93422,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         style: _style.globalStyles.centerContainer,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 42
+                            lineNumber: 54
                         }
                     },
                     _react3.default.createElement(
@@ -93420,7 +93432,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             style: [_style.globalStyles.whiteText, _style.globalStyles.center],
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 43
+                                lineNumber: 55
                             }
                         },
                         "FMx Merchant Signup"
@@ -93431,7 +93443,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             style: [_style.globalStyles.whiteText, _style.globalStyles.center],
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 46
+                                lineNumber: 58
                             }
                         },
                         "Save time. Save money. Scale Your Business."
@@ -93442,7 +93454,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             labelStyle: _style.globalStyles.whiteText,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 49
+                                lineNumber: 61
                             }
                         },
                         "Email"
@@ -93457,7 +93469,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         inputStyle: _style.globalStyles.whiteText,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 50
+                            lineNumber: 62
                         }
                     }),
                     _react3.default.createElement(_reactNativeElements.Button, {
@@ -93467,7 +93479,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         accessibilityLabel: "Register",
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 55
+                            lineNumber: 67
                         }
                     })
                 );

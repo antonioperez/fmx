@@ -37,6 +37,18 @@ export default class SignupUI extends React.Component {
     }
   }
 
+  nextStep = () => {
+    this.setState({
+      step : this.state.step + 1
+    })
+  }
+
+  previousStep = () =>{
+    this.setState({
+      step : this.state.step - 1
+    })
+  }
+
   render() {
     return (
       <View style={globalStyles.centerContainer}>

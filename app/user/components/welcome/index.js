@@ -3,7 +3,7 @@ import firebase from 'react-native-firebase';
 import Swiper from 'react-native-swiper';
 import { ScrollView, View } from 'react-native';
 import { globalStyles, ACTIVE_THEME } from '../../style';
-import { listenForFirebase } from '../../actions';
+import { getFirebaseData } from '../../actions';
 import { 
   Button,
   Text
@@ -30,7 +30,7 @@ export default class WelcomeUI extends React.Component {
 
   componentDidMount() {
       let _this = this;
-      listenForFirebase(this.welcomeRef, (data) => {
+      getFirebaseData(this.welcomeRef, (data) => {
         _this.populateCards(data);
       });
   }

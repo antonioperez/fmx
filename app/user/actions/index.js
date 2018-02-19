@@ -72,7 +72,7 @@ export function signOut(successCB, errorCB) {
 }
 
 //get Firebase Data
-export const listenForFirebase = (ref, successCB, errorCB) => {
+export const getFirebaseData = (ref, successCB, errorCB) => {
 
     var currData = [];
     ref.on("value", function (snapshot) {
