@@ -17,17 +17,14 @@ export class Card extends React.Component {
     render() {
         return (
             <View style={welcomeStyle.centerSlider}>
-                <Text h4 style={[globalStyles.center, globalStyles.whiteText]}>
-                    {this.state.info.image}
+                <Text h2 style={[globalStyles.center, globalStyles.whiteText]}>
+                    {this.state.info.title}
                 </Text>
-                {/* <Icon 
+                {<Icon 
                     name={this.state.info.image} 
                     iconStyle={[globalStyles.center, globalStyles.whiteText]}
                     size={100}
-                /> */}
-                <Text h4 style={[globalStyles.center, globalStyles.whiteText]}>
-                    {this.state.info.title}
-                </Text>
+                />}
                 {this.state.info.tags.map((data, index) => {
                     var key = new Date().getTime() + index;
                     return (
