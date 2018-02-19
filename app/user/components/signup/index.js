@@ -1,5 +1,5 @@
 import React from 'react';
-import { globalStyles, globalThemes } from '../../style';
+import { globalStyles, ACTIVE_THEME } from '../../style';
 import { login, register } from '../../actions';
 import { Platform, View, Image } from 'react-native';
 import { 
@@ -25,7 +25,7 @@ export default class SignupUI extends React.Component {
     if (this.state.email && this.state.pw) {
         login(this.state.email, this.state.pw, 
         (user) => {
-            this.props.goToNextScreen();
+            this.props.goToDashboard();
         },
         (error) => {
             var errorCode = error.code;
@@ -33,7 +33,7 @@ export default class SignupUI extends React.Component {
             alert(errorMessage);
         });
     } else {
-        alert("Email and Password Required!")
+        alert("Email Required!")
     }
   }
 

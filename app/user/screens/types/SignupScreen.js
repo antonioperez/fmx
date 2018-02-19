@@ -1,7 +1,7 @@
 import React from 'react';
 import SignupUI from './../../components/signup';
 import LinearGradient from 'react-native-linear-gradient';
-import { globalStyles, globalThemes } from '../../style';
+import { globalStyles, ACTIVE_THEME } from '../../style';
 
 export default class SignupScreen extends React.Component {
   constructor(props) {
@@ -23,7 +23,7 @@ export default class SignupScreen extends React.Component {
 
   render() {
     return (
-      <LinearGradient colors={globalThemes.dark} style={globalStyles.background} >
+      <LinearGradient colors={ACTIVE_THEME} style={globalStyles.background} >
         <SignupUI goToDashboard ={this.goToDashboard.bind(this)} />
       </LinearGradient>
     );

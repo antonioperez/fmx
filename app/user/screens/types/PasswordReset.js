@@ -1,7 +1,7 @@
 import React from 'react';
 import { PasswordRecoverUI } from './../../components/login';
 import LinearGradient from 'react-native-linear-gradient';
-import { globalStyles, globalThemes } from '../../style';
+import { globalStyles, ACTIVE_THEME } from '../../style';
 
 export default class PWRecoverScreen extends React.Component {
 
@@ -40,7 +40,7 @@ export default class PWRecoverScreen extends React.Component {
 
   render() {
     return (
-        <LinearGradient colors={globalThemes.dark} style={globalStyles.background} >
+        <LinearGradient colors={ACTIVE_THEME} style={globalStyles.background} >
           <PasswordRecoverUI onSucess = {this.goToNextScreen.bind(this)} />
         </LinearGradient>
     );

@@ -8,6 +8,8 @@ export const globalThemes = {
   'dark' : darkTheme
 }
 
+export const ACTIVE_THEME = globalThemes.dark;
+
 export const globalStyles = StyleSheet.create({
     background: {
       flex: 1,

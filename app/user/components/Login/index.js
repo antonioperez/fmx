@@ -1,5 +1,5 @@
 import React from 'react';
-import { globalStyles, globalThemes } from '../../style';
+import { globalStyles, ACTIVE_THEME } from '../../style';
 import { login, resetPassword } from '../../actions';
 import { FBLoginButton } from './container';
 import { Platform, View, Image } from 'react-native';

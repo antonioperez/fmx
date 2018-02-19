@@ -68358,7 +68358,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
         return _react3.default.createElement(
           _reactNativeLinearGradient2.default,
           {
-            colors: _style.globalThemes.dark,
+            colors: _style.ACTIVE_THEME,
             style: _style.globalStyles.background,
             __source: {
               fileName: _jsxFileName,
@@ -68694,7 +68694,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.globalStyles = exports.globalThemes = undefined;
+  exports.globalStyles = exports.ACTIVE_THEME = exports.globalThemes = undefined;
 
   var _reactNative = require(_dependencyMap[0], "react-native");
 
@@ -68704,6 +68704,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     "light": lightTheme,
     'dark': darkTheme
   };
+  var ACTIVE_THEME = exports.ACTIVE_THEME = globalThemes.dark;
 
   var globalStyles = exports.globalStyles = _reactNative.StyleSheet.create({
     background: {
@@ -91829,7 +91830,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
         return _react3.default.createElement(
           _reactNativeLinearGradient2.default,
           {
-            colors: _style.globalThemes.dark,
+            colors: _style.ACTIVE_THEME,
             style: _style.globalStyles.background,
             __source: {
               fileName: _jsxFileName,
@@ -93075,7 +93076,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 return _react3.default.createElement(
                     _reactNativeLinearGradient2.default,
                     {
-                        colors: _style.globalThemes.dark,
+                        colors: _style.ACTIVE_THEME,
                         style: _style.globalStyles.background,
                         __source: {
                             fileName: _jsxFileName,
@@ -93294,7 +93295,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
         return _react3.default.createElement(
           _reactNativeLinearGradient2.default,
           {
-            colors: _style.globalThemes.dark,
+            colors: _style.ACTIVE_THEME,
             style: _style.globalStyles.background,
             __source: {
               fileName: _jsxFileName,
@@ -93380,14 +93381,14 @@ __d(function (global, require, module, exports, _dependencyMap) {
             _this.onSubmit = function () {
                 if (_this.state.email && _this.state.pw) {
                     (0, _actions.login)(_this.state.email, _this.state.pw, function (user) {
-                        _this.props.goToNextScreen();
+                        _this.props.goToDashboard();
                     }, function (error) {
                         var errorCode = error.code;
                         var errorMessage = error.message;
                         alert(errorMessage);
                     });
                 } else {
-                    alert("Email and Password Required!");
+                    alert("Email Required!");
                 }
             };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import {LoginUI} from './../../components/login';
 import LinearGradient from 'react-native-linear-gradient';
-import {globalStyles,globalThemes} from '../../style';
+import {globalStyles, ACTIVE_THEME} from '../../style';
 
 export default class LoginScreen extends React.Component {
 
@@ -58,7 +58,7 @@ export default class LoginScreen extends React.Component {
 
   render() {
     return ( 
-      <LinearGradient colors = {globalThemes.dark} style = {globalStyles.background} >
+      <LinearGradient colors = {ACTIVE_THEME} style = {globalStyles.background} >
         <LoginUI onSucess = {this.goToNextScreen.bind(this)}/> 
       </LinearGradient>
     );
