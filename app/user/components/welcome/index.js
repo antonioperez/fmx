@@ -51,6 +51,7 @@ export default class WelcomeUI extends React.Component {
         <Button 
           buttonStyle={globalStyles.clearButton}
           title="Sign up" 
+          onPress={this.props.goToSignup}
           accessibilityLabel="Sign up"
         />
         <Button 

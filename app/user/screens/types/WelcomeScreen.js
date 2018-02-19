@@ -11,6 +11,16 @@ export default class WelcomeScreen extends React.Component {
     };
   }
 
+  goToSignup() {
+    this.props.navigator.showModal({
+      screen: 'fmx.signup',
+      navigatorStyle: {
+        navBarHidden: false,
+        navBarBackgroundColor: "#000"
+      },
+    });
+  }
+
   goToLogin() {
     this.props.navigator.showModal({
       screen: 'fmx.login',
@@ -24,7 +34,7 @@ export default class WelcomeScreen extends React.Component {
   render() {
     return (
       <LinearGradient colors={globalThemes.dark} style={globalStyles.background} >
-        <WelcomeUI goToLogin ={this.goToLogin.bind(this)} />
+        <WelcomeUI goToLogin ={this.goToLogin.bind(this)} goToSignup ={this.goToSignup.bind(this)} />
       </LinearGradient>
     );
   }
