@@ -14,10 +14,10 @@ export default class DashboardUI extends React.Component {
   render() {
     return (
       <View >
-        <Text h4 style={[globalStyles.center]}>
+        <Text h4 style={[globalStyles.alignCenter]}>
             Dashboard Test
         </Text>
-        <Text style={[globalStyles.center]}>
+        <Text style={[globalStyles.alignCenter]}>
           Save time. Save money. Scale Your Business.
         </Text>
       </View>

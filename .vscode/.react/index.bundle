@@ -1408,7 +1408,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var _App2 = _interopRequireDefault(_App);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},710,[12,489],"fmx/index.js");
+},715,[12,489],"fmx/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -68254,7 +68254,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             return _SignupScreen2.default;
         });
     }
-},504,[490,505,703,712,713,708],"fmx/app/user/screens/index.js");
+},504,[490,505,703,709,710,713],"fmx/app/user/screens/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -68494,17 +68494,17 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         style: _style.globalStyles.centerContainer,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 43
+                            lineNumber: 42
                         }
                     },
                     _react3.default.createElement(
                         _reactNativeElements.Text,
                         {
                             h4: true,
-                            style: [_style.globalStyles.whiteText, _style.globalStyles.center],
+                            style: [_style.globalStyles.whiteText, _style.globalStyles.alignCenter],
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 44
+                                lineNumber: 43
                             }
                         },
                         "FMx Merchant Portal"
@@ -68512,10 +68512,10 @@ __d(function (global, require, module, exports, _dependencyMap) {
                     _react3.default.createElement(
                         _reactNativeElements.Text,
                         {
-                            style: [_style.globalStyles.whiteText, _style.globalStyles.center],
+                            style: [_style.globalStyles.whiteText, _style.globalStyles.alignCenter],
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 47
+                                lineNumber: 46
                             }
                         },
                         "Save time. Save money. Scale Your Business."
@@ -68526,7 +68526,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             labelStyle: _style.globalStyles.whiteText,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 50
+                                lineNumber: 49
                             }
                         },
                         "Email"
@@ -68539,9 +68539,10 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         },
                         clearButtonMode: "always",
                         inputStyle: _style.globalStyles.whiteText,
+                        keyboardType: "email-address",
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 51
+                            lineNumber: 50
                         }
                     }),
                     _react3.default.createElement(
@@ -68641,7 +68642,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         _reactNativeElements.Text,
                         {
                             h4: true,
-                            style: [_style.globalStyles.whiteText, _style.globalStyles.center],
+                            style: [_style.globalStyles.whiteText, _style.globalStyles.alignCenter],
                             __source: {
                                 fileName: _jsxFileName,
                                 lineNumber: 104
@@ -68714,8 +68715,12 @@ __d(function (global, require, module, exports, _dependencyMap) {
       flex: 1,
       justifyContent: 'center'
     },
-    center: {
+    alignCenter: {
       alignSelf: 'center'
+    },
+    alignLeft: {
+      alignSelf: 'flex-start',
+      marginLeft: 20
     },
     whiteText: {
       color: "white"
@@ -92038,7 +92043,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = WelcomeUI;
-},704,[109,128,527,706,12,507,508,594,705],"fmx/app/user/components/welcome/index.js");
+},704,[109,128,527,705,12,507,508,594,707],"fmx/app/user/components/welcome/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var _src = require(_dependencyMap[0], "./src/");
 
@@ -92047,7 +92052,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
   module.exports = _src2.default;
-},706,[707],"react-native-swiper/index.js");
+},705,[706],"react-native-swiper/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -92842,7 +92847,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }, _temp2));
 
   exports.default = _component;
-},707,[109,128,292,12],"react-native-swiper/src/index.js");
+},706,[109,128,292,12],"react-native-swiper/src/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -92927,7 +92932,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         _reactNativeElements.Text,
                         {
                             h2: true,
-                            style: [_style.globalStyles.center, _style.globalStyles.whiteText],
+                            style: [_style.globalStyles.alignCenter, _style.globalStyles.whiteText],
                             __source: {
                                 fileName: _jsxFileName,
                                 lineNumber: 20
@@ -92937,7 +92942,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                     ),
                     _react3.default.createElement(_reactNativeElements.Icon, {
                         name: this.state.info.image,
-                        iconStyle: [_style.globalStyles.center, _style.globalStyles.whiteText],
+                        iconStyle: [_style.globalStyles.alignCenter, _style.globalStyles.whiteText],
                         size: 100,
                         __source: {
                             fileName: _jsxFileName,
@@ -92950,7 +92955,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             _reactNativeElements.Text,
                             {
                                 key: key,
-                                style: [_style.globalStyles.center, _style.globalStyles.whiteText],
+                                style: [_style.globalStyles.alignCenter, _style.globalStyles.whiteText],
                                 __source: {
                                     fileName: _jsxFileName,
                                     lineNumber: 31
@@ -92965,7 +92970,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
         return Card;
     }(_react3.default.Component));
-},705,[109,128,507,12,594,711],"fmx/app/user/components/welcome/container.js");
+},707,[109,128,507,12,594,708],"fmx/app/user/components/welcome/container.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -92981,7 +92986,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             alignItems: 'center'
         }
     });
-},711,[12],"fmx/app/user/components/welcome/style.js");
+},708,[12],"fmx/app/user/components/welcome/style.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -93103,112 +93108,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     }, _temp));
 
     exports.default = PWRecoverScreen;
-},712,[109,128,506,702,507],"fmx/app/user/screens/types/PasswordReset.js");
-__d(function (global, require, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-
-  var _react2 = require(_dependencyMap[0], "react");
-
-  var _react3 = _interopRequireDefault(_react2);
-
-  var _index = require(_dependencyMap[1], "./../../../../node_modules/react-transform-hmr/lib/index.js");
-
-  var _index2 = _interopRequireDefault(_index);
-
-  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/dashboard/index.js";
-
-  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-  var _style = require(_dependencyMap[2], "../../style");
-
-  var _reactNative = require(_dependencyMap[3], "react-native");
-
-  var _reactNativeElements = require(_dependencyMap[4], "react-native-elements");
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-  var _components = {
-    DashboardUI: {
-      displayName: "DashboardUI"
-    }
-  };
-
-  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/dashboard/index.js",
-    components: _components,
-    locals: [module],
-    imports: [_react3.default]
-  });
-
-  function _wrapComponent(id) {
-    return function (Component) {
-      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
-    };
-  }
-
-  var DashboardUI = _wrapComponent("DashboardUI")(function (_React$Component) {
-    _inherits(DashboardUI, _React$Component);
-
-    function DashboardUI(props) {
-      _classCallCheck(this, DashboardUI);
-
-      var _this = _possibleConstructorReturn(this, (DashboardUI.__proto__ || Object.getPrototypeOf(DashboardUI)).call(this, props));
-
-      _this.state = {};
-      return _this;
-    }
-
-    _createClass(DashboardUI, [{
-      key: "render",
-      value: function render() {
-        return _react3.default.createElement(
-          _reactNative.View,
-          {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 16
-            }
-          },
-          _react3.default.createElement(
-            _reactNativeElements.Text,
-            {
-              h4: true,
-              style: [_style.globalStyles.center],
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 17
-              }
-            },
-            "Dashboard Test"
-          ),
-          _react3.default.createElement(
-            _reactNativeElements.Text,
-            {
-              style: [_style.globalStyles.center],
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 20
-              }
-            },
-            "Save time. Save money. Scale Your Business."
-          )
-        );
-      }
-    }]);
-
-    return DashboardUI;
-  }(_react3.default.Component));
-
-  exports.default = DashboardUI;
-},708,[109,128,507,12,594],"fmx/app/user/components/dashboard/index.js");
+},709,[109,128,506,702,507],"fmx/app/user/screens/types/PasswordReset.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -93314,11 +93214,162 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = SignupScreen;
-},713,[109,128,714,702,507],"fmx/app/user/screens/types/SignupScreen.js");
+},710,[109,128,711,702,507],"fmx/app/user/screens/types/SignupScreen.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react2 = require(_dependencyMap[0], "react");
+
+  var _react3 = _interopRequireDefault(_react2);
+
+  var _index = require(_dependencyMap[1], "./../../../../node_modules/react-transform-hmr/lib/index.js");
+
+  var _index2 = _interopRequireDefault(_index);
+
+  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/signup/index.js";
+
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  var _style = require(_dependencyMap[2], "../../style");
+
+  var _actions = require(_dependencyMap[3], "../../actions");
+
+  var _container = require(_dependencyMap[4], "./container");
+
+  var _reactNative = require(_dependencyMap[5], "react-native");
+
+  var _reactNativeElements = require(_dependencyMap[6], "react-native-elements");
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var _components = {
+    SignupUI: {
+      displayName: "SignupUI"
+    }
+  };
+
+  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/signup/index.js",
+    components: _components,
+    locals: [module],
+    imports: [_react3.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var SignupUI = _wrapComponent("SignupUI")(function (_React$Component) {
+    _inherits(SignupUI, _React$Component);
+
+    function SignupUI(props) {
+      _classCallCheck(this, SignupUI);
+
+      var _this = _possibleConstructorReturn(this, (SignupUI.__proto__ || Object.getPrototypeOf(SignupUI)).call(this, props));
+
+      _this.submit = function () {
+        if (_this.state.email && _this.state.pw) {
+          (0, _actions.login)(_this.state.email, _this.state.pw, function (user) {
+            _this.props.goToDashboard();
+          }, function (error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            alert(errorMessage);
+          });
+        } else {
+          alert("Required!");
+        }
+      };
+
+      _this.nextStep = function (input, key) {
+        _this.setState({
+          step: _this.state.step + 1
+        });
+      };
+
+      _this.previousStep = function () {
+        _this.setState({
+          step: _this.state.step - 1
+        });
+      };
+
+      _this.saveState = function (input, key) {
+        console.log(input);
+        console.log(key);
+        var currState = _this.state;
+        currState[key] = input;
+
+        _this.setState(currState);
+      };
+
+      _this.saveAndContinue = function () {};
+
+      _this.nextStep = _this.nextStep.bind(_this);
+      _this.state = {
+        step: 1,
+        test: ""
+      };
+      return _this;
+    }
+
+    _createClass(SignupUI, [{
+      key: "render",
+      value: function render() {
+        console.log(this.state);
+        return _react3.default.createElement(
+          _reactNative.View,
+          {
+            style: _style.globalStyles.centerContainer,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 69
+            }
+          },
+          _react3.default.createElement(_container.InputFieldCard, {
+            fieldHandler: this.saveState,
+            title: "Hi",
+            label: "hello",
+            inputKey: "test",
+            keyboardType: "numeric",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 70
+            }
+          }),
+          _react3.default.createElement(_reactNativeElements.Button, {
+            buttonStyle: _style.globalStyles.clearButton,
+            onPress: this.nextStep,
+            title: "Register",
+            accessibilityLabel: "Register",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 77
+            }
+          })
+        );
+      }
+    }]);
+
+    return SignupUI;
+  }(_react3.default.Component));
+
+  exports.default = SignupUI;
+},711,[109,128,507,508,712,12,594],"fmx/app/user/components/signup/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
+    exports.InputFieldCard = undefined;
 
     var _react2 = require(_dependencyMap[0], "react");
 
@@ -93328,17 +93379,15 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     var _index2 = _interopRequireDefault(_index);
 
-    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/signup/index.js";
+    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/signup/container.js";
 
     var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
     var _style = require(_dependencyMap[2], "../../style");
 
-    var _actions = require(_dependencyMap[3], "../../actions");
+    var _reactNative = require(_dependencyMap[3], "react-native");
 
-    var _reactNative = require(_dependencyMap[4], "react-native");
-
-    var _reactNativeElements = require(_dependencyMap[5], "react-native-elements");
+    var _reactNativeElements = require(_dependencyMap[4], "react-native-elements");
 
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -93349,13 +93398,13 @@ __d(function (global, require, module, exports, _dependencyMap) {
     function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
     var _components = {
-        SignupUI: {
-            displayName: "SignupUI"
+        InputFieldCard: {
+            displayName: "InputFieldCard"
         }
     };
 
     var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-        filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/signup/index.js",
+        filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/signup/container.js",
         components: _components,
         locals: [module],
         imports: [_react3.default]
@@ -93367,48 +93416,23 @@ __d(function (global, require, module, exports, _dependencyMap) {
         };
     }
 
-    var SignupUI = _wrapComponent("SignupUI")(function (_React$Component) {
-        _inherits(SignupUI, _React$Component);
+    var InputFieldCard = exports.InputFieldCard = _wrapComponent("InputFieldCard")(function (_React$Component) {
+        _inherits(InputFieldCard, _React$Component);
 
-        function SignupUI(props) {
-            _classCallCheck(this, SignupUI);
+        function InputFieldCard(props) {
+            _classCallCheck(this, InputFieldCard);
 
-            var _this = _possibleConstructorReturn(this, (SignupUI.__proto__ || Object.getPrototypeOf(SignupUI)).call(this, props));
+            var _this = _possibleConstructorReturn(this, (InputFieldCard.__proto__ || Object.getPrototypeOf(InputFieldCard)).call(this, props));
 
-            _this.onSubmit = function () {
-                if (_this.state.email && _this.state.pw) {
-                    (0, _actions.login)(_this.state.email, _this.state.pw, function (user) {
-                        _this.props.goToDashboard();
-                    }, function (error) {
-                        var errorCode = error.code;
-                        var errorMessage = error.message;
-                        alert(errorMessage);
-                    });
-                } else {
-                    alert("Email Required!");
-                }
+            _this.onChangeText = function (input, key) {
+                _this.props.fieldHandler(input, key);
             };
 
-            _this.nextStep = function () {
-                _this.setState({
-                    step: _this.state.step + 1
-                });
-            };
-
-            _this.previousStep = function () {
-                _this.setState({
-                    step: _this.state.step - 1
-                });
-            };
-
-            _this.state = {
-                email: '',
-                pw: ''
-            };
+            _this.key = _this.props.inputKey;
             return _this;
         }
 
-        _createClass(SignupUI, [{
+        _createClass(InputFieldCard, [{
             key: "render",
             value: function render() {
                 var _this2 = this;
@@ -93416,34 +93440,22 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 return _react3.default.createElement(
                     _reactNative.View,
                     {
-                        style: _style.globalStyles.centerContainer,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 54
+                            lineNumber: 25
                         }
                     },
                     _react3.default.createElement(
                         _reactNativeElements.Text,
                         {
                             h4: true,
-                            style: [_style.globalStyles.whiteText, _style.globalStyles.center],
+                            style: [_style.globalStyles.whiteText, _style.globalStyles.alignLeft],
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 55
+                                lineNumber: 26
                             }
                         },
-                        "FMx Merchant Signup"
-                    ),
-                    _react3.default.createElement(
-                        _reactNativeElements.Text,
-                        {
-                            style: [_style.globalStyles.whiteText, _style.globalStyles.center],
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 58
-                            }
-                        },
-                        "Save time. Save money. Scale Your Business."
+                        this.props.title
                     ),
                     _react3.default.createElement(
                         _reactNativeElements.FormLabel,
@@ -93451,43 +93463,135 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             labelStyle: _style.globalStyles.whiteText,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 61
+                                lineNumber: 29
                             }
                         },
-                        "Email"
+                        this.props.label
                     ),
                     _react3.default.createElement(_reactNativeElements.FormInput, {
-                        onChangeText: function onChangeText(email) {
-                            return _this2.setState({
-                                email: email
-                            });
+                        onChangeText: function onChangeText(input) {
+                            return _this2.onChangeText(input, _this2.key);
                         },
                         clearButtonMode: "always",
                         inputStyle: _style.globalStyles.whiteText,
+                        keyboardType: this.props.keyboardType,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 62
-                        }
-                    }),
-                    _react3.default.createElement(_reactNativeElements.Button, {
-                        buttonStyle: _style.globalStyles.clearButton,
-                        onPress: this.onSubmit,
-                        title: "Register",
-                        accessibilityLabel: "Register",
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 67
+                            lineNumber: 32
                         }
                     })
                 );
             }
         }]);
 
-        return SignupUI;
+        return InputFieldCard;
     }(_react3.default.Component));
+},712,[109,128,507,12,594],"fmx/app/user/components/signup/container.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
 
-    exports.default = SignupUI;
-},714,[109,128,507,508,12,594],"fmx/app/user/components/signup/index.js");
+  var _react2 = require(_dependencyMap[0], "react");
+
+  var _react3 = _interopRequireDefault(_react2);
+
+  var _index = require(_dependencyMap[1], "./../../../../node_modules/react-transform-hmr/lib/index.js");
+
+  var _index2 = _interopRequireDefault(_index);
+
+  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/dashboard/index.js";
+
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  var _style = require(_dependencyMap[2], "../../style");
+
+  var _reactNative = require(_dependencyMap[3], "react-native");
+
+  var _reactNativeElements = require(_dependencyMap[4], "react-native-elements");
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var _components = {
+    DashboardUI: {
+      displayName: "DashboardUI"
+    }
+  };
+
+  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/dashboard/index.js",
+    components: _components,
+    locals: [module],
+    imports: [_react3.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var DashboardUI = _wrapComponent("DashboardUI")(function (_React$Component) {
+    _inherits(DashboardUI, _React$Component);
+
+    function DashboardUI(props) {
+      _classCallCheck(this, DashboardUI);
+
+      var _this = _possibleConstructorReturn(this, (DashboardUI.__proto__ || Object.getPrototypeOf(DashboardUI)).call(this, props));
+
+      _this.state = {};
+      return _this;
+    }
+
+    _createClass(DashboardUI, [{
+      key: "render",
+      value: function render() {
+        return _react3.default.createElement(
+          _reactNative.View,
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 16
+            }
+          },
+          _react3.default.createElement(
+            _reactNativeElements.Text,
+            {
+              h4: true,
+              style: [_style.globalStyles.alignCenter],
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 17
+              }
+            },
+            "Dashboard Test"
+          ),
+          _react3.default.createElement(
+            _reactNativeElements.Text,
+            {
+              style: [_style.globalStyles.alignCenter],
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 20
+              }
+            },
+            "Save time. Save money. Scale Your Business."
+          )
+        );
+      }
+    }]);
+
+    return DashboardUI;
+  }(_react3.default.Component));
+
+  exports.default = DashboardUI;
+},713,[109,128,507,12,594],"fmx/app/user/components/dashboard/index.js");
 require(23);
-require(710);
+require(715);
 //# sourceMappingURL=index.map

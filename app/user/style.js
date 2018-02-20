@@ -18,8 +18,12 @@ export const globalStyles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center'
     },
-    center: {
+    alignCenter: {
       alignSelf: 'center',
+    },
+    alignLeft: {
+      alignSelf: 'flex-start',
+      marginLeft: 20,
     },
     whiteText: {
       color: "white",

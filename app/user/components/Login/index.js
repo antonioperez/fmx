@@ -7,7 +7,6 @@ import {
   Button, 
   FormLabel, 
   FormInput,
-  TextInput,
   FormValidationMessage,
   Text,
   SocialIcon
@@ -41,10 +40,10 @@ export class LoginUI extends React.Component {
   render() {
     return (
       <View style={globalStyles.centerContainer}>
-          <Text h4 style={[globalStyles.whiteText,globalStyles.center]}>
+          <Text h4 style={[globalStyles.whiteText,globalStyles.alignCenter]}>
               FMx Merchant Portal
           </Text>
-          <Text style={[globalStyles.whiteText,globalStyles.center]}>
+          <Text style={[globalStyles.whiteText,globalStyles.alignCenter]}>
             Save time. Save money. Scale Your Business.
           </Text>
           <FormLabel labelStyle={globalStyles.whiteText}>Email</FormLabel>
@@ -52,6 +51,7 @@ export class LoginUI extends React.Component {
               onChangeText={(email) => this.setState({email})}
               clearButtonMode='always'
               inputStyle={globalStyles.whiteText}
+              keyboardType = "email-address"
           />
           <FormLabel labelStyle={globalStyles.whiteText}>Password</FormLabel>
           <FormInput 
@@ -101,7 +101,7 @@ export class PasswordRecoverUI extends React.Component {
   render() {
     return (
       <View style={globalStyles.centerContainer}>
-          <Text h4 style={[globalStyles.whiteText,globalStyles.center]}>
+          <Text h4 style={[globalStyles.whiteText,globalStyles.alignCenter]}>
               FMx Password Recovery
           </Text>
           <FormLabel labelStyle={globalStyles.whiteText}>Email</FormLabel>

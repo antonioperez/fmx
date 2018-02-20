@@ -1,6 +1,7 @@
 import React from 'react';
 import { globalStyles, ACTIVE_THEME } from '../../style';
 import { login, register } from '../../actions';
+import { InputFieldCard, InputOptionsCard } from './container';
 import { Platform, View, Image } from 'react-native';
 import { 
   Button, 
@@ -15,13 +16,14 @@ import {
 export default class SignupUI extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { 
-            email: '',
-            pw: '', 
+        this.nextStep = this.nextStep.bind(this);
+        this.state = {
+          step:1,
+          test: ""
         };
     }
     
-  onSubmit = () => {
+  submit = () => {
     if (this.state.email && this.state.pw) {
         login(this.state.email, this.state.pw, 
         (user) => {
@@ -33,11 +35,11 @@ export default class SignupUI extends React.Component {
             alert(errorMessage);
         });
     } else {
-        alert("Email Required!")
+        alert("Required!")
     }
   }
 
-  nextStep = () => {
+  nextStep = (input, key) => {
     this.setState({
       step : this.state.step + 1
     })
@@ -49,24 +51,32 @@ export default class SignupUI extends React.Component {
     })
   }
 
+  saveState = (input, key) => {
+    console.log(input);
+    console.log(key);
+    let currState = this.state;
+    currState[key] = input;
+    this.setState(currState)
+  } 
+
+  saveAndContinue = () => {
+
+  }
+
   render() {
+    console.log(this.state);
     return (
       <View style={globalStyles.centerContainer}>
-          <Text h4 style={[globalStyles.whiteText,globalStyles.center]}>
-              FMx Merchant Signup
-          </Text>
-          <Text style={[globalStyles.whiteText,globalStyles.center]}>
-            Save time. Save money. Scale Your Business.
-          </Text>
-          <FormLabel labelStyle={globalStyles.whiteText}>Email</FormLabel>
-          <FormInput 
-              onChangeText={(email) => this.setState({email})}
-              clearButtonMode='always'
-              inputStyle={globalStyles.whiteText}
+          <InputFieldCard 
+            fieldHandler = {this.saveState}
+            title = "Hi"
+            label = "hello"
+            inputKey = "test"
+            keyboardType = "numeric"
           />
           <Button 
               buttonStyle={globalStyles.clearButton}
-              onPress={this.onSubmit} 
+              onPress={this.nextStep} 
               title="Register" 
               accessibilityLabel="Register"
           />
