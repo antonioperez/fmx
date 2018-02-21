@@ -25,6 +25,8 @@ export class LoginUI extends React.Component {
     if (this.state.email && this.state.pw) {
         login(this.state.email, this.state.pw, 
         (user) => {
+            console.log(user)
+            
             this.props.onSucess();
         },
         (error) => {

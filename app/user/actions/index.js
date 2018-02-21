@@ -6,10 +6,12 @@ import firebase from 'react-native-firebase';
 
 
 //USER FUNCTIONS
-
 export function register(email, password, successCB, errorCB) {
-    auth.createUserWithEmailAndPassword(email, password)
-        .then((user) => successCB(user))
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((user) => {
+            var user = user.toJSON();
+            successCB(user)
+        })
         .catch((error) => errorCB(error));
 }
 
@@ -94,4 +96,17 @@ export const getFirebaseData = (ref, successCB, errorCB) => {
     });
 
     return currData;
+}
+
+export const updateFirebaseData = (ref, payload, successCB) => {
+    if (ref) {
+        ref.update(payload).then(function(){
+            alert("Data saved successfully.");
+            if (successCB) {
+                successCB();
+            }
+          }).catch(function(error) {
+            alert("Data could not be saved." + error);
+        });
+    }
 }

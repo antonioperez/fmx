@@ -68465,6 +68465,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
             _this.onLogin = function () {
                 if (_this.state.email && _this.state.pw) {
                     (0, _actions.login)(_this.state.email, _this.state.pw, function (user) {
+                        console.log(user);
+
                         _this.props.onSucess();
                     }, function (error) {
                         var errorCode = error.code;
@@ -68494,7 +68496,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         style: _style.globalStyles.centerContainer,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 42
+                            lineNumber: 44
                         }
                     },
                     _react3.default.createElement(
@@ -68504,7 +68506,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             style: [_style.globalStyles.whiteText, _style.globalStyles.alignCenter],
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 43
+                                lineNumber: 45
                             }
                         },
                         "FMx Merchant Portal"
@@ -68515,7 +68517,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             style: [_style.globalStyles.whiteText, _style.globalStyles.alignCenter],
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 46
+                                lineNumber: 48
                             }
                         },
                         "Save time. Save money. Scale Your Business."
@@ -68526,7 +68528,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             labelStyle: _style.globalStyles.whiteText,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 49
+                                lineNumber: 51
                             }
                         },
                         "Email"
@@ -68542,7 +68544,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         keyboardType: "email-address",
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 50
+                            lineNumber: 52
                         }
                     }),
                     _react3.default.createElement(
@@ -68551,7 +68553,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             labelStyle: _style.globalStyles.whiteText,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 56
+                                lineNumber: 58
                             }
                         },
                         "Password"
@@ -68567,7 +68569,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         inputStyle: _style.globalStyles.whiteText,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 57
+                            lineNumber: 59
                         }
                     }),
                     _react3.default.createElement(_reactNativeElements.Button, {
@@ -68577,14 +68579,14 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         accessibilityLabel: "Login",
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 63
+                            lineNumber: 65
                         }
                     }),
                     _react3.default.createElement(_container.FBLoginButton, {
                         onSucess: this.props.onSucess,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 69
+                            lineNumber: 71
                         }
                     })
                 );
@@ -68635,7 +68637,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         style: _style.globalStyles.centerContainer,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 103
+                            lineNumber: 105
                         }
                     },
                     _react3.default.createElement(
@@ -68645,7 +68647,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             style: [_style.globalStyles.whiteText, _style.globalStyles.alignCenter],
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 104
+                                lineNumber: 106
                             }
                         },
                         "FMx Password Recovery"
@@ -68656,7 +68658,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             labelStyle: _style.globalStyles.whiteText,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 107
+                                lineNumber: 109
                             }
                         },
                         "Email"
@@ -68671,7 +68673,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         inputStyle: _style.globalStyles.whiteText,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 108
+                            lineNumber: 110
                         }
                     }),
                     _react3.default.createElement(_reactNativeElements.Button, {
@@ -68681,7 +68683,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         accessibilityLabel: "Reset Password",
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 113
+                            lineNumber: 115
                         }
                     })
                 );
@@ -68739,7 +68741,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
-    exports.getFirebaseData = exports.FBLogin = exports.login = undefined;
+    exports.updateFirebaseData = exports.getFirebaseData = exports.FBLogin = exports.login = undefined;
 
     var _this = this;
 
@@ -68756,8 +68758,9 @@ __d(function (global, require, module, exports, _dependencyMap) {
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
     function register(email, password, successCB, errorCB) {
-        auth.createUserWithEmailAndPassword(email, password).then(function (user) {
-            return successCB(user);
+        _reactNativeFirebase2.default.auth().createUserWithEmailAndPassword(email, password).then(function (user) {
+            var user = user.toJSON();
+            successCB(user);
         }).catch(function (error) {
             return errorCB(error);
         });
@@ -68883,6 +68886,20 @@ __d(function (global, require, module, exports, _dependencyMap) {
             }
         });
         return currData;
+    };
+
+    var updateFirebaseData = exports.updateFirebaseData = function updateFirebaseData(ref, payload, successCB) {
+        if (ref) {
+            ref.update(payload).then(function () {
+                alert("Data saved successfully.");
+
+                if (successCB) {
+                    successCB();
+                }
+            }).catch(function (error) {
+                alert("Data could not be saved." + error);
+            });
+        }
     };
 },508,[509,527],"fmx/app/user/actions/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
@@ -93232,15 +93249,19 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-  var _style = require(_dependencyMap[2], "../../style");
+  var _reactNativeFirebase = require(_dependencyMap[2], "react-native-firebase");
 
-  var _actions = require(_dependencyMap[3], "../../actions");
+  var _reactNativeFirebase2 = _interopRequireDefault(_reactNativeFirebase);
 
-  var _container = require(_dependencyMap[4], "./container");
+  var _style = require(_dependencyMap[3], "../../style");
 
-  var _reactNative = require(_dependencyMap[5], "react-native");
+  var _actions = require(_dependencyMap[4], "../../actions");
 
-  var _reactNativeElements = require(_dependencyMap[6], "react-native-elements");
+  var _container = require(_dependencyMap[5], "./container");
+
+  var _reactNative = require(_dependencyMap[6], "react-native");
+
+  var _reactNativeElements = require(_dependencyMap[7], "react-native-elements");
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -93277,17 +93298,20 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
       var _this = _possibleConstructorReturn(this, (SignupUI.__proto__ || Object.getPrototypeOf(SignupUI)).call(this, props));
 
-      _this.submit = function () {
-        if (_this.state.email && _this.state.pw) {
-          (0, _actions.login)(_this.state.email, _this.state.pw, function (user) {
-            _this.props.goToDashboard();
+      _this.createUser = function () {
+        if (_this.state.userInfo.email && _this.state.userInfo.password) {
+          (0, _actions.register)(_this.state.userInfo.email, _this.state.userInfo.password, function (user) {
+            delete _this.state.userInfo.email;
+            delete _this.state.userInfo.password;
+            _this.user = user;
+            _this.userRef = _reactNativeFirebase2.default.database().ref('users').child(user.uid);
           }, function (error) {
             var errorCode = error.code;
             var errorMessage = error.message;
-            alert(errorMessage);
+            alert(errorMessage, "", function () {
+              _this.previousStep();
+            });
           });
-        } else {
-          alert("Required!");
         }
       };
 
@@ -93310,10 +93334,22 @@ __d(function (global, require, module, exports, _dependencyMap) {
         _this.setState(currState);
       };
 
+      _this.updateUser = function () {
+        if (_this.userRef) {
+          (0, _actions.updateFirebaseData)(_this.userRef, _this.state.userInfo, function () {});
+        }
+      };
+
       _this.saveAndContinue = function () {
+        _this.createUser();
+
+        _this.updateUser();
+
         _this.nextStep();
       };
 
+      _this.userRef = null;
+      _this.user = null;
       _this.state = {
         step: 0,
         userInfo: {
@@ -93332,23 +93368,49 @@ __d(function (global, require, module, exports, _dependencyMap) {
       value: function renderForm(step) {
         switch (this.state.step) {
           case 0:
+            return _react3.default.createElement(_container.InputFieldCard, {
+              fieldHandler: this.saveState,
+              title: "What's your email?",
+              label: "Email Address",
+              inputKey: "email",
+              keyboardType: "default",
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 90
+              }
+            });
+
+          case 1:
+            return _react3.default.createElement(_container.InputFieldCard, {
+              fieldHandler: this.saveState,
+              title: "What about a password?",
+              label: "Must be longer than 8 characters!",
+              inputKey: "password",
+              keyboardType: "default",
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 96
+              }
+            });
+
+          case 2:
             return _react3.default.createElement(
               _reactNative.View,
               {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 72
+                  lineNumber: 102
                 }
               },
               _react3.default.createElement(_container.InputFieldCard, {
                 fieldHandler: this.saveState,
-                title: "What's your name?",
+                title: "And what's your name?",
                 label: "First Name",
                 inputKey: "firstName",
                 keyboardType: "default",
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 72
+                  lineNumber: 102
                 }
               }),
               _react3.default.createElement(_container.InputFieldCard, {
@@ -93359,36 +93421,10 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 keyboardType: "default",
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 78
+                  lineNumber: 108
                 }
               })
             );
-
-          case 1:
-            return _react3.default.createElement(_container.InputFieldCard, {
-              fieldHandler: this.saveState,
-              title: "And your email?",
-              label: "Email Address",
-              inputKey: "email",
-              keyboardType: "default",
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 84
-              }
-            });
-
-          case 2:
-            return _react3.default.createElement(_container.InputFieldCard, {
-              fieldHandler: this.saveState,
-              title: "What about a password?",
-              label: "Must be longer than 8 characters!",
-              inputKey: "password",
-              keyboardType: "default",
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 90
-              }
-            });
 
           case 3:
             return _react3.default.createElement(_container.InputFieldCard, {
@@ -93399,7 +93435,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               keyboardType: "default",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 96
+                lineNumber: 114
               }
             });
         }
@@ -93407,14 +93443,13 @@ __d(function (global, require, module, exports, _dependencyMap) {
     }, {
       key: "render",
       value: function render() {
-        console.log(this.state);
         return _react3.default.createElement(
           _reactNative.View,
           {
             style: _style.globalStyles.centerContainer,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 107
+              lineNumber: 124
             }
           },
           this.renderForm(this.state.step),
@@ -93425,7 +93460,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             accessibilityLabel: "Continue",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 109
+              lineNumber: 126
             }
           })
         );
@@ -93436,7 +93471,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = SignupUI;
-},711,[109,128,507,508,712,12,594],"fmx/app/user/components/signup/index.js");
+},711,[109,128,527,507,508,712,12,594],"fmx/app/user/components/signup/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
