@@ -93307,14 +93307,15 @@ __d(function (global, require, module, exports, _dependencyMap) {
         console.log(input);
         console.log(key);
         var currState = _this.state;
-        currState[key] = input;
+        currState.userInfo[key] = input;
 
         _this.setState(currState);
       };
 
-      _this.saveAndContinue = function () {};
+      _this.saveAndContinue = function () {
+        _this.nextStep();
+      };
 
-      _this.saveState = _this.saveState.bind(_this);
       _this.state = {
         step: 0,
         userInfo: {
@@ -93338,7 +93339,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 76
+                  lineNumber: 74
                 }
               },
               _react3.default.createElement(_container.InputFieldCard, {
@@ -93349,7 +93350,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 keyboardType: "default",
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 76
+                  lineNumber: 74
                 }
               }),
               _react3.default.createElement(_container.InputFieldCard, {
@@ -93360,47 +93361,65 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 keyboardType: "default",
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 82
+                  lineNumber: 80
                 }
               })
             );
 
           case 1:
-            return _react3.default.createElement(_container.InputFieldCard, {
-              fieldHandler: this.saveState,
-              title: "And your email?",
-              label: "Email Address",
-              inputKey: "email",
-              keyboardType: "default",
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 88
-              }
-            });
+            return _react3.default.createElement(
+              _reactNative.View,
+              {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 86
+                }
+              },
+              _react3.default.createElement(_container.InputFieldCard, {
+                fieldHandler: this.saveState,
+                title: "And your email?",
+                label: "Email Address",
+                inputKey: "email",
+                keyboardType: "default",
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 86
+                }
+              })
+            );
 
           case 2:
-            return _react3.default.createElement(_container.InputFieldCard, {
-              fieldHandler: this.saveState,
-              title: "What about a password?",
-              label: "Must be longer than 8 characters!",
-              inputKey: "password",
-              keyboardType: "default",
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 94
-              }
-            });
+            return _react3.default.createElement(
+              _reactNative.View,
+              {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 92
+                }
+              },
+              _react3.default.createElement(_container.InputFieldCard, {
+                fieldHandler: this.saveState,
+                title: "What about a password?",
+                label: "Must be longer than 8 characters!",
+                inputKey: "password",
+                keyboardType: "default",
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 92
+                }
+              })
+            );
 
           case 3:
             return _react3.default.createElement(_container.InputFieldCard, {
               fieldHandler: this.saveState,
-              title: "Where are you currently located?",
+              title: "Where are you located?",
               label: "Rates depend on your location!",
               inputKey: "location",
               keyboardType: "default",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 100
+                lineNumber: 98
               }
             });
         }
@@ -93415,18 +93434,18 @@ __d(function (global, require, module, exports, _dependencyMap) {
             style: _style.globalStyles.centerContainer,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 111
+              lineNumber: 109
             }
           },
           this.renderForm(this.state.step),
           _react3.default.createElement(_reactNativeElements.Button, {
             buttonStyle: _style.globalStyles.clearButton,
-            onPress: this.nextStep,
+            onPress: this.saveAndContinue,
             title: "Continue",
             accessibilityLabel: "Continue",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 113
+              lineNumber: 111
             }
           })
         );
@@ -93497,15 +93516,16 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
             var _this = _possibleConstructorReturn(this, (InputFieldCard.__proto__ || Object.getPrototypeOf(InputFieldCard)).call(this, props));
 
-            _this.onChangeText = function (input, key) {
-                _this.props.fieldHandler(input, key);
-            };
-
             _this.key = _this.props.inputKey;
             return _this;
         }
 
         _createClass(InputFieldCard, [{
+            key: "onFieldChange",
+            value: function onFieldChange(input, key) {
+                this.props.fieldHandler(input, key);
+            }
+        }, {
             key: "render",
             value: function render() {
                 var _this2 = this;
@@ -93513,6 +93533,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 return _react3.default.createElement(
                     _reactNative.View,
                     {
+                        key: this.props.inputKey,
                         __source: {
                             fileName: _jsxFileName,
                             lineNumber: 25
@@ -93543,7 +93564,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                     ),
                     _react3.default.createElement(_reactNativeElements.FormInput, {
                         onChangeText: function onChangeText(input) {
-                            return _this2.onChangeText(input, _this2.key);
+                            return _this2.onFieldChange(input, _this2.props.inputKey);
                         },
                         clearButtonMode: "always",
                         inputStyle: _style.globalStyles.whiteText,

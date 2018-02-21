@@ -16,13 +16,13 @@ export class InputFieldCard extends React.Component {
         this.key = this.props.inputKey;
     }
 
-    onChangeText = (input, key) =>{
+    onFieldChange(input, key) {
         this.props.fieldHandler(input, key);
     }
 
     render() {
         return (
-          <View >
+          <View key = {this.props.inputKey}>
                 <Text h4 style={[globalStyles.whiteText, globalStyles.alignLeft]}>
                   {this.props.title}
                 </Text>
@@ -30,7 +30,7 @@ export class InputFieldCard extends React.Component {
                     {this.props.label}
                 </FormLabel>
                 <FormInput
-                    onChangeText={(input) => this.onChangeText(input, this.key)}
+                    onChangeText={(input) => this.onFieldChange(input, this.props.inputKey)}
                     clearButtonMode='always'
                     inputStyle={globalStyles.whiteText}
                     keyboardType = {this.props.keyboardType}

@@ -16,8 +16,6 @@ import {
 export default class SignupUI extends React.Component {
   constructor(props) {
     super(props);
-    this.saveState = this.saveState.bind(this);
-    
     this.state = {
       step: 0,
       userInfo : {
@@ -62,12 +60,12 @@ export default class SignupUI extends React.Component {
     console.log(input);
     console.log(key);
     let currState = this.state;
-    currState[key] = input;
+    currState.userInfo[key] = input;
     this.setState(currState)
   } 
 
   saveAndContinue = () => {
-
+    this.nextStep();
   }
 
   renderForm(step) {
@@ -85,20 +83,20 @@ export default class SignupUI extends React.Component {
                             inputKey = "lastName"
                             keyboardType = "default"/></View>)
       case 1:
-        return  <InputFieldCard fieldHandler = {this.saveState} 
+        return  (<View><InputFieldCard fieldHandler = {this.saveState} 
                               title = "And your email?" 
                               label = "Email Address" 
                               inputKey = "email" 
-                              keyboardType = "default"/>
+                              keyboardType = "default"/></View>)
       case 2:
-        return <InputFieldCard fieldHandler = {this.saveState} 
+        return (<View><InputFieldCard fieldHandler = {this.saveState} 
                               title = "What about a password?" 
                               label = "Must be longer than 8 characters!" 
                               inputKey = "password" 
-                              keyboardType = "default"/>
+                              keyboardType = "default"/></View>)
       case 3:
       return  <InputFieldCard fieldHandler = {this.saveState} 
-                              title = "Where are you currently located?" 
+                              title = "Where are you located?" 
                               label = "Rates depend on your location!" 
                               inputKey = "location" 
                               keyboardType = "default" />
@@ -112,7 +110,7 @@ export default class SignupUI extends React.Component {
           {this.renderForm(this.state.step)}
           <Button 
               buttonStyle={globalStyles.clearButton}
-              onPress={this.nextStep} 
+              onPress={this.saveAndContinue} 
               title="Continue" 
               accessibilityLabel="Continue"
           />
