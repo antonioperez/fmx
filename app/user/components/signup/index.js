@@ -57,8 +57,6 @@ export default class SignupUI extends React.Component {
   }
 
   saveState = (input, key) => {
-    console.log(input);
-    console.log(key);
     let currState = this.state;
     currState.userInfo[key] = input;
     this.setState(currState)
@@ -83,17 +81,17 @@ export default class SignupUI extends React.Component {
                             inputKey = "lastName"
                             keyboardType = "default"/></View>)
       case 1:
-        return  (<View><InputFieldCard fieldHandler = {this.saveState} 
+        return  <InputFieldCard fieldHandler = {this.saveState} 
                               title = "And your email?" 
                               label = "Email Address" 
                               inputKey = "email" 
-                              keyboardType = "default"/></View>)
+                              keyboardType = "default"/>
       case 2:
-        return (<View><InputFieldCard fieldHandler = {this.saveState} 
+        return <InputFieldCard fieldHandler = {this.saveState} 
                               title = "What about a password?" 
                               label = "Must be longer than 8 characters!" 
                               inputKey = "password" 
-                              keyboardType = "default"/></View>)
+                              keyboardType = "default"/>
       case 3:
       return  <InputFieldCard fieldHandler = {this.saveState} 
                               title = "Where are you located?" 

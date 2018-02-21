@@ -93304,8 +93304,6 @@ __d(function (global, require, module, exports, _dependencyMap) {
       };
 
       _this.saveState = function (input, key) {
-        console.log(input);
-        console.log(key);
         var currState = _this.state;
         currState.userInfo[key] = input;
 
@@ -93339,7 +93337,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 74
+                  lineNumber: 72
                 }
               },
               _react3.default.createElement(_container.InputFieldCard, {
@@ -93350,7 +93348,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 keyboardType: "default",
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 74
+                  lineNumber: 72
                 }
               }),
               _react3.default.createElement(_container.InputFieldCard, {
@@ -93361,54 +93359,36 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 keyboardType: "default",
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 80
+                  lineNumber: 78
                 }
               })
             );
 
           case 1:
-            return _react3.default.createElement(
-              _reactNative.View,
-              {
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 86
-                }
-              },
-              _react3.default.createElement(_container.InputFieldCard, {
-                fieldHandler: this.saveState,
-                title: "And your email?",
-                label: "Email Address",
-                inputKey: "email",
-                keyboardType: "default",
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 86
-                }
-              })
-            );
+            return _react3.default.createElement(_container.InputFieldCard, {
+              fieldHandler: this.saveState,
+              title: "And your email?",
+              label: "Email Address",
+              inputKey: "email",
+              keyboardType: "default",
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 84
+              }
+            });
 
           case 2:
-            return _react3.default.createElement(
-              _reactNative.View,
-              {
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 92
-                }
-              },
-              _react3.default.createElement(_container.InputFieldCard, {
-                fieldHandler: this.saveState,
-                title: "What about a password?",
-                label: "Must be longer than 8 characters!",
-                inputKey: "password",
-                keyboardType: "default",
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 92
-                }
-              })
-            );
+            return _react3.default.createElement(_container.InputFieldCard, {
+              fieldHandler: this.saveState,
+              title: "What about a password?",
+              label: "Must be longer than 8 characters!",
+              inputKey: "password",
+              keyboardType: "default",
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 90
+              }
+            });
 
           case 3:
             return _react3.default.createElement(_container.InputFieldCard, {
@@ -93419,7 +93399,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               keyboardType: "default",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 98
+                lineNumber: 96
               }
             });
         }
@@ -93434,7 +93414,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             style: _style.globalStyles.centerContainer,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 109
+              lineNumber: 107
             }
           },
           this.renderForm(this.state.step),
@@ -93445,7 +93425,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             accessibilityLabel: "Continue",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 111
+              lineNumber: 109
             }
           })
         );
