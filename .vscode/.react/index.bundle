@@ -68888,16 +68888,16 @@ __d(function (global, require, module, exports, _dependencyMap) {
         return currData;
     };
 
-    var updateFirebaseData = exports.updateFirebaseData = function updateFirebaseData(ref, payload, successCB) {
+    var updateFirebaseData = exports.updateFirebaseData = function updateFirebaseData(ref, payload, successCB, errorCB) {
         if (ref) {
             ref.update(payload).then(function () {
-                alert("Data saved successfully.");
-
                 if (successCB) {
                     successCB();
                 }
             }).catch(function (error) {
-                alert("Data could not be saved." + error);
+                if (errorCB) {
+                    errorCB();
+                }
             });
         }
     };
@@ -93298,23 +93298,6 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
       var _this = _possibleConstructorReturn(this, (SignupUI.__proto__ || Object.getPrototypeOf(SignupUI)).call(this, props));
 
-      _this.createUser = function () {
-        if (_this.state.userInfo.email && _this.state.userInfo.password) {
-          (0, _actions.register)(_this.state.userInfo.email, _this.state.userInfo.password, function (user) {
-            delete _this.state.userInfo.email;
-            delete _this.state.userInfo.password;
-            _this.user = user;
-            _this.userRef = _reactNativeFirebase2.default.database().ref('users').child(user.uid);
-          }, function (error) {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            alert(errorMessage, "", function () {
-              _this.previousStep();
-            });
-          });
-        }
-      };
-
       _this.nextStep = function (input, key) {
         _this.setState({
           step: _this.state.step + 1
@@ -93336,16 +93319,33 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
       _this.updateUser = function () {
         if (_this.userRef) {
-          (0, _actions.updateFirebaseData)(_this.userRef, _this.state.userInfo, function () {});
+          (0, _actions.updateFirebaseData)(_this.userRef, _this.state.userInfo, function () {
+            alert("Data saved successfully.");
+          });
         }
       };
 
       _this.saveAndContinue = function () {
-        _this.createUser();
+        if (_this.state.userInfo.email && _this.state.userInfo.password) {
+          (0, _actions.register)(_this.state.userInfo.email, _this.state.userInfo.password, function (user) {
+            delete _this.state.userInfo.email;
+            delete _this.state.userInfo.password;
+            _this.user = user;
+            _this.userRef = _reactNativeFirebase2.default.database().ref('users').child(user.uid);
 
-        _this.updateUser();
+            _this.nextStep();
+          }, function (error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            alert(errorMessage, "", function () {
+              _this.previousStep();
+            });
+          });
+        } else {
+          _this.nextStep();
 
-        _this.nextStep();
+          _this.updateUser();
+        }
       };
 
       _this.userRef = null;
@@ -93376,7 +93376,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               keyboardType: "default",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 90
+                lineNumber: 88
               }
             });
 
@@ -93389,7 +93389,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               keyboardType: "default",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 96
+                lineNumber: 94
               }
             });
 
@@ -93399,7 +93399,52 @@ __d(function (global, require, module, exports, _dependencyMap) {
               {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 102
+                  lineNumber: 100
+                }
+              },
+              _react3.default.createElement(
+                _reactNativeElements.Text,
+                {
+                  h3: true,
+                  style: [_style.globalStyles.whiteText, _style.globalStyles.alignLeft],
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 101
+                  }
+                },
+                "Welcome to FMx!"
+              ),
+              _react3.default.createElement(
+                _reactNativeElements.Text,
+                {
+                  style: [_style.globalStyles.whiteText, _style.globalStyles.alignLeft],
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 104
+                  }
+                },
+                "You're account has been created!"
+              ),
+              _react3.default.createElement(
+                _reactNativeElements.Text,
+                {
+                  style: [_style.globalStyles.whiteText, _style.globalStyles.alignLeft],
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 107
+                  }
+                },
+                "Now, lets fill in some information!"
+              )
+            );
+
+          case 3:
+            return _react3.default.createElement(
+              _reactNative.View,
+              {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 113
                 }
               },
               _react3.default.createElement(_container.InputFieldCard, {
@@ -93410,7 +93455,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 keyboardType: "default",
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 102
+                  lineNumber: 113
                 }
               }),
               _react3.default.createElement(_container.InputFieldCard, {
@@ -93421,12 +93466,12 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 keyboardType: "default",
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 108
+                  lineNumber: 119
                 }
               })
             );
 
-          case 3:
+          case 4:
             return _react3.default.createElement(_container.InputFieldCard, {
               fieldHandler: this.saveState,
               title: "Where are you located?",
@@ -93435,7 +93480,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               keyboardType: "default",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 114
+                lineNumber: 125
               }
             });
         }
@@ -93449,7 +93494,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             style: _style.globalStyles.centerContainer,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 124
+              lineNumber: 135
             }
           },
           this.renderForm(this.state.step),
@@ -93460,7 +93505,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             accessibilityLabel: "Continue",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 126
+              lineNumber: 137
             }
           })
         );

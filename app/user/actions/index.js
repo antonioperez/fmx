@@ -98,15 +98,16 @@ export const getFirebaseData = (ref, successCB, errorCB) => {
     return currData;
 }
 
-export const updateFirebaseData = (ref, payload, successCB) => {
+export const updateFirebaseData = (ref, payload, successCB, errorCB) => {
     if (ref) {
         ref.update(payload).then(function(){
-            alert("Data saved successfully.");
             if (successCB) {
                 successCB();
             }
           }).catch(function(error) {
-            alert("Data could not be saved." + error);
+            if (errorCB) {
+                errorCB();
+            }
         });
     }
 }

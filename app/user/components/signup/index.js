@@ -32,25 +32,6 @@ export default class SignupUI extends React.Component {
     };
   }
     
-  createUser = () => {
-    if (this.state.userInfo.email && this.state.userInfo.password) {
-      register(this.state.userInfo.email, this.state.userInfo.password, 
-        (user) => {
-            delete this.state.userInfo.email;
-            delete this.state.userInfo.password; 
-            this.user = user;
-            this.userRef = firebase.database().ref('users').child(user.uid);
-        },
-        (error) => {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            alert(errorMessage, "", () => {
-                this.previousStep();
-            });
-        });
-    }
-  }
-
   nextStep = (input, key) => {
     this.setState({
       step : this.state.step + 1
@@ -72,16 +53,33 @@ export default class SignupUI extends React.Component {
   updateUser = () => {
     if (this.userRef) {
       updateFirebaseData(this.userRef, this.state.userInfo, () => {
-
+        alert("Data saved successfully.");
       });
 
     }
   }
 
   saveAndContinue = () => {
-    this.createUser();
-    this.updateUser();
-    this.nextStep();
+    if (this.state.userInfo.email && this.state.userInfo.password) {
+      register(this.state.userInfo.email, this.state.userInfo.password, 
+        (user) => {
+            delete this.state.userInfo.email;
+            delete this.state.userInfo.password; 
+            this.user = user;
+            this.userRef = firebase.database().ref('users').child(user.uid);
+            this.nextStep();
+        },
+        (error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            alert(errorMessage, "", () => {
+                this.previousStep();
+            });
+        });
+    } else {
+      this.nextStep();
+      this.updateUser();
+    }
   }
 
   renderForm(step) {
@@ -99,6 +97,19 @@ export default class SignupUI extends React.Component {
                               inputKey = "password" 
                               keyboardType = "default"/>
       case 2:
+      return (<View>
+                <Text h3 style={[globalStyles.whiteText, globalStyles.alignLeft]}>
+                  Welcome to FMx!
+                </Text>
+                <Text style={[globalStyles.whiteText, globalStyles.alignLeft]}>
+                  You're account has been created!
+                </Text>
+                <Text style={[globalStyles.whiteText, globalStyles.alignLeft]}>
+                  Now, lets fill in some information!
+                </Text>
+
+              </View>)
+      case 3:
         return (<View><InputFieldCard 
                     fieldHandler = {this.saveState}
                     title = "And what's your name?"
@@ -110,7 +121,7 @@ export default class SignupUI extends React.Component {
                             label = "Last Name"
                             inputKey = "lastName"
                             keyboardType = "default"/></View>)
-      case 3:
+      case 4:
       return  <InputFieldCard fieldHandler = {this.saveState} 
                               title = "Where are you located?" 
                               label = "Rates depend on your location!" 
