@@ -93322,15 +93322,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
           "lastName": "",
           "email": "",
           "password": "",
-          "businessModel": "",
-          "businessType": "",
-          "city": "",
-          "effectiveRate": "",
-          "monthlyFees": "",
-          "monthlyRevenue": "",
-          "processor": "",
-          "state": "",
-          "zipcode": ""
+          "location": ""
         }
       };
       return _this;
@@ -93346,7 +93338,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 84
+                  lineNumber: 76
                 }
               },
               _react3.default.createElement(_container.InputFieldCard, {
@@ -93357,7 +93349,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 keyboardType: "default",
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 84
+                  lineNumber: 76
                 }
               }),
               _react3.default.createElement(_container.InputFieldCard, {
@@ -93368,7 +93360,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 keyboardType: "default",
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 90
+                  lineNumber: 82
                 }
               })
             );
@@ -93382,7 +93374,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               keyboardType: "default",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 96
+                lineNumber: 88
               }
             });
 
@@ -93395,20 +93387,20 @@ __d(function (global, require, module, exports, _dependencyMap) {
               keyboardType: "default",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 102
+                lineNumber: 94
               }
             });
 
           case 3:
             return _react3.default.createElement(_container.InputFieldCard, {
               fieldHandler: this.saveState,
-              title: "Who's your current Processor",
-              label: "",
-              inputKey: "processor",
+              title: "Where are you currently located?",
+              label: "Rates depend on your location!",
+              inputKey: "location",
               keyboardType: "default",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 108
+                lineNumber: 100
               }
             });
         }
@@ -93423,7 +93415,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             style: _style.globalStyles.centerContainer,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 119
+              lineNumber: 111
             }
           },
           this.renderForm(this.state.step),
@@ -93434,7 +93426,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             accessibilityLabel: "Continue",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 121
+              lineNumber: 113
             }
           })
         );

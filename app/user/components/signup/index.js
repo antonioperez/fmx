@@ -25,15 +25,7 @@ export default class SignupUI extends React.Component {
         "lastName" : "",
         "email": "", 
         "password": "",
-        "businessModel" : "",
-        "businessType" : "",
-        "city" : "",
-        "effectiveRate" : "",
-        "monthlyFees" : "",
-        "monthlyRevenue" : "",
-        "processor" : "",
-        "state" : "",
-        "zipcode" : ""
+        "location" : ""
       }      
     };
   }
@@ -106,9 +98,9 @@ export default class SignupUI extends React.Component {
                               keyboardType = "default"/>
       case 3:
       return  <InputFieldCard fieldHandler = {this.saveState} 
-                              title = "Who's your current Processor" 
-                              label = "" 
-                              inputKey = "processor" 
+                              title = "Where are you currently located?" 
+                              label = "Rates depend on your location!" 
+                              inputKey = "location" 
                               keyboardType = "default" />
     }
   }
