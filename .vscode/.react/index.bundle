@@ -93314,15 +93314,106 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
       _this.saveAndContinue = function () {};
 
-      _this.nextStep = _this.nextStep.bind(_this);
+      _this.saveState = _this.saveState.bind(_this);
       _this.state = {
-        step: 1,
-        test: ""
+        step: 0,
+        userInfo: {
+          "firstName": "",
+          "lastName": "",
+          "email": "",
+          "password": "",
+          "businessModel": "",
+          "businessType": "",
+          "city": "",
+          "effectiveRate": "",
+          "monthlyFees": "",
+          "monthlyRevenue": "",
+          "processor": "",
+          "state": "",
+          "zipcode": ""
+        }
       };
       return _this;
     }
 
     _createClass(SignupUI, [{
+      key: "renderForm",
+      value: function renderForm(step) {
+        switch (this.state.step) {
+          case 0:
+            return _react3.default.createElement(
+              _reactNative.View,
+              {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 84
+                }
+              },
+              _react3.default.createElement(_container.InputFieldCard, {
+                fieldHandler: this.saveState,
+                title: "What's your name?",
+                label: "First Name",
+                inputKey: "firstName",
+                keyboardType: "default",
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 84
+                }
+              }),
+              _react3.default.createElement(_container.InputFieldCard, {
+                fieldHandler: this.saveState,
+                title: "",
+                label: "Last Name",
+                inputKey: "lastName",
+                keyboardType: "default",
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 90
+                }
+              })
+            );
+
+          case 1:
+            return _react3.default.createElement(_container.InputFieldCard, {
+              fieldHandler: this.saveState,
+              title: "And your email?",
+              label: "Email Address",
+              inputKey: "email",
+              keyboardType: "default",
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 96
+              }
+            });
+
+          case 2:
+            return _react3.default.createElement(_container.InputFieldCard, {
+              fieldHandler: this.saveState,
+              title: "What about a password?",
+              label: "Must be longer than 8 characters!",
+              inputKey: "password",
+              keyboardType: "default",
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 102
+              }
+            });
+
+          case 3:
+            return _react3.default.createElement(_container.InputFieldCard, {
+              fieldHandler: this.saveState,
+              title: "Who's your current Processor",
+              label: "",
+              inputKey: "processor",
+              keyboardType: "default",
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 108
+              }
+            });
+        }
+      }
+    }, {
       key: "render",
       value: function render() {
         console.log(this.state);
@@ -93332,28 +93423,18 @@ __d(function (global, require, module, exports, _dependencyMap) {
             style: _style.globalStyles.centerContainer,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 69
+              lineNumber: 119
             }
           },
-          _react3.default.createElement(_container.InputFieldCard, {
-            fieldHandler: this.saveState,
-            title: "Hi",
-            label: "hello",
-            inputKey: "test",
-            keyboardType: "numeric",
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 70
-            }
-          }),
+          this.renderForm(this.state.step),
           _react3.default.createElement(_reactNativeElements.Button, {
             buttonStyle: _style.globalStyles.clearButton,
             onPress: this.nextStep,
-            title: "Register",
-            accessibilityLabel: "Register",
+            title: "Continue",
+            accessibilityLabel: "Continue",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 77
+              lineNumber: 121
             }
           })
         );

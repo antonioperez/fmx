@@ -14,14 +14,29 @@ import {
 } from 'react-native-elements';
 
 export default class SignupUI extends React.Component {
-    constructor(props) {
-        super(props);
-        this.nextStep = this.nextStep.bind(this);
-        this.state = {
-          step:1,
-          test: ""
-        };
-    }
+  constructor(props) {
+    super(props);
+    this.saveState = this.saveState.bind(this);
+    
+    this.state = {
+      step: 0,
+      userInfo : {
+        "firstName" : "",
+        "lastName" : "",
+        "email": "", 
+        "password": "",
+        "businessModel" : "",
+        "businessType" : "",
+        "city" : "",
+        "effectiveRate" : "",
+        "monthlyFees" : "",
+        "monthlyRevenue" : "",
+        "processor" : "",
+        "state" : "",
+        "zipcode" : ""
+      }      
+    };
+  }
     
   submit = () => {
     if (this.state.email && this.state.pw) {
@@ -63,22 +78,51 @@ export default class SignupUI extends React.Component {
 
   }
 
+  renderForm(step) {
+    switch (this.state.step) {
+      case 0:
+        return (<View><InputFieldCard 
+                    fieldHandler = {this.saveState}
+                    title = "What's your name?"
+                    label = "First Name"
+                    inputKey = "firstName"
+                    keyboardType = "default"/>
+            <InputFieldCard fieldHandler = {this.saveState}
+                            title = ""
+                            label = "Last Name"
+                            inputKey = "lastName"
+                            keyboardType = "default"/></View>)
+      case 1:
+        return  <InputFieldCard fieldHandler = {this.saveState} 
+                              title = "And your email?" 
+                              label = "Email Address" 
+                              inputKey = "email" 
+                              keyboardType = "default"/>
+      case 2:
+        return <InputFieldCard fieldHandler = {this.saveState} 
+                              title = "What about a password?" 
+                              label = "Must be longer than 8 characters!" 
+                              inputKey = "password" 
+                              keyboardType = "default"/>
+      case 3:
+      return  <InputFieldCard fieldHandler = {this.saveState} 
+                              title = "Who's your current Processor" 
+                              label = "" 
+                              inputKey = "processor" 
+                              keyboardType = "default" />
+    }
+  }
+
   render() {
     console.log(this.state);
     return (
       <View style={globalStyles.centerContainer}>
-          <InputFieldCard 
-            fieldHandler = {this.saveState}
-            title = "Hi"
-            label = "hello"
-            inputKey = "test"
-            keyboardType = "numeric"
-          />
+          {this.renderForm(this.state.step)}
           <Button 
               buttonStyle={globalStyles.clearButton}
               onPress={this.nextStep} 
-              title="Register" 
-              accessibilityLabel="Register"
+              title="Continue" 
+              accessibilityLabel="Continue"
           />
       </View>
     );
