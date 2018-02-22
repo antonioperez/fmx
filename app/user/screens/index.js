@@ -3,7 +3,7 @@ import LoginScreen from './types/LoginScreen';
 import WelcomeScreen from './types/WelcomeScreen';
 import PWRecoverScreen from './types/PasswordReset';
 import SignupScreen from './types/SignupScreen';
-import DashboardUI  from './../components/dashboard';
+import DashboardScreen  from './types/DashboardScreen';
 
 
 
@@ -13,6 +13,6 @@ export function registerScreens() {
     Navigation.registerComponent('fmx.login', () => LoginScreen);
     Navigation.registerComponent('fmx.passwordReset', () => PWRecoverScreen);
     Navigation.registerComponent('fmx.signup', () => SignupScreen);
-    Navigation.registerComponent('fmx.dashboard', () => DashboardUI);
+    Navigation.registerComponent('fmx.dashboard', () => DashboardScreen);
 
 }

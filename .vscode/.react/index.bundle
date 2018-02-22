@@ -68227,9 +68227,9 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     var _SignupScreen2 = _interopRequireDefault(_SignupScreen);
 
-    var _dashboard = require(_dependencyMap[5], "./../components/dashboard");
+    var _DashboardScreen = require(_dependencyMap[5], "./types/DashboardScreen");
 
-    var _dashboard2 = _interopRequireDefault(_dashboard);
+    var _DashboardScreen2 = _interopRequireDefault(_DashboardScreen);
 
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -68251,10 +68251,10 @@ __d(function (global, require, module, exports, _dependencyMap) {
         });
 
         _reactNativeNavigation.Navigation.registerComponent('fmx.dashboard', function () {
-            return _dashboard2.default;
+            return _DashboardScreen2.default;
         });
     }
-},504,[490,505,703,709,710,713],"fmx/app/user/screens/index.js");
+},504,[490,505,703,709,710,716],"fmx/app/user/screens/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -93711,6 +93711,97 @@ __d(function (global, require, module, exports, _dependencyMap) {
     }(_react3.default.Component));
 },712,[109,128,507,12,594],"fmx/app/user/components/signup/container.js");
 __d(function (global, require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+
+    var _react2 = require(_dependencyMap[0], "react");
+
+    var _react3 = _interopRequireDefault(_react2);
+
+    var _index = require(_dependencyMap[1], "./../../../../node_modules/react-transform-hmr/lib/index.js");
+
+    var _index2 = _interopRequireDefault(_index);
+
+    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/screens/types/DashboardScreen.js";
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    var _dashboard = require(_dependencyMap[2], "./../../components/dashboard");
+
+    var _dashboard2 = _interopRequireDefault(_dashboard);
+
+    var _reactNativeLinearGradient = require(_dependencyMap[3], "react-native-linear-gradient");
+
+    var _reactNativeLinearGradient2 = _interopRequireDefault(_reactNativeLinearGradient);
+
+    var _style = require(_dependencyMap[4], "../../style");
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    var _components = {
+        DashboardScreen: {
+            displayName: "DashboardScreen"
+        }
+    };
+
+    var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+        filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/screens/types/DashboardScreen.js",
+        components: _components,
+        locals: [module],
+        imports: [_react3.default]
+    });
+
+    function _wrapComponent(id) {
+        return function (Component) {
+            return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+        };
+    }
+
+    var DashboardScreen = _wrapComponent("DashboardScreen")(function (_React$Component) {
+        _inherits(DashboardScreen, _React$Component);
+
+        function DashboardScreen(props) {
+            _classCallCheck(this, DashboardScreen);
+
+            return _possibleConstructorReturn(this, (DashboardScreen.__proto__ || Object.getPrototypeOf(DashboardScreen)).call(this, props));
+        }
+
+        _createClass(DashboardScreen, [{
+            key: "render",
+            value: function render() {
+                return _react3.default.createElement(
+                    _reactNativeLinearGradient2.default,
+                    {
+                        colors: _style.ACTIVE_THEME,
+                        style: _style.globalStyles.background,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 15
+                        }
+                    },
+                    _react3.default.createElement(_dashboard2.default, {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 16
+                        }
+                    })
+                );
+            }
+        }]);
+
+        return DashboardScreen;
+    }(_react3.default.Component));
+
+    exports.default = DashboardScreen;
+},716,[109,128,713,702,507],"fmx/app/user/screens/types/DashboardScreen.js");
+__d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
@@ -93780,7 +93871,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 16
+              lineNumber: 17
             }
           },
           _react3.default.createElement(
@@ -93790,7 +93881,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               style: [_style.globalStyles.alignCenter],
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 17
+                lineNumber: 18
               }
             },
             "Dashboard Test"
@@ -93798,10 +93889,10 @@ __d(function (global, require, module, exports, _dependencyMap) {
           _react3.default.createElement(
             _reactNativeElements.Text,
             {
-              style: [_style.globalStyles.alignCenter],
+              style: [_style.globalStyles.alignCenter, _style.globalStyles.whiteText],
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 20
+                lineNumber: 21
               }
             },
             "Save time. Save money. Scale Your Business."
