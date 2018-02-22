@@ -12,7 +12,15 @@ Navigation.startSingleScreenApp({
             navBarHidden: true
         },
         navigatorButtons: {},
-      }
+    },
+    drawer : {
+        left: {
+            screen: 'fmx.menu', 
+            passProps: {}, 
+            disableOpenGesture: false, 
+            fixedWidth: 500 
+        },
+    }
 });
 
 

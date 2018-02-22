@@ -58513,6 +58513,14 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 navBarHidden: true
             },
             navigatorButtons: {}
+        },
+        drawer: {
+            left: {
+                screen: 'fmx.menu',
+                passProps: {},
+                disableOpenGesture: false,
+                fixedWidth: 500
+            }
         }
     });
 },489,[490,503],"fmx/app/App.js");
@@ -68231,6 +68239,10 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     var _DashboardScreen2 = _interopRequireDefault(_DashboardScreen);
 
+    var _MenuScreen = require(_dependencyMap[6], "./types/MenuScreen");
+
+    var _MenuScreen2 = _interopRequireDefault(_MenuScreen);
+
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
     function registerScreens() {
@@ -68253,8 +68265,12 @@ __d(function (global, require, module, exports, _dependencyMap) {
         _reactNativeNavigation.Navigation.registerComponent('fmx.dashboard', function () {
             return _DashboardScreen2.default;
         });
+
+        _reactNativeNavigation.Navigation.registerComponent('fmx.menu', function () {
+            return _MenuScreen2.default;
+        });
     }
-},504,[490,505,703,709,710,716],"fmx/app/user/screens/index.js");
+},504,[490,505,703,709,710,716,718],"fmx/app/user/screens/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -68699,7 +68715,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.globalStyles = exports.ACTIVE_THEME = exports.globalThemes = undefined;
+  exports.globalStyles = exports.ACTIVE_COLOR = exports.ACTIVE_THEME = exports.globalThemes = undefined;
 
   var _reactNative = require(_dependencyMap[0], "react-native");
 
@@ -68710,6 +68726,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     'dark': darkTheme
   };
   var ACTIVE_THEME = exports.ACTIVE_THEME = globalThemes.dark;
+  var ACTIVE_COLOR = exports.ACTIVE_COLOR = '#1d0c34';
 
   var globalStyles = exports.globalStyles = _reactNative.StyleSheet.create({
     background: {
@@ -93737,6 +93754,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     var _style = require(_dependencyMap[4], "../../style");
 
+    var _reactNativeElements = require(_dependencyMap[5], "react-native-elements");
+
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
     function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -93770,7 +93789,31 @@ __d(function (global, require, module, exports, _dependencyMap) {
         function DashboardScreen(props) {
             _classCallCheck(this, DashboardScreen);
 
-            return _possibleConstructorReturn(this, (DashboardScreen.__proto__ || Object.getPrototypeOf(DashboardScreen)).call(this, props));
+            var _this = _possibleConstructorReturn(this, (DashboardScreen.__proto__ || Object.getPrototypeOf(DashboardScreen)).call(this, props));
+
+            _this.toggleMenu = function (action) {
+                _this.props.navigator.toggleDrawer({
+                    side: 'left',
+                    animated: true,
+                    to: action
+                });
+            };
+
+            _this.menuButton = function () {
+                return _react3.default.createElement(_reactNativeElements.Icon, {
+                    name: "menu",
+                    color: "#1d0c34",
+                    onPress: function onPress() {
+                        return _this.toggleMenu('open');
+                    },
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 24
+                    }
+                });
+            };
+
+            return _this;
         }
 
         _createClass(DashboardScreen, [{
@@ -93783,13 +93826,27 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         style: _style.globalStyles.background,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 33
+                            lineNumber: 34
                         }
                     },
+                    _react3.default.createElement(_reactNativeElements.Header, {
+                        backgroundColor: "#fff",
+                        leftComponent: this.menuButton(),
+                        centerComponent: {
+                            text: 'FMx',
+                            style: {
+                                color: '#1d0c34'
+                            }
+                        },
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 35
+                        }
+                    }),
                     _react3.default.createElement(_dashboard2.default, {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 34
+                            lineNumber: 40
                         }
                     })
                 );
@@ -93800,7 +93857,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     }(_react3.default.Component));
 
     exports.default = DashboardScreen;
-},716,[109,128,713,702,507],"fmx/app/user/screens/types/DashboardScreen.js");
+},716,[109,128,713,702,507,594],"fmx/app/user/screens/types/DashboardScreen.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -93824,7 +93881,11 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _reactNativeElements = require(_dependencyMap[4], "react-native-elements");
 
-  var _container = require(_dependencyMap[5], "./container");
+  var _reactNativeLinearGradient = require(_dependencyMap[5], "react-native-linear-gradient");
+
+  var _reactNativeLinearGradient2 = _interopRequireDefault(_reactNativeLinearGradient);
+
+  var _container = require(_dependencyMap[6], "./container");
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -93873,37 +93934,16 @@ __d(function (global, require, module, exports, _dependencyMap) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 18
-            }
-          },
-          _react3.default.createElement(_reactNativeElements.Header, {
-            backgroundColor: "#fff",
-            leftComponent: {
-              icon: 'menu',
-              color: '#1d0c34'
-            },
-            centerComponent: {
-              text: 'FMx',
-              style: {
-                color: '#1d0c34'
-              }
-            },
-            rightComponent: {
-              icon: 'settings',
-              color: '#1d0c34'
-            },
-            __source: {
-              fileName: _jsxFileName,
               lineNumber: 19
             }
-          }),
+          },
           _react3.default.createElement(
             _reactNativeElements.Card,
             {
               title: "Welcome back, Antonio",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 25
+                lineNumber: 20
               }
             },
             _react3.default.createElement(
@@ -93914,10 +93954,33 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 }],
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 26
+                  lineNumber: 21
                 }
               },
-              "We suggest merchant processors based on your business profile. Easily import your information with Snap n Cap!"
+              "We suggest merchant processors based on your business profile. Complete your business profile with Snap n Cap!"
+            ),
+            _react3.default.createElement(
+              _reactNativeLinearGradient2.default,
+              {
+                colors: _style.ACTIVE_THEME,
+                style: {
+                  marginTop: 10
+                },
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 24
+                }
+              },
+              _react3.default.createElement(_reactNativeElements.Button, {
+                title: "Snap n Cap",
+                buttonStyle: {
+                  backgroundColor: 'transparent'
+                },
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 25
+                }
+              })
             )
           ),
           _react3.default.createElement(
@@ -93925,37 +93988,25 @@ __d(function (global, require, module, exports, _dependencyMap) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 30
+                lineNumber: 28
               }
             },
             _react3.default.createElement(_container.RateCard, {
               __source: {
                 fileName: _jsxFileName,
+                lineNumber: 29
+              }
+            }),
+            _react3.default.createElement(_container.RateCard, {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 30
+              }
+            }),
+            _react3.default.createElement(_container.RateCard, {
+              __source: {
+                fileName: _jsxFileName,
                 lineNumber: 31
-              }
-            }),
-            _react3.default.createElement(_container.RateCard, {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 32
-              }
-            }),
-            _react3.default.createElement(_container.RateCard, {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 33
-              }
-            }),
-            _react3.default.createElement(_container.RateCard, {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 34
-              }
-            }),
-            _react3.default.createElement(_container.RateCard, {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 35
               }
             })
           )
@@ -93967,7 +94018,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = DashboardUI;
-},713,[109,128,507,12,594,717],"fmx/app/user/components/dashboard/index.js");
+},713,[109,128,507,12,594,702,717],"fmx/app/user/components/dashboard/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -94273,6 +94324,283 @@ __d(function (global, require, module, exports, _dependencyMap) {
         return RateCard;
     }(_react3.default.Component));
 },717,[109,128,507,12,594,702],"fmx/app/user/components/dashboard/container.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+
+    var _react2 = require(_dependencyMap[0], "react");
+
+    var _react3 = _interopRequireDefault(_react2);
+
+    var _index = require(_dependencyMap[1], "./../../../../node_modules/react-transform-hmr/lib/index.js");
+
+    var _index2 = _interopRequireDefault(_index);
+
+    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/screens/types/MenuScreen.js";
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    var _menu = require(_dependencyMap[2], "./../../components/menu");
+
+    var _menu2 = _interopRequireDefault(_menu);
+
+    var _reactNativeLinearGradient = require(_dependencyMap[3], "react-native-linear-gradient");
+
+    var _reactNativeLinearGradient2 = _interopRequireDefault(_reactNativeLinearGradient);
+
+    var _style = require(_dependencyMap[4], "../../style");
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    var _components = {
+        MenuScreen: {
+            displayName: "MenuScreen"
+        }
+    };
+
+    var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+        filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/screens/types/MenuScreen.js",
+        components: _components,
+        locals: [module],
+        imports: [_react3.default]
+    });
+
+    function _wrapComponent(id) {
+        return function (Component) {
+            return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+        };
+    }
+
+    var MenuScreen = _wrapComponent("MenuScreen")(function (_React$Component) {
+        _inherits(MenuScreen, _React$Component);
+
+        function MenuScreen(props) {
+            _classCallCheck(this, MenuScreen);
+
+            return _possibleConstructorReturn(this, (MenuScreen.__proto__ || Object.getPrototypeOf(MenuScreen)).call(this, props));
+        }
+
+        _createClass(MenuScreen, [{
+            key: "render",
+            value: function render() {
+                return _react3.default.createElement(
+                    _reactNativeLinearGradient2.default,
+                    {
+                        colors: _style.ACTIVE_THEME,
+                        style: _style.globalStyles.background,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 14
+                        }
+                    },
+                    _react3.default.createElement(_menu2.default, {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 15
+                        }
+                    })
+                );
+            }
+        }]);
+
+        return MenuScreen;
+    }(_react3.default.Component));
+
+    exports.default = MenuScreen;
+},718,[109,128,719,702,507],"fmx/app/user/screens/types/MenuScreen.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react2 = require(_dependencyMap[0], "react");
+
+  var _react3 = _interopRequireDefault(_react2);
+
+  var _index = require(_dependencyMap[1], "./../../../../node_modules/react-transform-hmr/lib/index.js");
+
+  var _index2 = _interopRequireDefault(_index);
+
+  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/menu/index.js";
+
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  var _reactNativeLinearGradient = require(_dependencyMap[2], "react-native-linear-gradient");
+
+  var _reactNativeLinearGradient2 = _interopRequireDefault(_reactNativeLinearGradient);
+
+  var _style = require(_dependencyMap[3], "../../style");
+
+  var _reactNative = require(_dependencyMap[4], "react-native");
+
+  var _reactNativeElements = require(_dependencyMap[5], "react-native-elements");
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var _components = {
+    MenuUI: {
+      displayName: "MenuUI"
+    }
+  };
+
+  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/menu/index.js",
+    components: _components,
+    locals: [module],
+    imports: [_react3.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var MenuUI = _wrapComponent("MenuUI")(function (_React$Component) {
+    _inherits(MenuUI, _React$Component);
+
+    function MenuUI(props) {
+      _classCallCheck(this, MenuUI);
+
+      var _this = _possibleConstructorReturn(this, (MenuUI.__proto__ || Object.getPrototypeOf(MenuUI)).call(this, props));
+
+      _this.state = {};
+      _this.list = [{
+        title: 'Dashboard',
+        icon: 'home',
+        hideChevron: true
+      }, {
+        title: 'My Profile',
+        icon: 'account-circle',
+        hideChevron: true
+      }, {
+        title: 'Browse Merchants',
+        icon: 'search',
+        hideChevron: true
+      }, {
+        title: 'Settings',
+        icon: 'settings',
+        hideChevron: true
+      }, {
+        title: 'Help',
+        icon: 'help',
+        hideChevron: true
+      }];
+      return _this;
+    }
+
+    _createClass(MenuUI, [{
+      key: "render",
+      value: function render() {
+        return _react3.default.createElement(
+          _reactNative.View,
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 44
+            }
+          },
+          _react3.default.createElement(_reactNativeElements.Header, {
+            backgroundColor: "#fff",
+            centerComponent: {
+              text: 'FMx',
+              style: {
+                color: '#1d0c34'
+              }
+            },
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 45
+            }
+          }),
+          _react3.default.createElement(
+            _reactNativeElements.List,
+            {
+              style: [{
+                marginTop: 5
+              }],
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 49
+              }
+            },
+            this.list.map(function (item, i) {
+              return _react3.default.createElement(_reactNativeElements.ListItem, {
+                key: i,
+                title: item.title,
+                leftIcon: {
+                  name: item.icon,
+                  color: _style.ACTIVE_COLOR
+                },
+                hideChevron: item.hideChevron,
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 52
+                }
+              });
+            })
+          ),
+          _react3.default.createElement(
+            _reactNative.View,
+            {
+              style: {
+                marginTop: 40
+              },
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 61
+              }
+            },
+            _react3.default.createElement(_reactNativeElements.Button, {
+              title: "Logout",
+              buttonStyle: {
+                backgroundColor: '#fff'
+              },
+              color: _style.ACTIVE_COLOR,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 62
+              }
+            }),
+            _react3.default.createElement(
+              _reactNativeElements.Text,
+              {
+                style: [{
+                  fontSize: 12,
+                  marginTop: 15
+                }, _style.globalStyles.alignCenter, _style.globalStyles.whiteText],
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 63
+                }
+              },
+              "Copyright 2018 ",
+              "\n",
+              " Rose Through Concrete LLC."
+            )
+          )
+        );
+      }
+    }]);
+
+    return MenuUI;
+  }(_react3.default.Component));
+
+  exports.default = MenuUI;
+},719,[109,128,702,507,12,594],"fmx/app/user/components/menu/index.js");
 require(23);
 require(715);
 //# sourceMappingURL=index.map

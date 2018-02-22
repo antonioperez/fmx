@@ -1,7 +1,8 @@
 import React from 'react';
-import { globalStyles } from '../../style';
+import { globalStyles, ACTIVE_THEME } from '../../style';
 import { View, ScrollView } from 'react-native';
-import { Text, Header, Card } from 'react-native-elements';
+import { Text, Card, Button } from 'react-native-elements';
+import LinearGradient from 'react-native-linear-gradient';
 import { RateCard } from './container';
 
 export default class DashboardUI extends React.Component {
@@ -16,26 +17,19 @@ export default class DashboardUI extends React.Component {
   render() {
     return (
       <View >
-        <Header
-          backgroundColor = {"#fff"}
-          leftComponent={{ icon: 'menu', color: '#1d0c34' }}
-          centerComponent={{ text: 'FMx', style: { color: '#1d0c34' } }}
-          rightComponent={{ icon: 'settings', color: '#1d0c34' }}
-        />
         <Card title="Welcome back, Antonio">
           <Text style={[{fontSize:12}]}>
-            We suggest merchant processors based on your business profile. Easily import your information with Snap n Cap!
+            We suggest merchant processors based on your business profile. Complete your business profile with Snap n Cap!
           </Text>
+          <LinearGradient colors={ACTIVE_THEME} style={{marginTop: 10}} >
+              <Button title='Snap n Cap' buttonStyle={{backgroundColor: 'transparent'}} />
+          </LinearGradient>
         </Card>
         <ScrollView>
           <RateCard />
           <RateCard />
           <RateCard />
-          <RateCard />
-          <RateCard />
-
         </ScrollView>
-       
       </View>
     );
   }

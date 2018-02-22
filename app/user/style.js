@@ -9,6 +9,7 @@ export const globalThemes = {
 }
 
 export const ACTIVE_THEME = globalThemes.dark;
+export const ACTIVE_COLOR = '#1d0c34';
 
 export const globalStyles = StyleSheet.create({
     background: {
