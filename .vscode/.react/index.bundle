@@ -68348,8 +68348,10 @@ __d(function (global, require, module, exports, _dependencyMap) {
       key: "goToNextScreen",
       value: function goToNextScreen() {
         this.props.navigator.resetTo({
-          screen: 'fmx.welcome',
-          title: 'Pushed Screen'
+          screen: 'fmx.dashboard',
+          navigatorStyle: {
+            navBarHidden: true
+          }
         });
       }
     }, {
@@ -68362,14 +68364,14 @@ __d(function (global, require, module, exports, _dependencyMap) {
             style: _style.globalStyles.background,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 61
+              lineNumber: 63
             }
           },
           _react3.default.createElement(_login.LoginUI, {
             onSucess: this.goToNextScreen.bind(this),
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 62
+              lineNumber: 64
             }
           })
         );

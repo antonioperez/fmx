@@ -51,8 +51,10 @@ export default class LoginScreen extends React.Component {
 
   goToNextScreen() {
     this.props.navigator.resetTo({
-      screen: 'fmx.welcome',
-      title: 'Pushed Screen'
+      screen: 'fmx.dashboard',
+      navigatorStyle: {
+        navBarHidden: true
+      },
     });
   }
 
