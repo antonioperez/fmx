@@ -42,5 +42,10 @@ export const globalStyles = StyleSheet.create({
       width:60,
       height:60,
       borderRadius:100,
+    },
+    row : {
+      marginTop: 10,
+      flexDirection: 'row',
+      justifyContent: 'space-between'
     }
   });

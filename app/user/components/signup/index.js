@@ -130,16 +130,17 @@ export default class SignupUI extends React.Component {
   }
 
   render() {
+ 
     return (
       <View style={globalStyles.centerContainer}>
           {this.renderForm(this.state.step)}
-          <View >
+          <View style={globalStyles.row}>
               <Button
-                  style = {{alignSelf: "flex-end"}}
+                  style = {{alignSelf: "flex-start"}}
                   buttonStyle={[globalStyles.clearButton, globalStyles.buttonCircle]}
                   onPress={this.previousStep} 
                   icon={{name: 'chevron-left', size: 35}}
-                  accessibilityLabel="Continue"
+                  accessibilityLabel="Go Back"
               />
               <Button
                   style = {{alignSelf: "flex-end"}}

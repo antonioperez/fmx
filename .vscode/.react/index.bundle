@@ -68741,6 +68741,11 @@ __d(function (global, require, module, exports, _dependencyMap) {
       width: 60,
       height: 60,
       borderRadius: 100
+    },
+    row: {
+      marginTop: 10,
+      flexDirection: 'row',
+      justifyContent: 'space-between'
     }
   });
 },507,[12],"fmx/app/user/style.js");
@@ -93500,21 +93505,22 @@ __d(function (global, require, module, exports, _dependencyMap) {
             style: _style.globalStyles.centerContainer,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 134
+              lineNumber: 135
             }
           },
           this.renderForm(this.state.step),
           _react3.default.createElement(
             _reactNative.View,
             {
+              style: _style.globalStyles.row,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 136
+                lineNumber: 137
               }
             },
             _react3.default.createElement(_reactNativeElements.Button, {
               style: {
-                alignSelf: "flex-end"
+                alignSelf: "flex-start"
               },
               buttonStyle: [_style.globalStyles.clearButton, _style.globalStyles.buttonCircle],
               onPress: this.previousStep,
@@ -93522,10 +93528,10 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 name: 'chevron-left',
                 size: 35
               },
-              accessibilityLabel: "Continue",
+              accessibilityLabel: "Go Back",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 137
+                lineNumber: 138
               }
             }),
             _react3.default.createElement(_reactNativeElements.Button, {
@@ -93541,7 +93547,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               accessibilityLabel: "Continue",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 144
+                lineNumber: 145
               }
             })
           )
