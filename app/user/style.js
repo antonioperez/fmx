@@ -35,5 +35,12 @@ export const globalStyles = StyleSheet.create({
       borderWidth: 1,
       marginTop: 10,
       marginBottom: 10
+    },
+    buttonCircle: {
+      alignItems:'center',
+      justifyContent:'center',
+      width:60,
+      height:60,
+      borderRadius:100,
     }
   });

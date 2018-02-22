@@ -53,9 +53,8 @@ export default class SignupUI extends React.Component {
   updateUser = () => {
     if (this.userRef) {
       updateFirebaseData(this.userRef, this.state.userInfo, () => {
-        alert("Data saved successfully.");
+        
       });
-
     }
   }
 
@@ -72,9 +71,7 @@ export default class SignupUI extends React.Component {
         (error) => {
             var errorCode = error.code;
             var errorMessage = error.message;
-            alert(errorMessage, "", () => {
-                this.previousStep();
-            });
+            alert(errorMessage);
         });
     } else {
       this.nextStep();
@@ -122,11 +119,13 @@ export default class SignupUI extends React.Component {
                             inputKey = "lastName"
                             keyboardType = "default"/></View>)
       case 4:
-      return  <InputFieldCard fieldHandler = {this.saveState} 
+        return  <InputFieldCard fieldHandler = {this.saveState} 
                               title = "Where are you located?" 
                               label = "Rates depend on your location!" 
                               inputKey = "location" 
                               keyboardType = "default" />
+      case 5:
+          this.props.goToDashboard();
     }
   }
 
@@ -134,12 +133,23 @@ export default class SignupUI extends React.Component {
     return (
       <View style={globalStyles.centerContainer}>
           {this.renderForm(this.state.step)}
-          <Button 
-              buttonStyle={globalStyles.clearButton}
-              onPress={this.saveAndContinue} 
-              title="Continue"
-              accessibilityLabel="Continue"
-          />
+          <View >
+              <Button
+                  style = {{alignSelf: "flex-end"}}
+                  buttonStyle={[globalStyles.clearButton, globalStyles.buttonCircle]}
+                  onPress={this.previousStep} 
+                  icon={{name: 'chevron-left', size: 35}}
+                  accessibilityLabel="Continue"
+              />
+              <Button
+                  style = {{alignSelf: "flex-end"}}
+                  buttonStyle={[globalStyles.clearButton, globalStyles.buttonCircle]}
+                  onPress={this.saveAndContinue} 
+                  icon={{name: 'chevron-right', size: 35}}
+                  accessibilityLabel="Continue"
+                  
+              />
+          </View>
       </View>
     );
   }

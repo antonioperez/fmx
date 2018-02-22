@@ -68734,6 +68734,13 @@ __d(function (global, require, module, exports, _dependencyMap) {
       borderWidth: 1,
       marginTop: 10,
       marginBottom: 10
+    },
+    buttonCircle: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 60,
+      height: 60,
+      borderRadius: 100
     }
   });
 },507,[12],"fmx/app/user/style.js");
@@ -93319,9 +93326,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
       _this.updateUser = function () {
         if (_this.userRef) {
-          (0, _actions.updateFirebaseData)(_this.userRef, _this.state.userInfo, function () {
-            alert("Data saved successfully.");
-          });
+          (0, _actions.updateFirebaseData)(_this.userRef, _this.state.userInfo, function () {});
         }
       };
 
@@ -93337,9 +93342,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
           }, function (error) {
             var errorCode = error.code;
             var errorMessage = error.message;
-            alert(errorMessage, "", function () {
-              _this.previousStep();
-            });
+            alert(errorMessage);
           });
         } else {
           _this.nextStep();
@@ -93376,7 +93379,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               keyboardType: "default",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 88
+                lineNumber: 85
               }
             });
 
@@ -93389,7 +93392,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               keyboardType: "default",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 94
+                lineNumber: 91
               }
             });
 
@@ -93399,7 +93402,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 100
+                  lineNumber: 97
                 }
               },
               _react3.default.createElement(
@@ -93409,7 +93412,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                   style: [_style.globalStyles.whiteText, _style.globalStyles.alignLeft],
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 101
+                    lineNumber: 98
                   }
                 },
                 "Welcome to FMx!"
@@ -93420,7 +93423,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                   style: [_style.globalStyles.whiteText, _style.globalStyles.alignLeft],
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 104
+                    lineNumber: 101
                   }
                 },
                 "You're account has been created!"
@@ -93431,7 +93434,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                   style: [_style.globalStyles.whiteText, _style.globalStyles.alignLeft],
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 107
+                    lineNumber: 104
                   }
                 },
                 "Now, lets fill in some information!"
@@ -93444,7 +93447,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 113
+                  lineNumber: 110
                 }
               },
               _react3.default.createElement(_container.InputFieldCard, {
@@ -93455,7 +93458,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 keyboardType: "default",
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 113
+                  lineNumber: 110
                 }
               }),
               _react3.default.createElement(_container.InputFieldCard, {
@@ -93466,7 +93469,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 keyboardType: "default",
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 119
+                  lineNumber: 116
                 }
               })
             );
@@ -93480,9 +93483,12 @@ __d(function (global, require, module, exports, _dependencyMap) {
               keyboardType: "default",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 125
+                lineNumber: 122
               }
             });
+
+          case 5:
+            this.props.goToDashboard();
         }
       }
     }, {
@@ -93494,20 +93500,51 @@ __d(function (global, require, module, exports, _dependencyMap) {
             style: _style.globalStyles.centerContainer,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 135
+              lineNumber: 134
             }
           },
           this.renderForm(this.state.step),
-          _react3.default.createElement(_reactNativeElements.Button, {
-            buttonStyle: _style.globalStyles.clearButton,
-            onPress: this.saveAndContinue,
-            title: "Continue",
-            accessibilityLabel: "Continue",
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 137
-            }
-          })
+          _react3.default.createElement(
+            _reactNative.View,
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 136
+              }
+            },
+            _react3.default.createElement(_reactNativeElements.Button, {
+              style: {
+                alignSelf: "flex-end"
+              },
+              buttonStyle: [_style.globalStyles.clearButton, _style.globalStyles.buttonCircle],
+              onPress: this.previousStep,
+              icon: {
+                name: 'chevron-left',
+                size: 35
+              },
+              accessibilityLabel: "Continue",
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 137
+              }
+            }),
+            _react3.default.createElement(_reactNativeElements.Button, {
+              style: {
+                alignSelf: "flex-end"
+              },
+              buttonStyle: [_style.globalStyles.clearButton, _style.globalStyles.buttonCircle],
+              onPress: this.saveAndContinue,
+              icon: {
+                name: 'chevron-right',
+                size: 35
+              },
+              accessibilityLabel: "Continue",
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 144
+              }
+            })
+          )
         );
       }
     }]);
