@@ -1,11 +1,14 @@
 import React from 'react';
 import DashboardUI from './../../components/dashboard';
+import ShopUI from './../../components/shop';
+import ProfileUI from './../../components/profile';
+import SettingsUI from './../../components/settings';
 import LinearGradient from 'react-native-linear-gradient';
 import { globalStyles, ACTIVE_THEME } from '../../style';
 import { Text, Header, Icon } from 'react-native-elements';
 
 
-export default class DashboardScreen extends React.Component {
+export default class UserScreens extends React.Component {
 
     constructor(props) {
         super(props);
@@ -27,6 +30,10 @@ export default class DashboardScreen extends React.Component {
                 onPress={() => this.toggleMenu('open')} 
             />
         )
+    }
+
+    renderScreen() {
+        
     }
 
     render() {
