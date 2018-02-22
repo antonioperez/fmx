@@ -68234,16 +68234,12 @@ __d(function (global, require, module, exports, _dependencyMap) {
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
     function registerScreens() {
-        _reactNativeNavigation.Navigation.registerComponent('fmx.login', function () {
-            return _LoginScreen2.default;
-        });
-
-        _reactNativeNavigation.Navigation.registerComponent('fmx.dashboard', function () {
-            return _dashboard2.default;
-        });
-
         _reactNativeNavigation.Navigation.registerComponent('fmx.welcome', function () {
             return _WelcomeScreen2.default;
+        });
+
+        _reactNativeNavigation.Navigation.registerComponent('fmx.login', function () {
+            return _LoginScreen2.default;
         });
 
         _reactNativeNavigation.Navigation.registerComponent('fmx.passwordReset', function () {
@@ -68252,6 +68248,10 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
         _reactNativeNavigation.Navigation.registerComponent('fmx.signup', function () {
             return _SignupScreen2.default;
+        });
+
+        _reactNativeNavigation.Navigation.registerComponent('fmx.dashboard', function () {
+            return _dashboard2.default;
         });
     }
 },504,[490,505,703,709,710,713],"fmx/app/user/screens/index.js");

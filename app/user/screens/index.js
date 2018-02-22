@@ -9,9 +9,10 @@ import DashboardUI  from './../components/dashboard';
 
 export function registerScreens() {
     
-    Navigation.registerComponent('fmx.login', () => LoginScreen);
-    Navigation.registerComponent('fmx.dashboard', () => DashboardUI);
     Navigation.registerComponent('fmx.welcome', () => WelcomeScreen);
+    Navigation.registerComponent('fmx.login', () => LoginScreen);
     Navigation.registerComponent('fmx.passwordReset', () => PWRecoverScreen);
     Navigation.registerComponent('fmx.signup', () => SignupScreen);
+    Navigation.registerComponent('fmx.dashboard', () => DashboardUI);
+
 }
