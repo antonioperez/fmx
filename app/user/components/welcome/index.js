@@ -1,7 +1,7 @@
 import React from 'react';
 import firebase from 'react-native-firebase';
 import Swiper from 'react-native-swiper';
-import { ScrollView, View } from 'react-native';
+import { View } from 'react-native';
 import { globalStyles, ACTIVE_THEME } from '../../style';
 import { getFirebaseData } from '../../actions';
 import { 

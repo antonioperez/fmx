@@ -58507,7 +58507,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     _reactNativeNavigation.Navigation.startSingleScreenApp({
         screen: {
-            screen: 'fmx.welcome',
+            screen: 'fmx.dashboard',
             title: '',
             navigatorStyle: {
                 navBarHidden: true
@@ -93783,13 +93783,13 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         style: _style.globalStyles.background,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 15
+                            lineNumber: 33
                         }
                     },
                     _react3.default.createElement(_dashboard2.default, {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 16
+                            lineNumber: 34
                         }
                     })
                 );
@@ -93823,6 +93823,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var _reactNative = require(_dependencyMap[3], "react-native");
 
   var _reactNativeElements = require(_dependencyMap[4], "react-native-elements");
+
+  var _container = require(_dependencyMap[5], "./container");
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -93871,31 +93873,91 @@ __d(function (global, require, module, exports, _dependencyMap) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 17
+              lineNumber: 18
             }
           },
-          _react3.default.createElement(
-            _reactNativeElements.Text,
-            {
-              h4: true,
-              style: [_style.globalStyles.alignCenter],
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 18
+          _react3.default.createElement(_reactNativeElements.Header, {
+            backgroundColor: "#fff",
+            leftComponent: {
+              icon: 'settings',
+              color: '#1d0c34'
+            },
+            centerComponent: {
+              text: 'FMx',
+              style: {
+                color: '#1d0c34'
               }
             },
-            "Dashboard Test"
+            rightComponent: {
+              icon: 'photo',
+              color: '#1d0c34'
+            },
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 19
+            }
+          }),
+          _react3.default.createElement(
+            _reactNativeElements.Card,
+            {
+              title: "Welcome back, Antonio",
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 25
+              }
+            },
+            _react3.default.createElement(
+              _reactNativeElements.Text,
+              {
+                style: [{
+                  fontSize: 12
+                }],
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 26
+                }
+              },
+              "We suggest merchant processors based on your business profile. Easily import your information with Snap n Cap!"
+            )
           ),
           _react3.default.createElement(
-            _reactNativeElements.Text,
+            _reactNative.ScrollView,
             {
-              style: [_style.globalStyles.alignCenter, _style.globalStyles.whiteText],
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 21
+                lineNumber: 30
               }
             },
-            "Save time. Save money. Scale Your Business."
+            _react3.default.createElement(_container.RateCard, {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 31
+              }
+            }),
+            _react3.default.createElement(_container.RateCard, {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 32
+              }
+            }),
+            _react3.default.createElement(_container.RateCard, {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 33
+              }
+            }),
+            _react3.default.createElement(_container.RateCard, {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 34
+              }
+            }),
+            _react3.default.createElement(_container.RateCard, {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 35
+              }
+            })
           )
         );
       }
@@ -93905,7 +93967,312 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = DashboardUI;
-},713,[109,128,507,12,594],"fmx/app/user/components/dashboard/index.js");
+},713,[109,128,507,12,594,717],"fmx/app/user/components/dashboard/index.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.RateCard = undefined;
+
+    var _react2 = require(_dependencyMap[0], "react");
+
+    var _react3 = _interopRequireDefault(_react2);
+
+    var _index = require(_dependencyMap[1], "./../../../../node_modules/react-transform-hmr/lib/index.js");
+
+    var _index2 = _interopRequireDefault(_index);
+
+    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/dashboard/container.js";
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    var _style = require(_dependencyMap[2], "../../style");
+
+    var _reactNative = require(_dependencyMap[3], "react-native");
+
+    var _reactNativeElements = require(_dependencyMap[4], "react-native-elements");
+
+    var _reactNativeLinearGradient = require(_dependencyMap[5], "react-native-linear-gradient");
+
+    var _reactNativeLinearGradient2 = _interopRequireDefault(_reactNativeLinearGradient);
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    var _components = {
+        RateCard: {
+            displayName: "RateCard"
+        }
+    };
+
+    var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+        filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/dashboard/container.js",
+        components: _components,
+        locals: [module],
+        imports: [_react3.default]
+    });
+
+    function _wrapComponent(id) {
+        return function (Component) {
+            return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+        };
+    }
+
+    var RateCard = exports.RateCard = _wrapComponent("RateCard")(function (_React$Component) {
+        _inherits(RateCard, _React$Component);
+
+        function RateCard(props) {
+            _classCallCheck(this, RateCard);
+
+            return _possibleConstructorReturn(this, (RateCard.__proto__ || Object.getPrototypeOf(RateCard)).call(this, props));
+        }
+
+        _createClass(RateCard, [{
+            key: "render",
+            value: function render() {
+                return _react3.default.createElement(
+                    _reactNativeElements.Card,
+                    {
+                        title: "CHASE MERCHANT SERVICES",
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 15
+                        }
+                    },
+                    _react3.default.createElement(
+                        _reactNative.View,
+                        {
+                            style: {
+                                flexDirection: 'row',
+                                justifyContent: 'center'
+                            },
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 16
+                            }
+                        },
+                        _react3.default.createElement(_reactNativeElements.Rating, {
+                            type: "star",
+                            fractions: 1,
+                            startingValue: 3.6,
+                            readonly: true,
+                            imageSize: 20,
+                            style: {
+                                alignSelf: 'center'
+                            },
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 17
+                            }
+                        }),
+                        _react3.default.createElement(
+                            _reactNativeElements.Text,
+                            {
+                                style: {
+                                    fontSize: 12,
+                                    marginLeft: 10
+                                },
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 25
+                                }
+                            },
+                            "105 REVIEWS"
+                        )
+                    ),
+                    _react3.default.createElement(
+                        _reactNative.View,
+                        {
+                            style: {
+                                flexDirection: 'row',
+                                justifyContent: 'space-between',
+                                marginTop: 10,
+                                marginBottom: 10
+                            },
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 29
+                            }
+                        },
+                        _react3.default.createElement(
+                            _reactNative.View,
+                            {
+                                style: {
+                                    flexDirection: 'column',
+                                    justifyContent: 'center'
+                                },
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 30
+                                }
+                            },
+                            _react3.default.createElement(
+                                _reactNativeElements.Text,
+                                {
+                                    style: {
+                                        fontSize: 11
+                                    },
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 31
+                                    }
+                                },
+                                "Term of Loan"
+                            ),
+                            _react3.default.createElement(
+                                _reactNativeElements.Text,
+                                {
+                                    style: {
+                                        fontSize: 12,
+                                        marginTop: 10,
+                                        fontWeight: "bold"
+                                    },
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 34
+                                    }
+                                },
+                                "36 Months"
+                            )
+                        ),
+                        _react3.default.createElement(_reactNative.View, {
+                            style: {
+                                borderLeftWidth: 1,
+                                borderColor: '#1d0c34'
+                            },
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 38
+                            }
+                        }),
+                        _react3.default.createElement(
+                            _reactNative.View,
+                            {
+                                style: {
+                                    flexDirection: 'column',
+                                    justifyContent: 'center'
+                                },
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 39
+                                }
+                            },
+                            _react3.default.createElement(
+                                _reactNativeElements.Text,
+                                {
+                                    h4: true,
+                                    style: {
+                                        fontSize: 11
+                                    },
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 40
+                                    }
+                                },
+                                "Rate Estimate"
+                            ),
+                            _react3.default.createElement(
+                                _reactNativeElements.Text,
+                                {
+                                    style: {
+                                        fontSize: 12,
+                                        marginTop: 10,
+                                        fontWeight: "bold"
+                                    },
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 43
+                                    }
+                                },
+                                "5.99%"
+                            )
+                        ),
+                        _react3.default.createElement(_reactNative.View, {
+                            style: {
+                                borderLeftWidth: 1,
+                                borderColor: '#1d0c34'
+                            },
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 47
+                            }
+                        }),
+                        _react3.default.createElement(
+                            _reactNative.View,
+                            {
+                                style: {
+                                    flexDirection: 'column',
+                                    justifyContent: 'center'
+                                },
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 48
+                                }
+                            },
+                            _react3.default.createElement(
+                                _reactNativeElements.Text,
+                                {
+                                    h4: true,
+                                    style: {
+                                        fontSize: 11
+                                    },
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 49
+                                    }
+                                },
+                                "Monthly Payment ",
+                                "\n",
+                                " Estimate"
+                            ),
+                            _react3.default.createElement(
+                                _reactNativeElements.Text,
+                                {
+                                    style: {
+                                        fontSize: 12,
+                                        fontWeight: "bold"
+                                    },
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 52
+                                    }
+                                },
+                                "$5000"
+                            )
+                        )
+                    ),
+                    _react3.default.createElement(
+                        _reactNativeLinearGradient2.default,
+                        {
+                            colors: _style.ACTIVE_THEME,
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 57
+                            }
+                        },
+                        _react3.default.createElement(_reactNativeElements.Button, {
+                            title: "SEE DETAILS AND RATES",
+                            buttonStyle: {
+                                backgroundColor: 'transparent'
+                            },
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 58
+                            }
+                        })
+                    )
+                );
+            }
+        }]);
+
+        return RateCard;
+    }(_react3.default.Component));
+},717,[109,128,507,12,594,702],"fmx/app/user/components/dashboard/container.js");
 require(23);
 require(715);
 //# sourceMappingURL=index.map
