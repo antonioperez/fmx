@@ -93879,7 +93879,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
           _react3.default.createElement(_reactNativeElements.Header, {
             backgroundColor: "#fff",
             leftComponent: {
-              icon: 'settings',
+              icon: 'menu',
               color: '#1d0c34'
             },
             centerComponent: {
@@ -93889,7 +93889,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               }
             },
             rightComponent: {
-              icon: 'photo',
+              icon: 'settings',
               color: '#1d0c34'
             },
             __source: {

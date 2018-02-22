@@ -18,9 +18,9 @@ export default class DashboardUI extends React.Component {
       <View >
         <Header
           backgroundColor = {"#fff"}
-          leftComponent={{ icon: 'settings', color: '#1d0c34' }}
+          leftComponent={{ icon: 'menu', color: '#1d0c34' }}
           centerComponent={{ text: 'FMx', style: { color: '#1d0c34' } }}
-          rightComponent={{ icon: 'photo', color: '#1d0c34' }}
+          rightComponent={{ icon: 'settings', color: '#1d0c34' }}
         />
         <Card title="Welcome back, Antonio">
           <Text style={[{fontSize:12}]}>
