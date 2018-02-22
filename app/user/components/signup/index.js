@@ -3,7 +3,7 @@ import firebase from 'react-native-firebase';
 import { globalStyles, ACTIVE_THEME } from '../../style';
 import { register, updateFirebaseData } from '../../actions';
 import { InputFieldCard, InputOptionsCard } from './container';
-import { Platform, View } from 'react-native';
+import { View } from 'react-native';
 import { 
   Button, 
   FormLabel, 

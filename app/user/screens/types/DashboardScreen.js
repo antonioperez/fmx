@@ -35,7 +35,7 @@ export default class DashboardScreen extends React.Component {
                 <Header
                     backgroundColor = {"#fff"}
                     leftComponent={this.menuButton()}
-                    centerComponent={{ text: 'FMx', style: { color: '#1d0c34' } }}
+                    centerComponent={{ text: 'FMx', style: { color: '#1d0c34', fontSize:20 } }}
                 />
                 <DashboardUI  />
             </LinearGradient>

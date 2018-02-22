@@ -93835,7 +93835,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         centerComponent: {
                             text: 'FMx',
                             style: {
-                                color: '#1d0c34'
+                                color: '#1d0c34',
+                                fontSize: 20
                             }
                         },
                         __source: {
@@ -94384,10 +94385,34 @@ __d(function (global, require, module, exports, _dependencyMap) {
         function MenuScreen(props) {
             _classCallCheck(this, MenuScreen);
 
-            return _possibleConstructorReturn(this, (MenuScreen.__proto__ || Object.getPrototypeOf(MenuScreen)).call(this, props));
+            var _this = _possibleConstructorReturn(this, (MenuScreen.__proto__ || Object.getPrototypeOf(MenuScreen)).call(this, props));
+
+            _this.goToScreen = _this.goToScreen.bind(_this);
+            _this.signOutHandler = _this.signOutHandler.bind(_this);
+            return _this;
         }
 
         _createClass(MenuScreen, [{
+            key: "goToScreen",
+            value: function goToScreen(screenName) {
+                console.log(screenName);
+                this.props.navigator.toggleDrawer({
+                    side: 'left',
+                    animated: true
+                });
+            }
+        }, {
+            key: "signOutHandler",
+            value: function signOutHandler() {
+                console.log("logout");
+                this.props.navigator.resetTo({
+                    screen: 'fmx.welcome',
+                    navigatorStyle: {
+                        navBarHidden: true
+                    }
+                });
+            }
+        }, {
             key: "render",
             value: function render() {
                 return _react3.default.createElement(
@@ -94397,13 +94422,15 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         style: _style.globalStyles.background,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 14
+                            lineNumber: 34
                         }
                     },
                     _react3.default.createElement(_menu2.default, {
+                        goToScreen: this.goToScreen,
+                        signOutHandler: this.signOutHandler,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 15
+                            lineNumber: 35
                         }
                     })
                 );
@@ -94441,6 +94468,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var _reactNative = require(_dependencyMap[4], "react-native");
 
   var _reactNativeElements = require(_dependencyMap[5], "react-native-elements");
+
+  var _actions = require(_dependencyMap[6], "../../actions");
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -94481,36 +94510,59 @@ __d(function (global, require, module, exports, _dependencyMap) {
       _this.list = [{
         title: 'Dashboard',
         icon: 'home',
-        hideChevron: true
+        hideChevron: true,
+        onPress: "fmx.login"
       }, {
         title: 'My Profile',
         icon: 'account-circle',
-        hideChevron: true
+        hideChevron: true,
+        onPress: "fmx.signup"
       }, {
         title: 'Browse Merchants',
         icon: 'search',
-        hideChevron: true
+        hideChevron: true,
+        onPress: "fmx.signup"
       }, {
         title: 'Settings',
         icon: 'settings',
-        hideChevron: true
+        hideChevron: true,
+        onPress: "fmx.signup"
       }, {
         title: 'Help',
         icon: 'help',
-        hideChevron: true
+        hideChevron: true,
+        onPress: "fmx.signup"
       }];
       return _this;
     }
 
     _createClass(MenuUI, [{
+      key: "onMenuPress",
+      value: function onMenuPress(action) {
+        this.props.goToScreen(action);
+      }
+    }, {
+      key: "signOutAction",
+      value: function signOutAction() {
+        var _this2 = this;
+
+        (0, _actions.signOut)(function () {
+          _this2.props.signOutHandler();
+        }, function () {
+          _this2.props.signOutHandler();
+        });
+      }
+    }, {
       key: "render",
       value: function render() {
+        var _this3 = this;
+
         return _react3.default.createElement(
           _reactNative.View,
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 44
+              lineNumber: 63
             }
           },
           _react3.default.createElement(_reactNativeElements.Header, {
@@ -94523,7 +94575,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 45
+              lineNumber: 64
             }
           }),
           _react3.default.createElement(
@@ -94534,7 +94586,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               }],
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 49
+                lineNumber: 68
               }
             },
             this.list.map(function (item, i) {
@@ -94546,9 +94598,12 @@ __d(function (global, require, module, exports, _dependencyMap) {
                   color: _style.ACTIVE_COLOR
                 },
                 hideChevron: item.hideChevron,
+                onPress: function onPress() {
+                  _this3.onMenuPress(item.onPress);
+                },
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 52
+                  lineNumber: 71
                 }
               });
             })
@@ -94561,7 +94616,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               },
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 61
+                lineNumber: 81
               }
             },
             _react3.default.createElement(_reactNativeElements.Button, {
@@ -94570,9 +94625,12 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 backgroundColor: '#fff'
               },
               color: _style.ACTIVE_COLOR,
+              onPress: function onPress() {
+                _this3.signOutAction();
+              },
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 62
+                lineNumber: 82
               }
             }),
             _react3.default.createElement(
@@ -94584,7 +94642,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 }, _style.globalStyles.alignCenter, _style.globalStyles.whiteText],
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 63
+                  lineNumber: 83
                 }
               },
               "Copyright 2018 ",
@@ -94600,7 +94658,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = MenuUI;
-},719,[109,128,702,507,12,594],"fmx/app/user/components/menu/index.js");
+},719,[109,128,702,507,12,594,508],"fmx/app/user/components/menu/index.js");
 require(23);
 require(715);
 //# sourceMappingURL=index.map

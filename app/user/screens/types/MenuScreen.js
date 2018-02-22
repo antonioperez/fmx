@@ -7,12 +7,32 @@ export default class MenuScreen extends React.Component {
     
     constructor(props) {
         super(props);
+        this.goToScreen = this.goToScreen.bind(this);
+        this.signOutHandler = this.signOutHandler.bind(this);
+    }
+
+    goToScreen (screenName) {
+        console.log(screenName);
+        this.props.navigator.toggleDrawer({
+            side: 'left',
+            animated: true
+        });
+    }
+
+    signOutHandler() {
+        console.log("logout");
+        this.props.navigator.resetTo({
+          screen: 'fmx.welcome',
+          navigatorStyle: {
+            navBarHidden: true
+          },
+        });
     }
 
     render() {
         return (
             <LinearGradient colors={ACTIVE_THEME} style={globalStyles.background} >
-                <MenuUI  />
+                <MenuUI goToScreen={this.goToScreen} signOutHandler={this.signOutHandler} />
             </LinearGradient>
         );
     }
