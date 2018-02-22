@@ -93372,6 +93372,71 @@ __d(function (global, require, module, exports, _dependencyMap) {
     }
 
     _createClass(SignupUI, [{
+      key: "renderButtons",
+      value: function renderButtons() {
+        if (this.state.step >= 1 && this.state.step != 2) {
+          return _react3.default.createElement(
+            _reactNative.View,
+            {
+              style: _style.globalStyles.row,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 85
+              }
+            },
+            _react3.default.createElement(_reactNativeElements.Button, {
+              style: {
+                alignSelf: "flex-start"
+              },
+              buttonStyle: [_style.globalStyles.clearButton, _style.globalStyles.buttonCircle],
+              onPress: this.previousStep,
+              icon: {
+                name: 'chevron-left',
+                size: 35
+              },
+              accessibilityLabel: "Go Back",
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 86
+              }
+            }),
+            _react3.default.createElement(_reactNativeElements.Button, {
+              style: {
+                alignSelf: "flex-end"
+              },
+              buttonStyle: [_style.globalStyles.clearButton, _style.globalStyles.buttonCircle],
+              onPress: this.saveAndContinue,
+              icon: {
+                name: 'chevron-right',
+                size: 35
+              },
+              accessibilityLabel: "Continue",
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 93
+              }
+            })
+          );
+        } else {
+          return _react3.default.createElement(_reactNativeElements.Button, {
+            style: {
+              alignSelf: "flex-end"
+            },
+            buttonStyle: [_style.globalStyles.clearButton, _style.globalStyles.buttonCircle],
+            onPress: this.saveAndContinue,
+            icon: {
+              name: 'chevron-right',
+              size: 35
+            },
+            accessibilityLabel: "Continue",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 103
+            }
+          });
+        }
+      }
+    }, {
       key: "renderForm",
       value: function renderForm(step) {
         switch (this.state.step) {
@@ -93384,7 +93449,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               keyboardType: "default",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 85
+                lineNumber: 115
               }
             });
 
@@ -93397,7 +93462,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               keyboardType: "default",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 91
+                lineNumber: 121
               }
             });
 
@@ -93407,7 +93472,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 97
+                  lineNumber: 127
                 }
               },
               _react3.default.createElement(
@@ -93417,7 +93482,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                   style: [_style.globalStyles.whiteText, _style.globalStyles.alignLeft],
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 98
+                    lineNumber: 128
                   }
                 },
                 "Welcome to FMx!"
@@ -93428,7 +93493,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                   style: [_style.globalStyles.whiteText, _style.globalStyles.alignLeft],
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 101
+                    lineNumber: 131
                   }
                 },
                 "You're account has been created!"
@@ -93439,7 +93504,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                   style: [_style.globalStyles.whiteText, _style.globalStyles.alignLeft],
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 104
+                    lineNumber: 134
                   }
                 },
                 "Now, lets fill in some information!"
@@ -93452,7 +93517,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 110
+                  lineNumber: 140
                 }
               },
               _react3.default.createElement(_container.InputFieldCard, {
@@ -93463,7 +93528,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 keyboardType: "default",
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 110
+                  lineNumber: 140
                 }
               }),
               _react3.default.createElement(_container.InputFieldCard, {
@@ -93474,7 +93539,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 keyboardType: "default",
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 116
+                  lineNumber: 146
                 }
               })
             );
@@ -93488,7 +93553,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               keyboardType: "default",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 122
+                lineNumber: 152
               }
             });
 
@@ -93505,52 +93570,11 @@ __d(function (global, require, module, exports, _dependencyMap) {
             style: _style.globalStyles.centerContainer,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 135
+              lineNumber: 165
             }
           },
           this.renderForm(this.state.step),
-          _react3.default.createElement(
-            _reactNative.View,
-            {
-              style: _style.globalStyles.row,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 137
-              }
-            },
-            _react3.default.createElement(_reactNativeElements.Button, {
-              style: {
-                alignSelf: "flex-start"
-              },
-              buttonStyle: [_style.globalStyles.clearButton, _style.globalStyles.buttonCircle],
-              onPress: this.previousStep,
-              icon: {
-                name: 'chevron-left',
-                size: 35
-              },
-              accessibilityLabel: "Go Back",
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 138
-              }
-            }),
-            _react3.default.createElement(_reactNativeElements.Button, {
-              style: {
-                alignSelf: "flex-end"
-              },
-              buttonStyle: [_style.globalStyles.clearButton, _style.globalStyles.buttonCircle],
-              onPress: this.saveAndContinue,
-              icon: {
-                name: 'chevron-right',
-                size: 35
-              },
-              accessibilityLabel: "Continue",
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 145
-              }
-            })
-          )
+          this.renderButtons()
         );
       }
     }]);

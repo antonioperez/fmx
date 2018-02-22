@@ -79,6 +79,36 @@ export default class SignupUI extends React.Component {
     }
   }
 
+  renderButtons() {
+    if (this.state.step >= 1 && this.state.step != 2){
+      return (
+        <View style={globalStyles.row}>
+            <Button
+                style = {{alignSelf: "flex-start"}}
+                buttonStyle={[globalStyles.clearButton, globalStyles.buttonCircle]}
+                onPress={this.previousStep} 
+                icon={{name: 'chevron-left', size: 35}}
+                accessibilityLabel="Go Back"
+            />
+            <Button
+                style = {{alignSelf: "flex-end"}}
+                buttonStyle={[globalStyles.clearButton, globalStyles.buttonCircle]}
+                onPress={this.saveAndContinue} 
+                icon={{name: 'chevron-right', size: 35}}
+                accessibilityLabel="Continue"
+                
+            />
+        </View>)
+    } else {
+      return (<Button
+          style = {{alignSelf: "flex-end"}}
+          buttonStyle={[globalStyles.clearButton, globalStyles.buttonCircle]}
+          onPress={this.saveAndContinue} 
+          icon={{name: 'chevron-right', size: 35}}
+          accessibilityLabel="Continue" />)
+    }
+  }
+
   renderForm(step) {
     switch (this.state.step) {
       case 0:
@@ -134,23 +164,7 @@ export default class SignupUI extends React.Component {
     return (
       <View style={globalStyles.centerContainer}>
           {this.renderForm(this.state.step)}
-          <View style={globalStyles.row}>
-              <Button
-                  style = {{alignSelf: "flex-start"}}
-                  buttonStyle={[globalStyles.clearButton, globalStyles.buttonCircle]}
-                  onPress={this.previousStep} 
-                  icon={{name: 'chevron-left', size: 35}}
-                  accessibilityLabel="Go Back"
-              />
-              <Button
-                  style = {{alignSelf: "flex-end"}}
-                  buttonStyle={[globalStyles.clearButton, globalStyles.buttonCircle]}
-                  onPress={this.saveAndContinue} 
-                  icon={{name: 'chevron-right', size: 35}}
-                  accessibilityLabel="Continue"
-                  
-              />
-          </View>
+          {this.renderButtons()}
       </View>
     );
   }
