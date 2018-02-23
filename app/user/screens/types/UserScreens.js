@@ -4,6 +4,7 @@ import ShopUI from './../../components/shop';
 import ProfileUI from './../../components/profile';
 import SettingsUI from './../../components/settings';
 import HelpCenterUI from './../../components/helpcenter';
+import MessagesUI from './../../components/messages';
 import LinearGradient from 'react-native-linear-gradient';
 import { globalStyles, ACTIVE_THEME } from '../../style';
 import { Text, Header, Icon } from 'react-native-elements';
@@ -58,6 +59,8 @@ export default class UserScreens extends React.Component {
                 return <ShopUI  />
             case "profile":
                 return <ProfileUI  />
+            case "messages":
+                return <MessagesUI />
             case "settings":
                 return <SettingsUI  />
             case "help":

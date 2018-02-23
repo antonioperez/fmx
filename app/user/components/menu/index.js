@@ -32,6 +32,12 @@ export default class MenuUI extends React.Component {
           onPress: "browse"
         },
         {
+          title: 'Messages',
+          icon: 'message',
+          hideChevron: true,
+          onPress: "messages"
+        },
+        {
           title: 'Settings',
           icon: 'settings',
           hideChevron: true,
