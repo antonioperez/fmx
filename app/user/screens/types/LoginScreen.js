@@ -33,6 +33,7 @@ export default class LoginScreen extends React.Component {
   onNavigatorEvent(event) {
     if (event.type == 'NavBarButtonPress') {
       if (event.id == 'forgotPassword') {
+        
         this.props.navigator.showModal({
           screen: 'fmx.passwordReset',
           navigatorStyle: {
