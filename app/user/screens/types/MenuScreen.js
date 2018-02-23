@@ -12,10 +12,13 @@ export default class MenuScreen extends React.Component {
     }
 
     goToScreen (screenName) {
-        console.log(screenName);
         this.props.navigator.toggleDrawer({
             side: 'left',
             animated: true
+        });
+
+        this.props.navigator.handleDeepLink({ 
+            screen: screenName
         });
     }
 
@@ -28,7 +31,7 @@ export default class MenuScreen extends React.Component {
           },
         });
     }
-
+    
     render() {
         return (
             <LinearGradient colors={ACTIVE_THEME} style={globalStyles.background} >

@@ -17,31 +17,31 @@ export default class MenuUI extends React.Component {
           title: 'Dashboard',
           icon: 'home',
           hideChevron: true,
-          onPress: "fmx.login"
+          onPress: "dashboard"
         },
         {
           title: 'My Profile',
           icon: 'account-circle',
           hideChevron: true,
-          onPress: "fmx.signup"
+          onPress: "profile"
         },
         {
           title: 'Browse Merchants',
           icon: 'search',
           hideChevron: true,
-          onPress: "fmx.signup"
+          onPress: "browse"
         },
         {
           title: 'Settings',
           icon: 'settings',
           hideChevron: true,
-          onPress: "fmx.signup"
+          onPress: "settings"
         },
         {
           title: 'Help',
           icon: 'help',
           hideChevron: true,
-          onPress: "fmx.signup"
+          onPress: "help"
         },
       ]
   }

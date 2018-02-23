@@ -15,8 +15,7 @@ Navigation.startSingleScreenApp({
     },
     drawer : {
         left: {
-            screen: 'fmx.menu', 
-            passProps: {}, 
+            screen: 'fmx.menu',
             disableOpenGesture: false, 
             fixedWidth: 500 
         },
