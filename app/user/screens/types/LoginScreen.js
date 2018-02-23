@@ -2,6 +2,7 @@ import React from 'react';
 import {LoginUI} from './../../components/login';
 import LinearGradient from 'react-native-linear-gradient';
 import {globalStyles, ACTIVE_THEME} from '../../style';
+import { goToScreen } from '../actions';
 
 export default class LoginScreen extends React.Component {
 
@@ -25,44 +26,27 @@ export default class LoginScreen extends React.Component {
   constructor(props) {
     super(props);
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent.bind(this));
-    this.state = {
-
-    };
   }
 
   onNavigatorEvent(event) {
     if (event.type == 'NavBarButtonPress') {
       if (event.id == 'forgotPassword') {
-        
-        this.props.navigator.showModal({
-          screen: 'fmx.passwordReset',
-          navigatorStyle: {
-            navBarHidden: false,
-            navBarBackgroundColor: "#000"
-          },
-        });
+        showScreenModal(this.props.navigator, 'fmx.passwordReset');
       }
       if (event.id == 'cancel') {
-        this.props.navigator.dismissModal({
-          animationType: 'slide-down'
-        });
+        dismissModal();
       }
     }
   }
 
-  goToNextScreen() {
-    this.props.navigator.resetTo({
-      screen: 'fmx.user',
-      navigatorStyle: {
-        navBarHidden: true
-      },
-    });
+  onLogin() {
+    goToScreen(this.props.navigator, "fmx.user");
   }
 
   render() {
     return ( 
       <LinearGradient colors = {ACTIVE_THEME} style = {globalStyles.background} >
-        <LoginUI onSucess = {this.goToNextScreen.bind(this)}/> 
+        <LoginUI onSucess = {this.onLogin.bind(this)}/> 
       </LinearGradient>
     );
   }

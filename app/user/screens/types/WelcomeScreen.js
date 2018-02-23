@@ -2,6 +2,7 @@ import React from 'react';
 import WelcomeUI from './../../components/welcome';
 import LinearGradient from 'react-native-linear-gradient';
 import { globalStyles, ACTIVE_THEME } from '../../style';
+import { showScreenModal } from '../actions';
 
 export default class WelcomeScreen extends React.Component {
   constructor(props) {
@@ -12,23 +13,11 @@ export default class WelcomeScreen extends React.Component {
   }
 
   goToSignup() {
-    this.props.navigator.showModal({
-      screen: 'fmx.signup',
-      navigatorStyle: {
-        navBarHidden: false,
-        navBarBackgroundColor: "#000"
-      },
-    });
+    showScreenModal(this.props.navigator, 'fmx.signup');
   }
 
   goToLogin() {
-    this.props.navigator.showModal({
-      screen: 'fmx.login',
-      navigatorStyle: {
-        navBarHidden: false,
-        navBarBackgroundColor: "#000"
-      },
-    });
+    showScreenModal(this.props.navigator, 'fmx.login');
   }
 
   render() {

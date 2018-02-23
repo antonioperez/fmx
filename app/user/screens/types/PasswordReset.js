@@ -2,6 +2,7 @@ import React from 'react';
 import { PasswordRecoverUI } from './../../components/login';
 import LinearGradient from 'react-native-linear-gradient';
 import { globalStyles, ACTIVE_THEME } from '../../style';
+import { dismissModal } from '../actions';
 
 export default class PWRecoverScreen extends React.Component {
 
@@ -25,17 +26,13 @@ export default class PWRecoverScreen extends React.Component {
     onNavigatorEvent(event) {
         if (event.type == 'NavBarButtonPress') {
             if (event.id == 'cancel') {
-                this.props.navigator.dismissModal({
-                    animationType: 'slide-down'
-                });
+                dismissModal();
             }
         }
     }
 
     goToNextScreen() {
-        this.props.navigator.dismissModal({
-            animationType: 'slide-down'
-        });
+        dismissModal();
     }
 
   render() {

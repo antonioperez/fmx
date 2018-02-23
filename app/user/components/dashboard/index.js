@@ -17,7 +17,7 @@ export default class DashboardUI extends React.Component {
   render() {
     return (
       <View >
-        <Card title="Welcome back, Antonio">
+        <Card title="Welcome back!">
           <Text style={[{fontSize:12}]}>
             We suggest merchant processors based on your business profile. Complete your business profile with Snap n Cap!
           </Text>

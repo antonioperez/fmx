@@ -68297,6 +68297,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _style = require(_dependencyMap[4], "../../style");
 
+  var _actions = require(_dependencyMap[5], "../actions");
+
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -68334,7 +68336,6 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
       _this.props.navigator.setOnNavigatorEvent(_this.onNavigatorEvent.bind(_this));
 
-      _this.state = {};
       return _this;
     }
 
@@ -68343,31 +68344,18 @@ __d(function (global, require, module, exports, _dependencyMap) {
       value: function onNavigatorEvent(event) {
         if (event.type == 'NavBarButtonPress') {
           if (event.id == 'forgotPassword') {
-            this.props.navigator.showModal({
-              screen: 'fmx.passwordReset',
-              navigatorStyle: {
-                navBarHidden: false,
-                navBarBackgroundColor: "#000"
-              }
-            });
+            showScreenModal(this.props.navigator, 'fmx.passwordReset');
           }
 
           if (event.id == 'cancel') {
-            this.props.navigator.dismissModal({
-              animationType: 'slide-down'
-            });
+            dismissModal();
           }
         }
       }
     }, {
-      key: "goToNextScreen",
-      value: function goToNextScreen() {
-        this.props.navigator.resetTo({
-          screen: 'fmx.user',
-          navigatorStyle: {
-            navBarHidden: true
-          }
-        });
+      key: "onLogin",
+      value: function onLogin() {
+        (0, _actions.goToScreen)(this.props.navigator, "fmx.user");
       }
     }, {
       key: "render",
@@ -68379,14 +68367,14 @@ __d(function (global, require, module, exports, _dependencyMap) {
             style: _style.globalStyles.background,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 64
+              lineNumber: 48
             }
           },
           _react3.default.createElement(_login.LoginUI, {
-            onSucess: this.goToNextScreen.bind(this),
+            onSucess: this.onLogin.bind(this),
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 65
+              lineNumber: 49
             }
           })
         );
@@ -68412,7 +68400,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }, _temp));
 
   exports.default = LoginScreen;
-},505,[109,128,506,702,507],"fmx/app/user/screens/types/LoginScreen.js");
+},505,[109,128,506,702,507,724],"fmx/app/user/screens/types/LoginScreen.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -91815,6 +91803,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _style = require(_dependencyMap[4], "../../style");
 
+  var _actions = require(_dependencyMap[5], "../actions");
+
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -91857,24 +91847,12 @@ __d(function (global, require, module, exports, _dependencyMap) {
     _createClass(WelcomeScreen, [{
       key: "goToSignup",
       value: function goToSignup() {
-        this.props.navigator.showModal({
-          screen: 'fmx.signup',
-          navigatorStyle: {
-            navBarHidden: false,
-            navBarBackgroundColor: "#000"
-          }
-        });
+        (0, _actions.showScreenModal)(this.props.navigator, 'fmx.signup');
       }
     }, {
       key: "goToLogin",
       value: function goToLogin() {
-        this.props.navigator.showModal({
-          screen: 'fmx.login',
-          navigatorStyle: {
-            navBarHidden: false,
-            navBarBackgroundColor: "#000"
-          }
-        });
+        (0, _actions.showScreenModal)(this.props.navigator, 'fmx.login');
       }
     }, {
       key: "render",
@@ -91886,7 +91864,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             style: _style.globalStyles.background,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 36
+              lineNumber: 25
             }
           },
           _react3.default.createElement(_welcome2.default, {
@@ -91894,7 +91872,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             goToSignup: this.goToSignup.bind(this),
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 37
+              lineNumber: 26
             }
           })
         );
@@ -91905,7 +91883,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = WelcomeScreen;
-},703,[109,128,704,702,507],"fmx/app/user/screens/types/WelcomeScreen.js");
+},703,[109,128,704,702,507,724],"fmx/app/user/screens/types/WelcomeScreen.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -93061,6 +93039,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     var _style = require(_dependencyMap[4], "../../style");
 
+    var _actions = require(_dependencyMap[5], "../actions");
+
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
     function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -93106,18 +93086,14 @@ __d(function (global, require, module, exports, _dependencyMap) {
             value: function onNavigatorEvent(event) {
                 if (event.type == 'NavBarButtonPress') {
                     if (event.id == 'cancel') {
-                        this.props.navigator.dismissModal({
-                            animationType: 'slide-down'
-                        });
+                        (0, _actions.dismissModal)();
                     }
                 }
             }
         }, {
             key: "goToNextScreen",
             value: function goToNextScreen() {
-                this.props.navigator.dismissModal({
-                    animationType: 'slide-down'
-                });
+                (0, _actions.dismissModal)();
             }
         }, {
             key: "render",
@@ -93129,14 +93105,14 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         style: _style.globalStyles.background,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 43
+                            lineNumber: 40
                         }
                     },
                     _react3.default.createElement(_login.PasswordRecoverUI, {
                         onSucess: this.goToNextScreen.bind(this),
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 44
+                            lineNumber: 41
                         }
                     })
                 );
@@ -93155,7 +93131,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     }, _temp));
 
     exports.default = PWRecoverScreen;
-},709,[109,128,506,702,507],"fmx/app/user/screens/types/PasswordReset.js");
+},709,[109,128,506,702,507,724],"fmx/app/user/screens/types/PasswordReset.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -93225,13 +93201,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     _createClass(SignupScreen, [{
       key: "goToDashboard",
       value: function goToDashboard() {
-        this.props.navigator.showModal({
-          screen: 'fmx.user',
-          navigatorStyle: {
-            navBarHidden: false,
-            navBarBackgroundColor: "#000"
-          }
-        });
+        showScreenModal(this.props.navigator, 'fmx.user');
       }
     }, {
       key: "render",
@@ -93243,14 +93213,14 @@ __d(function (global, require, module, exports, _dependencyMap) {
             style: _style.globalStyles.background,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 26
+              lineNumber: 20
             }
           },
           _react3.default.createElement(_signup2.default, {
             goToDashboard: this.goToDashboard.bind(this),
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 27
+              lineNumber: 21
             }
           })
         );
@@ -93771,6 +93741,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     var _reactNativeElements = require(_dependencyMap[9], "react-native-elements");
 
+    var _actions = require(_dependencyMap[10], "../actions");
+
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
     function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -93807,11 +93779,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             var _this = _possibleConstructorReturn(this, (UserScreens.__proto__ || Object.getPrototypeOf(UserScreens)).call(this, props));
 
             _this.toggleMenu = function (action) {
-                _this.props.navigator.toggleDrawer({
-                    side: 'left',
-                    animated: true,
-                    to: action
-                });
+                (0, _actions.toggleSideBar)(_this.props.navigator, action);
             };
 
             _this.menuButton = function () {
@@ -93823,7 +93791,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                     },
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 58
+                        lineNumber: 45
                     }
                 });
             };
@@ -93840,10 +93808,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             key: "onNavigatorEvent",
             value: function onNavigatorEvent(event) {
                 if (event.type == 'DeepLink') {
-                    this.props.navigator.toggleDrawer({
-                        side: 'left',
-                        animated: true
-                    });
+                    (0, _actions.toggleSideBar)(this.props.navigator);
                     var link = event.link;
                     var screen = event.payload;
 
@@ -93852,12 +93817,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             activeScreen: screen
                         });
                     } else if (link == 'signout') {
-                        this.props.navigator.resetTo({
-                            screen: 'fmx.welcome',
-                            navigatorStyle: {
-                                navBarHidden: true
-                            }
-                        });
+                        (0, _actions.goToScreen)(this.props.navigator, "fmx.welcome");
                     }
                 }
             }
@@ -93869,7 +93829,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_dashboard2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 69
+                                lineNumber: 56
                             }
                         });
 
@@ -93877,7 +93837,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_shop2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 71
+                                lineNumber: 58
                             }
                         });
 
@@ -93885,7 +93845,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_profile2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 73
+                                lineNumber: 60
                             }
                         });
 
@@ -93893,7 +93853,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_settings2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 75
+                                lineNumber: 62
                             }
                         });
 
@@ -93901,7 +93861,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_helpcenter2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 77
+                                lineNumber: 64
                             }
                         });
                 }
@@ -93916,7 +93876,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         style: _style.globalStyles.background,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 85
+                            lineNumber: 72
                         }
                     },
                     _react3.default.createElement(_reactNativeElements.Header, {
@@ -93931,7 +93891,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         },
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 86
+                            lineNumber: 73
                         }
                     }),
                     this.renderScreen(this.state.activeScreen)
@@ -93943,7 +93903,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     }(_react3.default.Component));
 
     exports.default = UserScreens;
-},713,[109,128,714,716,717,718,723,702,507,594],"fmx/app/user/screens/types/UserScreens.js");
+},713,[109,128,714,716,717,718,723,702,507,594,724],"fmx/app/user/screens/types/UserScreens.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -94026,7 +93986,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
           _react3.default.createElement(
             _reactNativeElements.Card,
             {
-              title: "Welcome back, Antonio",
+              title: "Welcome back!",
               __source: {
                 fileName: _jsxFileName,
                 lineNumber: 20
@@ -95230,6 +95190,50 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   exports.default = HelpCenterUI;
 },723,[109,128,507,12,594,702],"fmx/app/user/components/helpcenter/index.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.goToScreen = goToScreen;
+    exports.toggleSideBar = toggleSideBar;
+    exports.showScreenModal = showScreenModal;
+    exports.dismissModal = dismissModal;
+
+    function goToScreen(navigator, target) {
+        navigator.resetTo({
+            screen: target,
+            navigatorStyle: {
+                navBarHidden: true
+            }
+        });
+    }
+
+    function toggleSideBar(navigator, action) {
+        var act = "";
+        if (action) act = action;
+        navigator.toggleDrawer({
+            side: 'left',
+            animated: true,
+            to: act
+        });
+    }
+
+    function showScreenModal(navigator, target) {
+        navigator.showModal({
+            screen: target,
+            navigatorStyle: {
+                navBarHidden: false,
+                navBarBackgroundColor: "#000"
+            }
+        });
+    }
+
+    function dismissModal() {
+        this.props.navigator.dismissModal({
+            animationType: 'slide-down'
+        });
+    }
+},724,[],"fmx/app/user/screens/actions.js");
 require(23);
 require(722);
 //# sourceMappingURL=index.map

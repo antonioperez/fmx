@@ -12,13 +12,7 @@ export default class SignupScreen extends React.Component {
   }
 
   goToDashboard() {
-    this.props.navigator.showModal({
-      screen: 'fmx.user',
-      navigatorStyle: {
-        navBarHidden: false,
-        navBarBackgroundColor: "#000"
-      },
-    });
+    showScreenModal(this.props.navigator, 'fmx.user');
   }
 
   render() {

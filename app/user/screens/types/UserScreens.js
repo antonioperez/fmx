@@ -7,6 +7,7 @@ import HelpCenterUI from './../../components/helpcenter';
 import LinearGradient from 'react-native-linear-gradient';
 import { globalStyles, ACTIVE_THEME } from '../../style';
 import { Text, Header, Icon } from 'react-native-elements';
+import { goToScreen, toggleSideBar } from '../actions';
 
 export default class UserScreens extends React.Component {
 
@@ -20,35 +21,21 @@ export default class UserScreens extends React.Component {
     }
 
     toggleMenu = (action) =>{
-        this.props.navigator.toggleDrawer({
-            side: 'left',
-            animated: true, 
-            to: action
-        });
+        toggleSideBar(this.props.navigator, action);
     }
 
     onNavigatorEvent(event) {
         if (event.type == 'DeepLink') {
 
-            this.props.navigator.toggleDrawer({
-                side: 'left',
-                animated: true
-            });
-
+            toggleSideBar(this.props.navigator);
             const link = event.link
             const screen = event.payload;
-
             if (link == 'user') {
                 this.setState({
                     activeScreen : screen
                 })
             } else if (link == 'signout'){
-                this.props.navigator.resetTo({
-                    screen: 'fmx.welcome',
-                    navigatorStyle: {
-                      navBarHidden: true
-                    },
-                });
+                goToScreen(this.props.navigator, "fmx.welcome");
             }
          }
       }
