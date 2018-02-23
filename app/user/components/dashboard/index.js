@@ -4,6 +4,7 @@ import { View, ScrollView } from 'react-native';
 import { Text, Card, Button } from 'react-native-elements';
 import LinearGradient from 'react-native-linear-gradient';
 import { RateCard } from './container';
+import { getActiveUser } from '../../actions';
 
 export default class DashboardUI extends React.Component {
   
@@ -15,6 +16,7 @@ export default class DashboardUI extends React.Component {
   }
 
   render() {
+    //console.log(getActiveUser());
     return (
       <View >
         <Card title="Welcome back!">

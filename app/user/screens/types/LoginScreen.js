@@ -2,7 +2,7 @@ import React from 'react';
 import {LoginUI} from './../../components/login';
 import LinearGradient from 'react-native-linear-gradient';
 import {globalStyles, ACTIVE_THEME} from '../../style';
-import { goToScreen } from '../actions';
+import { goToScreen, dismissModal, showScreenModal } from '../actions';
 
 export default class LoginScreen extends React.Component {
 
@@ -34,7 +34,7 @@ export default class LoginScreen extends React.Component {
         showScreenModal(this.props.navigator, 'fmx.passwordReset');
       }
       if (event.id == 'cancel') {
-        dismissModal();
+        dismissModal(this.props.navigator);
       }
     }
   }

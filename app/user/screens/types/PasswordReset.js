@@ -26,13 +26,13 @@ export default class PWRecoverScreen extends React.Component {
     onNavigatorEvent(event) {
         if (event.type == 'NavBarButtonPress') {
             if (event.id == 'cancel') {
-                dismissModal();
+                dismissModal(this.props.navigator);
             }
         }
     }
 
     goToNextScreen() {
-        dismissModal();
+        dismissModal(this.props.navigator);
     }
 
   render() {

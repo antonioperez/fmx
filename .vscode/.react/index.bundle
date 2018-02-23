@@ -58507,7 +58507,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     _reactNativeNavigation.Navigation.startSingleScreenApp({
         screen: {
-            screen: 'fmx.user',
+            screen: 'fmx.welcome',
             title: '',
             navigatorStyle: {
                 navBarHidden: true
@@ -68344,11 +68344,11 @@ __d(function (global, require, module, exports, _dependencyMap) {
       value: function onNavigatorEvent(event) {
         if (event.type == 'NavBarButtonPress') {
           if (event.id == 'forgotPassword') {
-            showScreenModal(this.props.navigator, 'fmx.passwordReset');
+            (0, _actions.showScreenModal)(this.props.navigator, 'fmx.passwordReset');
           }
 
           if (event.id == 'cancel') {
-            dismissModal();
+            (0, _actions.dismissModal)(this.props.navigator);
           }
         }
       }
@@ -68470,8 +68470,6 @@ __d(function (global, require, module, exports, _dependencyMap) {
             _this.onLogin = function () {
                 if (_this.state.email && _this.state.pw) {
                     (0, _actions.login)(_this.state.email, _this.state.pw, function (user) {
-                        console.log(user);
-
                         _this.props.onSucess();
                     }, function (error) {
                         var errorCode = error.code;
@@ -68501,7 +68499,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         style: _style.globalStyles.centerContainer,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 44
+                            lineNumber: 42
                         }
                     },
                     _react3.default.createElement(
@@ -68511,7 +68509,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             style: [_style.globalStyles.whiteText, _style.globalStyles.alignCenter],
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 45
+                                lineNumber: 43
                             }
                         },
                         "FMx Merchant Portal"
@@ -68522,7 +68520,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             style: [_style.globalStyles.whiteText, _style.globalStyles.alignCenter],
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 48
+                                lineNumber: 46
                             }
                         },
                         "Save time. Save money. Scale Your Business."
@@ -68533,7 +68531,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             labelStyle: _style.globalStyles.whiteText,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 51
+                                lineNumber: 49
                             }
                         },
                         "Email"
@@ -68549,7 +68547,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         keyboardType: "email-address",
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 52
+                            lineNumber: 50
                         }
                     }),
                     _react3.default.createElement(
@@ -68558,7 +68556,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             labelStyle: _style.globalStyles.whiteText,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 58
+                                lineNumber: 56
                             }
                         },
                         "Password"
@@ -68574,7 +68572,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         inputStyle: _style.globalStyles.whiteText,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 59
+                            lineNumber: 57
                         }
                     }),
                     _react3.default.createElement(_reactNativeElements.Button, {
@@ -68584,14 +68582,14 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         accessibilityLabel: "Login",
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 65
+                            lineNumber: 63
                         }
                     }),
                     _react3.default.createElement(_container.FBLoginButton, {
                         onSucess: this.props.onSucess,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 71
+                            lineNumber: 69
                         }
                     })
                 );
@@ -68642,7 +68640,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         style: _style.globalStyles.centerContainer,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 105
+                            lineNumber: 103
                         }
                     },
                     _react3.default.createElement(
@@ -68652,7 +68650,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             style: [_style.globalStyles.whiteText, _style.globalStyles.alignCenter],
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 106
+                                lineNumber: 104
                             }
                         },
                         "FMx Password Recovery"
@@ -68663,7 +68661,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                             labelStyle: _style.globalStyles.whiteText,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 109
+                                lineNumber: 107
                             }
                         },
                         "Email"
@@ -68678,7 +68676,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         inputStyle: _style.globalStyles.whiteText,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 110
+                            lineNumber: 108
                         }
                     }),
                     _react3.default.createElement(_reactNativeElements.Button, {
@@ -68688,7 +68686,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         accessibilityLabel: "Reset Password",
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 115
+                            lineNumber: 113
                         }
                     })
                 );
@@ -68763,6 +68761,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     var _this = this;
 
+    exports.getActiveUser = getActiveUser;
     exports.register = register;
     exports.resetPassword = resetPassword;
     exports.signOut = signOut;
@@ -68774,6 +68773,10 @@ __d(function (global, require, module, exports, _dependencyMap) {
     var _reactNativeFirebase2 = _interopRequireDefault(_reactNativeFirebase);
 
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function getActiveUser() {
+        return _reactNativeFirebase2.default.auth().currentUser;
+    }
 
     function register(email, password, successCB, errorCB) {
         _reactNativeFirebase2.default.auth().createUserWithEmailAndPassword(email, password).then(function (user) {
@@ -93086,14 +93089,14 @@ __d(function (global, require, module, exports, _dependencyMap) {
             value: function onNavigatorEvent(event) {
                 if (event.type == 'NavBarButtonPress') {
                     if (event.id == 'cancel') {
-                        (0, _actions.dismissModal)();
+                        (0, _actions.dismissModal)(this.props.navigator);
                     }
                 }
             }
         }, {
             key: "goToNextScreen",
             value: function goToNextScreen() {
-                (0, _actions.dismissModal)();
+                (0, _actions.dismissModal)(this.props.navigator);
             }
         }, {
             key: "render",
@@ -93145,9 +93148,11 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/screens/types/SignupScreen.js";
-
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  var _class,
+      _temp,
+      _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/screens/types/SignupScreen.js";
 
   var _signup = require(_dependencyMap[2], "./../../components/signup");
 
@@ -93158,6 +93163,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var _reactNativeLinearGradient2 = _interopRequireDefault(_reactNativeLinearGradient);
 
   var _style = require(_dependencyMap[4], "../../style");
+
+  var _actions = require(_dependencyMap[5], "../actions");
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -93186,7 +93193,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     };
   }
 
-  var SignupScreen = _wrapComponent("SignupScreen")(function (_React$Component) {
+  var SignupScreen = _wrapComponent("SignupScreen")((_temp = _class = function (_React$Component) {
     _inherits(SignupScreen, _React$Component);
 
     function SignupScreen(props) {
@@ -93194,14 +93201,25 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
       var _this = _possibleConstructorReturn(this, (SignupScreen.__proto__ || Object.getPrototypeOf(SignupScreen)).call(this, props));
 
+      _this.props.navigator.setOnNavigatorEvent(_this.onNavigatorEvent.bind(_this));
+
       _this.state = {};
       return _this;
     }
 
     _createClass(SignupScreen, [{
+      key: "onNavigatorEvent",
+      value: function onNavigatorEvent(event) {
+        if (event.type == 'NavBarButtonPress') {
+          if (event.id == 'cancel') {
+            (0, _actions.dismissModal)(this.props.navigator);
+          }
+        }
+      }
+    }, {
       key: "goToDashboard",
       value: function goToDashboard() {
-        showScreenModal(this.props.navigator, 'fmx.user');
+        (0, _actions.goToScreen)(this.props.navigator, 'fmx.user');
       }
     }, {
       key: "render",
@@ -93213,14 +93231,14 @@ __d(function (global, require, module, exports, _dependencyMap) {
             style: _style.globalStyles.background,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 20
+              lineNumber: 42
             }
           },
           _react3.default.createElement(_signup2.default, {
             goToDashboard: this.goToDashboard.bind(this),
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 21
+              lineNumber: 43
             }
           })
         );
@@ -93228,10 +93246,18 @@ __d(function (global, require, module, exports, _dependencyMap) {
     }]);
 
     return SignupScreen;
-  }(_react3.default.Component));
+  }(_react3.default.Component), _class.navigatorButtons = {
+    leftButtons: [{
+      title: 'X',
+      id: 'cancel',
+      buttonColor: 'white',
+      buttonFontSize: 18,
+      buttonFontWeight: '800'
+    }]
+  }, _temp));
 
   exports.default = SignupScreen;
-},710,[109,128,711,702,507],"fmx/app/user/screens/types/SignupScreen.js");
+},710,[109,128,711,702,507,724],"fmx/app/user/screens/types/SignupScreen.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -93782,26 +93808,9 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
             var _this = _possibleConstructorReturn(this, (UserScreens.__proto__ || Object.getPrototypeOf(UserScreens)).call(this, props));
 
-            _this.toggleMenu = function (action) {
-                (0, _actions.toggleSideBar)(_this.props.navigator, action);
-            };
-
-            _this.menuButton = function () {
-                return _react3.default.createElement(_reactNativeElements.Icon, {
-                    name: "menu",
-                    color: "#1d0c34",
-                    onPress: function onPress() {
-                        return _this.toggleMenu('open');
-                    },
-                    __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 46
-                    }
-                });
-            };
-
             _this.props.navigator.setOnNavigatorEvent(_this.onNavigatorEvent.bind(_this));
 
+            _this.menuButton = _this.menuButton.bind(_this);
             _this.state = {
                 activeScreen: "dashboard"
             };
@@ -93809,8 +93818,15 @@ __d(function (global, require, module, exports, _dependencyMap) {
         }
 
         _createClass(UserScreens, [{
+            key: "toggleMenu",
+            value: function toggleMenu(action) {
+                (0, _actions.toggleSideBar)(this.props.navigator);
+            }
+        }, {
             key: "onNavigatorEvent",
             value: function onNavigatorEvent(event) {
+                console.log(event);
+
                 if (event.type == 'DeepLink') {
                     (0, _actions.toggleSideBar)(this.props.navigator);
                     var link = event.link;
@@ -93826,6 +93842,23 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 }
             }
         }, {
+            key: "menuButton",
+            value: function menuButton() {
+                var _this2 = this;
+
+                return _react3.default.createElement(_reactNativeElements.Icon, {
+                    name: "menu",
+                    color: "#1d0c34",
+                    onPress: function onPress() {
+                        return _this2.toggleMenu('open');
+                    },
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 48
+                    }
+                });
+            }
+        }, {
             key: "renderScreen",
             value: function renderScreen(screen) {
                 switch (screen) {
@@ -93833,7 +93866,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_dashboard2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 57
+                                lineNumber: 59
                             }
                         });
 
@@ -93841,7 +93874,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_shop2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 59
+                                lineNumber: 61
                             }
                         });
 
@@ -93849,7 +93882,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_profile2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 61
+                                lineNumber: 63
                             }
                         });
 
@@ -93857,7 +93890,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_messages2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 63
+                                lineNumber: 65
                             }
                         });
 
@@ -93865,7 +93898,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_settings2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 65
+                                lineNumber: 67
                             }
                         });
 
@@ -93873,7 +93906,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_helpcenter2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 67
+                                lineNumber: 69
                             }
                         });
                 }
@@ -93888,7 +93921,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         style: _style.globalStyles.background,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 75
+                            lineNumber: 77
                         }
                     },
                     _react3.default.createElement(_reactNativeElements.Header, {
@@ -93903,7 +93936,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         },
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 76
+                            lineNumber: 78
                         }
                     }),
                     this.renderScreen(this.state.activeScreen)
@@ -93944,6 +93977,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var _reactNativeLinearGradient2 = _interopRequireDefault(_reactNativeLinearGradient);
 
   var _container = require(_dependencyMap[6], "./container");
+
+  var _actions = require(_dependencyMap[7], "../../actions");
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -93992,7 +94027,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 19
+              lineNumber: 21
             }
           },
           _react3.default.createElement(
@@ -94001,7 +94036,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               title: "Welcome back!",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 20
+                lineNumber: 22
               }
             },
             _react3.default.createElement(
@@ -94012,7 +94047,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 }],
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 21
+                  lineNumber: 23
                 }
               },
               "We suggest merchant processors based on your business profile. Complete your business profile with Snap n Cap!"
@@ -94026,7 +94061,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 },
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 24
+                  lineNumber: 26
                 }
               },
               _react3.default.createElement(_reactNativeElements.Button, {
@@ -94036,7 +94071,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 },
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 25
+                  lineNumber: 27
                 }
               })
             )
@@ -94046,25 +94081,25 @@ __d(function (global, require, module, exports, _dependencyMap) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 28
+                lineNumber: 30
               }
             },
             _react3.default.createElement(_container.RateCard, {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 29
-              }
-            }),
-            _react3.default.createElement(_container.RateCard, {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 30
-              }
-            }),
-            _react3.default.createElement(_container.RateCard, {
-              __source: {
-                fileName: _jsxFileName,
                 lineNumber: 31
+              }
+            }),
+            _react3.default.createElement(_container.RateCard, {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 32
+              }
+            }),
+            _react3.default.createElement(_container.RateCard, {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 33
               }
             })
           )
@@ -94076,7 +94111,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = DashboardUI;
-},714,[109,128,507,12,594,702,715],"fmx/app/user/components/dashboard/index.js");
+},714,[109,128,507,12,594,702,715,508],"fmx/app/user/components/dashboard/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -95226,6 +95261,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     }
 
     function toggleSideBar(navigator, action) {
+        console.log("hi");
         var act = "";
         if (action) act = action;
         navigator.toggleDrawer({
@@ -95245,8 +95281,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
         });
     }
 
-    function dismissModal() {
-        this.props.navigator.dismissModal({
+    function dismissModal(navigator) {
+        navigator.dismissModal({
             animationType: 'slide-down'
         });
     }

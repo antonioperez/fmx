@@ -15,17 +15,19 @@ export default class UserScreens extends React.Component {
     constructor(props) {
         super(props);
         this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent.bind(this));
+        this.menuButton = this.menuButton.bind(this);
         this.state = {
             activeScreen : "dashboard"
         }
 
     }
 
-    toggleMenu = (action) =>{
-        toggleSideBar(this.props.navigator, action);
+    toggleMenu(action) {
+        toggleSideBar(this.props.navigator);
     }
 
     onNavigatorEvent(event) {
+        console.log(event);
         if (event.type == 'DeepLink') {
 
             toggleSideBar(this.props.navigator);
@@ -41,7 +43,7 @@ export default class UserScreens extends React.Component {
          }
       }
 
-    menuButton = () => {
+    menuButton(){
         return (
             <Icon
                 name='menu'

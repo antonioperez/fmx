@@ -6,6 +6,11 @@ import firebase from 'react-native-firebase';
 
 
 //USER FUNCTIONS
+
+export function getActiveUser() {
+    return firebase.auth().currentUser;
+}
+
 export function register(email, password, successCB, errorCB) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((user) => {

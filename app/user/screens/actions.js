@@ -11,6 +11,7 @@ export function goToScreen(navigator, target) {
 }
 
 export function toggleSideBar(navigator, action){
+    console.log("hi");
     var act = "";
     if (action) act = action; 
     navigator.toggleDrawer({
@@ -30,8 +31,8 @@ export function showScreenModal(navigator, target){
     });
 }
 
-export function dismissModal(){
-    this.props.navigator.dismissModal({
+export function dismissModal(navigator){
+    navigator.dismissModal({
         animationType: 'slide-down'
     });
 }
