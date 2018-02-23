@@ -27,14 +27,11 @@ export default class UserScreens extends React.Component {
     }
 
     onNavigatorEvent(event) {
-
         if (event.type == 'DeepLink') {
-            const screen = event.screen;
-            console.log(screen);
+            const screen = event.payload;
             this.setState({
                 activeScreen : screen
             })
-            
          }
       }
 

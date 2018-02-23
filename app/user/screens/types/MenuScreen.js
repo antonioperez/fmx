@@ -18,7 +18,8 @@ export default class MenuScreen extends React.Component {
         });
 
         this.props.navigator.handleDeepLink({ 
-            screen: screenName
+            link : "user",
+            payload: screenName
         });
     }
 

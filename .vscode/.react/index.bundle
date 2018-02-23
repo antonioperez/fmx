@@ -93819,7 +93819,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                     },
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 43
+                        lineNumber: 40
                     }
                 });
             };
@@ -93836,8 +93836,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             key: "onNavigatorEvent",
             value: function onNavigatorEvent(event) {
                 if (event.type == 'DeepLink') {
-                    var screen = event.screen;
-                    console.log(screen);
+                    var screen = event.payload;
                     this.setState({
                         activeScreen: screen
                     });
@@ -93851,7 +93850,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_dashboard2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 54
+                                lineNumber: 51
                             }
                         });
 
@@ -93859,7 +93858,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_shop2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 56
+                                lineNumber: 53
                             }
                         });
 
@@ -93867,7 +93866,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_profile2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 58
+                                lineNumber: 55
                             }
                         });
 
@@ -93875,7 +93874,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_settings2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 60
+                                lineNumber: 57
                             }
                         });
 
@@ -93883,7 +93882,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_settings2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 62
+                                lineNumber: 59
                             }
                         });
                 }
@@ -93898,7 +93897,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         style: _style.globalStyles.background,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 70
+                            lineNumber: 67
                         }
                     },
                     _react3.default.createElement(_reactNativeElements.Header, {
@@ -93913,7 +93912,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         },
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 71
+                            lineNumber: 68
                         }
                     }),
                     this.renderScreen(this.state.activeScreen)
@@ -94849,7 +94848,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
                     animated: true
                 });
                 this.props.navigator.handleDeepLink({
-                    screen: screenName
+                    link: "user",
+                    payload: screenName
                 });
             }
         }, {
@@ -94873,7 +94873,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         style: _style.globalStyles.background,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 37
+                            lineNumber: 38
                         }
                     },
                     _react3.default.createElement(_menu2.default, {
@@ -94881,7 +94881,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         signOutHandler: this.signOutHandler,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 38
+                            lineNumber: 39
                         }
                     })
                 );
