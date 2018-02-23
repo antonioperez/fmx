@@ -3,6 +3,7 @@ import DashboardUI from './../../components/dashboard';
 import ShopUI from './../../components/shop';
 import ProfileUI from './../../components/profile';
 import SettingsUI from './../../components/settings';
+import HelpCenterUI from './../../components/helpcenter';
 import LinearGradient from 'react-native-linear-gradient';
 import { globalStyles, ACTIVE_THEME } from '../../style';
 import { Text, Header, Icon } from 'react-native-elements';
@@ -28,7 +29,7 @@ export default class UserScreens extends React.Component {
 
     onNavigatorEvent(event) {
         if (event.type == 'DeepLink') {
-            
+
             this.props.navigator.toggleDrawer({
                 side: 'left',
                 animated: true
@@ -73,7 +74,7 @@ export default class UserScreens extends React.Component {
             case "settings":
                 return <SettingsUI  />
             case "help":
-                return <SettingsUI  />
+                return <HelpCenterUI  />
             
         }
         

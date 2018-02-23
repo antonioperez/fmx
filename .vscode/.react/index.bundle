@@ -93759,13 +93759,17 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     var _settings2 = _interopRequireDefault(_settings);
 
-    var _reactNativeLinearGradient = require(_dependencyMap[6], "react-native-linear-gradient");
+    var _helpcenter = require(_dependencyMap[6], "./../../components/helpcenter");
+
+    var _helpcenter2 = _interopRequireDefault(_helpcenter);
+
+    var _reactNativeLinearGradient = require(_dependencyMap[7], "react-native-linear-gradient");
 
     var _reactNativeLinearGradient2 = _interopRequireDefault(_reactNativeLinearGradient);
 
-    var _style = require(_dependencyMap[7], "../../style");
+    var _style = require(_dependencyMap[8], "../../style");
 
-    var _reactNativeElements = require(_dependencyMap[8], "react-native-elements");
+    var _reactNativeElements = require(_dependencyMap[9], "react-native-elements");
 
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -93819,7 +93823,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                     },
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 56
+                        lineNumber: 58
                     }
                 });
             };
@@ -93865,7 +93869,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_dashboard2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 67
+                                lineNumber: 69
                             }
                         });
 
@@ -93873,7 +93877,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_shop2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 69
+                                lineNumber: 71
                             }
                         });
 
@@ -93881,7 +93885,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_profile2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 71
+                                lineNumber: 73
                             }
                         });
 
@@ -93889,15 +93893,15 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_settings2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 73
+                                lineNumber: 75
                             }
                         });
 
                     case "help":
-                        return _react3.default.createElement(_settings2.default, {
+                        return _react3.default.createElement(_helpcenter2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 75
+                                lineNumber: 77
                             }
                         });
                 }
@@ -93912,7 +93916,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         style: _style.globalStyles.background,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 83
+                            lineNumber: 85
                         }
                     },
                     _react3.default.createElement(_reactNativeElements.Header, {
@@ -93927,7 +93931,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         },
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 84
+                            lineNumber: 86
                         }
                     }),
                     this.renderScreen(this.state.activeScreen)
@@ -93939,7 +93943,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     }(_react3.default.Component));
 
     exports.default = UserScreens;
-},713,[109,128,714,716,717,718,702,507,594],"fmx/app/user/screens/types/UserScreens.js");
+},713,[109,128,714,716,717,718,723,702,507,594],"fmx/app/user/screens/types/UserScreens.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -95117,6 +95121,115 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   exports.default = MenuUI;
 },720,[109,128,702,507,12,594,508],"fmx/app/user/components/menu/index.js");
+__d(function (global, require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react2 = require(_dependencyMap[0], "react");
+
+  var _react3 = _interopRequireDefault(_react2);
+
+  var _index = require(_dependencyMap[1], "./../../../../node_modules/react-transform-hmr/lib/index.js");
+
+  var _index2 = _interopRequireDefault(_index);
+
+  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/helpcenter/index.js";
+
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  var _style = require(_dependencyMap[2], "../../style");
+
+  var _reactNative = require(_dependencyMap[3], "react-native");
+
+  var _reactNativeElements = require(_dependencyMap[4], "react-native-elements");
+
+  var _reactNativeLinearGradient = require(_dependencyMap[5], "react-native-linear-gradient");
+
+  var _reactNativeLinearGradient2 = _interopRequireDefault(_reactNativeLinearGradient);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var _components = {
+    HelpCenterUI: {
+      displayName: "HelpCenterUI"
+    }
+  };
+
+  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/helpcenter/index.js",
+    components: _components,
+    locals: [module],
+    imports: [_react3.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var HelpCenterUI = _wrapComponent("HelpCenterUI")(function (_React$Component) {
+    _inherits(HelpCenterUI, _React$Component);
+
+    function HelpCenterUI(props) {
+      _classCallCheck(this, HelpCenterUI);
+
+      var _this = _possibleConstructorReturn(this, (HelpCenterUI.__proto__ || Object.getPrototypeOf(HelpCenterUI)).call(this, props));
+
+      _this.state = {};
+      return _this;
+    }
+
+    _createClass(HelpCenterUI, [{
+      key: "render",
+      value: function render() {
+        return _react3.default.createElement(
+          _reactNative.View,
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 17
+            }
+          },
+          _react3.default.createElement(
+            _reactNativeElements.Card,
+            {
+              title: "Help Center?",
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 18
+              }
+            },
+            _react3.default.createElement(
+              _reactNativeElements.Text,
+              {
+                style: [{
+                  fontSize: 12
+                }],
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 19
+                }
+              },
+              "Need Help? FAQ?"
+            )
+          )
+        );
+      }
+    }]);
+
+    return HelpCenterUI;
+  }(_react3.default.Component));
+
+  exports.default = HelpCenterUI;
+},723,[109,128,507,12,594,702],"fmx/app/user/components/helpcenter/index.js");
 require(23);
 require(722);
 //# sourceMappingURL=index.map
