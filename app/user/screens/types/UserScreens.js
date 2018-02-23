@@ -12,14 +12,29 @@ import { goToScreen, toggleSideBar } from '../actions';
 
 export default class UserScreens extends React.Component {
 
+    // static navigatorButtons = {
+    //     leftButtons: [{
+    //       title: 'X',
+    //       id: 'sideBar',
+    //       buttonColor: 'red',
+    //       buttonFontSize: 18,
+    //       buttonFontWeight: '800',
+    //     }]
+    //   };
+      
+
     constructor(props) {
         super(props);
         this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent.bind(this));
-        this.menuButton = this.menuButton.bind(this);
+        this.toggleMenu = this.toggleMenu.bind(this);
         this.state = {
             activeScreen : "dashboard"
         }
 
+    }
+
+    componentDidMount() {
+        setTimeout(() => this.props.navigator.dismissAllModals({ animationType: 'none' }), 100);
     }
 
     toggleMenu(action) {
@@ -29,7 +44,6 @@ export default class UserScreens extends React.Component {
     onNavigatorEvent(event) {
         console.log(event);
         if (event.type == 'DeepLink') {
-
             toggleSideBar(this.props.navigator);
             const link = event.link
             const screen = event.payload;
@@ -37,10 +51,21 @@ export default class UserScreens extends React.Component {
                 this.setState({
                     activeScreen : screen
                 })
-            } else if (link == 'signout'){
+            } 
+            if (link == 'signout'){
                 goToScreen(this.props.navigator, "fmx.welcome");
             }
          }
+
+        if (event.type == 'NavBarButtonPress') {
+            if (event.id == 'sideBar') {
+                console.log("test");
+                this.props.navigator.toggleDrawer({
+                    side: 'left',
+                    animated: true
+                });
+            }
+        }
       }
 
     menuButton(){
@@ -80,7 +105,7 @@ export default class UserScreens extends React.Component {
                     leftComponent={this.menuButton()}
                     centerComponent={{ text: 'FMx', style: { color: '#1d0c34', fontSize:20 } }}
                 />
-            {this.renderScreen(this.state.activeScreen)}
+                {this.renderScreen(this.state.activeScreen)}
             </LinearGradient>
         );
     }

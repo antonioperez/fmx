@@ -58507,7 +58507,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     _reactNativeNavigation.Navigation.startSingleScreenApp({
         screen: {
-            screen: 'fmx.welcome',
+            screen: 'fmx.user',
             title: '',
             navigatorStyle: {
                 navBarHidden: true
@@ -93810,7 +93810,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
             _this.props.navigator.setOnNavigatorEvent(_this.onNavigatorEvent.bind(_this));
 
-            _this.menuButton = _this.menuButton.bind(_this);
+            _this.toggleMenu = _this.toggleMenu.bind(_this);
             _this.state = {
                 activeScreen: "dashboard"
             };
@@ -93818,6 +93818,17 @@ __d(function (global, require, module, exports, _dependencyMap) {
         }
 
         _createClass(UserScreens, [{
+            key: "componentDidMount",
+            value: function componentDidMount() {
+                var _this2 = this;
+
+                setTimeout(function () {
+                    return _this2.props.navigator.dismissAllModals({
+                        animationType: 'none'
+                    });
+                }, 100);
+            }
+        }, {
             key: "toggleMenu",
             value: function toggleMenu(action) {
                 (0, _actions.toggleSideBar)(this.props.navigator);
@@ -93836,25 +93847,37 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         this.setState({
                             activeScreen: screen
                         });
-                    } else if (link == 'signout') {
+                    }
+
+                    if (link == 'signout') {
                         (0, _actions.goToScreen)(this.props.navigator, "fmx.welcome");
+                    }
+                }
+
+                if (event.type == 'NavBarButtonPress') {
+                    if (event.id == 'sideBar') {
+                        console.log("test");
+                        this.props.navigator.toggleDrawer({
+                            side: 'left',
+                            animated: true
+                        });
                     }
                 }
             }
         }, {
             key: "menuButton",
             value: function menuButton() {
-                var _this2 = this;
+                var _this3 = this;
 
                 return _react3.default.createElement(_reactNativeElements.Icon, {
                     name: "menu",
                     color: "#1d0c34",
                     onPress: function onPress() {
-                        return _this2.toggleMenu('open');
+                        return _this3.toggleMenu('open');
                     },
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 48
+                        lineNumber: 73
                     }
                 });
             }
@@ -93866,7 +93889,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_dashboard2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 59
+                                lineNumber: 84
                             }
                         });
 
@@ -93874,7 +93897,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_shop2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 61
+                                lineNumber: 86
                             }
                         });
 
@@ -93882,7 +93905,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_profile2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 63
+                                lineNumber: 88
                             }
                         });
 
@@ -93890,7 +93913,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_messages2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 65
+                                lineNumber: 90
                             }
                         });
 
@@ -93898,7 +93921,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_settings2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 67
+                                lineNumber: 92
                             }
                         });
 
@@ -93906,7 +93929,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_helpcenter2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 69
+                                lineNumber: 94
                             }
                         });
                 }
@@ -93921,7 +93944,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         style: _style.globalStyles.background,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 77
+                            lineNumber: 102
                         }
                     },
                     _react3.default.createElement(_reactNativeElements.Header, {
@@ -93936,7 +93959,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         },
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 78
+                            lineNumber: 103
                         }
                     }),
                     this.renderScreen(this.state.activeScreen)
@@ -95255,7 +95278,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
         navigator.resetTo({
             screen: target,
             navigatorStyle: {
-                navBarHidden: true
+                navBarHidden: false
             }
         });
     }

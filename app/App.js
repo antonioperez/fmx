@@ -6,7 +6,7 @@ registerScreens();
 
 Navigation.startSingleScreenApp({
     screen: {
-        screen: 'fmx.welcome',
+        screen: 'fmx.user',
         title: '',
         navigatorStyle: {
             navBarHidden: true

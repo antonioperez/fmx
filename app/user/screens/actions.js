@@ -5,7 +5,7 @@ export function goToScreen(navigator, target) {
     navigator.resetTo({
         screen: target,
         navigatorStyle: {
-          navBarHidden: true
+          navBarHidden: false
         },
     });
 }
