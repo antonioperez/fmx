@@ -12,11 +12,6 @@ export default class MenuScreen extends React.Component {
     }
 
     goToScreen (screenName) {
-        this.props.navigator.toggleDrawer({
-            side: 'left',
-            animated: true
-        });
-
         this.props.navigator.handleDeepLink({ 
             link : "user",
             payload: screenName
@@ -24,12 +19,8 @@ export default class MenuScreen extends React.Component {
     }
 
     signOutHandler() {
-        console.log("logout");
-        this.props.navigator.resetTo({
-          screen: 'fmx.welcome',
-          navigatorStyle: {
-            navBarHidden: true
-          },
+        this.props.navigator.handleDeepLink({ 
+            link : "signout"
         });
     }
     

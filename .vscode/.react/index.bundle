@@ -93819,7 +93819,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                     },
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 40
+                        lineNumber: 56
                     }
                 });
             };
@@ -93836,10 +93836,25 @@ __d(function (global, require, module, exports, _dependencyMap) {
             key: "onNavigatorEvent",
             value: function onNavigatorEvent(event) {
                 if (event.type == 'DeepLink') {
-                    var screen = event.payload;
-                    this.setState({
-                        activeScreen: screen
+                    this.props.navigator.toggleDrawer({
+                        side: 'left',
+                        animated: true
                     });
+                    var link = event.link;
+                    var screen = event.payload;
+
+                    if (link == 'user') {
+                        this.setState({
+                            activeScreen: screen
+                        });
+                    } else if (link == 'signout') {
+                        this.props.navigator.resetTo({
+                            screen: 'fmx.welcome',
+                            navigatorStyle: {
+                                navBarHidden: true
+                            }
+                        });
+                    }
                 }
             }
         }, {
@@ -93850,7 +93865,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_dashboard2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 51
+                                lineNumber: 67
                             }
                         });
 
@@ -93858,7 +93873,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_shop2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 53
+                                lineNumber: 69
                             }
                         });
 
@@ -93866,7 +93881,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_profile2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 55
+                                lineNumber: 71
                             }
                         });
 
@@ -93874,7 +93889,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_settings2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 57
+                                lineNumber: 73
                             }
                         });
 
@@ -93882,7 +93897,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_settings2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 59
+                                lineNumber: 75
                             }
                         });
                 }
@@ -93897,7 +93912,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         style: _style.globalStyles.background,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 67
+                            lineNumber: 83
                         }
                     },
                     _react3.default.createElement(_reactNativeElements.Header, {
@@ -93912,7 +93927,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         },
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 68
+                            lineNumber: 84
                         }
                     }),
                     this.renderScreen(this.state.activeScreen)
@@ -94843,10 +94858,6 @@ __d(function (global, require, module, exports, _dependencyMap) {
         _createClass(MenuScreen, [{
             key: "goToScreen",
             value: function goToScreen(screenName) {
-                this.props.navigator.toggleDrawer({
-                    side: 'left',
-                    animated: true
-                });
                 this.props.navigator.handleDeepLink({
                     link: "user",
                     payload: screenName
@@ -94855,12 +94866,8 @@ __d(function (global, require, module, exports, _dependencyMap) {
         }, {
             key: "signOutHandler",
             value: function signOutHandler() {
-                console.log("logout");
-                this.props.navigator.resetTo({
-                    screen: 'fmx.welcome',
-                    navigatorStyle: {
-                        navBarHidden: true
-                    }
+                this.props.navigator.handleDeepLink({
+                    link: "signout"
                 });
             }
         }, {
@@ -94873,7 +94880,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         style: _style.globalStyles.background,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 38
+                            lineNumber: 29
                         }
                     },
                     _react3.default.createElement(_menu2.default, {
@@ -94881,7 +94888,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         signOutHandler: this.signOutHandler,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 39
+                            lineNumber: 30
                         }
                     })
                 );

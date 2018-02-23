@@ -28,10 +28,27 @@ export default class UserScreens extends React.Component {
 
     onNavigatorEvent(event) {
         if (event.type == 'DeepLink') {
+            
+            this.props.navigator.toggleDrawer({
+                side: 'left',
+                animated: true
+            });
+
+            const link = event.link
             const screen = event.payload;
-            this.setState({
-                activeScreen : screen
-            })
+
+            if (link == 'user') {
+                this.setState({
+                    activeScreen : screen
+                })
+            } else if (link == 'signout'){
+                this.props.navigator.resetTo({
+                    screen: 'fmx.welcome',
+                    navigatorStyle: {
+                      navBarHidden: true
+                    },
+                });
+            }
          }
       }
 
