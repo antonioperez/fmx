@@ -8,7 +8,7 @@ import MessagesUI from './../../components/messages';
 import LinearGradient from 'react-native-linear-gradient';
 import { globalStyles, ACTIVE_THEME } from '../../style';
 import { Text, Header, Icon } from 'react-native-elements';
-import { goToScreen, toggleSideBar } from '../actions';
+import { goToScreen, showScreenModal, toggleSideBar } from '../actions';
 
 export default class UserScreens extends React.Component {
 
@@ -34,7 +34,7 @@ export default class UserScreens extends React.Component {
     }
 
     componentDidMount() {
-        
+        setTimeout(() => this.props.navigator.dismissAllModals({ animationType: 'none' }), 100);
     }
 
     toggleMenu(action) {
@@ -53,7 +53,8 @@ export default class UserScreens extends React.Component {
                 })
             } 
             if (link == 'signout'){
-                goToScreen(this.props.navigator, "fmx.welcome");
+                showScreenModal(this.props.navigator, 'fmx.welcome');
+                //goToScreen(this.props.navigator, "fmx.welcome");
             }
          }
 
@@ -66,7 +67,7 @@ export default class UserScreens extends React.Component {
                 });
             }
         }
-      }
+    }
 
     menuButton(){
         return (

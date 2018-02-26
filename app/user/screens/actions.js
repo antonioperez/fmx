@@ -6,9 +6,13 @@ export function goToScreen(navigator, target) {
     navigator.resetTo({
         screen: target,
         navigatorStyle: {
-          navBarHidden: false
+          navBarHidden: true
         },
     });
+    // navigator.popToRoot({
+    //     animated: true, // does the popToRoot have transition animation or does it happen immediately (optional)
+    //     animationType: 'fade', // 'fade' (for both) / 'slide-horizontal' (for android) does the popToRoot have different transition animation (optional)
+    // });
 }
 
 export function toggleSideBar(navigator, action){

@@ -2,7 +2,7 @@ import React from 'react';
 import WelcomeUI from './../../components/welcome';
 import LinearGradient from 'react-native-linear-gradient';
 import { globalStyles, ACTIVE_THEME } from '../../style';
-import { showScreenModal, dismissModal } from '../actions';
+import { showScreenModal, dismissModal, goToScreen } from '../actions';
 
 export default class WelcomeScreen extends React.Component {
   constructor(props) {
