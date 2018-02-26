@@ -34,7 +34,7 @@ export default class UserScreens extends React.Component {
     }
 
     componentDidMount() {
-        setTimeout(() => this.props.navigator.dismissAllModals({ animationType: 'none' }), 100);
+        
     }
 
     toggleMenu(action) {

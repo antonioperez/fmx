@@ -2,6 +2,7 @@
 
 
 export function goToScreen(navigator, target) {
+
     navigator.resetTo({
         screen: target,
         navigatorStyle: {
@@ -11,7 +12,6 @@ export function goToScreen(navigator, target) {
 }
 
 export function toggleSideBar(navigator, action){
-    console.log("hi");
     var act = "";
     if (action) act = action; 
     navigator.toggleDrawer({
