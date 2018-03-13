@@ -1408,7 +1408,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var _App2 = _interopRequireDefault(_App);
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},11,[12,489],"fmx/index.js");
+},725,[12,489],"fmx/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -58497,13 +58497,13 @@ __d(function (global, require, module, exports, _dependencyMap) {
 __d(function (global, require, module, exports, _dependencyMap) {
     var _reactNativeNavigation = require(_dependencyMap[0], "react-native-navigation");
 
-    var _user = require(_dependencyMap[1], "./user");
+    var _src = require(_dependencyMap[1], "./src");
 
-    var _user2 = _interopRequireDefault(_user);
+    var _src2 = _interopRequireDefault(_src);
 
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-    (0, _user2.default)();
+    (0, _src2.default)();
 
     _reactNativeNavigation.Navigation.startSingleScreenApp({
         screen: {
@@ -68209,7 +68209,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var _screens = require(_dependencyMap[0], "./screens");
 
   exports.default = _screens.registerScreens;
-},503,[504],"fmx/app/user/index.js");
+},503,[504],"fmx/app/src/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -68269,7 +68269,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             return _MenuScreen2.default;
         });
     }
-},504,[490,505,704,710,711,714,722],"fmx/app/user/screens/index.js");
+},504,[490,505,704,710,711,714,722],"fmx/app/src/screens/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -68287,7 +68287,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _class,
       _temp,
-      _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/screens/types/LoginScreen.js";
+      _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/src/screens/types/LoginScreen.js";
 
   var _login = require(_dependencyMap[2], "./../../components/login");
 
@@ -68314,7 +68314,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   };
 
   var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/screens/types/LoginScreen.js",
+    filename: "/Users/antonioperez/Desktop/projects/fmx/app/src/screens/types/LoginScreen.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -68400,7 +68400,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }, _temp));
 
   exports.default = LoginScreen;
-},505,[109,128,506,702,507,703],"fmx/app/user/screens/types/LoginScreen.js");
+},505,[109,128,506,702,507,703],"fmx/app/src/screens/types/LoginScreen.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -68415,7 +68415,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     var _index2 = _interopRequireDefault(_index);
 
-    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/login/index.js";
+    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/src/components/login/index.js";
 
     var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -68447,7 +68447,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     };
 
     var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-        filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/login/index.js",
+        filename: "/Users/antonioperez/Desktop/projects/fmx/app/src/components/login/index.js",
         components: _components,
         locals: [module],
         imports: [_react3.default]
@@ -68695,7 +68695,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
         return PasswordRecoverUI;
     }(_react3.default.Component));
-},506,[109,128,507,508,593,12,594],"fmx/app/user/components/login/index.js");
+},506,[109,128,507,508,593,12,594],"fmx/app/src/components/login/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -68752,7 +68752,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
       justifyContent: 'space-between'
     }
   });
-},507,[12],"fmx/app/user/style.js");
+},507,[12],"fmx/app/src/style.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -68922,7 +68922,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             });
         }
     };
-},508,[509,527],"fmx/app/user/actions/index.js");
+},508,[509,527],"fmx/app/src/actions/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -77342,7 +77342,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     var _index2 = _interopRequireDefault(_index);
 
-    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/login/container.js";
+    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/src/components/login/container.js";
 
     var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -77369,7 +77369,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     };
 
     var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-        filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/login/container.js",
+        filename: "/Users/antonioperez/Desktop/projects/fmx/app/src/components/login/container.js",
         components: _components,
         locals: [module],
         imports: [_react3.default]
@@ -77432,7 +77432,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
         return FBLoginButton;
     }(_react3.default.Component));
-},593,[109,128,507,508,12,594],"fmx/app/user/components/login/container.js");
+},593,[109,128,507,508,12,594],"fmx/app/src/components/login/container.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -91822,7 +91822,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             animationType: 'slide-down'
         });
     }
-},703,[],"fmx/app/user/screens/actions.js");
+},703,[],"fmx/app/src/screens/actions.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -91836,7 +91836,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/screens/types/WelcomeScreen.js";
+  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/src/screens/types/WelcomeScreen.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -91867,7 +91867,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   };
 
   var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/screens/types/WelcomeScreen.js",
+    filename: "/Users/antonioperez/Desktop/projects/fmx/app/src/screens/types/WelcomeScreen.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -91930,7 +91930,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = WelcomeScreen;
-},704,[109,128,705,702,507,703],"fmx/app/user/screens/types/WelcomeScreen.js");
+},704,[109,128,705,702,507,703],"fmx/app/src/screens/types/WelcomeScreen.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -91944,7 +91944,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/welcome/index.js";
+  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/src/components/welcome/index.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -91981,7 +91981,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   };
 
   var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/welcome/index.js",
+    filename: "/Users/antonioperez/Desktop/projects/fmx/app/src/components/welcome/index.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -92115,7 +92115,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = WelcomeUI;
-},705,[109,128,527,706,12,507,508,594,708],"fmx/app/user/components/welcome/index.js");
+},705,[109,128,527,706,12,507,508,594,708],"fmx/app/src/components/welcome/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   var _src = require(_dependencyMap[0], "./src/");
 
@@ -92934,7 +92934,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     var _index2 = _interopRequireDefault(_index);
 
-    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/welcome/container.js";
+    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/src/components/welcome/container.js";
 
     var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -92961,7 +92961,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     };
 
     var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-        filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/welcome/container.js",
+        filename: "/Users/antonioperez/Desktop/projects/fmx/app/src/components/welcome/container.js",
         components: _components,
         locals: [module],
         imports: [_react3.default]
@@ -93042,7 +93042,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
         return Card;
     }(_react3.default.Component));
-},708,[109,128,507,12,594,709],"fmx/app/user/components/welcome/container.js");
+},708,[109,128,507,12,594,709],"fmx/app/src/components/welcome/container.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -93058,7 +93058,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
             alignItems: 'center'
         }
     });
-},709,[12],"fmx/app/user/components/welcome/style.js");
+},709,[12],"fmx/app/src/components/welcome/style.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -93076,7 +93076,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     var _class,
         _temp,
-        _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/screens/types/PasswordReset.js";
+        _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/src/screens/types/PasswordReset.js";
 
     var _login = require(_dependencyMap[2], "./../../components/login");
 
@@ -93103,7 +93103,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     };
 
     var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-        filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/screens/types/PasswordReset.js",
+        filename: "/Users/antonioperez/Desktop/projects/fmx/app/src/screens/types/PasswordReset.js",
         components: _components,
         locals: [module],
         imports: [_react3.default]
@@ -93178,7 +93178,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     }, _temp));
 
     exports.default = PWRecoverScreen;
-},710,[109,128,506,702,507,703],"fmx/app/user/screens/types/PasswordReset.js");
+},710,[109,128,506,702,507,703],"fmx/app/src/screens/types/PasswordReset.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -93196,7 +93196,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _class,
       _temp,
-      _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/screens/types/SignupScreen.js";
+      _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/src/screens/types/SignupScreen.js";
 
   var _signup = require(_dependencyMap[2], "./../../components/signup");
 
@@ -93225,7 +93225,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   };
 
   var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/screens/types/SignupScreen.js",
+    filename: "/Users/antonioperez/Desktop/projects/fmx/app/src/screens/types/SignupScreen.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -93301,7 +93301,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }, _temp));
 
   exports.default = SignupScreen;
-},711,[109,128,712,702,507,703],"fmx/app/user/screens/types/SignupScreen.js");
+},711,[109,128,712,702,507,703],"fmx/app/src/screens/types/SignupScreen.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -93315,7 +93315,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/signup/index.js";
+  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/src/components/signup/index.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -93348,7 +93348,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   };
 
   var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/signup/index.js",
+    filename: "/Users/antonioperez/Desktop/projects/fmx/app/src/components/signup/index.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -93641,7 +93641,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = SignupUI;
-},712,[109,128,527,507,508,713,12,594],"fmx/app/user/components/signup/index.js");
+},712,[109,128,527,507,508,713,12,594],"fmx/app/src/components/signup/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -93656,7 +93656,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     var _index2 = _interopRequireDefault(_index);
 
-    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/signup/container.js";
+    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/src/components/signup/container.js";
 
     var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -93681,7 +93681,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     };
 
     var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-        filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/signup/container.js",
+        filename: "/Users/antonioperez/Desktop/projects/fmx/app/src/components/signup/container.js",
         components: _components,
         locals: [module],
         imports: [_react3.default]
@@ -93765,7 +93765,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
         return InputFieldCard;
     }(_react3.default.Component));
-},713,[109,128,507,12,594],"fmx/app/user/components/signup/container.js");
+},713,[109,128,507,12,594],"fmx/app/src/components/signup/container.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -93779,7 +93779,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     var _index2 = _interopRequireDefault(_index);
 
-    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/screens/types/UserScreens.js";
+    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/src/screens/types/UserScreens.js";
 
     var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -93832,7 +93832,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     };
 
     var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-        filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/screens/types/UserScreens.js",
+        filename: "/Users/antonioperez/Desktop/projects/fmx/app/src/screens/types/UserScreens.js",
         components: _components,
         locals: [module],
         imports: [_react3.default]
@@ -93921,7 +93921,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                     },
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 74
+                        lineNumber: 75
                     }
                 });
             }
@@ -93933,7 +93933,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_dashboard2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 85
+                                lineNumber: 86
                             }
                         });
 
@@ -93941,7 +93941,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_shop2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 87
+                                lineNumber: 88
                             }
                         });
 
@@ -93949,7 +93949,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_profile2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 89
+                                lineNumber: 90
                             }
                         });
 
@@ -93957,7 +93957,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_messages2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 91
+                                lineNumber: 92
                             }
                         });
 
@@ -93965,7 +93965,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_settings2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 93
+                                lineNumber: 94
                             }
                         });
 
@@ -93973,7 +93973,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         return _react3.default.createElement(_helpcenter2.default, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 95
+                                lineNumber: 96
                             }
                         });
                 }
@@ -93988,7 +93988,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         style: _style.globalStyles.background,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 103
+                            lineNumber: 104
                         }
                     },
                     _react3.default.createElement(_reactNativeElements.Header, {
@@ -94003,7 +94003,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
                         },
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 104
+                            lineNumber: 105
                         }
                     }),
                     this.renderScreen(this.state.activeScreen)
@@ -94015,7 +94015,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     }(_react3.default.Component));
 
     exports.default = UserScreens;
-},714,[109,128,715,717,718,719,720,721,702,507,594,703],"fmx/app/user/screens/types/UserScreens.js");
+},714,[109,128,715,717,718,719,720,721,702,507,594,703],"fmx/app/src/screens/types/UserScreens.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -94029,7 +94029,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/dashboard/index.js";
+  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/src/components/dashboard/index.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -94062,7 +94062,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   };
 
   var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/dashboard/index.js",
+    filename: "/Users/antonioperez/Desktop/projects/fmx/app/src/components/dashboard/index.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -94178,7 +94178,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = DashboardUI;
-},715,[109,128,507,12,594,702,716,508],"fmx/app/user/components/dashboard/index.js");
+},715,[109,128,507,12,594,702,716,508],"fmx/app/src/components/dashboard/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -94193,7 +94193,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     var _index2 = _interopRequireDefault(_index);
 
-    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/dashboard/container.js";
+    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/src/components/dashboard/container.js";
 
     var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -94222,7 +94222,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     };
 
     var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-        filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/dashboard/container.js",
+        filename: "/Users/antonioperez/Desktop/projects/fmx/app/src/components/dashboard/container.js",
         components: _components,
         locals: [module],
         imports: [_react3.default]
@@ -94483,7 +94483,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
         return RateCard;
     }(_react3.default.Component));
-},716,[109,128,507,12,594,702],"fmx/app/user/components/dashboard/container.js");
+},716,[109,128,507,12,594,702],"fmx/app/src/components/dashboard/container.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -94497,7 +94497,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/shop/index.js";
+  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/src/components/shop/index.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -94528,7 +94528,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   };
 
   var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/shop/index.js",
+    filename: "/Users/antonioperez/Desktop/projects/fmx/app/src/components/shop/index.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -94624,7 +94624,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = ShopUI;
-},717,[109,128,507,12,594,702,716],"fmx/app/user/components/shop/index.js");
+},717,[109,128,507,12,594,702,716],"fmx/app/src/components/shop/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -94638,7 +94638,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/profile/index.js";
+  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/src/components/profile/index.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -94667,7 +94667,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   };
 
   var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/profile/index.js",
+    filename: "/Users/antonioperez/Desktop/projects/fmx/app/src/components/profile/index.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -94756,7 +94756,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = ProfileUI;
-},718,[109,128,507,12,594,702],"fmx/app/user/components/profile/index.js");
+},718,[109,128,507,12,594,702],"fmx/app/src/components/profile/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -94770,7 +94770,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/settings/index.js";
+  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/src/components/settings/index.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -94799,7 +94799,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   };
 
   var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/settings/index.js",
+    filename: "/Users/antonioperez/Desktop/projects/fmx/app/src/components/settings/index.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -94865,7 +94865,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = SettingsUI;
-},719,[109,128,507,12,594,702],"fmx/app/user/components/settings/index.js");
+},719,[109,128,507,12,594,702],"fmx/app/src/components/settings/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -94879,7 +94879,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/helpcenter/index.js";
+  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/src/components/helpcenter/index.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -94908,7 +94908,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   };
 
   var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/helpcenter/index.js",
+    filename: "/Users/antonioperez/Desktop/projects/fmx/app/src/components/helpcenter/index.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -94974,7 +94974,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = HelpCenterUI;
-},720,[109,128,507,12,594,702],"fmx/app/user/components/helpcenter/index.js");
+},720,[109,128,507,12,594,702],"fmx/app/src/components/helpcenter/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -94988,7 +94988,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/messages/index.js";
+  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/src/components/messages/index.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -95013,7 +95013,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   };
 
   var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/messages/index.js",
+    filename: "/Users/antonioperez/Desktop/projects/fmx/app/src/components/messages/index.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -95079,7 +95079,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = MessagesUI;
-},721,[109,128,507,12,594],"fmx/app/user/components/messages/index.js");
+},721,[109,128,507,12,594],"fmx/app/src/components/messages/index.js");
 __d(function (global, require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -95093,7 +95093,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
     var _index2 = _interopRequireDefault(_index);
 
-    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/screens/types/MenuScreen.js";
+    var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/src/screens/types/MenuScreen.js";
 
     var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -95122,7 +95122,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     };
 
     var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-        filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/screens/types/MenuScreen.js",
+        filename: "/Users/antonioperez/Desktop/projects/fmx/app/src/screens/types/MenuScreen.js",
         components: _components,
         locals: [module],
         imports: [_react3.default]
@@ -95191,7 +95191,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
     }(_react3.default.Component));
 
     exports.default = MenuScreen;
-},722,[109,128,723,702,507],"fmx/app/user/screens/types/MenuScreen.js");
+},722,[109,128,723,702,507],"fmx/app/src/screens/types/MenuScreen.js");
 __d(function (global, require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -95205,7 +95205,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/user/components/menu/index.js";
+  var _jsxFileName = "/Users/antonioperez/Desktop/projects/fmx/app/src/components/menu/index.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -95236,7 +95236,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   };
 
   var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/antonioperez/Desktop/projects/fmx/app/user/components/menu/index.js",
+    filename: "/Users/antonioperez/Desktop/projects/fmx/app/src/components/menu/index.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -95413,7 +95413,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
   }(_react3.default.Component));
 
   exports.default = MenuUI;
-},723,[109,128,702,507,12,594,508],"fmx/app/user/components/menu/index.js");
+},723,[109,128,702,507,12,594,508],"fmx/app/src/components/menu/index.js");
 require(23);
-require(11);
+require(725);
 //# sourceMappingURL=index.map
