@@ -1,10 +1,4 @@
 {
-  "name": "fmx",
-  "displayName": "fmx",
-  "expo": {
-    "slug": "fmx",
-    "name": "fmx",
-    "sdkVersion": "25.0.0",
-    "entryPoint": "/Users/antonioperez/Desktop/fmx/.vscode/exponentIndex.js"
-  }
+  "name": "fmxapp",
+  "displayName": "fmxapp"
 }

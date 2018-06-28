@@ -1,11 +1,12 @@
-package com.rosethroughconcretellc.fmx;
+package com.rosethroughconcretellc.fmxapp;
 
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
-import com.facebook.reactnative.androidsdk.FBSDKPackage;
-import com.oblador.vectoricons.VectorIconsPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
+import com.oblador.vectoricons.VectorIconsPackage;
+import io.invertase.firebase.RNFirebasePackage;
+import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -17,10 +18,12 @@ import io.invertase.firebase.admob.RNFirebaseAdMobPackage; //Firebase AdMob
 import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage; // Firebase Analytics
 import io.invertase.firebase.auth.RNFirebaseAuthPackage; // Firebase Auth
 import io.invertase.firebase.config.RNFirebaseRemoteConfigPackage; // Firebase Remote Config
-import io.invertase.firebase.crash.RNFirebaseCrashPackage; // Firebase Crash Reporting
 import io.invertase.firebase.database.RNFirebaseDatabasePackage; // Firebase Realtime Database
 import io.invertase.firebase.firestore.RNFirebaseFirestorePackage; // Firebase Firestore
+import io.invertase.firebase.instanceid.RNFirebaseInstanceIdPackage; // Firebase Instance ID
+import io.invertase.firebase.links.RNFirebaseLinksPackage; // Firebase Dynamic Links
 import io.invertase.firebase.messaging.RNFirebaseMessagingPackage; // Firebase Cloud Messaging
+import io.invertase.firebase.notifications.RNFirebaseNotificationsPackage; // Firebase Notifications
 import io.invertase.firebase.perf.RNFirebasePerformancePackage; // Firebase Performance
 import io.invertase.firebase.storage.RNFirebaseStoragePackage; // Firebase Storage
 import io.invertase.firebase.fabric.crashlytics.RNFirebaseCrashlyticsPackage; // Crashlytics
@@ -40,22 +43,25 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
-            new FBSDKPackage(),
-            new VectorIconsPackage(),
             new LinearGradientPackage(),
+            new VectorIconsPackage(),
+            new RNFirebasePackage(),
+            new FBSDKPackage(),
         new RNFirebasePackage(),
         // add/remove these packages as appropriate
         new RNFirebaseAdMobPackage(),
         new RNFirebaseAnalyticsPackage(),
         new RNFirebaseAuthPackage(),
-        new RNFirebaseRemoteConfigPackage(),
-        new RNFirebaseCrashPackage(),
+        new RNFirebaseCrashlyticsPackage(),
         new RNFirebaseDatabasePackage(),
         new RNFirebaseFirestorePackage(),
+        new RNFirebaseInstanceIdPackage(),
+        new RNFirebaseLinksPackage(),
         new RNFirebaseMessagingPackage(),
+        new RNFirebaseNotificationsPackage(),
         new RNFirebasePerformancePackage(),
-        new RNFirebaseStoragePackage(),
-        new RNFirebaseCrashlyticsPackage()
+        new RNFirebaseRemoteConfigPackage(),
+        new RNFirebaseStoragePackage()
       );
     }
     

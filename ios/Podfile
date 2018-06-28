@@ -1,19 +1,18 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '9.0'
 
-target 'fmx' do
+target 'fmxapp' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
 
-  # Pods for fmx
+  # Pods for fmxapp
 
   # Required by RNFirebase
-  pod 'Firebase/Core'
+  pod 'Firebase/Core', '~> 4.13.0'
 
   # [OPTIONAL PODS] - comment out pods for firebase products you won't be using.
   pod 'Firebase/AdMob'
   pod 'Firebase/Auth'
-  pod 'Firebase/Crash'
   pod 'Firebase/Database'
   pod 'Firebase/DynamicLinks'
   pod 'Firebase/Performance'
@@ -22,10 +21,30 @@ target 'fmx' do
   pod 'Firebase/RemoteConfig'
   pod 'Firebase/Storage'
   
-  pod 'Fabric', '~> 1.7.2'
-  pod 'Crashlytics', '~> 3.9.3'
- # pod 'React', :path => '../node_modules/react-native'
-#  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+  # Add new pods below this line
+  pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
+  pod 'React', :path => '../node_modules/react-native', :subspecs => [
+    'Core',
+    'CxxBridge',
+    'DevSupport',
+    'RCTActionSheet',
+    'RCTGeolocation',
+    'RCTText',
+    'RCTNetwork',
+    'RCTWebSocket',
+    'RCTNetwork',
+    'RCTVibration',
+    'RCTSettings',
+    'RCTAnimation',
+    'RCTLinkingIOS',
+    'RCTImage',
+  ]
+
+  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
+  pod 'Fabric', '~> 1.7.6'
+  pod 'Crashlytics', '~> 3.10.1'
 
 end
