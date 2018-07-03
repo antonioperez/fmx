@@ -23,6 +23,7 @@ target 'fmxapp' do
   
   # Add new pods below this line
   pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
+  pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'React', :path => '../node_modules/react-native', :subspecs => [
     'Core',
     'CxxBridge',

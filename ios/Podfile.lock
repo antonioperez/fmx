@@ -209,6 +209,7 @@ DEPENDENCIES:
   - Firebase/Performance
   - Firebase/RemoteConfig
   - Firebase/Storage
+  - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - React/Core (from `../node_modules/react-native`)
   - React/CxxBridge (from `../node_modules/react-native`)
   - React/DevSupport (from `../node_modules/react-native`)
@@ -247,7 +248,6 @@ SPEC REPOS:
     - FirebaseStorage
     - FirebaseSwizzlingUtilities
     - Folly
-    - glog
     - Google-Mobile-Ads-SDK
     - GoogleToolboxForMac
     - gRPC
@@ -262,6 +262,8 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   BVLinearGradient:
     :path: "../node_modules/react-native-linear-gradient"
+  glog:
+    :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
   React:
     :path: "../node_modules/react-native"
   RNVectorIcons:
@@ -306,6 +308,6 @@ SPEC CHECKSUMS:
   RNVectorIcons: c0dbfbf6068fefa240c37b0f71bd03b45dddac44
   yoga: a23273df0088bf7f2bb7e5d7b00044ea57a2a54a
 
-PODFILE CHECKSUM: 9f905f811982cf4ad501340976ba814a807cd1f6
+PODFILE CHECKSUM: 590d1b40d708aa270a3b10ae422087b5c8c8e1fd
 
 COCOAPODS: 1.5.3

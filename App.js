@@ -5,6 +5,8 @@ import firebase from 'react-native-firebase';
 const FBSDK = require('react-native-fbsdk');
 import LinearGradient from 'react-native-linear-gradient';
 
+import { Button } from 'react-native-elements';
+
 var styles = StyleSheet.create({
   linearGradient: {
     flex: 1,
@@ -40,7 +42,7 @@ export default class App extends React.Component {
 
         <View style={styles.container}>
         <Image source={require('./assets/RNFirebase.png')} style={[styles.logo]} />
-
+        <Button /> 
         {Platform.OS === 'ios' ? (
           <Text style={styles.instructions}>
             Press Cmd+R to reload,{'\n'}
